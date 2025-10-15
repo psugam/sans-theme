@@ -1,0 +1,53 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'My New Hugo Site'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 30
+
+  [[menus.main]]
+    name = 'Categories'
+    pageRef = '/categories'
+    weight = 30
+
+   [[menus.main]]
+    name = 'About'
+    pageRef ='/pages/about.md'
+    weight = 50 
+
+[pagination]
+  disableAliases = false
+  pagerSize = 4
+  path = 'page'
+  
+[taxonomies]
+  tag = "tags"
+  author = "authors"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+defaultMarkdownHandler = "goldmark"
+[goldmark]
+  [Extensions]
+    footnote = true
+    
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2

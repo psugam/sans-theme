@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <!-- This is for the main taxonomy page. So, not for individual tags but for the main tags page. -->
+  {{ .Content }}
+  {{ range .Pages }}
+   <div>
+<a href="{{ .RelPermalink }}" style="display:inline-block; margin-right:8px; font-size: large;">
+  {{ .LinkTitle }}
+</a>
+</div>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,16 @@
+{{ if and (gt .WordCount 400) (ne .Params.toc false) }}
+<div class="toc-container">
+    <div class="toc-title" onclick="toggleTOC(this)">Table of Contents ▾</div>
+    <div class="toc-body">
+        {{ .TableOfContents }}
+    </div>
+</div>
+{{ end }}
+
+<script>
+function toggleTOC(titleEl) {
+  const body = titleEl.nextElementSibling;
+  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+  titleEl.textContent = body.style.display === 'none' ? 'Table of Contents ▸' : 'Table of Contents ▾';
+}
+</script>

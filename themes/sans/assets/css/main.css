@@ -1,0 +1,314 @@
+body {
+  color: #222;
+  font-family: Georgia, sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color:  #e8e8e7af; */
+  background-color: white;
+  padding-top: 0;
+}
+
+header {
+  /* border-bottom: 1px solid #222; */
+  margin-bottom: 1rem;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  margin-top: 0;
+
+}
+
+footer {
+  /* border-top: 1px solid #222; */
+  margin-top: 1rem;
+  /* padding-bottom: 0.5rem; */
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
+
+header h1{
+  text-align: center;
+  margin-bottom: 0;
+}
+.header-nav{
+  /* background-color: red; */
+  /* border: 2px black solid; */
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-basis:60%;
+}
+.header-nav ul{
+  
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  /* gap:1.5rem;
+  margin:0;
+  padding:0; */
+}
+
+
+.footer-main{
+ text-align: center;
+}
+
+.site-title a{
+  text-decoration: none;
+  color: inherit;
+}
+.site-title{
+  margin:0;
+}
+
+
+
+
+/* home page */
+.home-page-main-div{
+  min-height: 80vh;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+
+
+/* Individual posts page */
+.page-tags-div{
+  display: flex;
+  align-items: center;
+}
+
+.page-tags-div ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 0;
+  margin-left: 1rem;
+  padding: 0;
+}
+.page-tags-div ul a {
+  padding: 0.15rem;
+  /* background-color: rgb(219, 219, 229); */
+}
+
+.page-tags-label{
+  display: inline-block;
+}
+
+.prev-next-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* pagination */
+
+.pagination{
+  margin-top: 1rem;
+}
+
+
+/* section archive */
+
+.section-meta-data-div{
+ display: flex;
+ width: 100%;
+ justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+/* codeblock shortcode */
+.custom-code-block-wrapper {
+  position: relative;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.custom-code-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid #444;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.code-lang-label {
+  color: #888;
+}
+
+.copy-code-btn {
+  background: none;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.copy-code-btn:hover {
+  color: #fff;
+}
+
+.custom-code-block {
+  margin: 0;
+  padding: 1rem;
+  color: #e5e5e5;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Syntax highlighting using Hugo's built-in Chroma classes */
+.chroma .k  { color: #569CD6; } /* keyword */
+.chroma .s  { color: #CE9178; } /* string */
+.chroma .n  { color: #9CDCFE; } /* name/variable */
+.chroma .c  { color: #6A9955; } /* comment */
+.chroma .o  { color: #D4D4D4; } /* operator */
+.chroma .p  { color: #D4D4D4; } /* punctuation */
+
+
+
+
+
+
+/* Table of Contents */
+
+/* .toc-container{
+  border: 2px solid rgb(101, 98, 98);
+}
+.toc-title{
+  border: 2px solid red;
+}
+
+.toc-body{
+  border: 2px solid green;
+}
+.toc-body ul{
+  list-style: none;
+  border: 2px solid blue;
+  padding-left: 0;
+}
+.toc-body #TableOfContents{
+  margin: 0;
+}
+.toc-body li{
+  padding-left: 1.5rem;
+} */
+
+
+/* Container */
+.toc-container{
+  /* border: 2px solid rgb(101, 98, 98); */
+  max-width: 300px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Title */
+.toc-title{
+  /* border: 2px solid red; */
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Body */
+.toc-body{
+  /* border: 2px solid green; */
+  background-color: rgba(143, 143, 145, 0.601);
+  padding: 0.5rem;
+}
+
+/* Remove default list style */
+.toc-body ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Numbering with CSS counters */
+.toc-body ul {
+  counter-reset: section;
+}
+
+.toc-body li {
+  counter-increment: section;
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 0.25rem 0;
+}
+
+.toc-body li::before {
+  content: counters(section, ".") " ";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Nested numbering */
+.toc-body li ul {
+  counter-reset: subsection;
+}
+
+.toc-body li li {
+  counter-increment: subsection;
+}
+
+.toc-body li li::before {
+  content: counters(section, ".") "." counters(subsection, ".") " ";
+}
+
+
+  .main-text-container {
+        counter-reset: h2counter;
+    }
+    .main-text-container h1 {
+        counter-reset: h2counter;
+    }
+.main-text-container    h2:before {
+        content: counter(h2counter) ".\0000a0\0000a0";
+        counter-increment: h2counter;
+        counter-reset: h3counter;
+    }
+.main-text-container    h3:before {
+        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+        counter-increment: h3counter;
+        counter-reset:h4counter;
+    }
+.main-text-container h4:before{
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+  counter-increment:h4counter;
+}
+
+
+/* FOR TE SEARCH */
+#search{
+  border: 2px solid black;
+  margin: 0;
+  padding:0 ;
+}

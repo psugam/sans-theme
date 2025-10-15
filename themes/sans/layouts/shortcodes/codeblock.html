@@ -1,0 +1,19 @@
+{{- $lang := .Get "lang" | default "text" -}}
+<!-- codeblock is not entirely wworking correctly. htmlEscape has some problems. Characters like " show problem as well -->
+
+<div class="custom-code-block-wrapper" data-lang="{{ $lang }}">
+  <div class="custom-code-toolbar">
+    <span class="code-lang-label">{{ upper $lang }}</span>
+    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+  </div>
+  <pre class="custom-code-block"><code class="language-{{ $lang }}">{{ .Inner | htmlEscape }}</code></pre>
+</div>
+
+<script>
+function copyCode(btn) {
+  const code = btn.closest('.custom-code-block-wrapper').querySelector('code').innerText;
+  navigator.clipboard.writeText(code);
+  btn.textContent = '✅ Copied';
+  setTimeout(() => btn.textContent = '📋 Copy', 1500);
+}
+</script>

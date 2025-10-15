@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="home-page-main-div">
+  {{ .Content }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <!-- This one is for the home page. As for now, the entire content is shown in the homepage with the title. This will be chamged. -->
+  {{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate $pages  }}
+
+ {{ range $paginator.Pages }}
+
+  <div data-pagefind-body>
+    <a href="{{ .RelPermalink }}" style="display:inline-block; margin-right:8px; font-size: large;" data-pagefind-meta="title">
+      {{ .LinkTitle }}
+    </a>
+    <p style="display:inline; margin:0; font-size: smaller;" data-pagefind-meta="date">{{ $dateHuman }}</p>
+  </div>
+    <!-- {{ .Summary }} -->
+  {{ end }}
+
+
+
+
+  {{ if gt $paginator.TotalPages 1 }}
+  {{ $current := $paginator.PageNumber }}
+  {{ $start := sub $current 2 }}
+  {{ $end := add $current 2 }}
+
+  {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+  {{ if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
+
+  <nav class="pagination">
+    {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="page-link">← Prev</a>
+    {{ end }}
+
+    {{ range $i := seq $start $end }}
+      {{ $page := index $paginator.Pagers (sub $i 1) }}
+      {{ if eq $i $current }}
+        <span class="page-link active">{{ $i }}</span>
+      {{ else }}
+        <a href="{{ $page.URL }}" class="page-link">{{ $i }}</a>
+      {{ end }}
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="page-link">Next →</a>
+    {{ end }}
+  </nav>
+{{ end }}
+</div>
+{{ end }}

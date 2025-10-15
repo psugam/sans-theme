@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+ <title>Multiple Column</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title"><a href="/">SUGAM</a></h1>
+
+  <nav class="header-nav">
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/categories/">Categories</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/pages/about/">About</a>
+    </li>
+    </ul>
+  </nav>
+
+
+<style>
+     
+    .search-icon-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .search-icon-btn:hover {
+        background: #000000;
+    }
+
+    .search-icon-btn svg {
+        width: 20px;
+        height: 20px;
+        stroke: #000000;
+        transition: stroke 0.3s ease;
+    }
+
+    .search-icon-btn:hover svg {
+        stroke: #ffffff;
+    }
+
+     
+    .search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 9999;
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .search-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+     
+    .search-container {
+        width: 90%;
+        max-width: 700px;
+        position: relative;
+    }
+
+     
+    .search-close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .search-close:hover {
+        background: #000000;
+        transform: rotate(90deg);
+    }
+
+    .search-close::before,
+    .search-close::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: #000000;
+        transition: background 0.3s ease;
+    }
+
+    .search-close:hover::before,
+    .search-close:hover::after {
+        background: #ffffff;
+    }
+
+    .search-close::before {
+        transform: rotate(45deg);
+    }
+
+    .search-close::after {
+        transform: rotate(-45deg);
+    }
+
+     
+    .search-input-wrapper {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .search-input-box {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .search-input-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        color: #000000;
+        background: transparent;
+    }
+
+    .search-input-box input::placeholder {
+        color: #666666;
+    }
+
+    .clear-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: none;
+        width: 24px;
+        height: 24px;
+        position: relative;
+    }
+
+    .clear-btn.active {
+        display: block;
+    }
+
+    .clear-btn::before,
+    .clear-btn::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background: #000000;
+        top: 50%;
+        left: 50%;
+    }
+
+    .clear-btn::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .clear-btn::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .clear-btn:hover::before,
+    .clear-btn:hover::after {
+        background: #666666;
+    }
+
+    .search-btn {
+        background: #000000;
+        color: #ffffff;
+        border: 2px solid #000000;
+        padding: 12px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .search-btn:hover {
+        background: #ffffff;
+        color: #000000;
+    }
+
+     
+    .search-results {
+        max-height: calc(100vh - 250px);
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    .search-results::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .search-results::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 4px;
+    }
+
+    .search-results::-webkit-scrollbar-thumb {
+        background: #000000;
+        border-radius: 4px;
+    }
+
+    .search-results::-webkit-scrollbar-thumb:hover {
+        background: #333333;
+    }
+
+     
+    .result-item {
+        background: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .result-item:hover {
+        box-shadow: 4px 4px 0px #000000;
+        transform: translate(-2px, -2px);
+    }
+
+    .result-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .result-excerpt {
+        color: #333333;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .result-url {
+        color: #666666;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .no-results {
+        text-align: center;
+        color: #666666;
+        font-size: 18px;
+        padding: 40px 20px;
+    }
+
+     
+    #search {
+        display: none;
+    }
+
+     
+    @media (max-width: 768px) {
+        .search-overlay {
+            padding-top: 80px;
+        }
+
+        .search-close {
+            top: -45px;
+        }
+
+        .search-input-wrapper {
+            flex-direction: column;
+        }
+
+        .search-btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<button class="search-icon-btn" id="searchIconBtn" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+    </svg>
+</button>
+
+
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+        <button class="search-close" id="searchClose" aria-label="Close search"></button>
+        
+        <div class="search-input-wrapper">
+            <div class="search-input-box">
+                <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+                <button class="clear-btn" id="clearBtn" aria-label="Clear search"></button>
+            </div>
+            <button class="search-btn" id="performSearch">Search</button>
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        new PagefindUI({ 
+            element: "#search", 
+            showSubResults: true 
+        });
+
+        
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchIconBtn = document.getElementById('searchIconBtn');
+        const searchClose = document.getElementById('searchClose');
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearBtn');
+        const performSearchBtn = document.getElementById('performSearch');
+        const searchResults = document.getElementById('searchResults');
+
+        
+        searchIconBtn.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+            searchInput.focus();
+        });
+
+        
+        searchClose.addEventListener('click', closeSearch);
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) {
+                closeSearch();
+            }
+        });
+
+        function closeSearch() {
+            searchOverlay.classList.remove('active');
+            searchInput.value = '';
+            clearBtn.classList.remove('active');
+            searchResults.innerHTML = '';
+        }
+
+        
+        searchInput.addEventListener('input', () => {
+            if (searchInput.value.length > 0) {
+                clearBtn.classList.add('active');
+            } else {
+                clearBtn.classList.remove('active');
+            }
+        });
+
+        
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.classList.remove('active');
+            searchResults.innerHTML = '';
+            searchInput.focus();
+        });
+
+        
+        performSearchBtn.addEventListener('click', performSearch);
+
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        async function performSearch() {
+            const query = searchInput.value.trim();
+            
+            if (!query) {
+                searchResults.innerHTML = '<div class="no-results">Please enter a search term</div>';
+                return;
+            }
+
+            searchResults.innerHTML = '<div class="no-results">Searching...</div>';
+
+            try {
+                
+                const pagefind = await import('/pagefind/pagefind.js');
+                const results = await pagefind.search(query);
+                
+                if (results.results.length === 0) {
+                    searchResults.innerHTML = '<div class="no-results">No results found</div>';
+                    return;
+                }
+
+                
+                const processedResults = await Promise.all(
+                    results.results.map(async (result) => {
+                        const data = await result.data();
+                        return {
+                            title: data.meta.title || 'Untitled',
+                            excerpt: data.excerpt,
+                            url: data.url
+                        };
+                    })
+                );
+
+                displayResults(processedResults);
+            } catch (error) {
+                console.error('Search error:', error);
+                searchResults.innerHTML = '<div class="no-results">An error occurred while searching</div>';
+            }
+        }
+
+        function displayResults(results) {
+            searchResults.innerHTML = results.map(result => `
+                <div class="result-item" onclick="window.location.href='${result.url}'">
+                    <div class="result-title">${result.title}</div>
+                    <div class="result-excerpt">${result.excerpt}</div>
+                    <div class="result-url">${result.url}</div>
+                </div>
+            `).join('');
+        }
+
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                closeSearch();
+            }
+        });
+    });
+</script>
+  </header>
+  <main>
+    
+  <div class="has-toc">
+    <div data-pagefind-body>
+
+      
+
+    <h1 data-pagefind-meta="title">Multiple Column</h1>
+
+    
+    
+    <time datetime="2025-06-04T18:07:33&#43;05:45">June 4, 2025</time>
+
+    
+  <div class="page-tags-div">
+    <div id="page-tags-label">Tags:</div>
+    <ul>
+        <li><a href="/tags/red/">Red</a></li>
+        <li><a href="/tags/white/">White</a></li>
+        <li><a href="/tags/blue/">Blue</a></li>
+        <li><a href="/tags/sugam/">Sugam</a></li>
+    </ul>
+  </div>
+
+    
+
+    
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/sugam/">Sugam</a></li>
+    </ul>
+  </div>
+
+
+    
+<div class="toc-container">
+    <div class="toc-title" onclick="toggleTOC(this)">Table of Contents ▾</div>
+    <div class="toc-body">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#footnotes">FOOTNOTES</a>
+      <ul>
+        <li><a href="#abcd">Abcd</a>
+          <ul>
+            <li><a href="#foot">foot</a></li>
+          </ul>
+        </li>
+        <li><a href="#footnotes-2">FOOTnotes 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#helllo">HELLLO</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+
+<script>
+function toggleTOC(titleEl) {
+  const body = titleEl.nextElementSibling;
+  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+  titleEl.textContent = body.style.display === 'none' ? 'Table of Contents ▸' : 'Table of Contents ▾';
+}
+</script>
+
+<div class="main-text-container">
+  <div class="columns" style="display: flex; gap: 1.5rem;">
+  
+    <div style="flex: 1;">
+      <h3 id="column-1-content-in-markdown">Column 1 content in Markdown</h3>
+<p>Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure[^first]. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.</p>
+<p>Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco voluptate aliqua nisi incididunt cillum. Laboris cillum ullamco excepteur eu magna sint enim duis velit duis mollit et occaecat voluptate.</p>
+<p>Laboris voluptate proident exercitation eiusmod reprehenderit excepteur et Lorem ipsum occaecat irure voluptate elit ad. Velit tempor veniam aliquip consequat culpa veniam qui. Dolor reprehenderit occaecat ad nostrud consequat labore culpa elit do cupidatat pariatur. Sunt quis et amet est ex cupidatat. Ipsum esse elit enim labore. Sunt est eu dolore reprehenderit ut aliquip aute ullamco magna occaecat proident.</p>
+<p>Deserunt aliqua est reprehenderit ea ea deserunt velit anim sit officia pariatur sit. Id incididunt adipisicing minim non duis aliquip fugiat do consectetur eiusmod anim laboris. Dolor mollit culpa consequat veniam dolor ad fugiat anim sunt. Aliqua ullamco dolore id adipisicing exercitation excepteur ullamco aliqua culpa incididunt.</p>
+
+    </div>
+    <div style="flex: 1;">
+      <h3 id="column-2-content-in-markdown">Column 2 content in Markdown</h3>
+<p>Ullamco culpa enim ut elit tempor adipisicing proident nostrud. Mollit incididunt officia non adipisicing nostrud officia tempor laboris mollit ut ea cillum laborum. Sunt ea laborum ullamco dolor id. In commodo nisi dolore deserunt officia. Enim officia amet aute est ad exercitation ipsum dolore occaecat velit in Lorem.</p>
+<p>Quis excepteur dolor excepteur sunt non nostrud do enim sint consectetur[^second]. Elit elit consectetur velit veniam cillum adipisicing. Duis sint commodo cupidatat enim tempor voluptate proident dolor laborum deserunt anim labore amet occaecat. Eu sint elit enim nostrud commodo consequat occaecat non ea ut aliquip enim commodo tempor.</p>
+<p>Non qui enim veniam sunt nisi fugiat ut non reprehenderit cupidatat duis ea. Ex exercitation incididunt mollit officia eu veniam irure. Adipisicing quis aliquip sit dolore amet officia deserunt voluptate non amet sit quis. Laborum tempor ex do velit. Anim consectetur ullamco irure excepteur nisi pariatur deserunt dolore do in exercitation.</p>
+<p>Non sint irure reprehenderit anim in ex exercitation. Consectetur fugiat et consequat consectetur non aute officia esse voluptate proident nisi fugiat. Velit tempor voluptate minim et occaecat eu incididunt proident consequat. Ex dolor do irure nisi ad amet veniam. Et qui anim sunt elit esse sit. Nisi nostrud aliquip ut enim anim quis irure. Est et tempor fugiat fugiat eiusmod dolor commodo pariatur.</p>
+<p>Adipisicing ad pariatur laboris ea consequat sint. Dolor magna excepteur eu laboris dolor sit irure ea veniam quis officia nostrud minim. Et ad proident nisi labore aliquip. Nulla enim eu nulla fugiat elit culpa ex qui mollit ex duis. Ullamco eu minim aliquip nostrud. Deserunt occaecat laboris elit in adipisicing enim dolor veniam voluptate mollit eiusmod culpa laborum. Pariatur incididunt ullamco mollit esse.</p>
+
+    </div>
+    <div style="flex: 1;">
+      <h3 id="column-3-content-in-markdown">Column 3 content in Markdown</h3>
+<p>Cillum ad excepteur sit Lorem amet. Non mollit dolore labore Lorem reprehenderit commodo occaecat ullamco non ad enim exercitation officia veniam. Aliquip mollit nostrud adipisicing minim. Consequat fugiat ex nostrud veniam nostrud do fugiat. Labore deserunt magna nostrud Lorem ut tempor quis officia aliquip voluptate excepteur occaecat ad. Voluptate adipisicing quis ullamco aute laboris irure id. Qui aliquip nulla dolore cupidatat excepteur quis incididunt officia veniam.</p>
+<p>Occaecat nostrud fugiat labore in nostrud et est in. Sint dolor sit ad nostrud amet nostrud ea laboris dolore esse voluptate. Enim mollit amet irure sit. Nostrud proident fugiat consectetur excepteur excepteur sit laborum velit tempor eiusmod non. Incididunt deserunt qui ipsum duis magna sint.</p>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+
+    </div>
+</div>
+
+<div class="columns" style="display: flex; gap: 1.5rem;">
+  
+    <div style="flex: 1;">
+      <h3 id="column-1">Column 1</h3>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+
+    </div>
+    <div style="flex: 1;">
+      <h3 id="column-2">Column 2</h3>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+
+    </div>
+</div>
+
+<h2 id="footnotes">FOOTNOTES</h2>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<h3 id="abcd">Abcd</h3>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<h4 id="foot">foot</h4>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<h3 id="footnotes-2">FOOTnotes 2</h3>
+<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<h2 id="helllo">HELLLO</h2>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
+Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
+Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+
+</div>
+</div>
+
+
+
+
+
+  
+  
+
+  <div class="prev-next-div">
+
+  <a href="/posts/post-3/">Previous: Post 3</a>
+
+
+
+  <a href="/posts/code-post/">Next: Code post</a>
+  </div>
+
+
+
+  </main>
+  <footer>
+   
+    <p class="footer-main">Copyright 2025. All rights reserved. <br>@Sugam</p>
+
+  </footer>
+</body>
+</html>

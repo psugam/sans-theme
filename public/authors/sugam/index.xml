@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sugam on SUGAM</title>
+    <link>http://localhost:1313/authors/sugam/</link>
+    <description>Recent content in Sugam on SUGAM</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jun 2025 18:07:33 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/authors/sugam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code post</title>
+      <link>http://localhost:1313/posts/code-post/</link>
+      <pubDate>Wed, 04 Jun 2025 18:07:33 +0545</pubDate>
+      <guid>http://localhost:1313/posts/code-post/</guid>
+      <description>&lt;div class=&#34;custom-code-block-wrapper&#34; data-lang=&#34;python&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;custom-code-toolbar&#34;&gt;&#xD;&#xA;    &lt;span class=&#34;code-lang-label&#34;&gt;PYTHON&lt;/span&gt;&#xD;&#xA;    &lt;button class=&#34;copy-code-btn&#34; onclick=&#34;copyCode(this)&#34;&gt;📋 Copy&lt;/button&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;pre class=&#34;custom-code-block&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;&#xD;&#xA;def greet(name):&#xD;&#xA;    print(f&amp;amp;#34;Hello, {name}!&amp;amp;#34;)&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function copyCode(btn) {&#xD;&#xA;  const code = btn.closest(&#39;.custom-code-block-wrapper&#39;).querySelector(&#39;code&#39;).innerText;&#xD;&#xA;  navigator.clipboard.writeText(code);&#xD;&#xA;  btn.textContent = &#39;✅ Copied&#39;;&#xD;&#xA;  setTimeout(() =&gt; btn.textContent = &#39;📋 Copy&#39;, 1500);&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;custom-code-block-wrapper&#34; data-lang=&#34;html&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;custom-code-toolbar&#34;&gt;&#xD;&#xA;    &lt;span class=&#34;code-lang-label&#34;&gt;HTML&lt;/span&gt;&#xD;&#xA;    &lt;button class=&#34;copy-code-btn&#34; onclick=&#34;copyCode(this)&#34;&gt;📋 Copy&lt;/button&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;pre class=&#34;custom-code-block&#34;&gt;&lt;code class=&#34;language-html&#34;&gt;&#xD;&#xA;&amp;amp;lt;div class=&amp;amp;#34;box&amp;amp;#34;&amp;amp;gt;Hello world&amp;amp;lt;/div&amp;amp;gt;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function copyCode(btn) {&#xD;&#xA;  const code = btn.closest(&#39;.custom-code-block-wrapper&#39;).querySelector(&#39;code&#39;).innerText;&#xD;&#xA;  navigator.clipboard.writeText(code);&#xD;&#xA;  btn.textContent = &#39;✅ Copied&#39;;&#xD;&#xA;  setTimeout(() =&gt; btn.textContent = &#39;📋 Copy&#39;, 1500);&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;</description>
+    </item>
+    <item>
+      <title>Multiple Column</title>
+      <link>http://localhost:1313/posts/multiple-columns/</link>
+      <pubDate>Wed, 04 Jun 2025 18:07:33 +0545</pubDate>
+      <guid>http://localhost:1313/posts/multiple-columns/</guid>
+      <description>&lt;div class=&#34;columns&#34; style=&#34;display: flex; gap: 1.5rem;&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div style=&#34;flex: 1;&#34;&gt;&#xD;&#xA;      &lt;h3 id=&#34;column-1-content-in-markdown&#34;&gt;Column 1 content in Markdown&lt;/h3&gt;&#xA;&lt;p&gt;Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure[^first]. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.&lt;/p&gt;&#xA;&lt;p&gt;Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco voluptate aliqua nisi incididunt cillum. Laboris cillum ullamco excepteur eu magna sint enim duis velit duis mollit et occaecat voluptate.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

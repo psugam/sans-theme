@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <!-- This is for individual pages inside the term. So, not for Tags but for specific Green , blue tags etc. -->
+  {{ .Content }}
+  {{ range .Pages }}
+   <!-- <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div> -->
+      <div>
+<a href="{{ .RelPermalink }}" style="display:inline-block; margin-right:8px; font-size: large;">
+  {{ .LinkTitle }}
+</a>
+</div>
+  {{ end }}
+{{ end }}

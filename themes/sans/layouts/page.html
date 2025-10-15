@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <div class="{{ if and .TableOfContents (not .Params.disableToc) }}has-toc{{ end }}">
+    <div data-pagefind-body>
+
+      
+
+    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+    {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+
+    {{ partial "toc.html" . }}
+<div class="main-text-container">
+  {{ .Content }}
+</div>
+</div>
+
+
+
+
+
+  <!-- prev next links at the bottom -->
+  {{ $pages := .CurrentSection.Pages.ByWeight }}
+
+  <div class="prev-next-div">
+{{ with $pages.Prev . }}
+  <a href="{{ .RelPermalink }}">Previous: {{.LinkTitle}}</a>
+{{ end }}
+
+{{ with $pages.Next . }}
+  <a href="{{ .RelPermalink }}">Next: {{.LinkTitle}}</a>
+  </div>
+
+{{ end }}
+{{ end }}

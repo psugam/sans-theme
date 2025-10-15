@@ -1,0 +1,48 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }} {{ $pages := where site.RegularPages "Type" "posts" }} {{
+$paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
+"2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
+}} {{ range $paginator.Pages }}
+<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+<p>{{$dateHuman}}</p>
+<div class="section-meta-data-div">
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} {{ partial
+  "terms.html" (dict "taxonomy" "categories" "page" .) }} {{ partial
+  "terms.html" (dict "taxonomy" "authors" "page" .) }}
+</div>
+ <p>{{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500 }}</p>
+
+<!-- 500 is letters not words -->
+<p><a href="{{ .RelPermalink }}">Read more...</a></p>
+
+{{ end }} {{ if gt $paginator.TotalPages 1 }} {{/* Compute start and end page
+numbers */}} {{ $current := $paginator.PageNumber }} {{ $start := sub $current 2
+}} {{ $end := add $current 2 }} {{ if lt $start 1 }}{{ $start = 1 }}{{ end }} {{
+if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
+
+<nav class="pagination flex justify-center gap-2 mt-8">
+  {{ if $paginator.HasPrev }}
+  <a
+    href="{{ $paginator.Prev.URL }}"
+    class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+    >← Prev</a
+  >
+  {{ end }} {{ range $i := seq $start $end }} {{ $page := index
+  $paginator.Pagers (sub $i 1) }} {{ if eq $i $current }}
+  <span class="px-3 py-1 bg-blue-500 text-white rounded">{{ $i }}</span>
+  {{ else }}
+  <a
+    href="{{ $page.URL }}"
+    class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+    >{{ $i }}</a
+  >
+  {{ end }} {{ end }} {{ if $paginator.HasNext }}
+  <a
+    href="{{ $paginator.Next.URL }}"
+    class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+    >Next →</a
+  >
+  {{ end }}
+</nav>
+{{ end }} {{ end }}

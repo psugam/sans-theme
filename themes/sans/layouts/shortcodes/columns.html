@@ -1,0 +1,9 @@
+<div class="columns" style="display: flex; gap: 1.5rem;">
+  <!-- footnotes doesn;t work in columns. cant seem to solve it. -->
+  {{- $cols := split .Inner "<!--col-->" -}}
+  {{- range $cols }}
+    <div style="flex: 1;">
+      {{ . | markdownify }}
+    </div>
+  {{- end }}
+</div>
