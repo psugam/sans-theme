@@ -19,7 +19,28 @@
   <header>
     <h1 class="site-title"><a href="/">SUGAM</a></h1>
 
-  <nav class="header-nav">
+
+<style>
+  .header-nav{
+   
+   
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-basis:60%;
+}
+.header-nav ul{
+  
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+   
+}
+
+</style>
+  <nav class="header-nav" >
     <ul>
     <li>
       <a aria-current="page" class="active" href="/">Home</a>
@@ -483,31 +504,141 @@
 </script>
   </header>
   <main>
-    
+    <div class="main-content">
+      
 <style>
-  #logo-image {
-    border-radius: 50%;
-    height: 25vh;
-    width: 25vh;
+  #home-intro-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    max-width: 100%;
   }
+  
+  .home-intro-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;  
+    height: 100%;
+  }
+
 </style>
+
 <div class="home-page-main-div">
+  <div id="home-posts-page">
   
   
   
   <div id="home-intro-page">
+    <div class="home-intro-center">
+      
+            <style>
+      #logo-image {
+    border-radius: 50%;
+    height: 25vh;
+    width: 25vh;
+    display: block;
+  }
+  h2{
+    text-align: center;
+}
+
+#logo-block{
+
+min-height: 70%;
+ display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#social-media-links{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 0.75rem;
+flex-wrap: wrap;
+overflow: visible;
+}
+
+.social-media-icons{
+height: 20px;
+width: 20px;
+}
+
+#social-media-links a{
+height: 25px;
+width: 25px;
+background-color: rgb(230, 236, 236);
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 20%;
+}
+#social-media-links a:hover{
+background-color: rgba(0, 0, 0, 0.464);
+}
+
+
+</style>
+<div id="logo-block">
+
+    
+    
+    <img id="logo-image" src="/images/sugam.jpg" />
     <h2>
-      MY NAME IS SUGAM 
-      <h2>Yes</h2>
-      
-      
-      <img id="logo-image" src="/images/bryce-canyon.jpg" />
-      
+        MY NAME IS SUGAM. What is your name 
     </h2>
+</div>
+<div id="social-media-links">
+
+    <p class="icon-box"><a target="_blank" href="https://facebook.com/yourpage">
+        <img class="social-media-icons" src="/social/facebook.svg" alt="Facebook">
+    </a></p>
+
+
+    <p><a target="_blank" href="https://x.com/yourhandle">
+        <img class="social-media-icons" src="/social/x.svg" alt="X (Twitter)">
+    </a></p>
+
+
+    <p><a target="_blank" href="https://instagram.com/yourhandle">
+        <img class="social-media-icons" src="/social/instagram.svg" alt="Instagram">
+    </a></p>
+
+
+    <p><a target="_blank" href="https://linkedin.com/in/yourprofile">
+        <img class="social-media-icons" src="/social/linkedin.svg" alt="LinkedIn">
+    </a></p>
+
+
+    <p><a target="_blank" href="https://youtube.com/@yourchannel">
+        <img class="social-media-icons" src="/social/youtube.svg" alt="YouTube">
+    </a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+ 
+      
+      
+    </div>
   </div>
   
 </div>
 
+    </div>
   </main>
   <footer>
    

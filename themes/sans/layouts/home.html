@@ -1,12 +1,25 @@
 {{ define "main" }}
 <style>
-  #logo-image {
-    border-radius: 50%;
-    height: 25vh;
-    width: 25vh;
+  #home-intro-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    max-width: 100%;
   }
+  
+  .home-intro-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Optional: adds space between image and h2 */
+    height: 100%;
+  }
+
 </style>
+
 <div class="home-page-main-div">
+  <div id="home-posts-page">
   {{ $homePageMode := .Site.Params.homepage.postsInHomePage }}
   <!-- {{ printf "Value: %v, Type: %T" $homePageMode $homePageMode }} -->
   {{ if $homePageMode }} {{ .Content }} {{ $dateHuman := .Date | time.Format
@@ -49,20 +62,24 @@
     <a href="{{ $paginator.Next.URL }}" class="page-link">Next →</a>
     {{ end }}
   </nav>
-  {{ end }} {{ else }}
+  {{ end }} 
+  </div>
+  {{ else }}
   <div id="home-intro-page">
-    <h2>
-      {{.Site.Params.homepage.homePageTitle}} {{ if
-      .Site.Params.homepage.homePageLogo }}
-      <h2>Yes</h2>
-      {{ $image := resources.Get .Site.Params.homepage.homePageLogoPath }}
-      <!-- <img id="logo-image"src="{{ $image.RelPermalink }}" width="{{ $image.Height }}" height="{{ $image.Height }}"> -->
-      <img id="logo-image" src="{{ $image.RelPermalink }}" />
+    <div class="home-intro-center">
+      {{ if .Site.Params.homepage.homePageLogo }}
+            {{ partial "logo-page.html" .}} 
+      
       {{else}}
-      <h2>No</h2>
+        {{partial "cover-page.html" .}}
       {{end}}
-    </h2>
+    </div>
   </div>
   {{ end }}
 </div>
 {{ end }}
+{{/*  
+<script>
+  const navbarMenu=document.getElementsByTagName("nav");
+  console.log(navbarMenu)
+</script>  */}}

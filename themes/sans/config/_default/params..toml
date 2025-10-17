@@ -1,5 +1,30 @@
 [homepage]
   postsInHomePage = false
-  homePageTitle="MY NAME IS SUGAM"
+  homePageTitle="MY NAME IS SUGAM. What is your name "
   homePageLogo=true
-  homePageLogoPath='images/bryce-canyon.jpg'
+  homePageLogoPath='images/sugam.jpg'
+  # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
+  homePageCoverPath='images/bryce-canyon.jpg'
+
+[social]
+  facebook = 'https://facebook.com/yourpage'
+  x = 'https://x.com/yourhandle'
+  instagram = 'https://instagram.com/yourhandle'
+  linkedin = 'https://linkedin.com/in/yourprofile'
+  youtube = 'https://youtube.com/@yourchannel'
+  # tiktok = 'https://tiktok.com/@yourhandle'
+  # github = 'https://github.com/yourusername'
+  # reddit = 'https://reddit.com/u/yourusername'
+  # pinterest = 'https://pinterest.com/yourhandle'
+  # snapchat = 'https://snapchat.com/add/yourhandle'
+  # discord = 'https://discord.gg/yourinvite'
+  # twitch = 'https://twitch.tv/yourchannel'
+  # telegram = 'https://t.me/yourhandle'
+  # whatsapp = 'https://wa.me/yourphonenumber'
+  # mastodon = 'https://mastodon.social/@yourhandle'
+  # bluesky = 'https://bsky.app/profile/yourhandle'
+  # threads = 'https://threads.net/@yourhandle'
+  # medium = 'https://medium.com/@yourhandle'
+
+[navbar]
+  sticky=true

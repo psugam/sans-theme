@@ -7,11 +7,34 @@ Renders a menu for the given menu ID.
 @example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 */}}
 
+<style>
+  .header-nav{
+  /* background-color: red; */
+  /* border: 2px black solid; */
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-basis:60%;
+}
+.header-nav ul{
+  
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  /* gap:1.5rem;
+  margin:0;
+  padding:0; */
+}
+
+</style>
+
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav class="header-nav">
+  <nav class="header-nav" >
     <ul>
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
@@ -20,7 +43,7 @@ Renders a menu for the given menu ID.
 
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
-  {{- range .menuEntries }}
+  {{- range .menuEntries }} 
     {{- $attrs := dict "href" .URL }}
     {{- if $page.IsMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
