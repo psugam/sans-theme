@@ -1,0 +1,5 @@
+[homepage]
+  postsInHomePage = false
+  homePageTitle="MY NAME IS SUGAM"
+  homePageLogo=true
+  homePageLogoPath='images/bryce-canyon.jpg'

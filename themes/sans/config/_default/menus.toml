@@ -1,0 +1,30 @@
+  [[main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 20
+
+  [[main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 30
+
+  [[main]]
+    name = 'Categories'
+    pageRef = '/categories'
+    weight = 40
+
+   [[main]]
+    name = 'About'
+    pageRef ='/pages/about.md'
+    weight = 50 
+
+  [[main]]
+    name='File'
+    url='pdfs/de_bello_gallico_orberg.pdf'
+    weight=60
+    params = {target = "_blank"}
