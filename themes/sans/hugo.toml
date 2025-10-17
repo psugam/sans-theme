@@ -17,13 +17,24 @@ title = 'My New Hugo Site'
   [module.hugoVersion]
     extended = false
     min = '0.146.0'
+    
 defaultMarkdownHandler = "goldmark"
 [goldmark]
   [Extensions]
     footnote = true
     
-[markup]
-  [markup.tableOfContents]
+
+ [markup]
+   [markup.tableOfContents]
     endLevel = 5
     ordered = false
     startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+[params]
+  math = false

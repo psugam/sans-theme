@@ -12,6 +12,7 @@
       <script src="/js/main.js"></script>
 
 
+    
 </head>
 
 <body>
@@ -530,29 +531,8 @@
   Copyright 2025. All rights reserved.
   <br />
   @Sugam
-  <button onclick="goToTop()" id="goToTopButton">↑</button>
 </div>
-<script>
-  const goToTopButton = document.getElementById("goToTopButton");
-  window.onscroll = function () {
-    scrollFunction();
-  };
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      goToTopButton.style.display = "block";
-    } else {
-      goToTopButton.style.display = "none";
-    }
-  }
 
-  
-  function topFunction() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-</script>
 
   </footer>
 </body>
