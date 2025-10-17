@@ -19,7 +19,28 @@
   <header>
     <h1 class="site-title"><a href="/">SUGAM</a></h1>
 
-  <nav class="header-nav">
+
+<style>
+  .header-nav{
+   
+   
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-basis:60%;
+}
+.header-nav ul{
+  
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+   
+}
+
+</style>
+  <nav class="header-nav" >
     <ul>
     <li>
       <a aria-current="page" class="active" href="/">Home</a>
@@ -483,26 +504,33 @@
 </script>
   </header>
   <main>
-    
+      
 <style>
-  #logo-image {
-    border-radius: 50%;
-    height: 25vh;
-    width: 25vh;
-  }
-  #home-intro-page{
-    border: 2px solid black;
-    display: flex;
-   justify-content: center;
-  }
-
-
-  #cover-image {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  max-width: none;
+ 
+.home-page-main-div{
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+  #home-intro-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    max-width: 100%;
+  }
+  
+  .home-intro-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;  
+    height: 100%;
+  }
+
 </style>
 
 <div class="home-page-main-div">
@@ -603,7 +631,6 @@ excepteur excepteur pariatur nostrud qui irure ullamco.</p>
 
   </main>
   <footer>
-   
     <p class="footer-main">Copyright 2025. All rights reserved. <br>@Sugam</p>
 
   </footer>
