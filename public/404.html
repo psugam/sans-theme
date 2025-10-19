@@ -619,32 +619,34 @@ body.dark-mode #dark-mode-toggle {
   <main>
       
 <style>
-    #four-o-four-box{
+  body.dark-mode #four-o-four-box {
+    background-color: inherit;
+  }
+
+  #four-o-four-box {
     width: 100%;
-    min-height:50vh;
-    background-color: rgba(234, 233, 233, 0.736);
+    min-height: 50vh;
+     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 10%;
     margin-top: 5%;
-    }
-    #four-o-four-number{
-    font-size: 15vw;
-    }
+  }
 
+  #four-o-four-number {
+    font-size: 15vw;
+  }
 </style>
 <main>
   <div>
     <div id="four-o-four-box">
-       <div id="four-o-four-number">
-        404
-       </div>
-       <div id="four-o-four-message">
-        Page not found. 
+      <div id="four-o-four-number">404</div>
+      <div id="four-o-four-message">
+        Page not found.
         <a href="/">Go back</a>
-       </div>
+      </div>
     </div>
   </div>
 </main>

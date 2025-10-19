@@ -1,5 +1,4 @@
-{{ define "main" }}
-{{/*  This is the archives page  */}}
+{{ define "main" }} {{/* This is the archives page */}}
 <h1>{{ .Title }}</h1>
 {{ .Content }} {{ $pages := where site.RegularPages "Type" "posts" }} {{
 $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
@@ -12,7 +11,10 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
   "terms.html" (dict "taxonomy" "categories" "page" .) }} {{ partial
   "terms.html" (dict "taxonomy" "authors" "page" .) }}
 </div>
- <p>{{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500 }}</p>
+<p>
+  {{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500
+  }}
+</p>
 
 <!-- 500 is letters not words -->
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
