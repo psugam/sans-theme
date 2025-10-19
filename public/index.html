@@ -537,8 +537,8 @@ color: var(--dark-link-color);
 #dark-circle, #light-circle{
     height: 100%;
     width: 100%;
-
 }
+
 #dark-mode-toggle{
  background: none; 
   background-color: inherit;
@@ -549,6 +549,9 @@ color: var(--dark-link-color);
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+}
+body.dark-mode #dark-mode-toggle{
+background-color: var(--light-color);
 }
 
 
@@ -578,6 +581,7 @@ color: var(--dark-link-color);
   if (theme === 'dark') {
     body.classList.add('dark-mode');
     darkCircle.style.display = 'inline';
+
     lightCircle.style.display = 'none';
   } else {
     body.classList.remove('dark-mode');
