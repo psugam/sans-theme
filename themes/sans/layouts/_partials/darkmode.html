@@ -1,19 +1,19 @@
-
 <style>
-      :root {
-      --light-color: {{ .Site.Params.theme.lightModeColor }};
-      --dark-color: {{ .Site.Params.theme.darkModeColor }};
-      --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
-      --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }}
-  }
-    /* Light Mode (Default) */
+:root {
+    --light-color: {{ .Site.Params.theme.lightModeColor }};
+    --dark-color: {{ .Site.Params.theme.darkModeColor }};
+    --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+    --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+}
+
+/* Light Mode (Default) */
 body {
     background-color: var(--light-color);
     color: #333333;
 }
 body a {
-  color: var(--light-link-color);
-  text-decoration: none;
+    color: var(--light-link-color);
+    text-decoration: none;
 }
 
 /* Dark Mode */
@@ -22,42 +22,49 @@ body.dark-mode {
     color: #ffffff;
 }
 body.dark-mode a {
-color: var(--dark-link-color);
-}
-/* body.dark-mode a or any other tags id etc works no need to take thenm using js */
-#dark-circle, #light-circle{
-    height: 100%;
-    width: 100%;
-}
-
-#dark-mode-toggle{
- background: none; 
-  background-color: inherit;
- height: 4vh;
- width: 4vh;
- border-radius: 50%;
-/* position: absolute;
- bottom: 30px;
- right: 90px;
- */
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
-body.dark-mode #dark-mode-toggle{
-background-color: var(--light-color);
+    color: var(--dark-link-color);
 }
 
 
+#dark-mode-toggle {
+    background: none;
+    background-color: inherit;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+/* to fix overflow */
+    display: flex;         
+    align-items: center;    
+    justify-content: center;
+    padding: 0;
+}
+
+#dark-mode-toggle p {
+    margin: 0;
+    font-size: 1.2em; /* scale with button */
+    line-height: 1;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    pointer-events: none; /* click passes to button */
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: var(--light-color);
+}
 </style>
-<div>
-<div>
-    <button id="dark-mode-toggle">
-<p id="dark-circle">🌓︎</p>
-<p id="light-circle">☀</p>
-    </button>
-</div>
 
+<div>
+    <div>
+        <button id="dark-mode-toggle">
+            <p id="dark-circle">🌓︎</p>
+            <p id="light-circle">☀</p>
+        </button>
+    </div>
 </div>
 
 

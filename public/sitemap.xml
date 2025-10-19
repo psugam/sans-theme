@@ -3,36 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/authors/alice/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/bob/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/category-1/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/category-2/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/green/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/new-post/</loc>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/red/</loc>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/hello-post/hello-post/</loc>
     <lastmod>2025-10-14T17:48:48+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/red/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/sugam/</loc>
-    <lastmod>2025-10-14T17:48:48+05:45</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-10-14T17:48:48+05:45</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/blue/</loc>

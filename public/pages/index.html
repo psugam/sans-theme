@@ -506,22 +506,22 @@
         });
     });
 </script>
-
 <style>
-      :root {
-      --light-color: white;
-      --dark-color: #333333;
-      --light-link-color: #00e;
-      --dark-link-color: #CCCCCC
-  }
-     
+:root {
+    --light-color: white;
+    --dark-color: #333333;
+    --light-link-color: #00e;
+    --dark-link-color: #CCCCCC;
+}
+
+ 
 body {
     background-color: var(--light-color);
     color: #333333;
 }
 body a {
-  color: var(--light-link-color);
-  text-decoration: none;
+    color: var(--light-link-color);
+    text-decoration: none;
 }
 
  
@@ -530,36 +530,49 @@ body.dark-mode {
     color: #ffffff;
 }
 body.dark-mode a {
-color: var(--dark-link-color);
+    color: var(--dark-link-color);
 }
+
+
+#dark-mode-toggle {
+    background: none;
+    background-color: inherit;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
  
-#dark-circle, #light-circle{
-    height: 100%;
-    width: 100%;
-
-}
-#dark-mode-toggle{
- background: none; 
-  background-color: inherit;
- height: 4vh;
- width: 4vh;
- border-radius: 50%;
- 
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+    display: flex;         
+    align-items: center;    
+    justify-content: center;
+    padding: 0;
 }
 
+#dark-mode-toggle p {
+    margin: 0;
+    font-size: 1.2em;  
+    line-height: 1;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    pointer-events: none;  
+}
 
+body.dark-mode #dark-mode-toggle {
+    background-color: var(--light-color);
+}
 </style>
-<div>
-<div>
-    <button id="dark-mode-toggle">
-<p id="dark-circle">🌓︎</p>
-<p id="light-circle">☀</p>
-    </button>
-</div>
 
+<div>
+    <div>
+        <button id="dark-mode-toggle">
+            <p id="dark-circle">🌓︎</p>
+            <p id="light-circle">☀</p>
+        </button>
+    </div>
 </div>
 
 
@@ -577,6 +590,7 @@ color: var(--dark-link-color);
   if (theme === 'dark') {
     body.classList.add('dark-mode');
     darkCircle.style.display = 'inline';
+
     lightCircle.style.display = 'none';
   } else {
     body.classList.remove('dark-mode');
@@ -607,6 +621,41 @@ color: var(--dark-link-color);
 
 <h1>Pages</h1>
      
+<h2><a href="/posts/new-post/">Nice Post</a></h2>
+<p>January 1, 1</p>
+<div class="section-meta-data-div">
+  
+  <div class="page-tags-div">
+    <div id="page-tags-label">Tags:</div>
+    <ul>
+        <li><a href="/tags/red/">Red</a></li>
+        <li><a href="/tags/green/">Green</a></li>
+    </ul>
+  </div>
+ 
+  <div class="page-tags-div">
+    <div id="page-tags-label">Categories:</div>
+    <ul>
+        <li><a href="/categories/category-1/">Category-1</a></li>
+        <li><a href="/categories/category-2/">Category-2</a></li>
+    </ul>
+  </div>
+ 
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
+    </ul>
+  </div>
+
+</div>
+ <p>HEADING TOP Anim eiusmod irure incididunt sint cupidatat. Choose what&rsquo;s best.—Best is what benefits me.1 Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis …</p>
+
+
+<p><a href="/posts/new-post/">Read more...</a></p>
+
+
 <h2><a href="/posts/hello-post/hello-post/">Hello-posst</a></h2>
 <p>January 1, 1</p>
 <div class="section-meta-data-div">
@@ -707,36 +756,6 @@ color: var(--dark-link-color);
 
 <p><a href="/posts/code-post/">Read more...</a></p>
 
-
-<h2><a href="/posts/multiple-columns/">Multiple Column</a></h2>
-<p>January 1, 1</p>
-<div class="section-meta-data-div">
-  
-  <div class="page-tags-div">
-    <div id="page-tags-label">Tags:</div>
-    <ul>
-        <li><a href="/tags/red/">Red</a></li>
-        <li><a href="/tags/white/">White</a></li>
-        <li><a href="/tags/blue/">Blue</a></li>
-        <li><a href="/tags/sugam/">Sugam</a></li>
-    </ul>
-  </div>
- 
- 
-  <div class="page-tags-div">
-    <div id="page-tags-label">Authors:</div>
-    <ul>
-        <li><a href="/authors/sugam/">Sugam</a></li>
-    </ul>
-  </div>
-
-</div>
- <p>Column 1 content in Markdown Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure[^first]. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.
-Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco voluptate aliqua …</p>
-
-
-<p><a href="/posts/multiple-columns/">Read more...</a></p>
-
        
 
 <nav class="pagination flex justify-center gap-2 mt-8">
@@ -747,6 +766,12 @@ Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco vo
     href="/pages/page/2/"
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >2</a
+  >
+     
+  <a
+    href="/pages/page/3/"
+    class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+    >3</a
   >
     
   <a
@@ -759,10 +784,15 @@ Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco vo
  
   </main>
   <footer>
-    <div class="footer-main">
+    <style>
+  a{
+text-decoration: none;
+  }
+</style>
+<div class="footer-main">
   Copyright 2025. All rights reserved.
   <br />
-  @Sugam
+  Made with <a href="https://gohugo.io/" target="_blank"><u>Hugo</u></a> and <a href="https://github.com/psugam" target="_blank"><u>Sans</u></a>
 </div>
 
     

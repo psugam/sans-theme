@@ -1,4 +1,10 @@
 {{ define "main" }}
+
+<style>
+  .metadata p{
+  margin: 0;
+  }
+</style>
   <div class="{{ if and .TableOfContents (not .Params.disableToc) }}has-toc{{ end }}">
     <div data-pagefind-body>
 
@@ -8,11 +14,19 @@
 
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
+{{ $readingTime = math.Ceil $readingTime }}
+<div class="metadata">
 
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-    {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
-    {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+  {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  
+  <p>Words: {{ .WordCount }}</p>
+  <p>Reading Time: {{ $readingTime}} mins </p>
+  
+</div>
 
     {{ partial "toc.html" . }}
 <div class="main-text-container">

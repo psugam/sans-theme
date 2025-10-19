@@ -36,7 +36,14 @@
 [theme]
 # main background colors
   darkModeColor='#333333'
-  lightModeColor='white'
+  lightModeColor='white' # #e0dedeff
 # link colors
   darkModeLinkColor='#CCCCCC'
   lightModeLinkColor='#00e'
+
+[toc]
+  numberingInTOC=true
+  numberingInPost=false
+
+[posts]
+  reading_speed=212  
