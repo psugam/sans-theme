@@ -29,7 +29,7 @@
 
 <div class="home-page-main-div">
   <div id="home-posts-page">
-  {{ $homePageMode := .Site.Params.homepage.postsInHomePage }}
+  {{ $homePageMode := .Site.Params.homepage.onlyPostsInHomePage }}
   <!-- {{ printf "Value: %v, Type: %T" $homePageMode $homePageMode }} -->
   {{ if $homePageMode }} {{ .Content }} {{ $dateHuman := .Date | time.Format
   ":date_long" }}

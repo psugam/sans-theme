@@ -34,15 +34,19 @@
     <h1 class="site-title"><a href="/">SUGAM</a></h1>
 
 
+
 <style>
   .header-nav{
    
    
+    
   margin-top: 0;
   display: flex;
   align-items: center;
   margin-left: auto;
   flex-basis:60%;
+
+  
 }
 .header-nav ul{
   
@@ -516,6 +520,101 @@
         });
     });
 </script>
+
+<style>
+      :root {
+      --light-color: white;
+      --dark-color: #333333;
+      --light-link-color: #00e;
+      --dark-link-color: #CCCCCC
+  }
+     
+body {
+    background-color: var(--light-color);
+    color: #333333;
+}
+body a {
+  color: var(--light-link-color);
+  text-decoration: none;
+}
+
+ 
+body.dark-mode {
+    background-color: var(--dark-color);
+    color: #ffffff;
+}
+body.dark-mode a {
+color: var(--dark-link-color);
+}
+ 
+#dark-circle, #light-circle{
+    height: 100%;
+    width: 100%;
+
+}
+#dark-mode-toggle{
+ background: none; 
+  background-color: inherit;
+ height: 4vh;
+ width: 4vh;
+ border-radius: 50%;
+ 
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+
+</style>
+<div>
+<div>
+    <button id="dark-mode-toggle">
+<p id="dark-circle">🌓︎</p>
+<p id="light-circle">☀</p>
+    </button>
+</div>
+
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const darkCircle=document.getElementById('dark-circle');
+    const lightCircle=document.getElementById('light-circle');
+
+ 
+  let theme = localStorage.getItem('theme') || 'light';
+
+  
+  if (theme === 'dark') {
+    body.classList.add('dark-mode');
+    darkCircle.style.display = 'inline';
+    lightCircle.style.display = 'none';
+  } else {
+    body.classList.remove('dark-mode');
+    darkCircle.style.display = 'none';
+    lightCircle.style.display = 'inline';
+  }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            lightCircle.style.setProperty('display', 'none');
+            darkCircle.style.setProperty('display', 'inline');
+
+        } else {
+            localStorage.setItem('theme', 'light');
+            darkCircle.style.setProperty('display', 'none');
+            lightCircle.style.setProperty('display', 'inline');
+        }
+    });
+});
+</script>
   </header>
   <main>
       
@@ -662,7 +761,8 @@ JS(\hat{y} || y) &amp;= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\fr
   @Sugam
 </div>
 
-
+    
   </footer>
+
 </body>
 </html>

@@ -1,10 +1,14 @@
 [homepage]
-  postsInHomePage = false
-  homePageTitle="MY NAME IS SUGAM. What is your name "
+  onlyPostsInHomePage = false
+  homePageTitle="SUGAM POKHREL."
   homePageLogo=true
   homePageLogoPath='images/sugam.jpg'
   # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageCoverPath='images/bryce-canyon.jpg'
+
+  # Manage Posts show in homepage
+  homePagePostDate=true
+
 
 [social]
   facebook = 'https://facebook.com/yourpage'
@@ -22,9 +26,17 @@
   # telegram = 'https://t.me/yourhandle'
   # whatsapp = 'https://wa.me/yourphonenumber'
   # mastodon = 'https://mastodon.social/@yourhandle'
-  # bluesky = 'https://bsky.app/profile/yourhandle'
-  # threads = 'https://threads.net/@yourhandle'
-  # medium = 'https://medium.com/@yourhandle'
+  bluesky = 'https://bsky.app/profile/yourhandle'
+  threads = 'https://threads.net/@yourhandle'
+  medium = 'https://medium.com/@yourhandle'
 
 [navbar]
   sticky=true
+
+[theme]
+# main background colors
+  darkModeColor='#333333'
+  lightModeColor='white'
+# link colors
+  darkModeLinkColor='#CCCCCC'
+  lightModeLinkColor='#00e'
