@@ -1,12 +1,25 @@
 {{ define "main" }} {{/* This is the archives page */}}
+<style>
+  .section-meta-data-div{
+ display: flex;
+ width: 100%;
+ justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+ .section-meta-data-div{
+  display: block;
+}
+}
+</style>
 <h1>{{ .Title }}</h1>
 {{ .Content }} {{ $pages := where site.RegularPages "Type" "posts" }} {{
 $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
 }} {{ range $paginator.Pages }}
 <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-<p>{{$dateHuman}}</p>
+
 <div class="section-meta-data-div">
+  <p>{{$dateHuman}}</p>
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} {{ partial
   "terms.html" (dict "taxonomy" "categories" "page" .) }} {{ partial
   "terms.html" (dict "taxonomy" "authors" "page" .) }}

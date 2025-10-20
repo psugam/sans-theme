@@ -11,6 +11,13 @@ body {
   padding-top: 0;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+   margin-left: 5%;
+   margin-right: 5%
+  }
+}
+
 header {
   /* border-bottom: 1px solid #222; */
   margin-bottom: 1rem;
@@ -93,11 +100,6 @@ header h1{
 
 /* section archive */
 
-.section-meta-data-div{
- display: flex;
- width: 100%;
- justify-content: space-between;
-}
 
 
 
@@ -192,30 +194,24 @@ header h1{
 
 
 /* Container */
-.toc-container{
-  /* border: 2px solid rgb(101, 98, 98); */
+/* .toc-container{
+  border: 2px solid rgb(101, 98, 98);
   max-width: 300px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-bottom: 1rem;
   padding-left: 0;
   margin-left: 0;
-}
+} */
 
 /* Title */
-.toc-title{
-  /* border: 2px solid red; */
-  background-color: #f0f0f0;
-  padding: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-}
+
 
 /* Body */
 
 
 /* FOR TE SEARCH */
-#search{
+/* #search{
   border: 2px solid black;
   margin: 0;
   padding:0 ;
-}
+} */
