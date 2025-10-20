@@ -1,11 +1,11 @@
 [homepage]
   onlyPostsInHomePage = false
-  homePageTitle="SUGAM POKHREL."
-  homePageLogo=true
+  homePageTitle="SUGAM POKAHREL"
+  homePageLogo=false
   homePageTagLine="Welcome to my website"
   homePageLogoPath='images/sugam.jpg'
   # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
-  homePageCoverPath='images/bryce-canyon.jpg'
+  homePageCoverPath='images/img_forest.jpg'
   # Manage Posts show in homepage
   homePagePostDate=true
 

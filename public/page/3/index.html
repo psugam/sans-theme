@@ -735,32 +735,107 @@ body.dark-mode #dark-mode-toggle {
   <div id="home-posts-page">
   
   
-   
-      <h2 id="this-is-for-the-home-page">This is for the home page</h2>
-<p>Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.</p>
+  
+
+
+  <div id="home-intro-page">
+    <div class="home-intro-center">
+      
+        <style>
+  #cover-image {
+    width: 100vw;
+    max-width: none;
+  }
+
+  #posts-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2rem;
+    margin-bottom: 2rem;
  
+  }
+
+  #post-title{
+  margin-top: 0;
+  }
+  #post-title a {
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 0;
+    font-size: x-large;
+  }
+  #details-box{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around; 
+  }
+
+  #details-box p {
+    margin-bottom: 0;
+    margin-top: 0;
+
+  }
+
+  #details-box time {
+    margin-bottom: 0;
+  }
+</style>
+
+
+<img id="cover-image" src="/images/img_forest.jpg" />
+
+
+
+<div id="recent-posts">
+
+
+
+  <h2>Recent Posts</h2>
 
   
-   
-   
-  <div data-pagefind-body>
-    <a
-      href="/posts/post-1/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
-    >
-      Post 1
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      January 15, 2023
-    </p>
+  
+  
+  <div data-pagefind-body id="posts-box">
+    <div id="cover-image-box">
+      
+
+
+
+
+
+
+  
+
+
+
+  <img src="/images/default.jpg" alt="Post 1"
+       style="width: 200px; height: 120px; object-fit: cover; border-radius: 8px;">
+
+
+
+
+
+    </div>
+
+
+    <div id="details-box">
+      <h2 id="post-title">
+        <a href="/posts/post-1/" data-pagefind-meta="title">
+          Post 1
+        </a>
+      </h2>
+
+      
+      
+      
+
+      <time datetime="2023-01-15T09:00:00-07:00">January 15, 2023</time>
+      
+      
+      <p>Reading Time: 1 mins </p>
+    </div>
+
   </div>
   
   
@@ -778,7 +853,12 @@ excepteur excepteur pariatur nostrud qui irure ullamco.</p>
     <span class="page-link active">3</span>
       
   </nav>
-   
+  
+</div>
+
+</div>
+      
+    </div>
   </div>
   
 </div>
@@ -786,14 +866,16 @@ excepteur excepteur pariatur nostrud qui irure ullamco.</p>
   </main>
   <footer>
     <style>
-  a{
+  .footer-main a{
 text-decoration: none;
+text-decoration: underline;
+color: inherit;
   }
 </style>
 <div class="footer-main">
   Copyright 2025. All rights reserved.
   <br />
-  Made with <a href="https://gohugo.io/" target="_blank"><u>Hugo</u></a> and <a href="https://github.com/psugam" target="_blank"><u>Sans</u></a>
+  Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
 </div>
 
     

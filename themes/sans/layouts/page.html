@@ -4,12 +4,46 @@
   .metadata p{
   margin: 0;
   }
+
+  .post-cover img{
+    width: 100%;
+    border-radius: 5%;
+  }
+  .caption{
+  text-align: center;
+  }
 </style>
+{{ with .Params.cover }}
+  {{ $cover := $.Resources.GetMatch .image }}
+  {{ $displayImage := $.Params.cover.imageDisplay | default true}}
+  
+
+  {{ if $displayImage }}
+  {{$displayCaption := $.Params.cover.captionDisplay | default true}}
+    {{ with $cover }}
+      <div class="post-cover">
+        <img src="{{ .RelPermalink }}" alt="{{ $.Params.cover.alt | default $.Title }}">
+        {{ if $displayCaption}}
+        {{ with $.Params.cover.caption }}
+          <p class="caption">{{ . }}</p>
+        {{ end }}
+        {{end}}
+
+      </div>
+    {{ end }}
+  {{ else }}
+    <h2>Hello</h2>
+  {{ end }}
+{{ end }}
+
+
+
+
+
+
+
   <div class="{{ if and .TableOfContents (not .Params.disableToc) }}has-toc{{ end }}">
     <div data-pagefind-body>
-
-      
-
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}

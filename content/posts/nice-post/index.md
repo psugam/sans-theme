@@ -5,6 +5,12 @@ title = 'Nice Post'
 tags = ['red','green']
 authors = ['Alice', 'Bob', 'Sugam']
 categories=['category-1', 'category-2']
+[cover]
+image = "img_mountains.jpg"
+alt = "Forest"
+caption = "Forest Caption"
+imageDisplay=true
+captionDisplay=false
 +++
 
 ## HEADING TOP

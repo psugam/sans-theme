@@ -43,6 +43,12 @@ border-radius: 20%;
 background-color: rgba(0, 0, 0, 0.464);
 }
 
+#home-page-tag{
+margin-top: 0;
+}
+#home-page-title{
+
+margin-bottom: 0;}
 
 </style>
 <div id="logo-block">
@@ -50,10 +56,10 @@ background-color: rgba(0, 0, 0, 0.464);
     {{ $image := resources.Get .Site.Params.homepage.homePageLogoPath }}
     <!-- <img id="logo-image"src="{{ $image.RelPermalink }}" width="{{ $image.Height }}" height="{{ $image.Height }}"> -->
     <img id="logo-image" src="{{ $image.RelPermalink }}" />
-    <h2>
+    <h2 id="home-page-title">
         {{.Site.Params.homepage.homePageTitle}}
     </h2>
-    <h4>
+    <h4 id="home-page-tag">
         {{.Site.Params.homepage.homePageTagline}}
     </h4>
 </div>

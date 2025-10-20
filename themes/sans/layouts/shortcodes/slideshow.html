@@ -56,11 +56,6 @@
 }
 </style>
 
-{{ $mainCaption := .Get "caption" }}
-
-{{ if not $slideWidth }}
-  {{ $slideWidth = "100%" }}
-{{ end }}
 
 <div class="w3-content w3-display-container">
   {{ range $index := seq 1 20 }}
@@ -110,3 +105,4 @@ function showDivs(n) {
   slides[slideIndex - 1].style.display = "block";
 }
 </script>
+{{/*  from w3s example  */}}

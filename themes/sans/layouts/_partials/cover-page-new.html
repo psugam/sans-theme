@@ -1,0 +1,66 @@
+{{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate $pages }}
+{{ $image := resources.Get .Site.Params.homepage.homePageCoverPath }}
+{{/*  <h2>No</h2>  */}}
+<img id="cover-image" src="{{ $image.RelPermalink }}" />
+
+{{ range $paginator.Pages }}
+  <div data-pagefind-body style="display: flex; flex-wrap: wrap; margin-bottom: 2rem; align-items: flex-start;">
+    {{/* Cover image left */}}
+    <div style="flex: 0 0 200px; margin-right: 1rem;">
+      {{ $cover := .Resources.GetMatch "cover*" }}
+      {{ if not $cover }}
+        {{ $cover = resources.Get "images/default.jpg" }}
+      {{ end }}
+      {{ if $cover }}
+        <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}" style="width: 200px; height: 120px; object-fit: cover; border-radius: 8px;">
+      {{ end }}
+    </div>
+
+    {{/* Post details right */}}
+    <div style="flex: 1 1 auto;">
+      <a href="{{ .RelPermalink }}" style="font-size: 1.25rem; font-weight: bold; color: inherit; text-decoration: none;" data-pagefind-meta="title">
+        {{ .LinkTitle }}
+      </a>
+      <div style="margin-top: 0.25rem; font-size: 0.9rem; color: #555;">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" data-pagefind-meta="date">{{ .Date.Format ":date_long" }}</time>
+        {{ with .Params.authors }}
+          <span> • by {{ delimit . ", " }}</span>
+        {{ end }}
+        {{ with .Params.categories }}
+          <span> • {{ delimit . ", " }}</span>
+        {{ end }}
+      </div>
+      {{/* Uncomment the next line if you want the summary */}}
+      <!-- {{ .Summary }} -->
+    </div>
+  </div>
+{{ end }}
+
+{{/* pagination  */}}
+{{ if gt $paginator.TotalPages 1 }}
+  {{ $current := $paginator.PageNumber }}
+  {{ $start := sub $current 2 }}
+  {{ $end := add $current 2 }}
+  {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+  {{ if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
+
+  <nav class="pagination">
+    {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="page-link">← Prev</a>
+    {{ end }}
+
+    {{ range $i := seq $start $end }}
+      {{ $page := index $paginator.Pagers (sub $i 1) }}
+      {{ if eq $i $current }}
+        <span class="page-link active">{{ $i }}</span>
+      {{ else }}
+        <a href="{{ $page.URL }}" class="page-link">{{ $i }}</a>
+      {{ end }}
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="page-link">Next →</a>
+    {{ end }}
+  </nav>
+{{ end }}
