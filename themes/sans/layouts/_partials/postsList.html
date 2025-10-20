@@ -48,11 +48,12 @@
   {{ end }} 
   </div>
   {{ else }}
+
+
   <div id="home-intro-page">
     <div class="home-intro-center">
       {{ if .Site.Params.homepage.homePageLogo }}
             {{ partial "logo-page.html" .}} 
-      
       {{else}}
         {{partial "cover-page.html" .}}
       {{end}}

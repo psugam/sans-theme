@@ -15,8 +15,21 @@ Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident c
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
   {{< figure src="/images/404.jpg" width="100%" >}}
 
-{{<alert>}}
+<!-- {{<alert>}}
 Hello, this is a **test** message!
-{{</alert>}}
+{{</alert>}} -->
+
+Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.
+
+{{< slideshow
+    slidewidth="90%"
+    caption="Journey through the Alps"
+    image1="images/img_mountains.jpg" caption1="Sunrise over the peaks"
+    image2="images/img_forest.jpg" caption2="Morning mist"
+    image3="images/img_lights.jpg" caption3="Reflections on the lake"
+    image4="images/sugam.jpg" caption4="Sugam Pokharel"
+>}}
+
+Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.
 
   [^translator]: Hays translation
