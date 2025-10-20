@@ -46,4 +46,10 @@
   numberingInPost=false
 
 [posts]
-  reading_speed=212  
+  reading_speed=212
+  showDate=true
+  showWordCount=true
+  showAuthors=true
+  showTags=true
+  showCategories=true
+  showReadingTime=true

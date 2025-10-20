@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{/*  This is for each individual post  */}}
 <style>
   .metadata p{
   margin: 0;
@@ -18,13 +18,39 @@
 {{ $readingTime = math.Ceil $readingTime }}
 <div class="metadata">
 
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-  {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
-  {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+{{ if not .Site.Params.posts.showTags}}
+{{else}}
+{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{end}}
 
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  
-  <p>Words: {{ .WordCount }}</p>
-  <p>Reading Time: {{ $readingTime}} mins </p>
+{{ if not .Site.Params.posts.showCategories}}
+{{else}}
+{{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+{{end}}
+
+{{ if not .Site.Params.posts.showAuthors}}
+{{else}}
+{{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+{{end}}  
+
+{{ if not .Site.Params.posts.showDate}}
+{{else}}
+ <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  
+{{end}}
+
+{{ if not .Site.Params.posts.showWordCount}}
+{{else}}
+ <p>Words: {{ .WordCount }}</p> 
+{{end}}
+
+
+{{ if not .Site.Params.posts.showReadingTime}}
+{{else}}
+<p>Reading Time: {{ $readingTime}} mins </p>
+{{end}}
+   
+  
+  
   
 </div>
 
