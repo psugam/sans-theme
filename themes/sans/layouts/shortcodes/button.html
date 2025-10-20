@@ -1,0 +1,29 @@
+{{ $href := .Get "href" | default "#" }}
+{{ $target := .Get "target" | default "_self" }}
+<style>
+    :root {
+    --light-color: {{ .Site.Params.theme.lightModeColor }};
+    --dark-color: {{ .Site.Params.theme.darkModeColor }};
+    --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+    --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+}
+
+    #button-shortcode{
+    display: inline-block; 
+    padding: 0.5rem 1rem; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--dark-link-color);
+    }
+
+    body.dark-mode #button-shortcode{
+    background-color: var(--light-color);
+    color: var(--light-link-color);
+    }
+</style>
+{{/*  the href value for headers in post should be the name of the header in lowercase separated by dash -  */}}
+<a id="button-shortcode"href="{{ $href }}" target="{{ $target }}">
+    {{ .Inner }}
+</a>

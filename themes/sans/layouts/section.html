@@ -24,11 +24,20 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
   "terms.html" (dict "taxonomy" "categories" "page" .) }} {{ partial
   "terms.html" (dict "taxonomy" "authors" "page" .) }}
 </div>
-<p>
+{{/*  <p>
   {{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500
   }}
-</p>
+</p>  */}}
+{{/*  same thing just format and remove codeblock  */}}
 
+{{ $summary := .Summary }}
+{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}.*?\{\{</.*?>\}\}` "" }}
+{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}` "" }}
+{{/*  not working for codeblock removal somehow  */}}
+{{ $summary = $summary | replaceRE "(?s)```.*?```" "" }}
+{{ $summary = $summary | replaceRE "`[^`]+`" "" }}
+{{ $summary = $summary | plainify | truncate 500 }}
+<p>{{ $summary }}</p>
 <!-- 500 is letters not words -->
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
 

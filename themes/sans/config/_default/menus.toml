@@ -25,6 +25,6 @@
 
   [[main]]
     name='File'
-    url='pdfs/de_bello_gallico_orberg.pdf'
+    url='/pdfs/de_bello_gallico_orberg.pdf'
     weight=60
     params = {target = "_blank"}

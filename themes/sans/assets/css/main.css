@@ -108,64 +108,6 @@ header h1{
 
 
 
-/* codeblock shortcode */
-.custom-code-block-wrapper {
-  position: relative;
-  margin: 1.5rem 0;
-  border-radius: 8px;
-  background-color: #1e1e1e;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-
-.custom-code-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2d2d2d;
-  padding: 0.4rem 0.75rem;
-  border-bottom: 1px solid #444;
-  font-family: monospace;
-  font-size: 0.85rem;
-}
-
-.code-lang-label {
-  color: #888;
-}
-
-.copy-code-btn {
-  background: none;
-  border: none;
-  color: #bbb;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.copy-code-btn:hover {
-  color: #fff;
-}
-
-.custom-code-block {
-  margin: 0;
-  padding: 1rem;
-  color: #e5e5e5;
-  font-family: Consolas, Monaco, 'Courier New', monospace;
-  font-size: 0.95rem;
-  overflow-x: auto;
-  white-space: pre;
-}
-
-/* Syntax highlighting using Hugo's built-in Chroma classes */
-.chroma .k  { color: #569CD6; } /* keyword */
-.chroma .s  { color: #CE9178; } /* string */
-.chroma .n  { color: #9CDCFE; } /* name/variable */
-.chroma .c  { color: #6A9955; } /* comment */
-.chroma .o  { color: #D4D4D4; } /* operator */
-.chroma .p  { color: #D4D4D4; } /* punctuation */
-
-
-
-
 
 
 /* Table of Contents */

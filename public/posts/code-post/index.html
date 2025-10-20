@@ -132,7 +132,7 @@ background-color: white;
       <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="pdfs/de_bello_gallico_orberg.pdf">File</a>
+      <a href="/pdfs/de_bello_gallico_orberg.pdf">File</a>
     </li>
     </ul>
   </nav>
@@ -757,7 +757,7 @@ body.dark-mode #dark-mode-toggle {
 
 
 
- <p>Words: 13</p> 
+ <p>Words: 181</p> 
 
 
 
@@ -877,49 +877,232 @@ function toggleTOC(titleEl) {
 
 
 <div class="main-text-container">
-  
+  <style>
+   
+  .custom-code-block-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .custom-code-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #444;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .code-lang-label {
+    color: #888;
+  }
+
+  .copy-code-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+  }
+
+  .copy-code-btn:hover {
+    color: #fff;
+  }
+
+  .custom-code-block-wrapper .highlight {
+    margin: 0;
+  }
+
+  .custom-code-block-wrapper pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    background-color: #1e1e1e !important;
+     
+  }
+
+  .custom-code-block-wrapper code {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 0.95rem;
+    background-color: transparent;
+  }
+</style>
 
 <div class="custom-code-block-wrapper" data-lang="python">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">PYTHON</span>
     <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
   </div>
-  <pre class="custom-code-block"><code class="language-python">
-def greet(name):
-    print(f&amp;#34;Hello, {name}!&amp;#34;)
-</code></pre>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet</span>(name):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello, </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">!&#34;</span>)</span></span></code></pre></div>
 </div>
 
 <script>
-function copyCode(btn) {
-  const code = btn.closest('.custom-code-block-wrapper').querySelector('code').innerText;
-  navigator.clipboard.writeText(code);
-  btn.textContent = '✅ Copied';
-  setTimeout(() => btn.textContent = '📋 Copy', 1500);
-}
+  function copyCode(btn) {
+    const wrapper = btn.closest(".custom-code-block-wrapper");
+    const code = wrapper.querySelector("code").innerText;
+    navigator.clipboard.writeText(code);
+    btn.textContent = "✅ Copied";
+    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+  }
 </script>
+<style>
+   
+  .custom-code-block-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
 
+  .custom-code-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #444;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
 
+  .code-lang-label {
+    color: #888;
+  }
+
+  .copy-code-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+  }
+
+  .copy-code-btn:hover {
+    color: #fff;
+  }
+
+  .custom-code-block-wrapper .highlight {
+    margin: 0;
+  }
+
+  .custom-code-block-wrapper pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    background-color: #1e1e1e !important;
+     
+  }
+
+  .custom-code-block-wrapper code {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 0.95rem;
+    background-color: transparent;
+  }
+</style>
 
 <div class="custom-code-block-wrapper" data-lang="html">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">HTML</span>
     <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
   </div>
-  <pre class="custom-code-block"><code class="language-html">
-&amp;lt;div class=&amp;#34;box&amp;#34;&amp;gt;Hello world&amp;lt;/div&amp;gt;
-</code></pre>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- $lang := .Get &#34;lang&#34; | default &#34;text&#34; -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* codeblock shortcode */</span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">custom-code-block-wrapper</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#1e1e1e</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.25</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">custom-code-toolbar</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">space-between</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#2d2d2d</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.4</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#444</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">monospace</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.85</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">code-lang-label</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#888</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">copy-code-btn</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#bbb</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">color</span> <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.9</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">copy-code-btn</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">custom-code-block-wrapper</span> .<span style="color:#a6e22e">highlight</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">custom-code-block-wrapper</span> <span style="color:#f92672">pre</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#1e1e1e</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">custom-code-block-wrapper</span> <span style="color:#f92672">code</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: Consolas, Monaco, <span style="color:#e6db74">&#34;Courier New&#34;</span>, <span style="color:#66d9ef">monospace</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.95</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-code-block-wrapper&#34;</span> <span style="color:#a6e22e">data-lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $lang }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-code-toolbar&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code-lang-label&#34;</span>&gt;{{ upper $lang }}&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copy-code-btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copyCode(this)&#34;</span>&gt;📋 Copy&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ highlight (trim .Inner &#34;\n\r&#34;) $lang &#34;style=monokai&#34; }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">copyCode</span>(<span style="color:#a6e22e">btn</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wrapper</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#34;.custom-code-block-wrapper&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">wrapper</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;code&#34;</span>).<span style="color:#a6e22e">innerText</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">clipboard</span>.<span style="color:#a6e22e">writeText</span>(<span style="color:#a6e22e">code</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;✅ Copied&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(() =&gt; (<span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;📋 Copy&#34;</span>), <span style="color:#ae81ff">1500</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div>
 </div>
 
 <script>
-function copyCode(btn) {
-  const code = btn.closest('.custom-code-block-wrapper').querySelector('code').innerText;
-  navigator.clipboard.writeText(code);
-  btn.textContent = '✅ Copied';
-  setTimeout(() => btn.textContent = '📋 Copy', 1500);
-}
+  function copyCode(btn) {
+    const wrapper = btn.closest(".custom-code-block-wrapper");
+    const code = wrapper.querySelector("code").innerText;
+    navigator.clipboard.writeText(code);
+    btn.textContent = "✅ Copied";
+    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+  }
 </script>
-
 
 </div>
 </div>
