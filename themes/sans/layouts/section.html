@@ -5,6 +5,12 @@
  width: 100%;
  justify-content: space-between;
 }
+#section-cover-image img{
+width: 100%;
+object-fit: cover; 
+border-radius: 8px;
+}
+
 @media screen and (max-width: 768px) {
  .section-meta-data-div{
   display: block;
@@ -29,6 +35,25 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
   }}
 </p>  */}}
 {{/*  same thing just format and remove codeblock  */}}
+<div id="section-cover-image">
+        {{ $cover := "" }}
+
+{{ with .Params.cover }}
+  {{ $cover = .image }}
+{{ end }}
+
+{{ $imageResource := .Resources.GetMatch $cover }}
+
+{{/*  {{ if not $imageResource }}
+  {{ $imageResource = resources.Get "images/default.jpg" }}
+{{ end }}  */}}
+
+{{ if $imageResource }}
+  <img src="{{ $imageResource.RelPermalink }}" alt="{{ .Title }}">
+{{ end }}
+
+
+</div>
 
 {{ $summary := .Summary }}
 {{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}.*?\{\{</.*?>\}\}` "" }}
