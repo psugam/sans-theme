@@ -3,7 +3,7 @@ date = '2025-11-14T17:48:48+05:45'
 draft = true
 title = 'Nice Post'
 tags = ['red','green']
-authors = ['Alice', 'Bob']
+authors = ['Alice', 'Bob', 'Sugam']
 categories=['category-1', 'category-2']
 +++
 
@@ -36,6 +36,15 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 #### Low Header
 
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+
+{{< figure
+  src="/images/sugam.jpg"
+  alt="A photograph of Zion National Park"
+  caption="Zion National Park"
+  class="ma0 w-75 center"
+  width="50%"
+>}}
+
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
 
 ##### Fourth Header

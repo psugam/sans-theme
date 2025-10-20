@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
- <title>Category-1</title>
+ <title>Nice Post</title>
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -120,7 +120,7 @@ background-color: white;
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="/posts/">Posts</a>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
     </li>
     <li>
       <a href="/tags/">Tags</a>
@@ -703,32 +703,298 @@ body.dark-mode #dark-mode-toggle {
   </header>
   <main>
       
-  <h1>Category-1</h1>
-  
-  <p>All posts related to the color Category-1, design principles, and aesthetics.</p>
+
+<style>
+  .metadata p{
+  margin: 0;
+  }
+</style>
+  <div class="has-toc">
+    <div data-pagefind-body>
+
+      
+
+    <h1 data-pagefind-meta="title">Nice Post</h1>
+
+    
+    
+    
+
+<div class="metadata">
 
   
-   
-      <div>
-<a href="/posts/new-post/" style="display:inline-block; margin-right:8px; font-size: large;">
-  Nice Post
-</a>
-</div>
+  <div class="page-tags-div">
+    <div id="page-tags-label">Tags:</div>
+    <ul>
+        <li><a href="/tags/red/">Red</a></li>
+        <li><a href="/tags/green/">Green</a></li>
+    </ul>
+  </div>
+
   
-   
-      <div>
-<a href="/posts/hello-post/hello-post/" style="display:inline-block; margin-right:8px; font-size: large;">
-  Hello-posst
-</a>
-</div>
+  <div class="page-tags-div">
+    <div id="page-tags-label">Categories:</div>
+    <ul>
+        <li><a href="/categories/category-1/">Category-1</a></li>
+        <li><a href="/categories/category-2/">Category-2</a></li>
+    </ul>
+  </div>
+
   
-   
-      <div>
-<a href="/posts/sugam/" style="display:inline-block; margin-right:8px; font-size: large;">
-  Sugam
-</a>
-</div>
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
+    </ul>
+  </div>
+
+
+    <time datetime="2025-11-14T17:48:48&#43;05:45">November 14, 2025</time>  
+  <p>Words: 1249</p>
+  <p>Reading Time: 6 mins </p>
   
+</div>
+
+    <style>
+
+.toc-container{
+ 
+position: fixed;
+left: 20px;
+top: 20%;
+font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
+}
+
+.toc-title{
+background-color: inherit;
+font-size: x-large;
+cursor: pointer;
+ user-select: none;
+}
+  .toc-body{
+   
+  background-color: inherit;
+  padding: 0.5rem;
+}
+
+
+ 
+.toc-body ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-body li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.toc-body li::before {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+@media only screen and (max-width: 1250px) {
+  .toc-container {
+    position: relative;
+  }
+  .toc-title{
+  text-align: left;
+  padding-left: 0;
+  }
+}
+
+</style>
+
+
+<style>
+ 
+.toc-body ul {
+  counter-reset: section;
+}
+
+.toc-body li {
+  counter-increment: section;
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 0.25rem 0;
+}
+
+.toc-body li::before {
+  content: counters(section, ".") " ";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #333;
+}
+ 
+ 
+.toc-body li ul {
+  counter-reset: subsection;
+}
+
+.toc-body li li {
+  counter-increment: subsection;
+}
+
+.toc-body li li::before {
+  content: counters(section, ".") "." counters(subsection, ".") " ";
+}
+
+</style>
+
+
+
+
+
+<div class="toc-container">
+    <div class="toc-title" onclick="toggleTOC(this)">Contents ▾</div>
+    <div class="toc-body">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading-top">HEADING TOP</a>
+      <ul>
+        <li><a href="#heading-middle">Heading middle</a></li>
+      </ul>
+    </li>
+    <li><a href="#another-title">ANOTHER TITLE</a>
+      <ul>
+        <li><a href="#heading-another">Heading Another</a>
+          <ul>
+            <li><a href="#low-header">Low Header</a>
+              <ul>
+                <li><a href="#fourth-header">Fourth Header</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+
+<script>
+function toggleTOC(titleEl) {
+  const body = titleEl.nextElementSibling;
+  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+  titleEl.textContent = body.style.display === 'none' ? 'Contents ▸' : 'Contents ▾';
+}
+</script>
+
+
+<div class="main-text-container">
+  <h2 id="heading-top">HEADING TOP</h2>
+<p>Anim eiusmod irure incididunt sint cupidatat. Choose what&rsquo;s best.—Best is what benefits me.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.</p>
+<p>Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
+<figure><img src="/images/404.jpg" width="100%">
+  </figure>
+</p>
+<h3 id="heading-middle">Heading middle</h3>
+<p>lorem
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<h2 id="another-title">ANOTHER TITLE</h2>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<h3 id="heading-another">Heading Another</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<h4 id="low-header">Low Header</h4>
+<figure class="ma0 w-75 center"><img src="/images/404.jpg"
+    alt="A photograph of Zion National Park" width="50%"><figcaption>
+      <p>Zion National Park</p>
+    </figcaption>
+</figure>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<h5 id="fourth-header">Fourth Header</h5>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Hays translation&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+  
+  
+
+  <div class="prev-next-div">
+
+  <a href="/posts/hello-post/hello-post/">Previous: Hello-posst</a>
+
+
+
+
+<style>
+    #goToTopButton{
+    display: none;  
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #goToTopButton:hover {
+  background-color: #4a4949;
+  transform: scale(1.1);
+  color: white;
+}
+</style>
+<div>
+  <button onclick="goToTop()" id="goToTopButton">↑</button>
+</div>
+<script>
+  const goToTopButton = document.getElementById("goToTopButton");
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      goToTopButton.style.display = "block";
+    } else {
+      goToTopButton.style.display = "none";
+    }
+  }
+
+  
+  function goToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
 
   </main>
   <footer>

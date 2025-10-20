@@ -215,3 +215,37 @@ header h1{
   margin: 0;
   padding:0 ;
 } */
+
+
+
+/* For images */
+/* centering */
+figure.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure.center img {
+  display: block;
+  margin: 0 auto;
+}
+figure.center figcaption{
+ text-align: center;
+}
+
+/* right align */
+figure.right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+figure.right img {
+  display: block;
+  margin-left: auto;
+}
+figure.right figcaption{
+  text-align: right;
+
+}
