@@ -1,11 +1,17 @@
 +++
 date = '2025-10-14T17:48:48+05:45'
 draft = true
-title = 'Hello-posst'
-tags = ['red','green']
+title = 'Hello-post'
+tags = ['red', 'green']
 authors = ['Alice', 'Bob']
-categories=['category-1', 'category-2']
-math=true
+categories = ['category-1', 'category-2']
+math = true
+[cover]
+image = "img_forest.jpg"
+alt = "Forest"
+caption = "Forest Caption"
+imageDisplay=true
+captionDisplay=false
 +++
 
 Anim eiusmod irure incididunt sint cupidatat. Choose what's best.—Best is what benefits me.[^translator]
