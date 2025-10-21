@@ -191,3 +191,11 @@ figure.right figcaption{
   text-align: right;
 
 }
+
+
+/* maath jax */
+
+mjx-container{
+max-width: 90%;
+overflow: auto;
+}

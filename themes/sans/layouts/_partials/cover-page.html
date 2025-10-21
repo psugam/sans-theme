@@ -95,8 +95,30 @@
         </h3>
 
         {{/* Custom summary cleaner to remove HTML & shortcodes */}}
-        {{ $plain := .Plain | plainify | replaceRE `\s+` " " | truncate 200 }}
-        <p class="post-summary">{{ $plain }}</p>
+        {{/*  {{ $plain := .Plain | plainify | replaceRE `\s+` " " | truncate 200 }}
+        {{ $plain := $plain | replaceRE `(?s)\{\{<.*?>\}\}` "" }}
+        <p class="post-summary">{{ $plain }}</p>  */}}
+
+
+{{/* Custom summary cleaner to remove HTML & shortcodes */}}
+{{ $plain := .RawContent }}
+{{/* Remove paired shortcodes with content (multi-line) */}}
+{{ $plain = $plain | replaceRE `(?s)\{\{<\s*\w+[^>]*>\}\}.*?\{\{<\s*/\w+\s*>\}\}` "" }}
+{{/* Remove self-closing shortcodes */}}
+{{ $plain = $plain | replaceRE `\{\{[^}]+\}\}` "" }}
+{{/* Remove markdown headings (# ## ### etc.) */}}
+{{ $plain = $plain | replaceRE `(?m)^#+\s+.*$` "" }}
+{{/* Remove footnote references [^fn1] */}}
+{{ $plain = $plain | replaceRE `\[\^[^\]]+\]` "" }}
+{{/* Remove footnote definitions [^fn1]: content */}}
+{{ $plain = $plain | replaceRE `(?m)^\[\^[^\]]+\]:.*$` "" }}
+{{/* Convert to plain text */}}
+{{ $plain = $plain | plainify }}
+{{/* Clean up whitespace */}}
+{{ $plain = $plain | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ $plain = $plain | truncate 200 }}
+<p class="post-summary">{{ $plain }}</p>
+
 
         <div class="post-footer">
           {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
@@ -159,6 +181,8 @@
     --dark-color: {{ .Site.Params.theme.darkModeColor }};
     --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
     --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+    --hero-section-color : {{ .Site.Params.theme.heroSectionColor }};
+    --dark-hero-section-color : {{ .Site.Params.theme.darkHeroSectionColor }};
 }
 
 body.dark-mode {
@@ -199,15 +223,19 @@ section {
 }
 
 /* Hero Section */
-.hero-section {
-  background-color: inherit;
+.hero-section{
+  background-color: var(--hero-section-color);
+  border-radius: 5rem;
   color: inherit;
   padding: 6rem 2rem;
   margin: 0;
-  max-width: 100%;
   width: 90vw;
+  max-width: 90%;
 }
 
+body.dark-mode .hero-section{
+background-color: var(--dark-hero-section-color);
+}
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;

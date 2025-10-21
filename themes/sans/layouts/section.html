@@ -60,14 +60,34 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 
 </div>
 
-{{ $summary := .Summary }}
+{{/*  {{ $summary := .Summary }}
 {{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}.*?\{\{</.*?>\}\}` "" }}
-{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}` "" }}
+{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}` "" }}  */}}
 {{/*  not working for codeblock removal somehow  */}}
-{{ $summary = $summary | replaceRE "(?s)```.*?```" "" }}
+{{/*  {{ $summary = $summary | replaceRE "(?s)```.*?```" "" }}
 {{ $summary = $summary | replaceRE "`[^`]+`" "" }}
 {{ $summary = $summary | plainify | truncate 500 }}
-<p>{{ $summary }}</p>
+<p>{{ $summary }}</p>  */}}
+
+{{/* Custom summary cleaner to remove HTML & shortcodes */}}
+{{ $plain := .RawContent }}
+{{/* Remove paired shortcodes with content (multi-line) */}}
+{{ $plain = $plain | replaceRE `(?s)\{\{<\s*\w+[^>]*>\}\}.*?\{\{<\s*/\w+\s*>\}\}` "" }}
+{{/* Remove self-closing shortcodes */}}
+{{ $plain = $plain | replaceRE `\{\{[^}]+\}\}` "" }}
+{{/* Remove markdown headings (# ## ### etc.) */}}
+{{ $plain = $plain | replaceRE `(?m)^#+\s+.*$` "" }}
+{{/* Remove footnote references [^fn1] */}}
+{{ $plain = $plain | replaceRE `\[\^[^\]]+\]` "" }}
+{{/* Remove footnote definitions [^fn1]: content */}}
+{{ $plain = $plain | replaceRE `(?m)^\[\^[^\]]+\]:.*$` "" }}
+{{/* Convert to plain text */}}
+{{ $plain = $plain | plainify }}
+{{/* Clean up whitespace */}}
+{{ $plain = $plain | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ $plain = $plain | truncate 500 }}
+<p >{{ $plain }}</p>
+
 <!-- 500 is letters not words -->
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
 
