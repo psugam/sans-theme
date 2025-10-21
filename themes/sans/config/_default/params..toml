@@ -1,5 +1,5 @@
 [homepage]
-  onlyPostsInHomePage = true
+  onlyPostsInHomePage = false
   homePageTitle="SUGAM POKAHREL"
   homePageLogo=false
   homePageTagLine="Welcome to my website"

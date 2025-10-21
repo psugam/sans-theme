@@ -4,6 +4,8 @@
  display: flex;
  width: 100%;
  justify-content: space-between;
+ margin-top: 1rem;
+ margin-bottom: 1rem;
 }
 #section-cover-image img{
 width: 100%;
@@ -31,7 +33,7 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 <h2 id="section-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 
 <div class="section-meta-data-div">
-  <p>{{$dateHuman}}</p>
+   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time> 
   {{/*  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}  */}}
    {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} 
   {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
