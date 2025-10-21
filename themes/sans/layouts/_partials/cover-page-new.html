@@ -55,7 +55,7 @@
   {{ $pages := where site.RegularPages "Type" "posts" }}
   {{ $paginator := .Paginate $pages }}
   {{ range $paginator.Pages }}
-  <div data-pagefind-body id="posts-box">
+  <div id="posts-box">
     <div id="cover-image-box">
       {{ $cover := "" }}
 
