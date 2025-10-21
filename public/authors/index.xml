@@ -11,14 +11,14 @@
     <item>
       <title>Alice</title>
       <link>http://localhost:1313/authors/alice/</link>
-      <pubDate>Tue, 14 Oct 2025 17:48:48 +0545</pubDate>
+      <pubDate>Tue, 21 Oct 2025 17:48:48 +0545</pubDate>
       <guid>http://localhost:1313/authors/alice/</guid>
       <description></description>
     </item>
     <item>
       <title>Bob</title>
       <link>http://localhost:1313/authors/bob/</link>
-      <pubDate>Tue, 14 Oct 2025 17:48:48 +0545</pubDate>
+      <pubDate>Tue, 21 Oct 2025 17:48:48 +0545</pubDate>
       <guid>http://localhost:1313/authors/bob/</guid>
       <description></description>
     </item>

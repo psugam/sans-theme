@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 
-<head>
-	<meta name="generator" content="Hugo 0.151.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
- <title>SUGAM</title>
+ <title>Table Post</title>
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -120,10 +119,10 @@ background-color: white;
 
     <ul id="nav-menu">
     <li>
-      <a aria-current="page" class="active" href="/">Home</a>
+      <a href="/">Home</a>
     </li>
     <li>
-      <a href="/posts/">Posts</a>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
     </li>
     <li>
       <a href="/tags/">Tags</a>
@@ -706,139 +705,376 @@ body.dark-mode #dark-mode-toggle {
   </header>
   <main>
       
+
 <style>
+  .metadata p{
+  margin: 0;
+  }
+
+  .post-cover img{
+    width: 100%;
+    border-radius: 5%;
+  }
+  .caption{
+  text-align: center;
+  }
+</style>
+
+
+
+
+
+
+
+
+  <div class="has-toc">
+    <div data-pagefind-body>
+    <h1 data-pagefind-meta="title">Table Post</h1>
+
+    
+    
+    
+
+<div class="metadata">
+
+
+
+  <div class="page-tags-div">
+    <div id="page-tags-label">Tags:</div>
+    <ul>
+        <li><a href="/tags/red/">Red</a></li>
+        <li><a href="/tags/green/">Green</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <div class="page-tags-div">
+    <div id="page-tags-label">Categories:</div>
+    <ul>
+        <li><a href="/categories/category-1/">Category-1</a></li>
+        <li><a href="/categories/category-2/">Category-2</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
+    </ul>
+  </div>
+
+  
+
+
+ <time datetime="2025-10-21T17:48:48&#43;05:45">October 21, 2025</time>  
+
+
+
+ <p>Words: 1008</p> 
+
+
+
+
+<p>Reading Time: 5 mins </p>
+
+   
+  
+  
+  
+</div>
+
+    <style>
+
+.toc-container{
  
-.home-page-main-div{
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+position: fixed;
+left: 20px;
+top: 20%;
+font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
+border-right: 1px solid #000000;
+}
+body.dark-mode .toc-container{
+border-right: 1px solid white;
 }
 
-  #home-intro-page{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    max-width: 100%;
+.toc-title{
+background-color: inherit;
+font-size: x-large;
+cursor: pointer;
+ user-select: none;
+}
+  .toc-body{
+   
+  background-color: inherit;
+  padding: 0.5rem;
+}
+
+
+ 
+.toc-body ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-body li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.toc-body li::before {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+@media only screen and (max-width: 1250px) {
+  .toc-container {
+    position: relative;
+    border: none !important;
   }
-  
-  .home-intro-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;  
-    height: 100%;
+  .toc-title{
+  text-align: left;
+  padding-left: 0;
   }
+}
 
 </style>
 
-<div class="home-page-main-div">
-  <div id="home-posts-page">
+
+
+
+
+<style>
+
+
+  .main-text-container {
+        counter-reset: h2counter;
+    }
+    .main-text-container h1 {
+        counter-reset: h2counter;
+    }
+.main-text-container    h2:before {
+        content: counter(h2counter) ".\0000a0\0000a0";
+        counter-increment: h2counter;
+        counter-reset: h3counter;
+    }
+.main-text-container    h3:before {
+        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+        counter-increment: h3counter;
+        counter-reset:h4counter;
+    }
+.main-text-container h4:before{
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+  counter-increment:h4counter;
+}
+</style>
+
+
+<div class="toc-container">
+    <div class="toc-title" onclick="toggleTOC(this)">Contents ▾</div>
+    <div class="toc-body">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+
+<script>
+function toggleTOC(titleEl) {
+  const body = titleEl.nextElementSibling;
+  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+  titleEl.textContent = body.style.display === 'none' ? 'Contents ▸' : 'Contents ▾';
+}
+</script>
+
+
+<div class="main-text-container">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolores voluptate perspiciatis iure? Corporis sed dolorum iusto natus hic ipsam sequi, fuga similique incidunt ad, porro maxime magnam quidem velit harum sapiente veniam, libero in nihil voluptas reprehenderit unde ipsum quas? Placeat, necessitatibus deserunt a porro atque cum quod impedit aperiam voluptatibus unde ullam libero in provident quaerat optio adipisci. Dolorem ea saepe quasi dignissimos officia doloribus possimus quo doloremque natus impedit nihil porro provident, error labore neque soluta reiciendis consectetur dolores. Eligendi quos nobis, rem eos, voluptates sit rerum neque vel quod minima ad esse ratione magnam dolorum! Voluptate blanditiis, odit error doloribus dolores autem totam eos soluta repellat quas officia maxime dolore cum recusandae inventore aut esse. Excepturi commodi quo reprehenderit voluptatum! Omnis enim molestiae sequi voluptate nihil labore ipsa quasi minima! Optio asperiores, dolorem labore saepe accusantium explicabo distinctio et modi nemo, laborum sapiente voluptate! Voluptas, atque? Dolorem repellendus cum, et optio eum dicta alias iste omnis cumque, repellat aperiam quo totam. Eius ratione nihil corrupti, mollitia ex dolorem maxime accusamus ipsam doloremque quae facere ducimus delectus eveniet excepturi dicta quibusdam alias odit doloribus. Earum, dicta possimus illum exercitationem voluptatem, corrupti delectus excepturi natus harum provident a quis cum distinctio laudantium dolor amet doloremque et quam nobis dolorem sapiente reiciendis sequi? Atque harum non suscipit deserunt? Neque voluptatum molestiae et doloremque tempora temporibus ducimus repellendus odio soluta harum, sequi libero at aliquid tempore error dolore tenetur ea facere enim perferendis asperiores fugiat architecto. Unde animi qui nisi? Animi magnam quisquam repudiandae esse possimus molestias provident accusantium accusamus neque asperiores. Harum, enim consequuntur ipsum tempore animi sed voluptates, mollitia possimus necessitatibus tempora nisi, quae autem quibusdam est dolor ad sequi? Repellat culpa alias non sapiente sed vero perferendis dolorem. Voluptatem non, eligendi dicta culpa quaerat, ex officia dignissimos quam rem voluptate impedit voluptas, voluptatum alias enim? Impedit magni atque, vitae perferendis aperiam sunt. Voluptatibus iusto earum ipsam ad porro? Provident facilis architecto, dicta pariatur ullam magni exercitationem reprehenderit tempore quasi culpa corporis similique excepturi placeat consequuntur blanditiis modi explicabo in ad optio quos ea nesciunt quo, accusamus nobis? Beatae illo voluptates reprehenderit ullam molestiae sint sunt quidem, rerum explicabo odit error ipsa esse quo quia delectus neque iusto nesciunt distinctio nobis quod perspiciatis! Voluptatibus magnam esse culpa. Alias error impedit iusto repellendus sunt asperiores perferendis enim maiores, consequuntur earum saepe delectus minus voluptates dolore tempore vero, eligendi adipisci autem porro expedita amet aspernatur sapiente fugit. Illo, ut eius facere accusamus repudiandae voluptatem eos assumenda expedita ad culpa provident eum illum, nihil esse labore laborum doloribus mollitia iusto aperiam rem? Reiciendis voluptatibus cum nemo mollitia officia est consectetur dolor esse. Temporibus mollitia reiciendis dicta porro eveniet fuga quia rem voluptatem, eos est doloremque quasi, quibusdam excepturi molestiae illum quae cumque maiores rerum facilis quod? Quos ea temporibus esse debitis molestias ad dolores voluptatem. Molestias laudantium illo deserunt autem ratione, magni aperiam fugiat veritatis repellat aliquid est, ipsa veniam, ex odit atque tempora natus ut praesentium doloremque esse sit! Vitae?</p>
+
+
+
+<table class="custom-table" id="my-table"><thead>
+        <tr><th>Name</th><th>Age</th><th>City</th></tr>
+      </thead><tbody><tr><td>John</td><td>25</td><td>New York</td></tr><tr><td>Jane</td><td>30</td><td>Los Angeles</td></tr><tr><td>Bob</td><td>-</td><td>Chicago</td></tr></tbody>
   
+  <caption class="table-caption"><b>Table: </b>My Table</caption>
   
-   
-      <h2 id="this-is-for-the-home-page">This is for the home page</h2>
-<p>Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.</p>
+</table>
+
+<style>
+
+  :root {
+    --light-color: white;
+    --dark-color: #333333;
+    --light-link-color: #00e;
+    --dark-link-color: #CCCCCC;
+}
+
+  .table-caption{
+  margin-bottom: 1rem;
+  font-size: larger;
+  }
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  background-color: inherit;
+}
+
+.custom-table th {
+  background-color: color-mix(in srgb, var(--light-color) 70%, black 30%);
+  font-weight: 600;
+  color: #222;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--light-color) 80%, black 20%);
+}
  
 
-  
-   
-   
-  <div data-pagefind-body>
-    <a
-      href="/posts/post-3/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
-    >
-      Post 3
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      March 15, 2023
-    </p>
-  </div>
-  
-  
-  <div data-pagefind-body>
-    <a
-      href="/posts/custom-url-slug/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
-    >
-      Post 2
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      February 15, 2023
-    </p>
-  </div>
-  
-  
-  <div data-pagefind-body>
-    <a
-      href="/posts/custom-url-slug-4/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
-    >
-      Post 4
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      February 15, 2023
-    </p>
-  </div>
-  
-  
-  <div data-pagefind-body>
-    <a
-      href="/posts/post-1/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
-    >
-      Post 1
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      January 15, 2023
-    </p>
-  </div>
-  
-  
-  
-       
+.custom-table tbody tr:hover {
+  background-color: color-mix(in srgb, var(--light-color) 90%, black 10%);
+  transition: background 0.2s ease;
+}
 
-  <nav class="pagination">
-    
-    <a href="/" class="page-link">← Prev</a>
-       
-    <a href="/" class="page-link">1</a>
-       
-    <span class="page-link active">2</span>
-      
-  </nav>
-   
-  </div>
-  
+body.dark-mode .custom-table tr{
+  background-color: color-mix(in srgb, var(--dark-color) 80%, white 20%);
+  color: var(--dark-link-color);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+}
+
+body.dark-mode .custom-table tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--dark-color) 50%, white 50%);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+}
+body.dark-mode .custom-table tbody tr:hover {
+   background-color: color-mix(in srgb, var(--dark-color) 70%, white 30%);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+  transition: background 0.2s ease;
+}
+
+
+</style>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolores voluptate perspiciatis iure? Corporis sed dolorum iusto natus hic ipsam sequi, fuga similique incidunt ad, porro maxime magnam quidem velit harum sapiente veniam, libero in nihil voluptas reprehenderit unde ipsum quas? Placeat, necessitatibus deserunt a porro atque cum quod impedit aperiam voluptatibus unde ullam libero in provident quaerat optio adipisci. Dolorem ea saepe quasi dignissimos officia doloribus possimus quo doloremque natus impedit nihil porro provident, error labore neque soluta reiciendis consectetur dolores. Eligendi quos nobis, rem eos, voluptates sit rerum neque vel quod minima ad esse ratione magnam dolorum! Voluptate blanditiis, odit error doloribus dolores autem totam eos soluta repellat quas officia maxime dolore cum recusandae inventore aut esse. Excepturi commodi quo reprehenderit voluptatum! Omnis enim molestiae sequi voluptate nihil labore ipsa quasi minima! Optio asperiores, dolorem labore saepe accusantium explicabo distinctio et modi nemo, laborum sapiente voluptate! Voluptas, atque? Dolorem repellendus cum, et optio eum dicta alias iste omnis cumque, repellat aperiam quo totam. Eius ratione nihil corrupti, mollitia ex dolorem maxime accusamus ipsam doloremque quae facere ducimus delectus eveniet excepturi dicta quibusdam alias odit doloribus. Earum, dicta possimus illum exercitationem voluptatem, corrupti delectus excepturi natus harum provident a quis cum distinctio laudantium dolor amet doloremque et quam nobis dolorem sapiente reiciendis sequi? Atque harum non suscipit deserunt? Neque voluptatum molestiae et doloremque tempora temporibus ducimus repellendus odio soluta harum, sequi libero at aliquid tempore error dolore tenetur ea facere enim perferendis asperiores fugiat architecto. Unde animi qui nisi? Animi magnam quisquam repudiandae esse possimus molestias provident accusantium accusamus neque asperiores. Harum, enim consequuntur ipsum tempore animi sed voluptates, mollitia possimus necessitatibus tempora nisi, quae autem quibusdam est dolor ad sequi? Repellat culpa alias non sapiente sed vero perferendis dolorem. Voluptatem non, eligendi dicta culpa quaerat, ex officia dignissimos quam rem voluptate impedit voluptas, voluptatum alias enim? Impedit magni atque, vitae perferendis aperiam sunt. Voluptatibus iusto earum ipsam ad porro? Provident facilis architecto, dicta pariatur ullam magni exercitationem reprehenderit tempore quasi culpa corporis similique excepturi placeat consequuntur blanditiis modi explicabo in ad optio quos ea nesciunt quo, accusamus nobis? Beatae illo voluptates reprehenderit ullam molestiae sint sunt quidem, rerum explicabo odit error ipsa esse quo quia delectus neque iusto nesciunt distinctio nobis quod perspiciatis! Voluptatibus magnam esse culpa. Alias error impedit iusto repellendus sunt asperiores perferendis enim maiores, consequuntur earum saepe delectus minus voluptates dolore tempore vero, eligendi adipisci autem porro expedita amet aspernatur sapiente fugit. Illo, ut eius facere accusamus repudiandae voluptatem eos assumenda expedita ad culpa provident eum illum, nihil esse labore laborum doloribus mollitia iusto aperiam rem? Reiciendis voluptatibus cum nemo mollitia officia est consectetur dolor esse. Temporibus mollitia reiciendis dicta porro eveniet fuga quia rem voluptatem, eos est doloremque quasi, quibusdam excepturi molestiae illum quae cumque maiores rerum facilis quod? Quos ea temporibus esse debitis molestias ad dolores voluptatem. Molestias laudantium illo deserunt autem ratione, magni aperiam fugiat veritatis repellat aliquid est, ipsa veniam, ex odit atque tempora natus ut praesentium doloremque esse sit! Vitae?</p>
+
+
+<style>
+    :root {
+    --light-color: white;
+    --dark-color: #333333;
+    --light-link-color: #00e;
+    --dark-link-color: #CCCCCC;
+}
+
+    #button-shortcode{
+    display: inline-block; 
+    padding: 0.5rem 1rem; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--dark-link-color);
+    }
+
+    body.dark-mode #button-shortcode{
+    background-color: var(--light-color);
+    color: var(--light-link-color);
+    }
+</style>
+
+<a id="button-shortcode"href="#my-table" target="_self">
+    Table
+</a>
+
 </div>
+</div>
+
+
+
+
+
+  
+  
+
+  <div class="prev-next-div">
+
+  <a href="/posts/hello-post/">Previous: Hello-post</a>
+
+
+
+  <a href="/posts/nice-post/">Next: Nice Post</a>
+  </div>
+
+
+
+<style>
+    #goToTopButton{
+    display: none;  
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #goToTopButton:hover {
+  background-color: #4a4949;
+  transform: scale(1.1);
+  color: white;
+}
+</style>
+<div>
+  <button onclick="goToTop()" id="goToTopButton">↑</button>
+</div>
+<script>
+  const goToTopButton = document.getElementById("goToTopButton");
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      goToTopButton.style.display = "block";
+    } else {
+      goToTopButton.style.display = "none";
+    }
+  }
+
+  
+  function goToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
 
   </main>
   <footer>

@@ -1,0 +1,101 @@
+{{/*  usign id may cause problem if more than one table is used in a single post  */}}
+
+
+<!-- layouts/shortcodes/table.html -->
+{{- $caption := .Get "caption" -}}
+{{- $id := $caption | urlize | default "" -}}
+<table class="custom-table"{{- if $id }} id="{{ $id }}"{{- end -}}>
+  {{- if .IsNamedParams -}}
+    {{- if .Get "headers" -}}
+      <thead>
+        <tr>
+          {{- range (split (.Get "headers") "|") -}}
+            <th>{{ trim . " " }}</th>
+          {{- end -}}
+        </tr>
+      </thead>
+    {{- end -}}
+  {{- end -}}
+  <tbody>
+    {{- $rows := split (trim .Inner "\n\r") "\n" -}}
+    {{- range $rows -}}
+      {{- $trimmedRow := trim . " \t\r" -}}
+      {{- if gt (len $trimmedRow) 0 -}}
+        <tr>
+          {{- $cells := split $trimmedRow "|" -}}
+          {{- range $cells -}}
+            <td>{{ trim . " " | default "&nbsp;" }}</td>
+          {{- end -}}
+        </tr>
+      {{- end -}}
+    {{- end -}}
+  </tbody>
+  {{ if .Get "caption"}}
+  <caption class="table-caption"><b>Table: </b>{{ .Get "caption" }}</caption>
+  {{end}}
+</table>
+
+<style>
+
+  :root {
+    --light-color: {{ .Site.Params.theme.lightModeColor }};
+    --dark-color: {{ .Site.Params.theme.darkModeColor }};
+    --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+    --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+}
+
+  .table-caption{
+  margin-bottom: 1rem;
+  font-size: larger;
+  }
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  background-color: inherit;
+}
+
+.custom-table th {
+  background-color: color-mix(in srgb, var(--light-color) 70%, black 30%);
+  font-weight: 600;
+  color: #222;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--light-color) 80%, black 20%);
+}
+/* current color is color not background color*/
+
+.custom-table tbody tr:hover {
+  background-color: color-mix(in srgb, var(--light-color) 90%, black 10%);
+  transition: background 0.2s ease;
+}
+
+body.dark-mode .custom-table tr{
+  background-color: color-mix(in srgb, var(--dark-color) 80%, white 20%);
+  color: var(--dark-link-color);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+}
+
+body.dark-mode .custom-table tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--dark-color) 50%, white 50%);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+}
+body.dark-mode .custom-table tbody tr:hover {
+   background-color: color-mix(in srgb, var(--dark-color) 70%, white 30%);
+  color: color-mix(in srgb, var(--dark-link-color) 20%, white 80%);
+  transition: background 0.2s ease;
+}
+
+
+</style>
