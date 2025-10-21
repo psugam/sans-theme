@@ -1,123 +1,611 @@
-<style>
-  #cover-image {
-    width: 100vw;
-    max-width: none;
-  }
-
-  #posts-box {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 2rem;
-    margin-bottom: 2rem;
-/*    border-top: 2px solid red;
-    border-bottom: 2px solid red;
-*/
-  }
-
-  #post-title{
-  margin-top: 0;
-  }
-  #post-title a {
-    display: inline-block;
-    margin-right: 8px;
-    margin-top: 0;
-    font-size: x-large;
-  }
-  #details-box{
- display: flex;
- flex-direction: column;
- justify-content: space-around; 
-  }
-
-  #details-box p {
-    margin-bottom: 0;
-    margin-top: 0;
-
-  }
-
-  #details-box time {
-    margin-bottom: 0;
-  }
-</style>
 {{ $image := resources.Get .Site.Params.homepage.homePageCoverPath }}
-{{/* <h2>No</h2> */}}
-<img id="cover-image" src="{{ $image.RelPermalink }}" />
+
+{{/* Hero Section */}}
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">{{.Site.Params.homepage.homePageCoverTitle}}</h1>
+      <p class="hero-subtitle">{{.Site.Params.homepage.homePageCoverTagLine}}</p>
+      <div class="hero-cta">
+        <a href="/pages" class="btn btn-primary">Explore Articles</a>
+        <a href="/pages/about" class="btn btn-secondary">About Us</a>
+      </div>
+    </div>
+    {{ if $image }}
+    <div class="hero-image">
+      <img src="{{ $image.RelPermalink }}" alt="Hero" />
+    </div>
+    {{ end }}
+  </div>
+</section>
 
 
+{{/* Stats Section */}}
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">{{ len (where site.RegularPages "Type" "posts") }}</div>
+      <div class="stat-label">Articles Published</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ len .Site.Taxonomies.authors }}</div>
+      <div class="stat-label">Contributing Authors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ len .Site.Taxonomies.tags }}</div>
+      <div class="stat-label">Topics Covered</div>
+    </div>
+  </div>
+</section>
 
-<div id="recent-posts">
+
+{{/* Newsletter Section */}}
+<section class="newsletter-section">
+  <div class="newsletter-content">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter and never miss a post. Get the latest articles delivered directly to your inbox.</p>
+    <form class="newsletter-form" action="/subscribe" method="post">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
 
 
-
-  <h2>Recent Posts</h2>
+{{/* Recent Posts */}}
+<section class="recent-posts-section">
+  <div class="section-header">
+    <h2>Recent Posts</h2>
+    <p>Latest articles from our community</p>
+  </div>
 
   {{ $pages := where site.RegularPages "Type" "posts" }}
   {{ $paginator := .Paginate $pages }}
-  {{ range $paginator.Pages }}
-  <div data-pagefind-body id="posts-box">
-    <div id="cover-image-box">
+
+  <div class="posts-grid">
+    {{ range $paginator.Pages }}
+    <article class="post-card">
       {{ $cover := "" }}
-
-{{ with .Params.cover }}
-  {{ $cover = .image }}
-{{ end }}
-
-{{ $imageResource := .Resources.GetMatch $cover }}
-
-{{ if not $imageResource }}
-  {{ $imageResource = resources.Get "images/default.jpg" }}
-{{ end }}
-
-{{ if $imageResource }}
-  <img src="{{ $imageResource.RelPermalink }}" alt="{{ .Title }}"
-       style="width: 200px; height: 120px; object-fit: cover; border-radius: 8px;">
-{{ end }}
-
-
-
-
-    </div>
-
-
-    <div id="details-box">
-      <h2 id="post-title">
-        <a href="{{ .RelPermalink }}" data-pagefind-meta="title">
-          {{ .LinkTitle }}
+      {{ with .Params.cover }}
+        {{ $cover = .image }}
+      {{ end }}
+      {{ $imageResource := .Resources.GetMatch $cover }}
+      {{ if not $imageResource }}
+        {{ $imageResource = resources.Get "images/default.jpg" }}
+      {{ end }}
+      {{ if $imageResource }}
+      <div class="post-image">
+        <a href="{{ .Permalink }}">
+          <img src="{{ $imageResource.RelPermalink }}" alt="{{ .LinkTitle }}" loading="lazy" />
         </a>
-      </h2>
+      </div>
+      {{ end }}
 
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
-      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-      {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
-      {{ $readingTime = math.Ceil $readingTime }}
-      <p>Reading Time: {{ $readingTime}} mins </p>
-    </div>
+      <div class="post-content">
+        <div class="post-meta">
+          {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+          <span class="post-date">
+            {{ $dateHuman := .Date | time.Format ":date_long" }}
+            {{ $dateHuman }}
+          </span>
+        </div>
 
+        <h3 class="post-title">
+          <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        </h3>
+
+        {{/* Custom summary cleaner to remove HTML & shortcodes */}}
+        {{ $plain := .Plain | plainify | replaceRE `\s+` " " | truncate 200 }}
+        <p class="post-summary">{{ $plain }}</p>
+
+        <div class="post-footer">
+          {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
+          {{ $readingTime = math.Ceil $readingTime }}
+          <span class="reading-time">{{ $readingTime }} min read</span>
+          <a href="{{ .Permalink }}" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </article>
+    {{ end }}
   </div>
-  <!-- {{ .Summary }} -->
-  {{ end }}
-  <!-- pagination  -->
-  {{ if gt $paginator.TotalPages 1 }} {{ $current := $paginator.PageNumber }} {{
-  $start := sub $current 2 }} {{ $end := add $current 2 }} {{ if lt $start 1
-  }}{{ $start = 1 }}{{ end }} {{ if gt $end $paginator.TotalPages }}{{ $end =
-  $paginator.TotalPages }}{{ end }}
 
+  {{ if gt $paginator.TotalPages 1 }}
+  {{ $current := $paginator.PageNumber }}
+  {{ $start := sub $current 2 }}
+  {{ $end := add $current 2 }}
+  {{ if lt $start 1 }}{{ $start = 1 }}{{ end }}
+  {{ if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
+  
   <nav class="pagination">
     {{ if $paginator.HasPrev }}
-    <a href="{{ $paginator.Prev.URL }}" class="page-link">← Prev</a>
-    {{ end }} {{ range $i := seq $start $end }} {{ $page := index
-    $paginator.Pagers (sub $i 1) }} {{ if eq $i $current }}
-    <span class="page-link active">{{ $i }}</span>
-    {{ else }}
-    <a href="{{ $page.URL }}" class="page-link">{{ $i }}</a>
-    {{ end }} {{ end }} {{ if $paginator.HasNext }}
-    <a href="{{ $paginator.Next.URL }}" class="page-link">Next →</a>
+    <a href="{{ $paginator.Prev.URL }}" class="pagination-btn">← Prev</a>
+    {{ end }}
+    
+    <div class="pagination-numbers">
+      {{ range $i := seq $start $end }}
+      {{ $page := index $paginator.Pagers (sub $i 1) }}
+      {{ if eq $i $current }}
+      <span class="pagination-number active">{{ $i }}</span>
+      {{ else }}
+      <a href="{{ $page.URL }}" class="pagination-number">{{ $i }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+    
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="pagination-btn">Next →</a>
     {{ end }}
   </nav>
   {{ end }}
-</div>
+</section>
 
-</div>
+
+<style>
+/* CSS Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent: #0d6efd;
+  --accent-hover: #0b5ed7;
+  --border: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+      --light-color: {{ .Site.Params.theme.lightModeColor }};
+    --dark-color: {{ .Site.Params.theme.darkModeColor }};
+    --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+    --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+}
+
+body.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --accent: #4d9aff;
+  --accent-hover: #6baeff;
+  --border: #3d3d3d;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: inherit;
+  color: inherit;
+  padding: 6rem 2rem;
+  margin: 0;
+  max-width: 100%;
+  width: 90vw;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --btn-primary-bg: {{ .Site.Params.theme.lightModeButton }};
+  --btn-primary-color: {{ .Site.Params.theme.lightModeButtonText }};
+  --btn-secondary-bg: {{ .Site.Params.theme.lightModeButtonAlt }};
+  --btn-secondary-color: {{ .Site.Params.theme.lightModeButtonAltText }};
+}
+
+body.dark-mode {
+  --btn-primary-bg: {{ .Site.Params.theme.darkModeButton }};
+  --btn-primary-color: {{ .Site.Params.theme.darkModeButtonText }};
+  --btn-secondary-bg: {{ .Site.Params.theme.darkModeButtonAlt }};
+  --btn-secondary-color: {{ .Site.Params.theme.darkModeButtonAltText }};
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-color);
+  border: 2px solid var(--btn-secondary-color);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Categories Section */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.category-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-count {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--bg-secondary);
+  max-width: 100%;
+  border-radius: 5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+ background-color: inherit;
+  color: inherit;
+  text-align: center;
+  max-width: 100%;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  border:1px solid black;
+  font-size: 1rem;
+  background: white;
+  color: #212529;
+}
+
+.newsletter-form button {
+  white-space: nowrap;
+}
+
+/* Posts Grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--shadow-lg);
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-image img {
+  transform: scale(1.05);
+}
+
+.post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.post-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: var(--accent);
+}
+
+.post-summary {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.reading-time {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: var(--accent-hover);
+}
+
+/* Pagination */ 
+
+/* only the style is changed the original  */ 
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.pagination-btn,
+.pagination-number {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.pagination-btn:hover,
+.pagination-number:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-number.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+}
+</style>

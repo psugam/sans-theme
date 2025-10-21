@@ -6,6 +6,8 @@
   homePageLogoPath='images/sugam.jpg'
   # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageCoverPath='images/img_forest.jpg'
+  homePageCoverTitle="Welcome to our blog and portfolio."
+  homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
   # Manage Posts show in homepage
   homePagePostDate=true
 
@@ -13,11 +15,11 @@
 [social]
   facebook = 'https://facebook.com/yourpage'
   x = 'https://x.com/yourhandle'
-  instagram = 'https://instagram.com/yourhandle'
-  linkedin = 'https://linkedin.com/in/yourprofile'
-  youtube = 'https://youtube.com/@yourchannel'
+  # instagram = 'https://instagram.com/yourhandle'
+  # linkedin = 'https://linkedin.com/in/yourprofile'
+  # youtube = 'https://youtube.com/@yourchannel'
   # tiktok = 'https://tiktok.com/@yourhandle'
-  # github = 'https://github.com/yourusername'
+  github = 'https://github.com/yourusername'
   # reddit = 'https://reddit.com/u/yourusername'
   # pinterest = 'https://pinterest.com/yourhandle'
   # snapchat = 'https://snapchat.com/add/yourhandle'
@@ -27,8 +29,8 @@
   # whatsapp = 'https://wa.me/yourphonenumber'
   # mastodon = 'https://mastodon.social/@yourhandle'
   bluesky = 'https://bsky.app/profile/yourhandle'
-  threads = 'https://threads.net/@yourhandle'
-  medium = 'https://medium.com/@yourhandle'
+  # threads = 'https://threads.net/@yourhandle'
+  # medium = 'https://medium.com/@yourhandle'
 
 [navbar]
   sticky=true
@@ -40,6 +42,17 @@
 # link colors
   darkModeLinkColor='#CCCCCC'
   lightModeLinkColor='#00e'
+
+lightModeButton = "#007bff"
+lightModeButtonText = "#ffffff"
+lightModeButtonAlt = "transparent"
+lightModeButtonAltText = "#007bff"
+
+darkModeButton = "#0d6efd"
+darkModeButtonText = "#ffffff"
+darkModeButtonAlt = "transparent"
+darkModeButtonAltText = "#4d9aff"
+
 
 [toc]
   numberingInTOC=true
@@ -53,3 +66,4 @@
   showTags=true
   showCategories=true
   showReadingTime=true
+  dateFormat="2023-11-11"

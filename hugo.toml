@@ -5,7 +5,7 @@ theme='sans'
 
 [pagination]
   disableAliases = false
-  pagerSize = 4
+  pagerSize = 6
   path = 'page'
 
 [taxonomies]

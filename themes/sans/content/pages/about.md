@@ -6,6 +6,7 @@ layout: "page"
 _build:
   list: never
 weight: 10
+toc: false
 ---
 This is my about page content.
 

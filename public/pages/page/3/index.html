@@ -709,6 +709,12 @@ body.dark-mode #dark-mode-toggle {
  width: 100%;
  justify-content: space-between;
 }
+#section-cover-image img{
+width: 100%;
+object-fit: cover; 
+border-radius: 8px;
+}
+
 @media screen and (max-width: 768px) {
  .section-meta-data-div{
   display: block;
@@ -722,18 +728,26 @@ body.dark-mode #dark-mode-toggle {
 <div class="section-meta-data-div">
   <p>January 1, 1</p>
   
-  <div class="page-tags-div">
-    <div id="page-tags-label">Tags:</div>
-    <ul>
-        <li><a href="/tags/red/">Red</a></li>
-    </ul>
-  </div>
+   
  
- 
+  
 
 </div>
 
 
+<div id="section-cover-image">
+        
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
@@ -776,6 +790,9 @@ Occaecat nulla excepteur dolore excepteur duis eiusmod ullamco officia anim in v
   </main>
   <footer>
     <style>
+  .footer-main{
+  margin-top: 2rem;
+  }
   .footer-main a{
 text-decoration: none;
 text-decoration: underline;
