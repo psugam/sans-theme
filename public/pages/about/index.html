@@ -12,6 +12,8 @@
 
       <script src="/js/main.js"></script>
 
+<link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
+
 
     
 </head>
@@ -829,44 +831,33 @@ cursor: pointer;
 </style>
 
 
+
+
+
 <style>
- 
-.toc-body ul {
-  counter-reset: section;
-}
 
-.toc-body li {
-  counter-increment: section;
-  position: relative;
-  padding-left: 2.5rem;
-  margin: 0.25rem 0;
-}
 
-.toc-body li::before {
-  content: counters(section, ".") " ";
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  color: #333;
+  .main-text-container {
+        counter-reset: h2counter;
+    }
+    .main-text-container h1 {
+        counter-reset: h2counter;
+    }
+.main-text-container    h2:before {
+        content: counter(h2counter) ".\0000a0\0000a0";
+        counter-increment: h2counter;
+        counter-reset: h3counter;
+    }
+.main-text-container    h3:before {
+        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+        counter-increment: h3counter;
+        counter-reset:h4counter;
+    }
+.main-text-container h4:before{
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+  counter-increment:h4counter;
 }
- 
- 
-.toc-body li ul {
-  counter-reset: subsection;
-}
-
-.toc-body li li {
-  counter-increment: subsection;
-}
-
-.toc-body li li::before {
-  content: counters(section, ".") "." counters(subsection, ".") " ";
-}
-
 </style>
-
-
-
 
 
 
@@ -958,11 +949,24 @@ text-decoration: none;
 text-decoration: underline;
 color: inherit;
   }
+  .rss-icon-box{
+height: 100%;
+width: 100%;
+margin-top: 1rem;
+  }
+  .rss-icon-box img{
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0;
+  }
 </style>
 <div class="footer-main">
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
+ 
+ 
 </div>
 
     

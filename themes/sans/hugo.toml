@@ -3,6 +3,13 @@ languageCode = 'en-US'
 title = 'My New Hugo Site'
 
 
+enableRobotsTXT = true
+summaryLength = 0
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
 
 [pagination]
   disableAliases = false

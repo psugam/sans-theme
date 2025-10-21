@@ -22,6 +22,7 @@ margin-bottom: 0;
 }
 }
 </style>
+
 <h1>{{ .Title }}</h1>
 {{ .Content }} {{ $pages := where site.RegularPages "Type" "posts" }} {{
 $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
@@ -69,6 +70,8 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 {{ $summary = $summary | plainify | truncate 500 }}
 <p>{{ $summary }}</p>  */}}
 
+{{$summaryLength := .Site.Params.homepage.homePageSummaryLength}}
+
 {{/* Custom summary cleaner to remove HTML & shortcodes */}}
 {{ $plain := .RawContent }}
 {{/* Remove paired shortcodes with content (multi-line) */}}
@@ -85,7 +88,7 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 {{ $plain = $plain | plainify }}
 {{/* Clean up whitespace */}}
 {{ $plain = $plain | replaceRE `\s+` " " | strings.TrimSpace }}
-{{ $plain = $plain | truncate 500 }}
+{{ $plain = $plain | truncate $summaryLength }}
 <p >{{ $plain }}</p>
 
 <!-- 500 is letters not words -->

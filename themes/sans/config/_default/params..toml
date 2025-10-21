@@ -1,13 +1,14 @@
 [homepage]
-  onlyPostsInHomePage = false
+  onlyPostsInHomePage = true
   homePageTitle="SUGAM POKAHREL"
-  homePageLogo=true
+  homePageLogo=false
   homePageTagLine="Welcome to my website"
   homePageLogoPath='images/sugam.jpg'
   # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageCoverPath='images/img_forest.jpg'
   homePageCoverTitle="Welcome to our blog and portfolio."
   homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
+  homePageSummaryLength=500
   # Manage Posts show in homepage
   homePagePostDate=true
 
@@ -32,9 +33,6 @@
   # threads = 'https://threads.net/@yourhandle'
   # medium = 'https://medium.com/@yourhandle'
 
-[navbar]
-  sticky=true
-
 [theme]
 # main background colors
   darkModeColor='#333333'
@@ -57,8 +55,8 @@ darkModeButtonAltText = "#4d9aff"
 
 
 [toc]
-  numberingInTOC=true
-  numberingInPost=false
+  numberingInTOC=false
+  numberingInPost=true
 
 [posts]
   reading_speed=212
@@ -69,3 +67,6 @@ darkModeButtonAltText = "#4d9aff"
   showCategories=true
   showReadingTime=true
   dateFormat="2023-11-11"
+
+[rss]
+  showRSS=false
