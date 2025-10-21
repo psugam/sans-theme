@@ -89,6 +89,8 @@ header h1{
 .prev-next-div{
   display: flex;
   justify-content: space-between;
+   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* pagination */

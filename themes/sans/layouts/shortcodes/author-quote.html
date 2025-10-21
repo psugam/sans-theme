@@ -1,11 +1,11 @@
 {{- $author := .Get "author" -}}
 {{- $source := .Get "source" -}}
 <blockquote class="custom-quote">
-  <p id="quote-open">“  </p>
-    <p id="quote-body">{{ .Inner | markdownify }}</p>
-     <p id="quote-close">   ”</p>
+  <p class="quote-open">“  </p>
+    <p class="quote-body">{{ .Inner | markdownify }}</p>
+     <p class="quote-close">   ”</p>
   {{- if $author -}}
-  <div>
+  <div class="source-line">
     
     — <b>{{ $author }}</b>
    
@@ -16,15 +16,23 @@
 </blockquote>
 
 <style>
+  .custom-quote{
+  padding-left: 2rem;
+  border-left: 2px solid rgb(255, 0, 0);
+  }
 
-#quote-body{
+.quote-body{
 display: inline;
 }
-    #quote-open, #quote-close{
+    .quote-open, .quote-close{
         display: inline;
     font-size:x-large ;
     text-decoration: italic;
     margin: 0;
+    }
+
+    .source-line{
+    margin-top: 1rem;
     }
 </style>
 
