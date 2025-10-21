@@ -794,12 +794,12 @@ body.dark-mode #dark-mode-toggle {
 
 
 
- <p>Words: 1250</p> 
+ <p>Words: 1391</p> 
 
 
 
 
-<p>Reading Time: 6 mins </p>
+<p>Reading Time: 7 mins </p>
 
    
   
@@ -939,6 +939,38 @@ function toggleTOC(titleEl) {
   <h2 id="heading-top">HEADING TOP</h2>
 <p>Anim eiusmod irure incididunt sint cupidatat. Choose what&rsquo;s best.—Best is what benefits me.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
 Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.</p>
+<blockquote class="custom-quote">
+  <p id="quote-open">“  </p>
+    <p id="quote-body">Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.</p>
+     <p id="quote-close">   ”</p><div>
+    
+    — <b>Sugam Pokharel</b>
+   
+    ,
+     <cite>Me lol</cite>
+  </div></blockquote>
+
+<style>
+
+#quote-body{
+display: inline;
+}
+    #quote-open, #quote-close{
+        display: inline;
+    font-size:x-large ;
+    text-decoration: italic;
+    margin: 0;
+    }
+</style>
+
+
+
+<details class="collapse" id="see-full-error-log">
+  <summary>See full error log</summary>
+  <div class="collapse-content">
+    Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
+  </div>
+</details>
 <p>Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
 <figure><img src="/images/404.jpg" width="100%">
   </figure>
@@ -993,7 +1025,83 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
      Hello 
 </a>
 <h5 id="fourth-header">Fourth Header</h5>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
+<p><style>
+   
+  .custom-code-block-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .custom-code-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #444;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .code-lang-label {
+    color: #888;
+  }
+
+  .copy-code-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+  }
+
+  .copy-code-btn:hover {
+    color: #fff;
+  }
+
+  .custom-code-block-wrapper .highlight {
+    margin: 0;
+  }
+
+  .custom-code-block-wrapper pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    background-color: #1e1e1e !important;
+     
+  }
+
+  .custom-code-block-wrapper code {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 0.95rem;
+    background-color: transparent;
+  }
+</style>
+
+<div class="custom-code-block-wrapper" data-lang="console">
+  <div class="custom-code-toolbar">
+    <span class="code-lang-label">CONSOLE</span>
+    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span> git commit -m &#34;Added table shortcode&#34;
+</span></span></code></pre></div>
+</div>
+
+<script>
+  function copyCode(btn) {
+    const wrapper = btn.closest(".custom-code-block-wrapper");
+    const code = wrapper.querySelector("code").innerText;
+    navigator.clipboard.writeText(code);
+    btn.textContent = "✅ Copied";
+    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+  }
+</script>
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>

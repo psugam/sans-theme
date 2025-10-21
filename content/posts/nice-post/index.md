@@ -18,6 +18,14 @@ captionDisplay=false
 Anim eiusmod irure incididunt sint cupidatat. Choose what's best.—Best is what benefits me.[^translator]
 Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.
 
+{{<author-quote author="Sugam Pokharel" source="Me lol">}}
+Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
+{{</author-quote>}}
+
+{{< collapse title="See full error log" >}}
+Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
+{{< /collapse >}}
+
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
   {{< figure src="/images/404.jpg" width="100%" >}}
 
@@ -58,6 +66,10 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 ##### Fourth Header
 
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
+
+{{< codeblock lang="console" >}}
+ git commit -m "Added table shortcode"
+{{< /codeblock >}}
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
 
   [^translator]: Hays translation
