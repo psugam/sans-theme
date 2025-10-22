@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "hugo server --disableFastRender",
+    "build": "hugo && npx pagefind --site public --output-path public/pagefind",
+    "dev": "hugo --destination public && npx pagefind --site public --output-path public/pagefind && hugo server --disableFastRender"
   },
   "keywords": [],
   "author": "",
