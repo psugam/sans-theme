@@ -6,6 +6,118 @@
 <meta name="viewport" content="width=device-width">
 
  <title>Green</title>
+ 
+    <style>
+:root {
+    --light-color: white;
+    --dark-color: #333333;
+    --light-link-color: #00e;
+    --dark-link-color: #CCCCCC;
+}
+
+ 
+body {
+    background-color: var(--light-color);
+    color: #333333;
+}
+body a {
+    color: var(--light-link-color);
+    text-decoration: none;
+}
+
+ 
+body.dark-mode {
+    background-color: var(--dark-color);
+    color: #ffffff;
+}
+body.dark-mode a {
+    color: var(--dark-link-color);
+}
+
+
+#dark-mode-toggle {
+    background: none;
+    background-color: inherit;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    cursor: pointer;
+ 
+    display: flex;         
+    align-items: center;    
+    justify-content: center;
+    padding: 0;
+    position: fixed;
+}
+
+#dark-mode-toggle p {
+    margin: 0;
+    font-size: 1.2em;  
+    line-height: 1;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    pointer-events: none;  
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: var(--light-color);
+}
+</style>
+
+<div>
+    <div>
+        <button id="dark-mode-toggle">
+            <p id="dark-circle">🌓︎</p>
+            <p id="light-circle">☀</p>
+        </button>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const darkCircle=document.getElementById('dark-circle');
+    const lightCircle=document.getElementById('light-circle');
+
+ 
+  let theme = localStorage.getItem('theme') || 'light';
+
+  
+  if (theme === 'dark') {
+    body.classList.add('dark-mode');
+    darkCircle.style.display = 'inline';
+
+    lightCircle.style.display = 'none';
+  } else {
+    body.classList.remove('dark-mode');
+    darkCircle.style.display = 'none';
+    lightCircle.style.display = 'inline';
+  }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            lightCircle.style.setProperty('display', 'none');
+            darkCircle.style.setProperty('display', 'inline');
+
+        } else {
+            localStorage.setItem('theme', 'light');
+            darkCircle.style.setProperty('display', 'none');
+            lightCircle.style.setProperty('display', 'inline');
+        }
+    });
+});
+</script>
+
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -137,6 +249,7 @@ background-color: white;
       <a href="/pdfs/de_bello_gallico_orberg.pdf">File</a>
     </li>
     </ul>
+    
   </nav>
 
 <script>
@@ -593,115 +706,7 @@ background-color: white;
         });
     });
 </script>
-<style>
-:root {
-    --light-color: white;
-    --dark-color: #333333;
-    --light-link-color: #00e;
-    --dark-link-color: #CCCCCC;
-}
 
- 
-body {
-    background-color: var(--light-color);
-    color: #333333;
-}
-body a {
-    color: var(--light-link-color);
-    text-decoration: none;
-}
-
- 
-body.dark-mode {
-    background-color: var(--dark-color);
-    color: #ffffff;
-}
-body.dark-mode a {
-    color: var(--dark-link-color);
-}
-
-
-#dark-mode-toggle {
-    background: none;
-    background-color: inherit;
-    height: 4vh;
-    width: 4vh;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    cursor: pointer;
- 
-    display: flex;         
-    align-items: center;    
-    justify-content: center;
-    padding: 0;
-}
-
-#dark-mode-toggle p {
-    margin: 0;
-    font-size: 1.2em;  
-    line-height: 1;
-    height: auto;
-    width: auto;
-    display: inline-block;
-    pointer-events: none;  
-}
-
-body.dark-mode #dark-mode-toggle {
-    background-color: var(--light-color);
-}
-</style>
-
-<div>
-    <div>
-        <button id="dark-mode-toggle">
-            <p id="dark-circle">🌓︎</p>
-            <p id="light-circle">☀</p>
-        </button>
-    </div>
-</div>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    const darkCircle=document.getElementById('dark-circle');
-    const lightCircle=document.getElementById('light-circle');
-
- 
-  let theme = localStorage.getItem('theme') || 'light';
-
-  
-  if (theme === 'dark') {
-    body.classList.add('dark-mode');
-    darkCircle.style.display = 'inline';
-
-    lightCircle.style.display = 'none';
-  } else {
-    body.classList.remove('dark-mode');
-    darkCircle.style.display = 'none';
-    lightCircle.style.display = 'inline';
-  }
-
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-
-        
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            lightCircle.style.setProperty('display', 'none');
-            darkCircle.style.setProperty('display', 'inline');
-
-        } else {
-            localStorage.setItem('theme', 'light');
-            darkCircle.style.setProperty('display', 'none');
-            lightCircle.style.setProperty('display', 'inline');
-        }
-    });
-});
-</script>
   </header>
   <main>
       

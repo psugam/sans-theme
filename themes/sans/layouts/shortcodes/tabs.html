@@ -1,0 +1,125 @@
+<div class="tabs-box">
+  {{ $tabs := split (strings.TrimSpace .Inner) "<!--tab-->" }}
+
+  <!-- Buttons -->
+  {{/*  two loops because doing one creates button aand content together  */}}
+  <div class="tab-buttons">
+    {{ range $index, $tab := $tabs }}
+      {{ $lines := split (strings.TrimSpace $tab) "\n" }}
+      {{ $title := "" }}
+      {{ $contentStart := false }}
+      {{ range $lines }}
+        {{ if hasPrefix . "title:" }}
+          {{ $title = strings.TrimSpace (replace . "title:" "" ) }}
+        {{ end }}
+      {{ end }}
+      <button type='button' class="tab-btn" data-tab="tab-{{ $index }}">{{ $title }}</button>
+    {{ end }}
+  </div>
+
+  <!-- Contents -->
+  <div class="tab-contents">
+    {{ range $index, $tab := $tabs }}
+      {{ $lines := split (strings.TrimSpace $tab) "\n" }}
+      {{ $title := "" }}
+      {{ $contentLines := slice }}
+      {{ $capture := false }}
+      {{ range $lines }}
+        {{ if hasPrefix . "title:" }}
+          {{ $title = strings.TrimSpace (replace . "title:" "" ) }}
+        {{ else if hasPrefix . "content:" }}
+          {{ $capture = true }}
+          {{ $line := strings.TrimSpace (replace . "content:" "" ) }}
+          {{ if $line }}
+            {{ $contentLines = $contentLines | append $line }}
+          {{ end }}
+        {{ else if $capture }}
+          {{ $contentLines = $contentLines | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $content := delimit $contentLines "\n" }}
+      <div class="tab-content hidden" id="tab-{{ $index }}">
+        {{ $content | markdownify }}
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab');
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  if (buttons.length > 0) {
+    buttons[0].click();
+  }
+});
+</script>
+
+<style>
+    :root{
+    --light-color: {{ .Site.Params.theme.lightModeColor }};
+    --dark-color: {{ .Site.Params.theme.darkModeColor }};
+    --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+    --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+    }
+
+.tabs-box {
+  border-radius: 8px;
+  padding: 1rem;
+}
+.tab-buttons {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  background-color: inherit;
+}
+.tab-btn {
+ /* background: var(--bg-secondary, #f1f1f1); */
+opacity: 90%;
+ border: none;
+  border-right: 1px solid black;
+  padding: .5rem 1rem;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  margin-bottom:0.5rem;
+  margin-top: 0.5rem;
+}
+.tab-btn.active {
+  background: var(--dark-color);
+  color: #ffffff;
+}
+.tab-content{
+background-color:var(--dark-color);
+color: var(--dark-link-color);
+padding: 2rem;
+}
+body.dark-mode .tab-content{
+background-color: var(--light-color);
+color:initial;
+}
+body.dark-mode .tab-btn{
+background-color: var(--light-color);
+color: initial;
+border-right: 1px solid var(--dark-color);
+}
+body.dark-mode .tab-btn.active{
+background-color: var(--dark-color);
+color: white;
+}
+
+.tab-content.hidden {
+  display: none;
+}
+</style>

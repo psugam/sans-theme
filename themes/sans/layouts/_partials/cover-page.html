@@ -40,7 +40,8 @@
 
 
 {{/* Newsletter Section */}}
-<section class="newsletter-section">
+{{/*  does nothing for now should add something */}}
+{{/*  <section class="newsletter-section">
   <div class="newsletter-content">
     <h2>Stay Updated</h2>
     <p>Subscribe to our newsletter and never miss a post. Get the latest articles delivered directly to your inbox.</p>
@@ -48,6 +49,49 @@
       <input type="email" placeholder="Enter your email" required />
       <button type="submit" class="btn btn-primary">Subscribe</button>
     </form>
+  </div>
+</section>  */}}
+
+
+{{/*  works only for netlift does nothing otherwise  */}}
+<section class="newsletter-section">
+  <div class="newsletter-content">
+    <h2>Stay Updated</h2>
+    <p>
+      Subscribe to our newsletter and never miss a post.
+      Get the latest articles delivered directly to your inbox.
+    </p>
+
+    <!-- Netlify-enabled form -->
+    <form
+      name="newsletter"
+      method="POST"
+      data-netlify="true"
+      class="newsletter-form"
+      id="newsletter-form"
+    >
+      <input
+        type="email"
+        name="email"
+        id="newsletter-email"
+        placeholder="Enter your email"
+        required
+      />
+      <button type="submit" class="btn btn-primary" id="newsletter-submit">
+        Subscribe
+      </button>
+
+      <!-- Optional: Netlify anti-bot field -->
+      <div style="display:none">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </div>
+
+      <!-- Hidden input so Netlify recognizes this form -->
+      <input type="hidden" name="form-name" value="newsletter" />
+    </form>
+
+    <!-- Success/Failure messages -->
+    <p id="newsletter-message" class="newsletter-message" style="display:none;"></p>
   </div>
 </section>
 
@@ -229,9 +273,19 @@ section {
   color: inherit;
   padding: 6rem 2rem;
   margin: 0;
-  width: 90vw;
+  width: 85vw;
   max-width: 90%;
 }
+
+@media (max-width: 768px) {
+.hero-section{
+max-width:80%
+}
+.hero-image img{
+display: none;
+}
+}
+
 
 body.dark-mode .hero-section{
 background-color: var(--dark-hero-section-color);
@@ -378,6 +432,7 @@ body.dark-mode {
 .stats-section {
   background: var(--bg-secondary);
   max-width: 100%;
+  margin-top: 3rem;
   border-radius: 5rem;
 }
 
@@ -637,3 +692,31 @@ body.dark-mode {
   }
 }
 </style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("newsletter-form");
+  const message = document.getElementById("newsletter-message");
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: data
+      });
+      form.reset();
+      message.style.display = "block";
+      message.textContent = "Thanks for subscribing!";
+      message.style.color = "var(--accent, #007bff)";
+    } catch (error) {
+      message.style.display = "block";
+      message.textContent = "❌ Something went wrong. Please try again.";
+      message.style.color = "red";
+    }
+  });
+});
+</script>

@@ -35,6 +35,7 @@
 
 [theme]
 # main background colors
+showDarkModeToggle=true
   darkModeColor='#333333'
   lightModeColor='white' # #e0dedeff
 # link colors
