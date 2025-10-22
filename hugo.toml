@@ -1,20 +1,54 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'SUGAM'
-theme='sans'
+title = 'SUGO-WEBSITE'
+theme = 'sans'
+
+enableRobotsTXT = true
+summaryLength = 50
+defaultMarkdownHandler = "goldmark"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+
+
 
 [pagination]
   disableAliases = false
-  pagerSize = 6
+  pagerSize = 4
   path = 'page'
+
 
 [taxonomies]
   tag = "tags"
-  category="categories"
+  category = "categories"
   author = "authors"
+
+
 
 [markup]
   [markup.tableOfContents]
     endLevel = 5
     ordered = false
     startLevel = 2
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+
+
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]

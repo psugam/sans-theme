@@ -164,6 +164,9 @@ header h1{
 
 /* For images */
 /* centering */
+figure figcaption{
+  font-size: small;
+}
 figure.center {
   display: block;
   margin-left: auto;

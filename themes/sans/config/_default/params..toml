@@ -1,20 +1,18 @@
-[fonts]
-  siteFont='Arial, Monotype Corsiva'
-
 [homepage]
   onlyPostsInHomePage = false
-  homePageTitle="SUGAM POKAHREL"
+  homePageTitle="SUGAM POKHAREL"
   homePageLogo=true
   homePageTagLine="Welcome to my website"
-  homePageLogoPath='images/sugam.jpg'
-  # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
+  homePageLogoPath='images/sugam.jpg' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageCoverPath='images/img_forest.jpg'
   homePageCoverTitle="Welcome to our blog and portfolio."
   homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
   homePageSummaryLength=500
-  # Manage Posts show in homepage
-  homePagePostDate=true
+  dateFormat="Nov 2, 2003"      # Manage Posts show in homepage 
+  showSocialLinksHome=true
 
+[fonts]
+  siteFont='sans-serif, Monotype Corsiva'
 
 [social]
   facebook = 'https://facebook.com/yourpage'
@@ -37,27 +35,23 @@
   # medium = 'https://medium.com/@yourhandle'
 
 [theme]
-# main background colors
-showDarkModeToggle=true
-  darkModeColor='#333333'
+  darkModeColor='#333333' # main background colors
   lightModeColor='white' # #e0dedeff
-# link colors
-  darkModeLinkColor='#CCCCCC'
+  darkModeLinkColor='#CCCCCC'  # link colors
   lightModeLinkColor='#00e'
-  #  heroSectionColor='#e0dedeff'
-  heroSectionColor='white'
-   darkHeroSectionColor="black"
-
-lightModeButton = "#007bff"
-lightModeButtonText = "#ffffff"
-lightModeButtonAlt = "transparent"
-lightModeButtonAltText = "#007bff"
-
-darkModeButton = "#0d6efd"
-darkModeButtonText = "#ffffff"
-darkModeButtonAlt = "transparent"
-darkModeButtonAltText = "#4d9aff"
-
+  heroSectionColor='white'  #  heroSectionColor='#e0dedeff'
+  darkHeroSectionColor="black"
+  lightModeButton = "#007bff"
+  lightModeButtonText = "#ffffff"
+  lightModeButtonAlt = "transparent"
+  lightModeButtonAltText = "#007bff"
+  darkModeButton = "#0d6efd"
+  darkModeButtonText = "#ffffff"
+  darkModeButtonAlt = "transparent"
+  darkModeButtonAltText = "#4d9aff"
+  showDarkModeToggle=false
+  showSearchIcon=false
+  showGoToTop=true
 
 [toc]
   numberingInTOC=false
@@ -71,7 +65,21 @@ darkModeButtonAltText = "#4d9aff"
   showTags=true
   showCategories=true
   showReadingTime=true
-  dateFormat="2023-11-11"
+  dateFormat="2 Jan 2006"
 
 [rss]
   showRSS=true
+
+[about]
+  showSocialLinksPage=false
+
+[sections]
+  showDate=true
+  showTags=false
+  showCategories=true
+  showAuthors=true
+  showCoverImage=true
+  showSummary=true
+  showReadMore=true
+  summaryLength=500
+  dateFormat="2006-01-02"

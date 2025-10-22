@@ -9,7 +9,8 @@ homepage = "https://github.com/psugam/sans/"
 demosite = "https://psugam.github.io/sans/"
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
-features = ["syntax highlighting", "dark mode", "emoji"]
+features = ["syntax highlighting", "dark mode"]
+min_version="0.146.0"
 
 [author]
   name = "Sugam Pokharel"

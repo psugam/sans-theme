@@ -126,7 +126,7 @@ body.dark-mode #dark-mode-toggle {
 
 <style>
 :root {
-  --site-font: Arial, Monotype Corsiva;
+  --site-font: sans-serif, Monotype Corsiva;
 }
 body {
   font-family: var(--site-font);
@@ -138,7 +138,7 @@ body {
 }
 </style>
 
-<link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
+<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="/index.xml">
 
 
     
@@ -146,7 +146,7 @@ body {
 
 <body>
   <header>
-    <h1 class="site-title"><a href="/">SUGAM</a></h1>
+    <h1 class="site-title"><a href="/">SUGO-WEBSITE</a></h1>
 
 
 <style>
@@ -262,7 +262,7 @@ background-color: white;
       <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="/pdfs/de_bello_gallico_orberg.pdf">File</a>
+      <a href="/images/default.jpg">File</a>
     </li>
     </ul>
     
@@ -573,6 +573,10 @@ background-color: white;
 </style>
 
 
+
+
+
+    
 <button class="search-icon-btn" id="searchIconBtn" aria-label="Search">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -723,6 +727,11 @@ background-color: white;
     });
 </script>
 
+
+
+
+
+
   </header>
   <main>
       
@@ -767,8 +776,6 @@ background-color: white;
     <h1 data-pagefind-meta="title">Post 4</h1>
 
     
-    
-    
 
 <div class="metadata">
 
@@ -798,7 +805,9 @@ background-color: white;
   
 
 
- <time datetime="2023-02-15T10:00:00-07:00">February 15, 2023</time>  
+ 
+ 
+ <time datetime="2023-02-15T10:00:00-07:00">15 Feb 2023</time>  
 
 
 
@@ -822,9 +831,8 @@ position: fixed;
 left: 20px;
 top: 20%;
 font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
-border-right: 1px solid #000000;
 }
-body.dark-mode .toc-container{
+body.dark-mode .toc-body{
 border-right: 1px solid white;
 }
 
@@ -838,6 +846,7 @@ cursor: pointer;
    
   background-color: inherit;
   padding: 0.5rem;
+  border-left: 1px solid black;
 }
 
 
@@ -866,6 +875,12 @@ cursor: pointer;
     position: static;
     border: none !important; 
     margin-left: 0;
+  }
+  
+  
+  body.dark-mode .toc-body{
+  border: none;
+  border-left: 1px solid white;
   }
   .toc-title{
   text-align: left;
@@ -963,6 +978,8 @@ function toggleTOC(titleEl) {
   color: white;
 }
 </style>
+
+
 <div>
   <button onclick="goToTop()" id="goToTopButton">↑</button>
 </div>
@@ -987,6 +1004,10 @@ function toggleTOC(titleEl) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 </script>
+
+
+
+
 
 
 
@@ -1019,13 +1040,6 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
- 
- 
- <div class="rss-icon-box">
-   <a href="/index.xml" target="_blank">
-     <img src="/rss-icon.svg" alt="">
-   </a>
- </div>
  
  
 </div>

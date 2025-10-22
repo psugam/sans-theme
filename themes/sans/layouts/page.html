@@ -66,8 +66,6 @@
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
     {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
 {{ $readingTime = math.Ceil $readingTime }}
 <div class="metadata">
@@ -89,6 +87,8 @@
 
 {{ if not .Site.Params.posts.showDate}}
 {{else}}
+ {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+ {{ $dateHuman := .Date | time.Format .Site.Params.posts.dateFormat }}
  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  
 {{end}}
 

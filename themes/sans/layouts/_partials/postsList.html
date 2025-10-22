@@ -1,3 +1,15 @@
+<style>
+@media screen and (max-width: 768px) {
+ .home-page-main-div{
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
+  
+</style>
+
+
 <div class="home-page-main-div">
   <div id="home-posts-page">
   {{ $homePageMode := .Site.Params.homepage.onlyPostsInHomePage }}
@@ -7,17 +19,17 @@
 
   <!-- This one is for the home page. As for now, the entire content is shown in the homepage with the title. This will be chamged. -->
   {{ $pages := where site.RegularPages "Type" "posts" }} 
-  {{ $paginator := .Paginate $pages }} {{ range $paginator.Pages }}
-  <div data-pagefind-body>
+  {{ $paginator := .Paginate $pages }} 
+  {{ range $paginator.Pages }}
+  <div>
     <a
       href="{{ .RelPermalink }}"
       style="display: inline-block; margin-right: 8px; font-size: large"
-      data-pagefind-meta="title"
     >
       {{ .LinkTitle }}
     </a>
            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    {{ $dateHuman := .Date | time.Format .Site.Params.homepage.dateFormat}}
     <p
       style="display: inline; margin: 0; font-size: smaller"
       data-pagefind-meta="date"

@@ -2,3 +2,5 @@ no shortcodes for footnotes. can work by goldmark parser from default. include a
 
 for pagefinf 
 ``` npx pagefind --site public --output-path public\pagefind```
+
+```hugo server --themesDir ../.. --buildDrafts```

@@ -20,7 +20,7 @@
 
    [[main]]
     name = 'About'
-    pageRef ='/pages/about.md'
+    pageRef ='/pages/about/'
     weight = 50 
 
   [[main]]

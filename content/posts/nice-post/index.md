@@ -28,6 +28,7 @@ Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Ve
 
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
   {{< figure src="/images/404.jpg" width="100%" >}}
+  {{< figure src="img_mountains.jpg" width="100%" caption="in-folder picture" class="center">}}
 
 ### Heading middle
 
@@ -55,7 +56,7 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
   src="/images/sugam.jpg"
   alt="A photograph of Zion National Park"
   caption="Zion National Park"
-  class="ma0 w-75 center"
+  class="center"
   width="50%"
 >}}
 

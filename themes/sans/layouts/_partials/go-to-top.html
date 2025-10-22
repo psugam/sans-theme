@@ -21,6 +21,8 @@
   color: white;
 }
 </style>
+
+{{if .Site.Params.theme.showGoToTop}}
 <div>
   <button onclick="goToTop()" id="goToTopButton">↑</button>
 </div>
@@ -45,3 +47,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 </script>
+{{end}}
+
+
+

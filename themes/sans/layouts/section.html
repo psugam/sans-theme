@@ -43,8 +43,9 @@ margin-bottom: 0;
 </div>
 {{ $pages := where site.RegularPages "Type" "posts" }}
  {{$paginator := .Paginate $pages }} 
- {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} 
- {{ $dateHuman := .Date | time.Format ":date_long"}}
+ {{/*  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}   */}}
+ {{/*  {{ $dateHuman := .Date | time.Format ":date_long"}}  */}}
+ {{/*  {{ $dateHuman := .Date | time.Format .Site.Params.sections.dateFormat}}  */}}
   {{ range $paginator.Pages }}
 
 
@@ -54,16 +55,36 @@ margin-bottom: 0;
 <h2 id="section-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 
 <div class="section-meta-data-div">
-   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time> 
-  {{/*  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}  */}}
-   {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} 
-  {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+
+{{ if .Site.Params.sections.showDate }}
+  {{ $dateMachine := .Date.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date.Format .Site.Params.sections.dateFormat }}
+  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+{{ end }}
+
+
+{{if .Site.Params.sections.showTags}}
+{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{end}}
+
+
+{{if .Site.Params.sections.showCategories}}
+{{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} 
+{{end}}
+
+{{if .Site.Params.sections.showAuthors}}
+{{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+{{end}}
+
+
 </div>
 {{/*  <p>
   {{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500
   }}
 </p>  */}}
 {{/*  same thing just format and remove codeblock  */}}
+
+{{if .Site.Params.sections.showCoverImage}}
 <div id="section-cover-image">
         {{ $cover := "" }}
 
@@ -83,6 +104,8 @@ margin-bottom: 0;
 
 
 </div>
+{{end}}
+
 
 {{/*  {{ $summary := .Summary }}
 {{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}.*?\{\{</.*?>\}\}` "" }}
@@ -93,7 +116,7 @@ margin-bottom: 0;
 {{ $summary = $summary | plainify | truncate 500 }}
 <p>{{ $summary }}</p>  */}}
 
-{{$summaryLength := .Site.Params.homepage.homePageSummaryLength}}
+{{$summaryLength := .Site.Params.sections.summaryLength}}
 
 {{/* Custom summary cleaner to remove HTML & shortcodes */}}
 {{ $plain := .RawContent }}
@@ -112,10 +135,15 @@ margin-bottom: 0;
 {{/* Clean up whitespace */}}
 {{ $plain = $plain | replaceRE `\s+` " " | strings.TrimSpace }}
 {{ $plain = $plain | truncate $summaryLength }}
+{{if .Site.Params.sections.showSummary}}
 <p >{{ $plain }}</p>
+{{end}}
 
 <!-- 500 is letters not words -->
+{{if .Site.Params.sections.showReadMore}}
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
+{{end}}
+
 </div>
 
 

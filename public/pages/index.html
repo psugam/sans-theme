@@ -126,7 +126,7 @@ body.dark-mode #dark-mode-toggle {
 
 <style>
 :root {
-  --site-font: Arial, Monotype Corsiva;
+  --site-font: sans-serif, Monotype Corsiva;
 }
 body {
   font-family: var(--site-font);
@@ -138,7 +138,7 @@ body {
 }
 </style>
 
-<link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
+<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="/index.xml">
 
 
     
@@ -146,7 +146,7 @@ body {
 
 <body>
   <header>
-    <h1 class="site-title"><a href="/">SUGAM</a></h1>
+    <h1 class="site-title"><a href="/">SUGO-WEBSITE</a></h1>
 
 
 <style>
@@ -169,7 +169,7 @@ body {
    
 }
 
- 
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -201,8 +201,10 @@ background-color: white;
     align-items: center;
     background-color: white;
     position: absolute;
-    top: 60px;
-    right: 10px;
+     
+    top: 70%;
+    left:50%;
+    transform: translateX(-50%);
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -260,7 +262,7 @@ background-color: white;
       <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="/pdfs/de_bello_gallico_orberg.pdf">File</a>
+      <a href="/images/default.jpg">File</a>
     </li>
     </ul>
     
@@ -571,6 +573,10 @@ background-color: white;
 </style>
 
 
+
+
+
+    
 <button class="search-icon-btn" id="searchIconBtn" aria-label="Search">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -721,9 +727,15 @@ background-color: white;
     });
 </script>
 
+
+
+
+
+
   </header>
   <main>
-       
+      
+
 <style>
 
   .section-meta-data-div{
@@ -748,14 +760,29 @@ margin-bottom: 0;
  .section-meta-data-div{
   display: block;
 }
-.section-main-box{
+.section-main-box, .pagination{
   max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  }
+    .posts-info-box{
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
 
+<div class="posts-info-box">
 <h1>Pages</h1>
-     
+   
+</div>
+
+  
+ 
+ 
+ 
+  
 
 
 <div class="section-main-box">
@@ -764,9 +791,19 @@ margin-bottom: 0;
 <h2 id="section-post-title"><a href="/posts/nice-post/">Nice Post</a></h2>
 
 <div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
+
+
   
-   
+  
+  <time datetime="2025-11-14T17:48:48&#43;05:45">2025-11-14</time>
+
+
+
+
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -774,8 +811,12 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
-  
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
@@ -785,7 +826,13 @@ margin-bottom: 0;
     </ul>
   </div>
 
+
+
+
+
 </div>
+
+
 
 
 <div id="section-cover-image">
@@ -829,10 +876,18 @@ margin-bottom: 0;
 
 
 
+
+
+
 <p >Anim eiusmod irure incididunt sint cupidatat. Choose what&#39;s best.—Best is what benefits me. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia. …</p>
 
 
+
+
 <p><a href="/posts/nice-post/">Read more...</a></p>
+
+
+</div>
 
 
 
@@ -845,9 +900,19 @@ margin-bottom: 0;
 <h2 id="section-post-title"><a href="/posts/card-post/">Card Post</a></h2>
 
 <div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
+
+
   
-   
+  
+  <time datetime="2025-10-22T17:48:48&#43;05:45">2025-10-22</time>
+
+
+
+
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -855,8 +920,12 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
-  
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
@@ -865,7 +934,13 @@ margin-bottom: 0;
     </ul>
   </div>
 
+
+
+
+
 </div>
+
+
 
 
 <div id="section-cover-image">
@@ -905,10 +980,18 @@ margin-bottom: 0;
 
 
 
+
+
+
 <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolores voluptate perspiciatis iure? Corporis sed dolorum iusto natus hic ipsam sequi, fuga similique incidunt ad, porro maxime magnam quidem velit harum sapiente veniam, libero in nihil voluptas reprehenderit unde ipsum quas? Placeat, necessitatibus deserunt a porro atque cum quod impedit aperiam voluptatibus unde ullam libero in provident quaerat optio adipisci. Dolorem ea saepe quasi dignissimos officia doloribus possimus quo …</p>
 
 
+
+
 <p><a href="/posts/card-post/">Read more...</a></p>
+
+
+</div>
 
 
 
@@ -921,9 +1004,19 @@ margin-bottom: 0;
 <h2 id="section-post-title"><a href="/posts/table-post/">Table Post</a></h2>
 
 <div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
+
+
   
-   
+  
+  <time datetime="2025-10-21T17:48:48&#43;05:45">2025-10-21</time>
+
+
+
+
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -931,8 +1024,12 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
-  
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
@@ -941,7 +1038,13 @@ margin-bottom: 0;
     </ul>
   </div>
 
+
+
+
+
 </div>
+
+
 
 
 <div id="section-cover-image">
@@ -981,10 +1084,18 @@ margin-bottom: 0;
 
 
 
+
+
+
 <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolores voluptate perspiciatis iure? Corporis sed dolorum iusto natus hic ipsam sequi, fuga similique incidunt ad, porro maxime magnam quidem velit harum sapiente veniam, libero in nihil voluptas reprehenderit unde ipsum quas? Placeat, necessitatibus deserunt a porro atque cum quod impedit aperiam voluptatibus unde ullam libero in provident quaerat optio adipisci. Dolorem ea saepe quasi dignissimos officia doloribus possimus quo …</p>
 
 
+
+
 <p><a href="/posts/table-post/">Read more...</a></p>
+
+
+</div>
 
 
 
@@ -997,9 +1108,19 @@ margin-bottom: 0;
 <h2 id="section-post-title"><a href="/posts/hello-post/">Hello-post</a></h2>
 
 <div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
+
+
   
-   
+  
+  <time datetime="2025-10-14T17:48:48&#43;05:45">2025-10-14</time>
+
+
+
+
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -1007,8 +1128,12 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
-  
+
+
+
+
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
@@ -1017,7 +1142,13 @@ margin-bottom: 0;
     </ul>
   </div>
 
+
+
+
+
 </div>
+
+
 
 
 <div id="section-cover-image">
@@ -1061,154 +1192,18 @@ margin-bottom: 0;
 
 
 
+
+
+
 <p >Anim eiusmod irure incididunt sint cupidatat. Choose what&#39;s best.—Best is what benefits me. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia. …</p>
+
+
 
 
 <p><a href="/posts/hello-post/">Read more...</a></p>
 
 
-
-
-
-
-<div class="section-main-box">
-
-
-<h2 id="section-post-title"><a href="/posts/sugam/">Sugam</a></h2>
-
-<div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
-  
-   
-  <div class="page-tags-div">
-    <div id="page-tags-label">Categories:</div>
-    <ul>
-        <li><a href="/categories/category-1/">Category-1</a></li>
-        <li><a href="/categories/category-2/">Category-2</a></li>
-    </ul>
-  </div>
- 
-  
-  <div class="page-tags-div">
-    <div id="page-tags-label">Authors:</div>
-    <ul>
-        <li><a href="/authors/alice/">Alice</a></li>
-        <li><a href="/authors/bob/">Bob</a></li>
-    </ul>
-  </div>
-
 </div>
-
-
-<div id="section-cover-image">
-        
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p >Anim eiusmod irure incididunt sint cupidatat. Choose what&#39;s best.—Best is what benefits me. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia. …</p>
-
-
-<p><a href="/posts/sugam/">Read more...</a></p>
-
-
-
-
-
-
-<div class="section-main-box">
-
-
-<h2 id="section-post-title"><a href="/posts/code-post/">Code post</a></h2>
-
-<div class="section-meta-data-div">
-   <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time> 
-  
-   
- 
-  
-  <div class="page-tags-div">
-    <div id="page-tags-label">Authors:</div>
-    <ul>
-        <li><a href="/authors/sugam/">Sugam</a></li>
-    </ul>
-  </div>
-
-</div>
-
-
-<div id="section-cover-image">
-        
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p ></p>
-
-
-<p><a href="/posts/code-post/">Read more...</a></p>
 
 
 
@@ -1223,6 +1218,12 @@ margin-bottom: 0;
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >2</a
   >
+     
+  <a
+    href="/pages/page/3/"
+    class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+    >3</a
+  >
     
   <a
     href="/pages/page/2/"
@@ -1231,8 +1232,9 @@ margin-bottom: 0;
   >
   
 </nav>
-</div>
- 
+
+
+
   </main>
   <footer>
     <style>
@@ -1260,13 +1262,6 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
- 
- 
- <div class="rss-icon-box">
-   <a href="/index.xml" target="_blank">
-     <img src="/rss-icon.svg" alt="">
-   </a>
- </div>
  
  
 </div>

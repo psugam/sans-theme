@@ -10,38 +10,13 @@
 }
 
 #logo-block{
-
 min-height: 70%;
  display: flex;
     flex-direction: column;
     align-items: center;
 }
-#social-media-links{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-gap: 0.75rem;
-flex-wrap: wrap;
-overflow: visible;
-}
 
-.social-media-icons{
-height: 20px;
-width: 20px;
-}
 
-#social-media-links a{
-height: 25px;
-width: 25px;
-background-color: rgb(230, 236, 236);
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 20%;
-}
-#social-media-links a:hover{
-background-color: rgba(0, 0, 0, 0.464);
-}
 
 #home-page-tag{
 margin-top: 0;
@@ -63,96 +38,6 @@ margin-bottom: 0;}
         {{.Site.Params.homepage.homePageTagline}}
     </h4>
 </div>
-<div id="social-media-links">
-{{if .Site.Params.social.facebook}}
-    <p class="icon-box"><a target="_blank" href="{{ .Site.Params.social.facebook }}">
-        <img class="social-media-icons" src="/social/facebook.svg" alt="Facebook">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.x}}
-    <p><a target="_blank" href="{{ .Site.Params.social.x }}">
-        <img class="social-media-icons" src="/social/x.svg" alt="X (Twitter)">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.instagram}}
-    <p><a target="_blank" href="{{ .Site.Params.social.instagram }}">
-        <img class="social-media-icons" src="/social/instagram.svg" alt="Instagram">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.linkedin}}
-    <p><a target="_blank" href="{{ .Site.Params.social.linkedin }}">
-        <img class="social-media-icons" src="/social/linkedin.svg" alt="LinkedIn">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.youtube}}
-    <p><a target="_blank" href="{{ .Site.Params.social.youtube }}">
-        <img class="social-media-icons" src="/social/youtube.svg" alt="YouTube">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.tiktok}}
-    <p><a target="_blank" href="{{ .Site.Params.social.tiktok }}">
-        <img class="social-media-icons" src="/social/tiktok.svg" alt="TikTok">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.github}}
-    <p><a target="_blank" href="{{ .Site.Params.social.github }}">
-        <img class="social-media-icons" src="/social/github.svg" alt="GitHub">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.reddit}}
-    <p><a target="_blank" href="{{ .Site.Params.social.reddit }}">
-        <img class="social-media-icons" src="/social/reddit.svg" alt="Reddit">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.pinterest}}
-    <p><a target="_blank" href="{{ .Site.Params.social.pinterest }}">
-        <img class="social-media-icons" src="/social/pinterest.svg" alt="Pinterest">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.snapchat}}
-    <p><a target="_blank" href="{{ .Site.Params.social.snapchat }}">
-        <img class="social-media-icons" src="/social/snapchat.svg" alt="Snapchat">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.discord}}
-    <p><a target="_blank" href="{{ .Site.Params.social.discord }}">
-        <img class="social-media-icons" src="/social/discord.svg" alt="Discord">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.twitch}}
-    <p><a target="_blank" href="{{ .Site.Params.social.twitch }}">
-        <img class="social-media-icons" src="/social/twitch.svg" alt="Twitch">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.telegram}}
-    <p><a target="_blank" href="{{ .Site.Params.social.telegram }}">
-        <img class="social-media-icons" src="/social/telegram.svg" alt="Telegram">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.whatsapp}}
-    <p><a target="_blank" href="{{ .Site.Params.social.whatsapp }}">
-        <img class="social-media-icons" src="/social/whatsapp.svg" alt="WhatsApp">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.mastodon}}
-    <p><a target="_blank" href="{{ .Site.Params.social.mastodon }}">
-        <img class="social-media-icons" src="/social/mastodon.svg" alt="Mastodon">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.bluesky}}
-    <p><a target="_blank" href="{{ .Site.Params.social.bluesky }}">
-        <img class="social-media-icons" src="/social/bluesky.svg" alt="Bluesky">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.threads}}
-    <p><a target="_blank" href="{{ .Site.Params.social.threads }}">
-        <img class="social-media-icons" src="/social/threads.svg" alt="Threads">
-    </a></p>
-{{end}}
-{{if .Site.Params.social.medium}}
-    <p><a target="_blank" href="{{ .Site.Params.social.medium }}">
-        <img class="social-media-icons" src="/social/medium.svg" alt="Medium">
-    </a></p>
-{{end}}
-</div>
+
+{{ partial "media-links.html" .}}
 

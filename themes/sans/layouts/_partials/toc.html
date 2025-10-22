@@ -5,9 +5,8 @@ position: fixed;
 left: 20px;
 top: 20%;
 font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
-border-right: 1px solid #000000;
 }
-body.dark-mode .toc-container{
+body.dark-mode .toc-body{
 border-right: 1px solid white;
 }
 
@@ -21,6 +20,7 @@ cursor: pointer;
   /* border: 2px solid green; */
   background-color: inherit;
   padding: 0.5rem;
+  border-left: 1px solid black;
 }
 
 
@@ -49,6 +49,12 @@ cursor: pointer;
     position: static;
     border: none !important; 
     margin-left: 0;
+  }
+  
+  
+  body.dark-mode .toc-body{
+  border: none;
+  border-left: 1px solid white;
   }
   .toc-title{
   text-align: left;

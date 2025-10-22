@@ -1,0 +1,86 @@
+[homepage]
+  onlyPostsInHomePage = true
+  homePageTitle="SUGAM POKHAREL"
+  homePageLogo=true
+  homePageTagLine="Welcome to my website"
+  homePageLogoPath='images/sugam.jpg' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
+  homePageCoverPath='images/img_forest.jpg'
+  homePageCoverTitle="Welcome to our blog and portfolio."
+  homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
+  homePageSummaryLength=500
+  homePagePostDate=true        # Manage Posts show in homepage 
+  dateFormat= "2 Jan 2006"
+  showSocialLinksHome=true
+
+[fonts]
+  siteFont='sans-serif, Monotype Corsiva'
+
+[social]
+  facebook = 'https://facebook.com/yourpage'
+  x = 'https://x.com/yourhandle'
+  # instagram = 'https://instagram.com/yourhandle'
+  # linkedin = 'https://linkedin.com/in/yourprofile'
+  # youtube = 'https://youtube.com/@yourchannel'
+  # tiktok = 'https://tiktok.com/@yourhandle'
+  github = 'https://github.com/yourusername'
+  # reddit = 'https://reddit.com/u/yourusername'
+  # pinterest = 'https://pinterest.com/yourhandle'
+  # snapchat = 'https://snapchat.com/add/yourhandle'
+  # discord = 'https://discord.gg/yourinvite'
+  # twitch = 'https://twitch.tv/yourchannel'
+  # telegram = 'https://t.me/yourhandle'
+  # whatsapp = 'https://wa.me/yourphonenumber'
+  # mastodon = 'https://mastodon.social/@yourhandle'
+  bluesky = 'https://bsky.app/profile/yourhandle'
+  # threads = 'https://threads.net/@yourhandle'
+  # medium = 'https://medium.com/@yourhandle'
+
+[theme]
+  darkModeColor='#333333' # main background colors
+  lightModeColor='white' # #e0dedeff
+  darkModeLinkColor='#CCCCCC'  # link colors
+  lightModeLinkColor='#00e'
+  heroSectionColor='white'  #  heroSectionColor='#e0dedeff'
+  darkHeroSectionColor="black"
+  lightModeButton = "#007bff"
+  lightModeButtonText = "#ffffff"
+  lightModeButtonAlt = "transparent"
+  lightModeButtonAltText = "#007bff"
+  darkModeButton = "#0d6efd"
+  darkModeButtonText = "#ffffff"
+  darkModeButtonAlt = "transparent"
+  darkModeButtonAltText = "#4d9aff"
+  showDarkModeToggle=true
+  showSearchIcon=true
+  showGoToTop=true
+
+[toc]
+  numberingInTOC=false
+  numberingInPost=true
+
+[posts]
+  reading_speed=212
+  showDate=true
+  showWordCount=true
+  showAuthors=true
+  showTags=true
+  showCategories=true
+  showReadingTime=true
+  dateFormat="2 Jan 2006"
+
+[rss]
+  showRSS=false
+
+[about]
+  showSocialLinksPage=true
+
+[sections]
+  showDate=true
+  showTags=false
+  showCategories=true
+  showAuthors=true
+  showCoverImage=true
+  showSummary=true
+  showReadMore=true
+  summaryLength=500
+  dateFormat="2006-01-02"
