@@ -124,6 +124,20 @@ body.dark-mode #dark-mode-toggle {
 
       <script src="/js/main.js"></script>
 
+<style>
+:root {
+  --site-font: Arial, Monotype Corsiva;
+}
+body {
+  font-family: var(--site-font);
+  color: #222;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 768px;
+  background-color: white;
+}
+</style>
+
 <link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
 
 
@@ -711,6 +725,7 @@ background-color: white;
   <main>
        
 <style>
+
   .section-meta-data-div{
  display: flex;
  width: 100%;
@@ -733,11 +748,19 @@ margin-bottom: 0;
  .section-meta-data-div{
   display: block;
 }
+.section-main-box{
+  max-width: 80%;
+  }
 }
 </style>
 
 <h1>Pages</h1>
      
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/nice-post/">Nice Post</a></h2>
 
 <div class="section-meta-data-div">
@@ -812,6 +835,13 @@ margin-bottom: 0;
 <p><a href="/posts/nice-post/">Read more...</a></p>
 
 
+
+
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/card-post/">Card Post</a></h2>
 
 <div class="section-meta-data-div">
@@ -881,6 +911,13 @@ margin-bottom: 0;
 <p><a href="/posts/card-post/">Read more...</a></p>
 
 
+
+
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/table-post/">Table Post</a></h2>
 
 <div class="section-meta-data-div">
@@ -948,6 +985,13 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/table-post/">Read more...</a></p>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/hello-post/">Hello-post</a></h2>
@@ -1023,6 +1067,13 @@ margin-bottom: 0;
 <p><a href="/posts/hello-post/">Read more...</a></p>
 
 
+
+
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/sugam/">Sugam</a></h2>
 
 <div class="section-meta-data-div">
@@ -1092,6 +1143,13 @@ margin-bottom: 0;
 <p><a href="/posts/sugam/">Read more...</a></p>
 
 
+
+
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/code-post/">Code post</a></h2>
 
 <div class="section-meta-data-div">
@@ -1152,6 +1210,8 @@ margin-bottom: 0;
 
 <p><a href="/posts/code-post/">Read more...</a></p>
 
+
+
        
 
 <nav class="pagination flex justify-center gap-2 mt-8">
@@ -1171,6 +1231,7 @@ margin-bottom: 0;
   >
   
 </nav>
+</div>
  
   </main>
   <footer>
@@ -1199,6 +1260,13 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
+ 
+ 
+ <div class="rss-icon-box">
+   <a href="/index.xml" target="_blank">
+     <img src="/rss-icon.svg" alt="">
+   </a>
+ </div>
  
  
 </div>

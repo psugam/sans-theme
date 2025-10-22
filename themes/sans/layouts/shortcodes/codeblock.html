@@ -61,7 +61,7 @@
 <div class="custom-code-block-wrapper" data-lang="{{ $lang }}">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">{{ upper $lang }}</span>
-    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+    <button class="copy-code-btn" onclick="copyCode(this)"> Copy</button>
   </div>
   {{ highlight (trim .Inner "\n\r") $lang "style=monokai" }}
 </div>
@@ -71,7 +71,7 @@
     const wrapper = btn.closest(".custom-code-block-wrapper");
     const code = wrapper.querySelector("code").innerText;
     navigator.clipboard.writeText(code);
-    btn.textContent = "✅ Copied";
-    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+    btn.textContent = " Copied";
+    setTimeout(() => (btn.textContent = " Copy"), 1500);
   }
 </script>

@@ -1,0 +1,13 @@
+<style>
+:root {
+  --site-font: {{ .Site.Params.fonts.siteFont | default "Georgia, serif" }};
+}
+body {
+  font-family: var(--site-font);
+  color: #222;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 768px;
+  background-color: white;
+}
+</style>

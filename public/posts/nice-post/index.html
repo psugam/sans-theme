@@ -124,6 +124,20 @@ body.dark-mode #dark-mode-toggle {
 
       <script src="/js/main.js"></script>
 
+<style>
+:root {
+  --site-font: Arial, Monotype Corsiva;
+}
+body {
+  font-family: var(--site-font);
+  color: #222;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 768px;
+  background-color: white;
+}
+</style>
+
 <link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
 
 
@@ -723,8 +737,22 @@ background-color: white;
   .caption{
   text-align: center;
   }
+
+
+  @media screen and (max-width: 768px) {
+ main{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+}
+
 </style>
 
+
+
+  
+  
   
   
   
@@ -771,6 +799,7 @@ background-color: white;
 
 
 
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -778,6 +807,7 @@ background-color: white;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
 
 
 
@@ -792,6 +822,7 @@ background-color: white;
     </ul>
   </div>
 
+
   
 
 
@@ -799,7 +830,7 @@ background-color: white;
 
 
 
- <p>Words: 1391</p> 
+ <p>Words: 1390</p> 
 
 
 
@@ -1100,7 +1131,7 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 <div class="custom-code-block-wrapper" data-lang="console">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">CONSOLE</span>
-    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+    <button class="copy-code-btn" onclick="copyCode(this)"> Copy</button>
   </div>
   <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span> git commit -m &#34;Added table shortcode&#34;
 </span></span></code></pre></div>
@@ -1111,8 +1142,8 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
     const wrapper = btn.closest(".custom-code-block-wrapper");
     const code = wrapper.querySelector("code").innerText;
     navigator.clipboard.writeText(code);
-    btn.textContent = "✅ Copied";
-    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+    btn.textContent = " Copied";
+    setTimeout(() => (btn.textContent = " Copy"), 1500);
   }
 </script>
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!</p>
@@ -1191,6 +1222,9 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 </script>
 
 
+
+
+
   </main>
   <footer>
     <style>
@@ -1218,6 +1252,13 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
+ 
+ 
+ <div class="rss-icon-box">
+   <a href="/index.xml" target="_blank">
+     <img src="/rss-icon.svg" alt="">
+   </a>
+ </div>
  
  
 </div>

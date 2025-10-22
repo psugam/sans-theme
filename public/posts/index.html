@@ -124,6 +124,20 @@ body.dark-mode #dark-mode-toggle {
 
       <script src="/js/main.js"></script>
 
+<style>
+:root {
+  --site-font: Arial, Monotype Corsiva;
+}
+body {
+  font-family: var(--site-font);
+  color: #222;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 768px;
+  background-color: white;
+}
+</style>
+
 <link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
 
 
@@ -709,8 +723,9 @@ background-color: white;
 
   </header>
   <main>
-       
+      
 <style>
+
   .section-meta-data-div{
  display: flex;
  width: 100%;
@@ -733,6 +748,11 @@ margin-bottom: 0;
  .section-meta-data-div{
   display: block;
 }
+.section-main-box, .pagination{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  }
 }
 </style>
 
@@ -740,6 +760,11 @@ margin-bottom: 0;
 <h2 id="this-is-for-the-posts-page">This is for the posts page</h2>
 <p>Tempor est exercitation ad qui pariatur quis adipisicing aliquip nisi ea consequat ipsum occaecat. Nostrud consequat ullamco laboris fugiat esse esse adipisicing velit laborum ipsum incididunt ut enim. Dolor pariatur nulla quis fugiat dolore excepteur. Aliquip ad quis aliqua enim do consequat.</p>
      
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="/posts/nice-post/">Nice Post</a></h2>
 
 <div class="section-meta-data-div">
@@ -753,6 +778,7 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
   
   <div class="page-tags-div">
@@ -763,6 +789,7 @@ margin-bottom: 0;
         <li><a href="/authors/sugam/">Sugam</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -812,6 +839,14 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/nice-post/">Read more...</a></p>
+</div>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/card-post/">Card Post</a></h2>
@@ -827,6 +862,7 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
   
   <div class="page-tags-div">
@@ -836,6 +872,7 @@ margin-bottom: 0;
         <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -881,6 +918,14 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/card-post/">Read more...</a></p>
+</div>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/table-post/">Table Post</a></h2>
@@ -896,6 +941,7 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
   
   <div class="page-tags-div">
@@ -905,6 +951,7 @@ margin-bottom: 0;
         <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -950,6 +997,14 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/table-post/">Read more...</a></p>
+</div>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/hello-post/">Hello-post</a></h2>
@@ -965,6 +1020,7 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
   
   <div class="page-tags-div">
@@ -974,6 +1030,7 @@ margin-bottom: 0;
         <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -1023,6 +1080,14 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/hello-post/">Read more...</a></p>
+</div>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/sugam/">Sugam</a></h2>
@@ -1038,6 +1103,7 @@ margin-bottom: 0;
         <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
+
  
   
   <div class="page-tags-div">
@@ -1047,6 +1113,7 @@ margin-bottom: 0;
         <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -1092,6 +1159,14 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/sugam/">Read more...</a></p>
+</div>
+
+
+
+
+
+
+<div class="section-main-box">
 
 
 <h2 id="section-post-title"><a href="/posts/code-post/">Code post</a></h2>
@@ -1100,6 +1175,7 @@ margin-bottom: 0;
    <time datetime="2023-01-01T08:30:00-07:00">January 1, 2023</time> 
   
    
+
  
   
   <div class="page-tags-div">
@@ -1108,6 +1184,7 @@ margin-bottom: 0;
         <li><a href="/authors/sugam/">Sugam</a></li>
     </ul>
   </div>
+
 
 </div>
 
@@ -1153,6 +1230,9 @@ margin-bottom: 0;
 
 
 <p><a href="/posts/code-post/">Read more...</a></p>
+</div>
+
+
 
        
 
@@ -1173,7 +1253,9 @@ margin-bottom: 0;
   >
   
 </nav>
- 
+
+
+
   </main>
   <footer>
     <style>
@@ -1201,6 +1283,13 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
+ 
+ 
+ <div class="rss-icon-box">
+   <a href="/index.xml" target="_blank">
+     <img src="/rss-icon.svg" alt="">
+   </a>
+ </div>
  
  
 </div>

@@ -124,6 +124,20 @@ body.dark-mode #dark-mode-toggle {
 
       <script src="/js/main.js"></script>
 
+<style>
+:root {
+  --site-font: Arial, Monotype Corsiva;
+}
+body {
+  font-family: var(--site-font);
+  color: #222;
+  line-height: 1.5;
+  margin: 1rem auto;
+  max-width: 768px;
+  background-color: white;
+}
+</style>
+
 <link rel="alternate" type="application/rss+xml" title="SUGAM RSS Feed" href="/index.xml">
 
 
@@ -727,6 +741,10 @@ background-color: white;
 
 
 
+  
+  
+
+
 
 
 
@@ -777,7 +795,7 @@ background-color: white;
 
 
 
- <p>Words: 181</p> 
+ <p>Words: 179</p> 
 
 
 
@@ -952,7 +970,7 @@ function toggleTOC(titleEl) {
 <div class="custom-code-block-wrapper" data-lang="python">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">PYTHON</span>
-    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+    <button class="copy-code-btn" onclick="copyCode(this)"> Copy</button>
   </div>
   <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet</span>(name):
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello, </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">!&#34;</span>)</span></span></code></pre></div>
@@ -963,8 +981,8 @@ function toggleTOC(titleEl) {
     const wrapper = btn.closest(".custom-code-block-wrapper");
     const code = wrapper.querySelector("code").innerText;
     navigator.clipboard.writeText(code);
-    btn.textContent = "✅ Copied";
-    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+    btn.textContent = " Copied";
+    setTimeout(() => (btn.textContent = " Copy"), 1500);
   }
 </script>
 <style>
@@ -1028,7 +1046,7 @@ function toggleTOC(titleEl) {
 <div class="custom-code-block-wrapper" data-lang="html">
   <div class="custom-code-toolbar">
     <span class="code-lang-label">HTML</span>
-    <button class="copy-code-btn" onclick="copyCode(this)">📋 Copy</button>
+    <button class="copy-code-btn" onclick="copyCode(this)"> Copy</button>
   </div>
   <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- $lang := .Get &#34;lang&#34; | default &#34;text&#34; -}}
 </span></span><span style="display:flex;"><span>
@@ -1113,8 +1131,8 @@ function toggleTOC(titleEl) {
     const wrapper = btn.closest(".custom-code-block-wrapper");
     const code = wrapper.querySelector("code").innerText;
     navigator.clipboard.writeText(code);
-    btn.textContent = "✅ Copied";
-    setTimeout(() => (btn.textContent = "📋 Copy"), 1500);
+    btn.textContent = " Copied";
+    setTimeout(() => (btn.textContent = " Copy"), 1500);
   }
 </script>
 
@@ -1188,6 +1206,9 @@ function toggleTOC(titleEl) {
 </script>
 
 
+
+
+
   </main>
   <footer>
     <style>
@@ -1215,6 +1236,13 @@ margin-top: 1rem;
   Copyright 2025. All rights reserved.
   <br />
   Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/psugam" target="_blank">Sans</a>
+ 
+ 
+ <div class="rss-icon-box">
+   <a href="/index.xml" target="_blank">
+     <img src="/rss-icon.svg" alt="">
+   </a>
+ </div>
  
  
 </div>

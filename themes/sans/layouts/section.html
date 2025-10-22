@@ -1,5 +1,6 @@
-{{ define "main" }} {{/* This is the archives page */}}
+{{ define "main" }}
 <style>
+
   .section-meta-data-div{
  display: flex;
  width: 100%;
@@ -22,6 +23,11 @@ margin-bottom: 0;
  .section-meta-data-div{
   display: block;
 }
+.section-main-box, .pagination{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  }
 }
 </style>
 
@@ -30,6 +36,11 @@ margin-bottom: 0;
 $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format ":date_long"
 }} {{ range $paginator.Pages }}
+
+
+<div class="section-main-box">
+
+
 <h2 id="section-post-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 
 <div class="section-meta-data-div">
@@ -95,6 +106,9 @@ $paginator := .Paginate $pages }} {{ $dateMachine := .Date | time.Format
 
 <!-- 500 is letters not words -->
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
+</div>
+
+
 
 {{ end }} {{ if gt $paginator.TotalPages 1 }} {{/* Compute start and end page
 numbers */}} {{ $current := $paginator.PageNumber }} {{ $start := sub $current 2
@@ -125,4 +139,6 @@ if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
   >
   {{ end }}
 </nav>
-{{ end }} {{ end }}
+
+{{ end }}
+{{ end }}

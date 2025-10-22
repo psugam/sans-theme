@@ -12,8 +12,28 @@
   .caption{
   text-align: center;
   }
+
+
+  @media screen and (max-width: 768px) {
+ main{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+}
+
 </style>
-{{ with .Params.cover }}
+
+{{ $typeOfPage := .Params.type }}
+{{ if eq $typeOfPage "page" }}
+{{/*  for non post page doesn't show any frontmatter  */}}
+<h1 data-pagefind-meta="title">{{ .Title }}</h1>
+  <div class="main-text-container">
+  {{ .Content }}
+</div>
+  {{else}}
+  {{/*  for normal posts page  */}}
+  {{ with .Params.cover }}
   {{ $cover := $.Resources.GetMatch .image }}
   {{ $displayImage := $.Params.cover.imageDisplay | default true}}
   
@@ -114,4 +134,8 @@
 
 {{partial "go-to-top.html" .}}
 {{ end }}
+
+
+{{ end }}
+
 

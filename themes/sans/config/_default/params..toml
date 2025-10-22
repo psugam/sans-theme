@@ -1,7 +1,10 @@
+[fonts]
+  siteFont='Arial, Monotype Corsiva'
+
 [homepage]
   onlyPostsInHomePage = false
   homePageTitle="SUGAM POKAHREL"
-  homePageLogo=false
+  homePageLogo=true
   homePageTagLine="Welcome to my website"
   homePageLogoPath='images/sugam.jpg'
   # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
@@ -41,7 +44,8 @@ showDarkModeToggle=true
 # link colors
   darkModeLinkColor='#CCCCCC'
   lightModeLinkColor='#00e'
-   heroSectionColor='#e0dedeff'
+  #  heroSectionColor='#e0dedeff'
+  heroSectionColor='white'
    darkHeroSectionColor="black"
 
 lightModeButton = "#007bff"
@@ -70,4 +74,4 @@ darkModeButtonAltText = "#4d9aff"
   dateFormat="2023-11-11"
 
 [rss]
-  showRSS=false
+  showRSS=true
