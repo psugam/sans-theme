@@ -779,84 +779,941 @@ background-color: white;
   <div id="home-posts-page">
   
   
-   
-      <h2 id="this-is-for-the-home-page">This is for the home page</h2>
-<p>Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.</p>
- 
+  
+
+
+  <div id="home-intro-page">
+    <div class="home-intro-center">
+      
+        
+
+
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Welcome to our blog and portfolio.</h1>
+      <p class="hero-subtitle">Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM</p>
+      <div class="hero-cta">
+        <a href="/pages" class="btn btn-primary">Explore Articles</a>
+        <a href="/pages/about" class="btn btn-secondary">About Us</a>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img src="/images/img_forest.jpg" alt="Hero" />
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">11</div>
+      <div class="stat-label">Articles Published</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Contributing Authors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Topics Covered</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="newsletter-section">
+  <div class="newsletter-content">
+    <h2>Stay Updated</h2>
+    <p>
+      Subscribe to our newsletter and never miss a post.
+      Get the latest articles delivered directly to your inbox.
+    </p>
+
+    
+    <form
+      name="newsletter"
+      method="POST"
+      data-netlify="true"
+      class="newsletter-form"
+      id="newsletter-form"
+    >
+      <input
+        type="email"
+        name="email"
+        id="newsletter-email"
+        placeholder="Enter your email"
+        required
+      />
+      <button type="submit" class="btn btn-primary" id="newsletter-submit">
+        Subscribe
+      </button>
+
+      
+      <div style="display:none">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </div>
+
+      
+      <input type="hidden" name="form-name" value="newsletter" />
+    </form>
+
+    
+    <p id="newsletter-message" class="newsletter-message" style="display:none;"></p>
+  </div>
+</section>
+
+
+
+<section class="recent-posts-section">
+  <div class="section-header">
+    <h2>Recent Posts</h2>
+    <p>Latest articles from our community</p>
+  </div>
 
   
-   
-   
   
-  <div>
-    <a
-      href="/posts/custom-url-slug/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-    >
-      Post 2
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      15 Feb 2023
-    </p>
-  </div>
-  
-  
-  <div>
-    <a
-      href="/posts/custom-url-slug-4/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-    >
-      Post 4
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      15 Feb 2023
-    </p>
-  </div>
-  
-  
-  <div>
-    <a
-      href="/posts/post-1/"
-      style="display: inline-block; margin-right: 8px; font-size: large"
-    >
-      Post 1
-    </a>
-           
-    
-    <p
-      style="display: inline; margin: 0; font-size: smaller"
-      data-pagefind-meta="date"
-    >
-      15 Jan 2023
-    </p>
-  </div>
-  
-  
-  
-       
 
+  <div class="posts-grid">
+    
+    <article class="post-card">
+      
+      
+      
+      
+        
+      
+      
+      <div class="post-image">
+        <a href="http://localhost:1313/posts/sugam/">
+          <img src="/images/default.jpg" alt="Sugam" loading="lazy" />
+        </a>
+      </div>
+      
+
+      <div class="post-content">
+        <div class="post-meta">
+          
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
+    </ul>
+  </div>
+
+
+          <span class="post-date">
+            
+            October 14, 2025
+          </span>
+        </div>
+
+        <h3 class="post-title">
+          <a href="http://localhost:1313/posts/sugam/">Sugam</a>
+        </h3>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="post-summary">Anim eiusmod irure incididunt sint cupidatat. Choose what&#39;s best.—Best is what benefits me. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. …</p>
+
+
+        <div class="post-footer">
+          
+          
+          <span class="reading-time">2 min read</span>
+          <a href="http://localhost:1313/posts/sugam/" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="post-card">
+      
+      
+      
+      
+        
+      
+      
+      <div class="post-image">
+        <a href="http://localhost:1313/posts/code-post/">
+          <img src="/images/default.jpg" alt="Code post" loading="lazy" />
+        </a>
+      </div>
+      
+
+      <div class="post-content">
+        <div class="post-meta">
+          
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/sugam/">Sugam</a></li>
+    </ul>
+  </div>
+
+
+          <span class="post-date">
+            
+            June 4, 2025
+          </span>
+        </div>
+
+        <h3 class="post-title">
+          <a href="http://localhost:1313/posts/code-post/">Code post</a>
+        </h3>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="post-summary"></p>
+
+
+        <div class="post-footer">
+          
+          
+          <span class="reading-time">2 min read</span>
+          <a href="http://localhost:1313/posts/code-post/" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="post-card">
+      
+      
+      
+      
+        
+      
+      
+      <div class="post-image">
+        <a href="http://localhost:1313/posts/multiple-columns/">
+          <img src="/images/default.jpg" alt="Multiple Column" loading="lazy" />
+        </a>
+      </div>
+      
+
+      <div class="post-content">
+        <div class="post-meta">
+          
+  <div class="page-tags-div">
+    <div id="page-tags-label">Authors:</div>
+    <ul>
+        <li><a href="/authors/sugam/">Sugam</a></li>
+    </ul>
+  </div>
+
+
+          <span class="post-date">
+            
+            June 4, 2025
+          </span>
+        </div>
+
+        <h3 class="post-title">
+          <a href="http://localhost:1313/posts/multiple-columns/">Multiple Column</a>
+        </h3>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="post-summary">Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla …</p>
+
+
+        <div class="post-footer">
+          
+          
+          <span class="reading-time">8 min read</span>
+          <a href="http://localhost:1313/posts/multiple-columns/" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="post-card">
+      
+      
+        
+      
+      
+      
+      
+      <div class="post-image">
+        <a href="http://localhost:1313/posts/post-3/">
+          <img src="/posts/post-3/bryce-canyon.jpg" alt="Post 3" loading="lazy" />
+        </a>
+      </div>
+      
+
+      <div class="post-content">
+        <div class="post-meta">
+          
+
+
+          <span class="post-date">
+            
+            March 15, 2023
+          </span>
+        </div>
+
+        <h3 class="post-title">
+          <a href="http://localhost:1313/posts/post-3/">Post 3</a>
+        </h3>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="post-summary">Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua …</p>
+
+
+        <div class="post-footer">
+          
+          
+          <span class="reading-time">1 min read</span>
+          <a href="http://localhost:1313/posts/post-3/" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </article>
+    
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
   <nav class="pagination">
     
-    <a href="/" class="page-link">← Prev</a>
-       
-    <a href="/" class="page-link">1</a>
-       
-    <span class="page-link active">2</span>
+    <a href="/" class="pagination-btn">← Prev</a>
+    
+    
+    <div class="pagination-numbers">
       
+      
+      
+      <a href="/" class="pagination-number">1</a>
+      
+      
+      
+      
+      <span class="pagination-number active">2</span>
+      
+      
+      
+      
+      <a href="/page/3/" class="pagination-number">3</a>
+      
+      
+    </div>
+    
+    
+    <a href="/page/3/" class="pagination-btn">Next →</a>
+    
   </nav>
-   
+  
+</section>
+
+
+<style>
+ 
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent: #0d6efd;
+  --accent-hover: #0b5ed7;
+  --border: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+      --light-color: white;
+    --dark-color: #333333;
+    --light-link-color: #00e;
+    --dark-link-color: #CCCCCC;
+    --hero-section-color : white;
+    --dark-hero-section-color : black;
+}
+
+body.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --accent: #4d9aff;
+  --accent-hover: #6baeff;
+  --border: #3d3d3d;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+ 
+.hero-section{
+  background-color: var(--hero-section-color);
+  border-radius: 5rem;
+  color: inherit;
+  padding: 6rem 2rem;
+  margin: 0;
+  width: 85vw;
+  max-width: 90%;
+}
+
+@media (max-width: 768px) {
+.hero-section{
+max-width:80%
+}
+.hero-image img{
+display: none;
+}
+}
+
+
+body.dark-mode .hero-section{
+background-color: var(--dark-hero-section-color);
+}
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --btn-primary-bg: #007bff;
+  --btn-primary-color: #ffffff;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-color: #007bff;
+}
+
+body.dark-mode {
+  --btn-primary-bg: #0d6efd;
+  --btn-primary-color: #ffffff;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-color: #4d9aff;
+}
+
+ 
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-color);
+  border: 2px solid var(--btn-secondary-color);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+ 
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.category-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-count {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+ 
+.stats-section {
+  background: var(--bg-secondary);
+  max-width: 100%;
+  margin-top: 3rem;
+  border-radius: 5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+ 
+.newsletter-section {
+ background-color: inherit;
+  color: inherit;
+  text-align: center;
+  max-width: 100%;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  border:1px solid black;
+  font-size: 1rem;
+  background: white;
+  color: #212529;
+}
+
+.newsletter-form button {
+  white-space: nowrap;
+}
+
+ 
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--shadow-lg);
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-image img {
+  transform: scale(1.05);
+}
+
+.post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.post-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: var(--accent);
+}
+
+.post-summary {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.reading-time {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: var(--accent-hover);
+}
+
+  
+
+  
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.pagination-btn,
+.pagination-number {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.pagination-btn:hover,
+.pagination-number:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-number.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+ 
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+}
+</style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("newsletter-form");
+  const message = document.getElementById("newsletter-message");
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: data
+      });
+      form.reset();
+      message.style.display = "block";
+      message.textContent = "Thanks for subscribing!";
+      message.style.color = "var(--accent, #007bff)";
+    } catch (error) {
+      message.style.display = "block";
+      message.textContent = "❌ Something went wrong. Please try again.";
+      message.style.color = "red";
+    }
+  });
+});
+</script>
+      
+    </div>
   </div>
   
 </div>

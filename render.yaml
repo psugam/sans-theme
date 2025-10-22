@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hugo-site
+    env: static
+    buildCommand: hugo --minify && npx pagefind --site public --output-path public/pagefind
+    staticPublishPath: public
+    envVars:
+      - key: HUGO_VERSION
+        value: 0.146.0
+      - key: NODE_VERSION
+        value: 20

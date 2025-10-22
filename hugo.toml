@@ -2,6 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
 theme = 'sans'
+publishDir = "public"
 
 enableRobotsTXT = true
 summaryLength = 50

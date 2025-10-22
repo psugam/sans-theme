@@ -1,6 +1,6 @@
 +++
 date = '2025-11-14T17:48:48+05:45'
-draft = true
+draft = false
 title = 'Nice Post'
 tags = ['red','green']
 authors = ['Alice', 'Bob', 'Sugam']

@@ -1,7 +1,7 @@
 [homepage]
-  onlyPostsInHomePage = true
+  onlyPostsInHomePage = false
   homePageTitle="SUGAM POKHAREL"
-  homePageLogo=true
+  homePageLogo=false
   homePageTagLine="Welcome to my website"
   homePageLogoPath='images/sugam.jpg' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageCoverPath='images/img_forest.jpg'

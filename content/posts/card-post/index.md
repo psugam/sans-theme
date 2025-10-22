@@ -1,6 +1,6 @@
 +++
 date = '2025-10-22T17:48:48+05:45'
-draft = true
+draft = false
 title = 'Card Post'
 tags = ['red','green']
 authors = ['Alice', 'Bob']
