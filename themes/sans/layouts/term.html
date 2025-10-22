@@ -1,7 +1,8 @@
 {{ define "main" }}
+<div class="individual-term-box">
   <h1>{{ .Title }}</h1>
   <!-- This is for individual pages inside the term. So, not for Tags but for specific Green , blue tags etc. -->
-  {{ .Content }}
+  {{ .Content }} 
   {{ range .Pages }}
    <!-- <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div> -->
       <div>
@@ -10,4 +11,6 @@
 </a>
 </div>
   {{ end }}
+</div>
+
 {{ end }}

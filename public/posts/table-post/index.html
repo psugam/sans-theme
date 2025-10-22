@@ -169,7 +169,7 @@ body {
    
 }
 
- 
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -201,8 +201,10 @@ background-color: white;
     align-items: center;
     background-color: white;
     position: absolute;
-    top: 60px;
-    right: 10px;
+     
+    top: 70%;
+    left:50%;
+    transform: translateX(-50%);
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -737,6 +739,16 @@ background-color: white;
   .caption{
   text-align: center;
   }
+
+
+  @media screen and (max-width: 768px) {
+ main{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+}
+
 </style>
 
 
@@ -774,6 +786,7 @@ background-color: white;
 
 
 
+
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
@@ -786,6 +799,7 @@ background-color: white;
 
 
 
+
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
@@ -793,6 +807,7 @@ background-color: white;
         <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
+
 
   
 
@@ -817,7 +832,6 @@ background-color: white;
     <style>
 
 .toc-container{
- 
 position: fixed;
 left: 20px;
 top: 20%;
@@ -863,8 +877,9 @@ cursor: pointer;
 
 @media only screen and (max-width: 1250px) {
   .toc-container {
-    position: relative;
-    border: none !important;
+    position: static;
+    border: none !important; 
+    margin-left: 0;
   }
   .toc-title{
   text-align: left;

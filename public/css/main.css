@@ -212,4 +212,10 @@ overflow: auto;
   margin-right: auto;
   margin-left: auto;
 }
+
+  .individual-term-box{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  }
 }
