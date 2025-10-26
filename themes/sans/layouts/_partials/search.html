@@ -316,7 +316,6 @@
 </div>
 
 <!-- Hidden Pagefind UI -->
-<!-- Hidden Pagefind UI -->
 <script src="{{ absURL "pagefind/pagefind-ui.js" }}"></script>
 <div id="search"></div>
 
@@ -398,7 +397,7 @@
 
             try {
                 // Use Pagefind search API
-                const pagefind = await import('/pagefind/pagefind.js');
+                const pagefind = await import('{{ absURL "pagefind/pagefind.js" }}');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -443,7 +442,6 @@
         });
     });
 </script>
-
 
 {{end}}
 

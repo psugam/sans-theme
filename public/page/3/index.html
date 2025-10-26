@@ -602,7 +602,6 @@ background-color: white;
 </div>
 
 
-
 <script src="//localhost:1313/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 
@@ -684,7 +683,7 @@ background-color: white;
 
             try {
                 
-                const pagefind = await import('/pagefind/pagefind.js');
+                const pagefind = await import('\/\/localhost:1313\/pagefind\/pagefind.js');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -729,7 +728,6 @@ background-color: white;
         });
     });
 </script>
-
 
 
 
