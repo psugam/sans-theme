@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on SUGO-WEBSITE</title>
-    <link>http://localhost:1313/sans-theme/authors/</link>
+    <link>http://localhost:1313/authors/</link>
     <description>Recent content in Authors on SUGO-WEBSITE</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Oct 2025 17:48:48 +0545</lastBuildDate>
-    <atom:link href="http://localhost:1313/sans-theme/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Oct 2025 17:48:48 +0545</lastBuildDate>
+    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alice</title>
-      <link>http://localhost:1313/sans-theme/authors/alice/</link>
-      <pubDate>Wed, 22 Oct 2025 17:48:48 +0545</pubDate>
-      <guid>http://localhost:1313/sans-theme/authors/alice/</guid>
+      <link>http://localhost:1313/authors/alice/</link>
+      <pubDate>Sat, 25 Oct 2025 17:48:48 +0545</pubDate>
+      <guid>http://localhost:1313/authors/alice/</guid>
       <description></description>
     </item>
     <item>
       <title>Bob</title>
-      <link>http://localhost:1313/sans-theme/authors/bob/</link>
-      <pubDate>Wed, 22 Oct 2025 17:48:48 +0545</pubDate>
-      <guid>http://localhost:1313/sans-theme/authors/bob/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ram</title>
-      <link>http://localhost:1313/sans-theme/authors/ram/</link>
-      <pubDate>Wed, 22 Oct 2025 17:48:48 +0545</pubDate>
-      <guid>http://localhost:1313/sans-theme/authors/ram/</guid>
+      <link>http://localhost:1313/authors/bob/</link>
+      <pubDate>Sat, 25 Oct 2025 17:48:48 +0545</pubDate>
+      <guid>http://localhost:1313/authors/bob/</guid>
       <description></description>
     </item>
     <item>
       <title>Sugam</title>
-      <link>http://localhost:1313/sans-theme/authors/sugam/</link>
-      <pubDate>Wed, 04 Jun 2025 18:07:33 +0545</pubDate>
-      <guid>http://localhost:1313/sans-theme/authors/sugam/</guid>
+      <link>http://localhost:1313/authors/sugam/</link>
+      <pubDate>Sat, 25 Oct 2025 17:48:48 +0545</pubDate>
+      <guid>http://localhost:1313/authors/sugam/</guid>
       <description>&lt;p&gt;All posts related to the color Sugam-1, design principles, and aesthetics.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ram</title>
+      <link>http://localhost:1313/authors/ram/</link>
+      <pubDate>Wed, 22 Oct 2025 17:48:48 +0545</pubDate>
+      <guid>http://localhost:1313/authors/ram/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -1,4 +1,4 @@
-baseURL = 'https://www.sugam-pokharel.com.np/sans-theme/'
+baseURL = 'https://www.sugam-pokharel.com.np/'
 languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
 theme = 'sans'
