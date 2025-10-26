@@ -316,7 +316,8 @@
 </div>
 
 <!-- Hidden Pagefind UI -->
-<script src="/pagefind/pagefind-ui.js"></script>
+<!-- Hidden Pagefind UI -->
+<script src="{{ absURL "pagefind/pagefind-ui.js" }}"></script>
 <div id="search"></div>
 
 <script>
@@ -324,7 +325,8 @@
         // Initialize Pagefind
         new PagefindUI({ 
             element: "#search", 
-            showSubResults: true 
+            showSubResults: true,
+            bundlePath: "{{ absURL "pagefind/" }}"
         });
 
         // Get elements
