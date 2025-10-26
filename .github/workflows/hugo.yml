@@ -63,7 +63,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --config config.github.toml
+          hugo --minify --config hugo.github.toml
 
       - name: Run Pagefind indexing
         run: |
