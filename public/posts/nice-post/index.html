@@ -764,6 +764,7 @@ background-color: white;
 
 
 
+
   
   
   
@@ -786,9 +787,7 @@ background-color: white;
 
 
 
-
-
-  <div class="has-toc">
+  
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">Nice Post</h1>
 
@@ -843,7 +842,7 @@ background-color: white;
 
 
 
- <p>Words: 1396</p> 
+ <p>Words: 1400</p> 
 
 
 
@@ -856,145 +855,19 @@ background-color: white;
   
 </div>
 
-    <style>
-
-.toc-container{
-position: fixed;
-left: 20px;
-top: 20%;
-font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
-}
-body.dark-mode .toc-body{
-border-right: 1px solid white;
-}
-
-.toc-title{
-background-color: inherit;
-font-size: x-large;
-cursor: pointer;
- user-select: none;
-}
-  .toc-body{
-   
-  background-color: inherit;
-  padding: 0.5rem;
-  border-left: 1px solid black;
-}
-
-
- 
-.toc-body ul{
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.toc-body li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin: 0.25rem 0;
-}
-
-.toc-body li::before {
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  color: #333;
-}
-
-@media only screen and (max-width: 1250px) {
-  .toc-container {
-    position: static;
-    border: none !important; 
-    margin-left: 0;
-  }
-  
-  
-  body.dark-mode .toc-body{
-  border: none;
-  border-left: 1px solid white;
-  }
-  .toc-title{
-  text-align: left;
-  padding-left: 0;
-  }
-}
-
-</style>
 
 
 
 
 
-<style>
 
-
-  .main-text-container {
-        counter-reset: h2counter;
-    }
-    .main-text-container h1 {
-        counter-reset: h2counter;
-    }
-.main-text-container    h2:before {
-        content: counter(h2counter) ".\0000a0\0000a0";
-        counter-increment: h2counter;
-        counter-reset: h3counter;
-    }
-.main-text-container    h3:before {
-        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
-        counter-increment: h3counter;
-        counter-reset:h4counter;
-    }
-.main-text-container h4:before{
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
-  counter-increment:h4counter;
-}
-</style>
-
-
-<div class="toc-container">
-    <div class="toc-title" onclick="toggleTOC(this)">Contents ▾</div>
-    <div class="toc-body">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#heading-top">HEADING TOP</a>
-      <ul>
-        <li><a href="#heading-middle">Heading middle</a></li>
-      </ul>
-    </li>
-    <li><a href="#another-title">ANOTHER TITLE</a>
-      <ul>
-        <li><a href="#heading-another">Heading Another</a>
-          <ul>
-            <li><a href="#low-header">Low Header</a>
-              <ul>
-                <li><a href="#fourth-header">Fourth Header</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-
-<script>
-function toggleTOC(titleEl) {
-  const body = titleEl.nextElementSibling;
-  body.style.display = (body.style.display === 'none') ? 'block' : 'none';
-  titleEl.textContent = body.style.display === 'none' ? 'Contents ▸' : 'Contents ▾';
-}
-</script>
 
 
 <div class="main-text-container">
   <h2 id="heading-top">HEADING TOP</h2>
 <p>Anim eiusmod irure incididunt sint cupidatat. Choose what&rsquo;s best.—Best is what benefits me.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
 Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.</p>
-<blockquote class="custom-quote">
+<p><blockquote class="custom-quote">
   <p class="quote-open">“  </p>
     <p class="quote-body">Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.</p>
      <p class="quote-close">   ”</p><div class="source-line">
@@ -1027,13 +900,14 @@ display: inline;
 </style>
 
 
+<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 
 <details class="collapse" id="see-full-error-log">
   <summary>See full error log</summary>
   <div class="collapse-content">
     Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
   </div>
-</details>
+</details></p>
 <p>Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
 <figure class="right"><img src="/images/default.jpg"
       alt="image folder picture" width="50%"><figcaption>
@@ -1187,6 +1061,9 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 <ol>
 <li id="fn:1">
 <p>Hays translation&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Hello Honey Bunny&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

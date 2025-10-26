@@ -6,9 +6,10 @@ authors=['Sugam']
 tags=['red', 'white', 'blue', 'sugam']
 toc=true
 +++
+## MANY COLUMNS
 {{< columns >}}
 ### Column 1 content in Markdown
-Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure[^first]. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.
+Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.
 
 Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco voluptate aliqua nisi incididunt cillum. Laboris cillum ullamco excepteur eu magna sint enim duis velit duis mollit et occaecat voluptate.
 
@@ -20,7 +21,7 @@ Deserunt aliqua est reprehenderit ea ea deserunt velit anim sit officia pariatur
 ### Column 2 content in Markdown
 Ullamco culpa enim ut elit tempor adipisicing proident nostrud. Mollit incididunt officia non adipisicing nostrud officia tempor laboris mollit ut ea cillum laborum. Sunt ea laborum ullamco dolor id. In commodo nisi dolore deserunt officia. Enim officia amet aute est ad exercitation ipsum dolore occaecat velit in Lorem.
 
-Quis excepteur dolor excepteur sunt non nostrud do enim sint consectetur[^second]. Elit elit consectetur velit veniam cillum adipisicing. Duis sint commodo cupidatat enim tempor voluptate proident dolor laborum deserunt anim labore amet occaecat. Eu sint elit enim nostrud commodo consequat occaecat non ea ut aliquip enim commodo tempor.
+Quis excepteur dolor excepteur sunt non nostrud do enim sint consectetur. Elit elit consectetur velit veniam cillum adipisicing. Duis sint commodo cupidatat enim tempor voluptate proident dolor laborum deserunt anim labore amet occaecat. Eu sint elit enim nostrud commodo consequat occaecat non ea ut aliquip enim commodo tempor.
 
 Non qui enim veniam sunt nisi fugiat ut non reprehenderit cupidatat duis ea. Ex exercitation incididunt mollit officia eu veniam irure. Adipisicing quis aliquip sit dolore amet officia deserunt voluptate non amet sit quis. Laborum tempor ex do velit. Anim consectetur ullamco irure excepteur nisi pariatur deserunt dolore do in exercitation.
 
@@ -58,7 +59,7 @@ Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit r
 
 ## FOOTNOTES
 
-Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.
+Fugiat id adipisicing dolor[^second] mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.
 
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 
@@ -68,7 +69,7 @@ Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation r
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 
 #### foot
-Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.
+Fugiat id adipisicing[^third] dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.
 
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 
@@ -80,12 +81,14 @@ Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit r
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 
 
-[^first]: This is the first footnote.
-[^second]: This is the second footnote.
-
 ## HELLLO
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
+
+### Mian Footnotes
+[^1]: This is inside tehe columns
+[^second]: This is outside the columns
+[^third]: This is the third one

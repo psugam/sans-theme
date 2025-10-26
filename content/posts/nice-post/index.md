@@ -7,6 +7,7 @@ tags = ['red','green']
 type='posts'
 authors = ['Alice', 'Bob', 'Sugam']
 categories=['category-1', 'category-2']
+toc=false
 [cover]
 image = "img_mountains.jpg"
 alt = "Forest"
@@ -23,7 +24,7 @@ Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident c
 {{<author-quote author="Sugam Pokharel" source="Me lol">}}
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
 {{</author-quote>}}
-
+[^nice]
 {{< collapse title="See full error log" >}}
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
 {{< /collapse >}}
@@ -76,3 +77,4 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur 
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos natus consectetur velit delectus eius, a quas? Cupiditate unde vel laboriosam distinctio sed, quas illo necessitatibus, exercitationem, voluptatibus consequuntur nihil dolore dicta? Accusantium labore, non atque tempora voluptatum libero provident maiores quibusdam consectetur dolor! Repellat quod, excepturi cupiditate saepe natus expedita a dignissimos maxime tempora dolore blanditiis, molestiae cum vero neque ipsam esse perspiciatis facilis rerum cumque. Quis, veritatis. Amet quas nulla minima minus quaerat modi dolorem reprehenderit similique autem, quod ea, dolor numquam fugiat incidunt at ut velit eius, commodi fuga iusto sequi ipsam nesciunt exercitationem voluptates? Minima, placeat aspernatur!
 
   [^translator]: Hays translation
+  [^nice]: Hello Honey Bunny

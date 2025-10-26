@@ -764,6 +764,7 @@ background-color: white;
 
 
 
+
   
   
 
@@ -771,9 +772,7 @@ background-color: white;
 
 
 
-
-
-  <div class="has-toc">
+  
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">Multiple Column</h1>
 
@@ -821,7 +820,7 @@ background-color: white;
 
 
 
- <p>Words: 1629</p> 
+ <p>Words: 1643</p> 
 
 
 
@@ -834,7 +833,8 @@ background-color: white;
   
 </div>
 
-    <style>
+
+<style>
 
 .toc-container{
 position: fixed;
@@ -935,6 +935,7 @@ cursor: pointer;
     <div class="toc-body">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#many-columns">MANY COLUMNS</a></li>
     <li><a href="#footnotes">FOOTNOTES</a>
       <ul>
         <li><a href="#abcd">Abcd</a>
@@ -945,7 +946,11 @@ cursor: pointer;
         <li><a href="#footnotes-2">FOOTnotes 2</a></li>
       </ul>
     </li>
-    <li><a href="#helllo">HELLLO</a></li>
+    <li><a href="#helllo">HELLLO</a>
+      <ul>
+        <li><a href="#mian-footnotes">Mian Footnotes</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -961,60 +966,116 @@ function toggleTOC(titleEl) {
 </script>
 
 
+
+
+
+
+
+
+
+
 <div class="main-text-container">
-  <div class="columns" style="display: flex; gap: 1.5rem;">
+  <h2 id="many-columns">MANY COLUMNS</h2>
+<style>
+ 
+  .columns{
+  display: flex;
+  gap: 1.5rem;
+  counter-reset: unset !important;
+  }
+  .single-column{
+  flex:1;
+  }
+
+  .columns h2:before,
+.columns h3:before,
+.columns h4:before {
+  content: "" !important;
+}
+
+</style>
+
+
+<div class="columns">
   
-    <div style="flex: 1;">
+      <div class="single-column">
       <h3 id="column-1-content-in-markdown">Column 1 content in Markdown</h3>
-<p>Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure[^first]. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.</p>
+<p>Quis nisi cupidatat ipsum sunt Lorem adipisicing ullamco enim consectetur irure. Nisi do elit aliqua esse occaecat. Cillum occaecat nulla duis adipisicing ut dolor minim amet reprehenderit magna officia mollit ipsum. Voluptate reprehenderit proident eu ipsum aliquip incididunt sint est do magna consequat et. Fugiat laboris ex exercitation ullamco officia voluptate.</p>
 <p>Culpa magna officia proident aute ex commodo minim veniam qui mollit. Ullamco voluptate aliqua nisi incididunt cillum. Laboris cillum ullamco excepteur eu magna sint enim duis velit duis mollit et occaecat voluptate.</p>
 <p>Laboris voluptate proident exercitation eiusmod reprehenderit excepteur et Lorem ipsum occaecat irure voluptate elit ad. Velit tempor veniam aliquip consequat culpa veniam qui. Dolor reprehenderit occaecat ad nostrud consequat labore culpa elit do cupidatat pariatur. Sunt quis et amet est ex cupidatat. Ipsum esse elit enim labore. Sunt est eu dolore reprehenderit ut aliquip aute ullamco magna occaecat proident.</p>
 <p>Deserunt aliqua est reprehenderit ea ea deserunt velit anim sit officia pariatur sit. Id incididunt adipisicing minim non duis aliquip fugiat do consectetur eiusmod anim laboris. Dolor mollit culpa consequat veniam dolor ad fugiat anim sunt. Aliqua ullamco dolore id adipisicing exercitation excepteur ullamco aliqua culpa incididunt.</p>
 
+       
     </div>
-    <div style="flex: 1;">
+      <div class="single-column">
       <h3 id="column-2-content-in-markdown">Column 2 content in Markdown</h3>
 <p>Ullamco culpa enim ut elit tempor adipisicing proident nostrud. Mollit incididunt officia non adipisicing nostrud officia tempor laboris mollit ut ea cillum laborum. Sunt ea laborum ullamco dolor id. In commodo nisi dolore deserunt officia. Enim officia amet aute est ad exercitation ipsum dolore occaecat velit in Lorem.</p>
-<p>Quis excepteur dolor excepteur sunt non nostrud do enim sint consectetur[^second]. Elit elit consectetur velit veniam cillum adipisicing. Duis sint commodo cupidatat enim tempor voluptate proident dolor laborum deserunt anim labore amet occaecat. Eu sint elit enim nostrud commodo consequat occaecat non ea ut aliquip enim commodo tempor.</p>
+<p>Quis excepteur dolor excepteur sunt non nostrud do enim sint consectetur. Elit elit consectetur velit veniam cillum adipisicing. Duis sint commodo cupidatat enim tempor voluptate proident dolor laborum deserunt anim labore amet occaecat. Eu sint elit enim nostrud commodo consequat occaecat non ea ut aliquip enim commodo tempor.</p>
 <p>Non qui enim veniam sunt nisi fugiat ut non reprehenderit cupidatat duis ea. Ex exercitation incididunt mollit officia eu veniam irure. Adipisicing quis aliquip sit dolore amet officia deserunt voluptate non amet sit quis. Laborum tempor ex do velit. Anim consectetur ullamco irure excepteur nisi pariatur deserunt dolore do in exercitation.</p>
 <p>Non sint irure reprehenderit anim in ex exercitation. Consectetur fugiat et consequat consectetur non aute officia esse voluptate proident nisi fugiat. Velit tempor voluptate minim et occaecat eu incididunt proident consequat. Ex dolor do irure nisi ad amet veniam. Et qui anim sunt elit esse sit. Nisi nostrud aliquip ut enim anim quis irure. Est et tempor fugiat fugiat eiusmod dolor commodo pariatur.</p>
 <p>Adipisicing ad pariatur laboris ea consequat sint. Dolor magna excepteur eu laboris dolor sit irure ea veniam quis officia nostrud minim. Et ad proident nisi labore aliquip. Nulla enim eu nulla fugiat elit culpa ex qui mollit ex duis. Ullamco eu minim aliquip nostrud. Deserunt occaecat laboris elit in adipisicing enim dolor veniam voluptate mollit eiusmod culpa laborum. Pariatur incididunt ullamco mollit esse.</p>
 
+       
     </div>
-    <div style="flex: 1;">
+      <div class="single-column">
       <h3 id="column-3-content-in-markdown">Column 3 content in Markdown</h3>
 <p>Cillum ad excepteur sit Lorem amet. Non mollit dolore labore Lorem reprehenderit commodo occaecat ullamco non ad enim exercitation officia veniam. Aliquip mollit nostrud adipisicing minim. Consequat fugiat ex nostrud veniam nostrud do fugiat. Labore deserunt magna nostrud Lorem ut tempor quis officia aliquip voluptate excepteur occaecat ad. Voluptate adipisicing quis ullamco aute laboris irure id. Qui aliquip nulla dolore cupidatat excepteur quis incididunt officia veniam.</p>
 <p>Occaecat nostrud fugiat labore in nostrud et est in. Sint dolor sit ad nostrud amet nostrud ea laboris dolore esse voluptate. Enim mollit amet irure sit. Nostrud proident fugiat consectetur excepteur excepteur sit laborum velit tempor eiusmod non. Incididunt deserunt qui ipsum duis magna sint.</p>
 <p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 
+       
     </div>
 </div>
 
-<div class="columns" style="display: flex; gap: 1.5rem;">
+
+<style>
+ 
+  .columns{
+  display: flex;
+  gap: 1.5rem;
+  counter-reset: unset !important;
+  }
+  .single-column{
+  flex:1;
+  }
+
+  .columns h2:before,
+.columns h3:before,
+.columns h4:before {
+  content: "" !important;
+}
+
+</style>
+
+
+<div class="columns">
   
-    <div style="flex: 1;">
+      <div class="single-column">
       <h3 id="column-1">Column 1</h3>
 <p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 
+       
     </div>
-    <div style="flex: 1;">
+      <div class="single-column">
       <h3 id="column-2">Column 2</h3>
 <p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 
+       
     </div>
 </div>
 
+
 <h2 id="footnotes">FOOTNOTES</h2>
-<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Fugiat id adipisicing dolor<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 <h3 id="abcd">Abcd</h3>
 <p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 <h4 id="foot">foot</h4>
-<p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
+<p>Fugiat id adipisicing<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 <h3 id="footnotes-2">FOOTnotes 2</h3>
 <p>Fugiat id adipisicing dolor mollit excepteur pariatur irure culpa exercitation reprehenderit anim. Irure est ipsum excepteur ad esse tempor duis elit ea mollit cillum esse. Consequat do eu sunt nulla est commodo est velit Lorem ipsum. Commodo ullamco in qui elit ad anim sit. Id proident mollit tempor exercitation aliquip consectetur anim. Dolor labore pariatur sit sit incididunt tempor sint enim deserunt dolor.</p>
@@ -1025,6 +1086,18 @@ function toggleTOC(titleEl) {
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.
 Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
 <p>Consectetur non labore incididunt quis laborum. Anim elit exercitation ea elit reprehenderit anim Lorem. Officia dolore ipsum ullamco aute nostrud reprehenderit laboris aliquip. Culpa et irure laboris dolore dolore proident aute nostrud labore duis. Amet laboris duis dolor dolore elit in deserunt cupidatat adipisicing.</p>
+<h3 id="mian-footnotes">Mian Footnotes</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This is outside the columns&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>This is the third one&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 </div>
 </div>

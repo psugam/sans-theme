@@ -24,6 +24,7 @@
 
 </style>
 
+
 {{ $typeOfPage := .Params.type }}
 {{ if eq $typeOfPage "page" }}
 {{/*  for non post page doesn't show any frontmatter  */}}
@@ -60,9 +61,7 @@
 
 
 
-
-
-  <div class="{{ if and .TableOfContents (not .Params.disableToc) }}has-toc{{ end }}">
+  
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 
@@ -108,7 +107,16 @@
   
 </div>
 
-    {{ partial "toc.html" . }}
+{{if eq .Params.toc true}}
+{{ partial "toc.html" . }}
+{{end}}
+
+
+
+
+
+
+
 <div class="main-text-container">
   {{ .Content }}
 </div>
@@ -137,5 +145,6 @@
 
 
 {{ end }}
+
 
 

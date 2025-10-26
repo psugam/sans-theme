@@ -222,3 +222,12 @@ overflow: auto;
   margin-left: auto;
   }
 }
+
+
+
+/* FOOOTNOTE */
+#myfootnoteText{
+  margin-top: 1rem;
+  font-size: x-large;
+
+}
