@@ -119,10 +119,10 @@ body.dark-mode #dark-mode-toggle {
 </script>
 
 
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 
-      <script src="../../js/main.js"></script>
+      <script src="/js/main.js"></script>
 
 <style>
 :root {
@@ -138,7 +138,7 @@ body {
 }
 </style>
 
-<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="../../index.xml">
+<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="/index.xml">
 
 
     
@@ -146,7 +146,7 @@ body {
 
 <body>
   <header>
-    <h1 class="site-title"><a href="../../">SUGO-WEBSITE</a></h1>
+    <h1 class="site-title"><a href="/">SUGO-WEBSITE</a></h1>
 
 
 <style>
@@ -247,22 +247,22 @@ background-color: white;
 
     <ul id="nav-menu">
     <li>
-      <a href="../../">Home</a>
+      <a href="/">Home</a>
     </li>
     <li>
-      <a href="../../posts/">Posts</a>
+      <a href="/posts/">Posts</a>
     </li>
     <li>
-      <a href="../../tags/">Tags</a>
+      <a href="/tags/">Tags</a>
     </li>
     <li>
-      <a href="../../categories/">Categories</a>
+      <a href="/categories/">Categories</a>
     </li>
     <li>
-      <a href="../../pages/about/">About</a>
+      <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="../../images/default.jpg">File</a>
+      <a href="/images/default.jpg">File</a>
     </li>
     </ul>
     
@@ -601,7 +601,7 @@ background-color: white;
 </div>
 
 
-<script src="../../pagefind/pagefind-ui.js"></script>
+<script src="//localhost:1313/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 
 <script>
@@ -610,7 +610,7 @@ background-color: white;
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "\/pagefind\/"
+            bundlePath: "\/\/localhost:1313\/pagefind\/"
         });
 
         
@@ -682,7 +682,7 @@ background-color: white;
 
             try {
                 
-                const pagefind = await import('\/pagefind\/pagefind.js');
+                const pagefind = await import('\/\/localhost:1313\/pagefind\/pagefind.js');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -742,63 +742,63 @@ background-color: white;
   
    
       <div>
-<a href="../../posts/nice-post/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/nice-post/" style="display:inline-block; margin-right:8px; font-size: large;">
   Nice Post
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/card-post/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/card-post/" style="display:inline-block; margin-right:8px; font-size: large;">
   Card Post
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/testing-post/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/testing-post/" style="display:inline-block; margin-right:8px; font-size: large;">
   Testing Post
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/table-post/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/table-post/" style="display:inline-block; margin-right:8px; font-size: large;">
   Table Post
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/hello-post/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/hello-post/" style="display:inline-block; margin-right:8px; font-size: large;">
   Hello-post
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/sugam/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/sugam/" style="display:inline-block; margin-right:8px; font-size: large;">
   Sugam
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/post-3/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/post-3/" style="display:inline-block; margin-right:8px; font-size: large;">
   Post 3
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/custom-url-slug/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/custom-url-slug/" style="display:inline-block; margin-right:8px; font-size: large;">
   Post 2
 </a>
 </div>
   
    
       <div>
-<a href="../../posts/custom-url-slug-4/" style="display:inline-block; margin-right:8px; font-size: large;">
+<a href="/posts/custom-url-slug-4/" style="display:inline-block; margin-right:8px; font-size: large;">
   Post 4
 </a>
 </div>

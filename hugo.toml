@@ -4,7 +4,10 @@ languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
 theme = 'sans'
 publishDir = "public"
-relativeURLs = true
+
+
+canonifyURLs = false  
+relativeURLs = false  
 
 enableRobotsTXT = true
 summaryLength = 50

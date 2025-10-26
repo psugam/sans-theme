@@ -119,10 +119,10 @@ body.dark-mode #dark-mode-toggle {
 </script>
 
 
-    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 
-      <script src="../../../js/main.js"></script>
+      <script src="/js/main.js"></script>
 
 <style>
 :root {
@@ -138,7 +138,7 @@ body {
 }
 </style>
 
-<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="../../../index.xml">
+<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="/index.xml">
 
 
     
@@ -146,7 +146,7 @@ body {
 
 <body>
   <header>
-    <h1 class="site-title"><a href="../../../">SUGO-WEBSITE</a></h1>
+    <h1 class="site-title"><a href="/">SUGO-WEBSITE</a></h1>
 
 
 <style>
@@ -247,22 +247,22 @@ background-color: white;
 
     <ul id="nav-menu">
     <li>
-      <a href="../../../">Home</a>
+      <a href="/">Home</a>
     </li>
     <li>
-      <a href="../../../posts/">Posts</a>
+      <a href="/posts/">Posts</a>
     </li>
     <li>
-      <a href="../../../tags/">Tags</a>
+      <a href="/tags/">Tags</a>
     </li>
     <li>
-      <a href="../../../categories/">Categories</a>
+      <a href="/categories/">Categories</a>
     </li>
     <li>
-      <a href="../../../pages/about/">About</a>
+      <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="../../../images/default.jpg">File</a>
+      <a href="/images/default.jpg">File</a>
     </li>
     </ul>
     
@@ -601,7 +601,7 @@ background-color: white;
 </div>
 
 
-<script src="../../../pagefind/pagefind-ui.js"></script>
+<script src="//localhost:1313/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 
 <script>
@@ -610,7 +610,7 @@ background-color: white;
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "\/pagefind\/"
+            bundlePath: "\/\/localhost:1313\/pagefind\/"
         });
 
         
@@ -682,7 +682,7 @@ background-color: white;
 
             try {
                 
-                const pagefind = await import('\/pagefind\/pagefind.js');
+                const pagefind = await import('\/\/localhost:1313\/pagefind\/pagefind.js');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -788,7 +788,7 @@ margin-bottom: 0;
 <div class="section-main-box">
 
 
-<h2 id="section-post-title"><a href="../../../posts/hello-post/">Hello-post</a></h2>
+<h2 id="section-post-title"><a href="/posts/hello-post/">Hello-post</a></h2>
 
 <div class="section-meta-data-div">
 
@@ -807,8 +807,8 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
-        <li><a href="../../../categories/category-1/">Category-1</a></li>
-        <li><a href="../../../categories/category-2/">Category-2</a></li>
+        <li><a href="/categories/category-1/">Category-1</a></li>
+        <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
 
@@ -820,8 +820,8 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
-        <li><a href="../../../authors/alice/">Alice</a></li>
-        <li><a href="../../../authors/bob/">Bob</a></li>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
 
@@ -846,7 +846,7 @@ margin-bottom: 0;
 
 
 
-  <img src="../../../posts/hello-post/img_forest.jpg" alt="Hello-post">
+  <img src="/posts/hello-post/img_forest.jpg" alt="Hello-post">
 
 
 
@@ -883,7 +883,7 @@ margin-bottom: 0;
 
 
 
-<p><a href="../../../posts/hello-post/">Read more...</a></p>
+<p><a href="/posts/hello-post/">Read more...</a></p>
 
 
 </div>
@@ -896,7 +896,7 @@ margin-bottom: 0;
 <div class="section-main-box">
 
 
-<h2 id="section-post-title"><a href="../../../posts/sugam/">Sugam</a></h2>
+<h2 id="section-post-title"><a href="/posts/sugam/">Sugam</a></h2>
 
 <div class="section-meta-data-div">
 
@@ -915,8 +915,8 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Categories:</div>
     <ul>
-        <li><a href="../../../categories/category-1/">Category-1</a></li>
-        <li><a href="../../../categories/category-2/">Category-2</a></li>
+        <li><a href="/categories/category-1/">Category-1</a></li>
+        <li><a href="/categories/category-2/">Category-2</a></li>
     </ul>
   </div>
 
@@ -928,8 +928,8 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
-        <li><a href="../../../authors/alice/">Alice</a></li>
-        <li><a href="../../../authors/bob/">Bob</a></li>
+        <li><a href="/authors/alice/">Alice</a></li>
+        <li><a href="/authors/bob/">Bob</a></li>
     </ul>
   </div>
 
@@ -987,7 +987,7 @@ margin-bottom: 0;
 
 
 
-<p><a href="../../../posts/sugam/">Read more...</a></p>
+<p><a href="/posts/sugam/">Read more...</a></p>
 
 
 </div>
@@ -1000,7 +1000,7 @@ margin-bottom: 0;
 <div class="section-main-box">
 
 
-<h2 id="section-post-title"><a href="../../../posts/code-post/">Code post</a></h2>
+<h2 id="section-post-title"><a href="/posts/code-post/">Code post</a></h2>
 
 <div class="section-meta-data-div">
 
@@ -1025,7 +1025,7 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
-        <li><a href="../../../authors/sugam/">Sugam</a></li>
+        <li><a href="/authors/sugam/">Sugam</a></li>
     </ul>
   </div>
 
@@ -1083,7 +1083,7 @@ margin-bottom: 0;
 
 
 
-<p><a href="../../../posts/code-post/">Read more...</a></p>
+<p><a href="/posts/code-post/">Read more...</a></p>
 
 
 </div>
@@ -1096,7 +1096,7 @@ margin-bottom: 0;
 <div class="section-main-box">
 
 
-<h2 id="section-post-title"><a href="../../../posts/multiple-columns/">Multiple Column</a></h2>
+<h2 id="section-post-title"><a href="/posts/multiple-columns/">Multiple Column</a></h2>
 
 <div class="section-meta-data-div">
 
@@ -1121,7 +1121,7 @@ margin-bottom: 0;
   <div class="page-tags-div">
     <div id="page-tags-label">Authors:</div>
     <ul>
-        <li><a href="../../../authors/sugam/">Sugam</a></li>
+        <li><a href="/authors/sugam/">Sugam</a></li>
     </ul>
   </div>
 
@@ -1179,7 +1179,7 @@ margin-bottom: 0;
 
 
 
-<p><a href="../../../posts/multiple-columns/">Read more...</a></p>
+<p><a href="/posts/multiple-columns/">Read more...</a></p>
 
 
 </div>
@@ -1191,13 +1191,13 @@ margin-bottom: 0;
 <nav class="pagination flex justify-center gap-2 mt-8">
   
   <a
-    href="../../../pages/"
+    href="/pages/"
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >← Prev</a
   >
      
   <a
-    href="../../../pages/"
+    href="/pages/"
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >1</a
   >
@@ -1205,13 +1205,13 @@ margin-bottom: 0;
   <span class="px-3 py-1 bg-blue-500 text-white rounded">2</span>
      
   <a
-    href="../../../pages/page/3/"
+    href="/pages/page/3/"
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >3</a
   >
     
   <a
-    href="../../../pages/page/3/"
+    href="/pages/page/3/"
     class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
     >Next →</a
   >

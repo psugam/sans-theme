@@ -120,10 +120,10 @@ body.dark-mode #dark-mode-toggle {
 </script>
 
 
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 
-      <script src="../../js/main.js"></script>
+      <script src="/js/main.js"></script>
 
 <style>
 :root {
@@ -139,7 +139,7 @@ body {
 }
 </style>
 
-<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="../../index.xml">
+<link rel="alternate" type="application/rss+xml" title="SUGO-WEBSITE RSS Feed" href="/index.xml">
 
 
     
@@ -147,7 +147,7 @@ body {
 
 <body>
   <header>
-    <h1 class="site-title"><a href="../../">SUGO-WEBSITE</a></h1>
+    <h1 class="site-title"><a href="/">SUGO-WEBSITE</a></h1>
 
 
 <style>
@@ -248,22 +248,22 @@ background-color: white;
 
     <ul id="nav-menu">
     <li>
-      <a aria-current="page" class="active" href="../../">Home</a>
+      <a aria-current="page" class="active" href="/">Home</a>
     </li>
     <li>
-      <a href="../../posts/">Posts</a>
+      <a href="/posts/">Posts</a>
     </li>
     <li>
-      <a href="../../tags/">Tags</a>
+      <a href="/tags/">Tags</a>
     </li>
     <li>
-      <a href="../../categories/">Categories</a>
+      <a href="/categories/">Categories</a>
     </li>
     <li>
-      <a href="../../pages/about/">About</a>
+      <a href="/pages/about/">About</a>
     </li>
     <li>
-      <a href="../../images/default.jpg">File</a>
+      <a href="/images/default.jpg">File</a>
     </li>
     </ul>
     
@@ -602,7 +602,7 @@ background-color: white;
 </div>
 
 
-<script src="../../pagefind/pagefind-ui.js"></script>
+<script src="//localhost:1313/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 
 <script>
@@ -611,7 +611,7 @@ background-color: white;
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "\/pagefind\/"
+            bundlePath: "\/\/localhost:1313\/pagefind\/"
         });
 
         
@@ -683,7 +683,7 @@ background-color: white;
 
             try {
                 
-                const pagefind = await import('\/pagefind\/pagefind.js');
+                const pagefind = await import('\/\/localhost:1313\/pagefind\/pagefind.js');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -794,13 +794,13 @@ background-color: white;
       <h1 class="hero-title">Welcome to our blog and portfolio.</h1>
       <p class="hero-subtitle">Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM</p>
       <div class="hero-cta">
-        <a href="../../pages" class="btn btn-primary">Explore Articles</a>
-        <a href="../../pages/about" class="btn btn-secondary">About Us</a>
+        <a href="/pages" class="btn btn-primary">Explore Articles</a>
+        <a href="/pages/about" class="btn btn-secondary">About Us</a>
       </div>
     </div>
     
     <div class="hero-image">
-      <img src="../../images/img_forest.jpg" alt="Hero" />
+      <img src="/images/img_forest.jpg" alt="Hero" />
     </div>
     
   </div>
@@ -896,7 +896,7 @@ background-color: white;
       
       <div class="post-image">
         <a href="//localhost:1313/posts/post-3/">
-          <img src="../../posts/post-3/bryce-canyon.jpg" alt="Post 3" loading="lazy" />
+          <img src="/posts/post-3/bryce-canyon.jpg" alt="Post 3" loading="lazy" />
         </a>
       </div>
       
@@ -959,7 +959,7 @@ background-color: white;
       
       <div class="post-image">
         <a href="//localhost:1313/posts/custom-url-slug/">
-          <img src="../../images/default.jpg" alt="Post 2" loading="lazy" />
+          <img src="/images/default.jpg" alt="Post 2" loading="lazy" />
         </a>
       </div>
       
@@ -1022,7 +1022,7 @@ background-color: white;
       
       <div class="post-image">
         <a href="//localhost:1313/posts/custom-url-slug-4/">
-          <img src="../../images/default.jpg" alt="Post 4" loading="lazy" />
+          <img src="/images/default.jpg" alt="Post 4" loading="lazy" />
         </a>
       </div>
       
@@ -1085,7 +1085,7 @@ background-color: white;
       
       <div class="post-image">
         <a href="//localhost:1313/posts/post-1/">
-          <img src="../../images/default.jpg" alt="Post 1" loading="lazy" />
+          <img src="/images/default.jpg" alt="Post 1" loading="lazy" />
         </a>
       </div>
       
@@ -1149,19 +1149,19 @@ background-color: white;
   
   <nav class="pagination">
     
-    <a href="../../page/2/" class="pagination-btn">← Prev</a>
+    <a href="/page/2/" class="pagination-btn">← Prev</a>
     
     
     <div class="pagination-numbers">
       
       
       
-      <a href="../../" class="pagination-number">1</a>
+      <a href="/" class="pagination-number">1</a>
       
       
       
       
-      <a href="../../page/2/" class="pagination-number">2</a>
+      <a href="/page/2/" class="pagination-number">2</a>
       
       
       
