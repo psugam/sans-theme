@@ -1,5 +1,5 @@
-# baseURL = 'https://www.sugam-pokharel.com.np/'
-baseURL = "/"
+baseURL = 'https://www.sugam-pokharel.com.np/sans-theme/'
+# baseURL = "/"
 languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
 theme = 'sans'
