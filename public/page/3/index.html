@@ -602,7 +602,9 @@ background-color: white;
 </div>
 
 
-<script src="//localhost:1313/pagefind/pagefind-ui.js"></script>
+
+
+<script src="/pagefind/pagefind-ui.js"></script>
 <div id="search"></div>
 
 <script>
@@ -611,7 +613,7 @@ background-color: white;
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "\/\/localhost:1313\/pagefind\/"
+            bundlePath: "\/pagefind\/"
         });
 
         
@@ -683,7 +685,7 @@ background-color: white;
 
             try {
                 
-                const pagefind = await import('\/\/localhost:1313\/pagefind\/pagefind.js');
+                const pagefind = await import('\/pagefind\/pagefind.js');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {

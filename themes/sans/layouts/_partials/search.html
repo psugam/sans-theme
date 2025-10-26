@@ -315,8 +315,10 @@
     </div>
 </div>
 
+
+
 <!-- Hidden Pagefind UI -->
-<script src="{{ absURL "pagefind/pagefind-ui.js" }}"></script>
+<script src="{{ relURL "pagefind/pagefind-ui.js" }}"></script>
 <div id="search"></div>
 
 <script>
@@ -325,7 +327,7 @@
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "{{ absURL "pagefind/" }}"
+            bundlePath: "{{ relURL "pagefind/" }}"
         });
 
         // Get elements
@@ -397,7 +399,7 @@
 
             try {
                 // Use Pagefind search API
-                const pagefind = await import('{{ absURL "pagefind/pagefind.js" }}');
+                const pagefind = await import('{{ relURL "pagefind/pagefind.js" }}');
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
