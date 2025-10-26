@@ -1,1 +1,60 @@
 baseURL = "https://psugam.github.io/sans-theme/"
+# if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
+languageCode = 'en-us'
+title = 'SUGO-WEBSITE'
+theme = 'sans'
+publishDir = "public"
+
+
+canonifyURLs = false  
+relativeURLs = false  
+
+enableRobotsTXT = true
+summaryLength = 50
+defaultMarkdownHandler = "goldmark"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+
+
+
+[pagination]
+  disableAliases = false
+  pagerSize = 4
+  path = 'page'
+
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+
+
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+
+
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
