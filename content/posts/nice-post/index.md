@@ -1,8 +1,10 @@
 +++
-date = '2025-11-14T17:48:48+05:45'
+date = '2025-10-25T17:48:48+05:45'
 draft = false
 title = 'Nice Post'
+slug='nice-post'
 tags = ['red','green']
+type='posts'
 authors = ['Alice', 'Bob', 'Sugam']
 categories=['category-1', 'category-2']
 [cover]
@@ -27,7 +29,7 @@ Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Ve
 {{< /collapse >}}
 
 Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
-  {{< figure src="/images/404.jpg" width="100%" >}}
+  {{< figure src="/images/default.jpg" width="50%" caption="image folder picture" class="right" >}}
   {{< figure src="img_mountains.jpg" width="100%" caption="in-folder picture" class="center">}}
 
 ### Heading middle
