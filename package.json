@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "hugo server --disableFastRender",
-    "build": "hugo && npx pagefind --site public --output-path public/pagefind",
-    "dev": "hugo --destination public && npx pagefind --site public --output-path public/pagefind && hugo server --disableFastRender --buildDrafts --noHTTPCache"
-  },
+  "serve": "hugo server --disableFastRender",
+  "build": "npx hugo && npx pagefind --site public --output-path public/pagefind",
+  "dev": "npx hugo --destination public && npx pagefind --site public --output-path public/pagefind && hugo server --disableFastRender --buildDrafts --noHTTPCache"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "hugo-extended": "^0.152.0"
+  }
 }
