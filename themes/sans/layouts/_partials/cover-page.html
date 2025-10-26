@@ -7,8 +7,8 @@
       <h1 class="hero-title">{{.Site.Params.homepage.homePageCoverTitle}}</h1>
       <p class="hero-subtitle">{{.Site.Params.homepage.homePageCoverTagLine}}</p>
       <div class="hero-cta">
-<a href="{{ .Site.BaseURL }}posts" class="btn btn-primary">Explore Articles</a>
-<a href="{{ .Site.BaseURL }}pages/about" class="btn btn-secondary">About Us</a>
+<a href="{{ relURL "/posts" }}" class="btn btn-primary">Explore Articles</a>
+<a href="{{ relURL "/pages/about" }}" class="btn btn-secondary">About Us</a>
       </div>
     </div>
     {{ if $image }}

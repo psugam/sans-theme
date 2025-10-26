@@ -1,5 +1,6 @@
-baseURL = 'https://www.sugam-pokharel.com.np/sans-theme/'
-# baseURL = "/"
+# baseURL = 'https://www.sugam-pokharel.com.np/sans-theme/'
+baseURL = "/"
+# if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
 languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
 theme = 'sans'
