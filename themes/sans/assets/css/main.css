@@ -231,3 +231,17 @@ overflow: auto;
   font-size: x-large;
 
 }
+
+
+
+/* txonomy image */
+.taxonomy_image{
+
+display: flex;
+justify-content: center;
+}
+.taxonomy_image img{
+border-radius: 50%;
+    width:15vh;
+  height: 15vh;
+}

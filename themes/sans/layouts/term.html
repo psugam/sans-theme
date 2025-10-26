@@ -2,6 +2,24 @@
 <div class="individual-term-box">
   <h1>{{ .Title }}</h1>
   <!-- This is for individual pages inside the term. So, not for Tags but for specific Green , blue tags etc. -->
+  
+
+
+{{ $cover := "" }}
+{{ $displayImage := true }}
+
+{{ with .Params.taxonomy_image }}
+  {{ $cover = $.Resources.GetMatch . }}  <!-- or use $.Resources.GetMatch if it’s a page bundle -->
+{{ end }}
+
+{{ if $cover }}
+<div class="taxonomy_image">
+  <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}">
+</div>
+{{ end }}
+
+
+
   {{ .Content }} 
   {{ range .Pages }}
    <!-- <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div> -->
@@ -14,3 +32,4 @@
 </div>
 
 {{ end }}
+
