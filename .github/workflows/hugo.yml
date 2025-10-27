@@ -25,6 +25,7 @@ defaults:
   run:
     shell: bash
 # hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+         # hugo --minify --config hugo.github.toml
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -63,7 +64,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --config hugo.github.toml
+          hugo --minify --config hugo.github.toml --baseURL "https://psugam.github.io/sans-theme/"
 
       - name: Run Pagefind indexing
         run: |
