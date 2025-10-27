@@ -79,7 +79,7 @@
   showTags=false
   showCategories=true
   showAuthors=true
-  showCoverImage=true
+  showCoverImage=false
   showSummary=true
   showReadMore=true
   summaryLength=500
