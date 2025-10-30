@@ -14,17 +14,11 @@
   }
 
   .taxo-clouds{
-  
-  position: absolute;
-  right: 30px;
-  max-width: 20%;
+  border: 2px solid black;
   }
-    .taxo-clouds h2{
- margin:1rem 0;
- padding: 0;
- text-align: center;
-
-}
+    .taxo-clouds div{
+  border: 2px solid red;
+  }
 
   @media screen and (max-width: 768px) {
  main{
@@ -33,7 +27,7 @@
   margin-left: auto;
 }
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1168px){
   .taxo-clouds{
   display: none;
 }
@@ -136,26 +130,20 @@
 
 <div class="taxo-clouds">
   <div class="tag-cloud">
-    
   {{ if not .Site.Params.posts.showTagCloud}}
   {{else}}
-  <h2>TAGS</h2>
   {{ partial "taxocloud.html" (dict "taxonomy" "tags") }}
   {{end}}
   </div>
   <div class="category-cloud">
-    
   {{ if not .Site.Params.posts.showCategoryCloud}}
   {{else}}
-  <h2>CATEGORIES</h2>
   {{ partial "taxocloud.html" (dict "taxonomy" "categories") }}
   {{end}}
   </div>
   <div class="author-cloud">
-    
   {{ if not .Site.Params.posts.showAuthorCloud}}
   {{else}}
-  <h2>AUTHORS</h2>
   {{ partial "taxocloud.html" (dict "taxonomy" "authors") }}
   {{end}}
   </div>
@@ -194,3 +182,6 @@
 
 
 {{ end }}
+
+
+

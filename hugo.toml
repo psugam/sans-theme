@@ -59,3 +59,7 @@ defaultMarkdownHandler = "goldmark"
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
+
+  # [services]
+  # [services.disqus]
+  #   shortname = 'your-disqus-shortname'

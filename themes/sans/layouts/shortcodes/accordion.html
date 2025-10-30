@@ -1,0 +1,203 @@
+<div class="accordion-box">
+{{- $caption := .Get "caption" -}}
+
+  {{ $accordions := split (strings.TrimSpace .Inner) "<!--accordion-->" }}
+
+  <!-- Accordion utems loop for all single this time -->
+  {{ range $index, $accordion := $accordions }}
+    {{ $lines := split (strings.TrimSpace $accordion) "\n" }}
+    {{ $title := "" }}
+    {{ $contentLines := slice }}
+    {{ $capture := false }}
+    
+    {{ range $lines }}
+      {{ if hasPrefix . "title:" }}
+        {{ $title = strings.TrimSpace (replace . "title:" "" ) }}
+      {{ else if hasPrefix . "content:" }}
+        {{ $capture = true }}
+        {{ $line := strings.TrimSpace (replace . "content:" "" ) }}
+        {{ if $line }}
+          {{ $contentLines = $contentLines | append $line }}
+        {{ end }}
+      {{ else if $capture }}
+        {{ $contentLines = $contentLines | append . }}
+      {{ end }}
+    {{ end }}
+    
+    {{ $content := delimit $contentLines "\n" }}
+    
+    <div class="accordion-item">
+      <button type='button' class="accordion-btn" data-accordion="accordion-{{ $index }}">
+        <span class="accordion-title-text">
+          {{ $title }}
+        </span>
+        <span class="accordion-icon">▶</span>
+        {{/*  handle its color in dark mode when title not active  */}}
+      </button>
+      <div class="accordion-content hidden" id="accordion-{{ $index }}">
+        <div class="accordion-content-inner">
+          {{ $content | markdownify }}
+        </div>
+      </div>
+    </div>
+  {{ end }}
+  {{- if $caption }}
+    <h3 class="accordion-caption">
+            {{ $caption }}
+     </h3>
+  {{- end -}}
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.accordion-btn');
+  const contents = document.querySelectorAll('.accordion-content');
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const accordionId = btn.getAttribute('data-accordion');
+      const content = document.getElementById(accordionId);
+      const icon = btn.querySelector('.accordion-icon');
+      const isHidden = content.classList.contains('hidden');
+      
+      // Close all accordions first only active whill be removed next time
+      contents.forEach(c => c.classList.add('hidden'));
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+      });
+      
+      // Open clicked accordion if it was closed
+      if (isHidden) {
+        content.classList.remove('hidden');
+        btn.classList.add('active');
+        icon.style.transform = 'rotate(90deg)';
+      }
+    });
+  });
+});
+</script>
+
+<style>
+:root {
+  --light-color: {{ .Site.Params.theme.lightModeColor }};
+  --dark-color: {{ .Site.Params.theme.darkModeColor }};
+  --light-link-color: {{ .Site.Params.theme.lightModeLinkColor }};
+  --dark-link-color: {{ .Site.Params.theme.darkModeLinkColor }};
+}
+
+.accordion-caption{
+font-size: large;
+text-align: center;
+}
+
+.accordion-box {
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.accordion-item {
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid var(--dark-color);
+}
+
+.accordion-btn {
+  width: 100%;
+  opacity: 90%;
+  border: none;
+  border-bottom: 1px solid var(--dark-color);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  background-color: inherit;
+}
+
+.accordion-btn:hover {
+  opacity: 100%;
+}
+
+.accordion-btn.active {
+  background: var(--dark-color);
+  color: #ffffff;
+  border-bottom: 1px solid var(--dark-color);
+}
+
+.accordion-title-text {
+  flex: 1;
+}
+
+.accordion-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.accordion-content {
+  background-color: inherit;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border-top: 1px solid var(--dark-color);
+}
+
+.accordion-content.hidden {
+  display: none;
+}
+
+.accordion-content-inner {
+  padding: 1.5rem;
+}
+
+.accordion-content-inner > *:first-child {
+  margin-top: 0;
+}
+
+.accordion-content-inner > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode .accordion-item {
+  border: 1px solid var(--light-color);
+
+}
+
+body.dark-mode .accordion-title-text{
+color: var(--dark-link-color);
+}
+body.dark-mode .accordion-btn {
+  border-bottom: 1px solid var(--light-color);
+}
+/* 
+body.dark-mode .accordion-btn.active {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-bottom: 1px solid var(--light-color);
+}
+*/
+
+body.dark-mode .accordion-content {
+  border-top: 1px solid var(--light-color);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .accordion-btn {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .accordion-content-inner {
+    padding: 1rem;
+  }
+}
+</style>
