@@ -2,8 +2,8 @@
 date = '2025-06-04T18:07:33+05:45'
 draft = false
 title = 'Code post'
-authors=['Sugam']
-tags=['red', 'white', 'blue', 'sugam']
+authors=['John']
+tags=['red', 'white', 'blue', 'hello']
 toc=false
 +++
 

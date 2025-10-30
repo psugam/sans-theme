@@ -184,6 +184,9 @@
   </div>
 {{ end }}
 
+{{ if .Site.Params.giscus.enable }}
+  {{partial "github-comments.html" .}}
+{{ end }}
 
 
 

@@ -24,6 +24,11 @@ margin-top: 0;
 #home-page-title{
 
 margin-bottom: 0;}
+#home-page-about{
+text-align: center;
+max-width: 600px;
+margin-top: 0;
+}
 
 </style>
 <div id="logo-block">
@@ -37,6 +42,9 @@ margin-bottom: 0;}
     <h4 id="home-page-tag">
         {{.Site.Params.homepage.homePageTagline}}
     </h4>
+    <p id="home-page-about">
+        {{.Site.Params.homepage.homePageAbout}}
+    </p>
 </div>
 
 {{ partial "media-links.html" .}}

@@ -10,7 +10,6 @@ toc: false
 ---
 This is my about page content.
 
-Samaya Samaya is my name.
 
 ``` WARN  deprecated: The "_build" front matter key was deprecated in Hugo 0.145.0 and will be removed in a future release. Use "build" instead. See https://gohugo.io/content-management/build-options.```
 

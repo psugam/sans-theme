@@ -2,8 +2,8 @@
 date = '2025-06-04T18:07:33+05:45'
 draft = false
 title = 'Multiple Column'
-authors=['Sugam']
-tags=['red', 'white', 'blue', 'sugam']
+authors=['John']
+tags=['red', 'white', 'blue', 'solo']
 toc=true
 +++
 ## MANY COLUMNS
