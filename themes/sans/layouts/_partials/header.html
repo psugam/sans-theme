@@ -1,5 +1,6 @@
 <h1 class="site-title">
-      <a href="{{ "/" | absURL }}">{{ site.Title }}</a>
+      {{/*  <a href="{{ "/" | absURL }}">{{ site.Title }}</a>  */}}
+      <a href="{{ .Site.BaseURL }}">{{site.Title}}</a>
       {{/*  <a href="{{ "/" | relURL }}">{{ site.Title }}</a>  */}}
         {{/*  <a href="{{ relURL "/" }}">{{ site.Title }}</a>  */}}
 </h1>
