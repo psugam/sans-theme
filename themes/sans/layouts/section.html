@@ -41,8 +41,9 @@ margin-bottom: 0;
 <h1>{{ .Title }}</h1>
   {{ .Content }} 
 </div>
-{{ $pages := where site.RegularPages "Type" "posts" }}
- {{$paginator := .Paginate $pages }} 
+{{/*  {{ $pages := where site.RegularPages "Type" "posts" }}  */}}
+{{ $pages := where site.RegularPages "Section" .Section }} 
+{{$paginator := .Paginate $pages }} 
  {{/*  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}   */}}
  {{/*  {{ $dateHuman := .Date | time.Format ":date_long"}}  */}}
  {{/*  {{ $dateHuman := .Date | time.Format .Site.Params.sections.dateFormat}}  */}}
