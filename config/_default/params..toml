@@ -1,7 +1,7 @@
 [homepage]
   onlyPostsInHomePage = false
+  homePageLogo=true
   homePageTitle="JOHN DOE"
-  homePageLogo=false
   homePageTagLine="Welcome to my website"
   homePageLogoPath='images/avatar.png' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageAbout="Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
@@ -10,7 +10,7 @@
   homePageCoverTitle="Welcome to our blog and portfolio."
   homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
   homePageSummaryLength=500
-  homePagePostDate=true        # Manage Posts show in homepage 
+  homePagePostDate=false        
   dateFormat= "2 Jan 2006"
   showSocialLinksHome=true
 
@@ -38,6 +38,9 @@
   # medium = 'https://medium.com/@yourhandle'
 
 [theme]
+  showDarkModeToggle=true
+  showSearchIcon=true
+  showGoToTop=false
   darkModeColor='#333333' # main background colors
   lightModeColor='white' # #e0dedeff
   darkModeLinkColor='#CCCCCC'  # link colors
@@ -52,13 +55,11 @@
   darkModeButtonText = "#ffffff"
   darkModeButtonAlt = "transparent"
   darkModeButtonAltText = "#4d9aff"
-  showDarkModeToggle=true
-  showSearchIcon=true
-  showGoToTop=false
+
 
 [toc]
   numberingInTOC=false
-  numberingInPost=true
+  numberingInPost=false
 
 [posts]
   reading_speed=212
@@ -69,10 +70,9 @@
   showCategories=true
   showReadingTime=true
   dateFormat="2 Jan 2006"
-  showTagCloud=true
-  showCategoryCloud=true
+  showTagCloud=false
+  showCategoryCloud=false
   showAuthorCloud=false
-
 [rss]
   showRSS=false
 
@@ -84,7 +84,7 @@
   showTags=false
   showCategories=true
   showAuthors=true
-  showCoverImage=false
+  showCoverImage=true
   showSummary=true
   showReadMore=true
   summaryLength=500

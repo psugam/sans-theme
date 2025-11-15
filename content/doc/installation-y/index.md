@@ -2,8 +2,8 @@
 date = '2025-10-30T17:48:48+05:45'
 draft = false
 title = '1-Installation'
-tags = ['red','green']
-authors = ['Alice', 'Bob']
+tags = ['installation','documentation']
+authors = ['John']
 categories=['category-1', 'category-2']
 type="page"
 +++
@@ -27,3 +27,8 @@ cd your-hugo-site
 git init
 git submodule add https://github.com/psugam/sugo-theme themes/sugo
 {{</codeblock>}}
+
+Copy the contents, assets and config folders of the theme and place it inside ```your-hugo-site folder```. Similarly, cut the hugo.toml out of the config folder and place it inside ```your-hugo-folder```. In the hugo.toml file, change the value of ***theme*** to 'sans' if it is not already so. 
+
+### Option B : Manual download
+Download the git repository of the sugo theme and place it inside your theme folder. Be sure to rename the the git repo's main folder to sugo. Other steps are the same as that of git installation. 

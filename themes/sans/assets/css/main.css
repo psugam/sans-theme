@@ -238,7 +238,7 @@ overflow: auto;
 .taxonomy_image{
 
 display: flex;
-justify-content: center;
+justify-content: left;
 }
 .taxonomy_image img{
 border-radius: 50%;

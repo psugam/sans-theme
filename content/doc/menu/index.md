@@ -1,4 +1,13 @@
-  [[main]]
++++
+title = '4 Menu'
+date = 2023-01-01T08:00:00-07:00
+draft = false
+type="page"
++++
+
+The sans theme only has a main menu. To customize the main menu, the user should edit config/menus.toml configuration file:
+{{<codeblock lang="go">}}
+   [[main]]
     name = 'Home'
     pageRef = '/'
     weight = 10
@@ -38,3 +47,6 @@
     name='Docs'
     url='/doc/'
     weight=70
+{{</codeblock>}}
+
+The order of the menu links is determined by the value of weight. Smaller the weight, the earlier will the link render.

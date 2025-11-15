@@ -28,10 +28,10 @@ Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident c
 {{< slideshow
     slidewidth="90%"
     caption="Journey through the Alps"
-    image1="images/img_mountains.jpg" caption1="Sunrise over the peaks"
-    image2="images/img_forest.jpg" caption2="Morning mist"
-    image3="images/img_lights.jpg" caption3="Reflections on the lake"
-    image4="images/avatar.png" caption4="Avatar"
+    image1="/images/img_mountains.jpg" caption1="Sunrise over the peaks"
+    image2="/images/img_forest.jpg" caption2="Morning mist"
+    image3="/images/img_lights.jpg" caption3="Reflections on the lake"
+    image4="/images/avatar.png" caption4="Avatar"
 >}}
 
 Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.

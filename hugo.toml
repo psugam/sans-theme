@@ -2,7 +2,7 @@
 baseURL = "/"
 # if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
 languageCode = 'en-us'
-title = 'SUGO'
+title = 'SANS'
 theme = 'sans'
 publishDir = "public"
 
@@ -37,7 +37,7 @@ defaultMarkdownHandler = "goldmark"
 [markup]
   [markup.tableOfContents]
     endLevel = 5
-    ordered = false
+    ordered = true
     startLevel = 2
 
   [markup.goldmark]
