@@ -59,7 +59,7 @@
   numberingInPost=true
 
 [posts]
-  reading_speed=212
+  readingSpeed=212
   showDate=true
   showWordCount=true
   showAuthors=true

@@ -82,3 +82,94 @@ Contents ▼
 {{</codeblock>}}
 
 These two params clash with each other, so only one must be set to true at a time. 
+
+
+### Posts
+
+For the posts in the site, some metadata is shown in the front. The params in `[posts]` can be used to configure whether or not the metadata show before the post. 
+{{<codeblock lang="go">}}
+[posts]
+  readingSpeed=212
+  showDate=true
+  showWordCount=true
+  showAuthors=true
+  showTags=true
+  showCategories=true
+  showReadingTime=true
+  dateFormat="2 Jan 2006"
+  showTagCloud=false
+  showCategoryCloud=false
+  showAuthorCloud=false
+{{</codeblock>}}
+
+*readingSpeed* is used to calculate the expected reading time. 212 is the default value.
+
+*showDate*, *showWordCount*, *showAuthors*, *showTags*, *showCategories* and *showReadingTime* do what their name implies.
+
+*dateFormat* specifies the format of the date that is rendered in the posts page. This is different from the dateformat of the homepage. 
+
+In large screens, you can enable clouds of taxonomies (tags, categories, authors or custom) with the params *showTagCloud*, *showCategoryCloud* and *showAuthorCloud*.
+
+### Sections
+
+This covers much the same ground as the posts params but for sections i.e for list pages. 
+{{<codeblock lang="go">}}
+[sections]
+  showDate=true
+  showTags=false
+  showCategories=false
+  showAuthors=false
+  showCoverImage=false
+  showSummary=true
+  showReadMore=false
+  summaryLength=500
+  dateFormat="2006-01-02"
+{{</codeblock>}}
+
+The *summaryLength* value takes number of characters and not the number of words.
+
+### About Page
+Whether or not social media links are displayed on the about page can be handled by the following parameters.
+{{<codeblock lang="go">}}
+[about]
+  showSocialLinksPage=true
+{{</codeblock>}}
+
+### RSS
+When the RSS option is turned on, a small RSS icon appears at the bottom of the page which leads to the xml of the site. 
+{{<codeblock lang="go">}}
+[rss]
+    showRSS=false
+{{</codeblock>}}
+
+### Code Highlight
+{{<codeblock lang="go">}}
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = true
+    startLevel = 2
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+{{</codeblock>}}
+
+
+### Pagination
+Pagination controls how many posts are displayed in a single page in any list page (like posts) or in the blog type homepage. The minimum value of the pagination must be 1. The path params controls what the address of the various pages become.  In hugo.toml change: 
+{{<codeblock lang="go">}}
+[pagination]
+  disableAliases = false
+  pagerSize = 4
+  path = 'page'
+{{</codeblock>}}

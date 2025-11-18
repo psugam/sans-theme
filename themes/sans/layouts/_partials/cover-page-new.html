@@ -91,7 +91,7 @@
       {{ $dateHuman := .Date | time.Format ":date_long" }}
       {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
       <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-      {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
+      {{ $readingTime := div (float .WordCount) .Site.Params.posts.readingSpeed }}
       {{ $readingTime = math.Ceil $readingTime }}
       <p>Reading Time: {{ $readingTime}} mins </p>
     </div>

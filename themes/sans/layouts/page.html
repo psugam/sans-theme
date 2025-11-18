@@ -84,7 +84,7 @@
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 
-    {{ $readingTime := div (float .WordCount) .Site.Params.posts.reading_speed }}
+    {{ $readingTime := div (float .WordCount) .Site.Params.posts.readingSpeed }}
 {{ $readingTime = math.Ceil $readingTime }}
 <div class="metadata">
 

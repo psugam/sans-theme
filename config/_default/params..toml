@@ -62,7 +62,7 @@
   numberingInPost=false
 
 [posts]
-  reading_speed=212
+  readingSpeed=212
   showDate=true
   showWordCount=true
   showAuthors=true
@@ -82,11 +82,11 @@
 [sections]
   showDate=true
   showTags=false
-  showCategories=true
-  showAuthors=true
-  showCoverImage=true
+  showCategories=false
+  showAuthors=false
+  showCoverImage=false
   showSummary=true
-  showReadMore=true
+  showReadMore=false
   summaryLength=500
   dateFormat="2006-01-02"
 

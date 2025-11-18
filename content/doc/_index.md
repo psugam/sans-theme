@@ -15,3 +15,5 @@ Lorem ipsum dolor sit amet.
 7. [Shortcodes](/doc/shortcodes)
 8. [Hosting](/doc/hosting-your-site)
    
+
+__________________________________________________________________
