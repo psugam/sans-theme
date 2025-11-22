@@ -4,24 +4,30 @@
 {{ end }}
 {{ $mainCaption := .Get "caption" }}
 
-<style>
-  :root{
-    --slide-width: {{ $slideWidth }};
-  }
-  
-.mySlides { 
-  display: none; 
-  border-radius: 8px; 
-}
+{{/* Generate unique ID - use provided id or create one from ordinal */}}
+{{ $slideshowId := .Get "id" }}
+{{ if not $slideshowId }}
+  {{ $slideshowId = printf "slideshow-%d" .Ordinal }}
+{{ end }}
 
-.w3-display-container { 
-  position: relative; 
-  width: var(--slide-width); 
+<style>
+.slideshow-container-{{ $slideshowId }} {
+  position: relative;
+  width: {{ $slideWidth }};
   max-width: 100% !important;
   margin: 0 auto;
 }
 
-.w3-button {
+.slideshow-container-{{ $slideshowId }} .slide {
+  display: none;
+  border-radius: 8px;
+}
+
+.slideshow-container-{{ $slideshowId }} .slide.active {
+  display: block;
+}
+
+.slideshow-container-{{ $slideshowId }} .nav-btn {
   background-color: black;
   color: white;
   border: none;
@@ -33,10 +39,10 @@
   z-index: 2;
 }
 
-.w3-display-left { left: 0; }
-.w3-display-right { right: 0; }
+.slideshow-container-{{ $slideshowId }} .nav-btn.prev { left: 0; }
+.slideshow-container-{{ $slideshowId }} .nav-btn.next { right: 0; }
 
-.slide-caption {
+.slideshow-container-{{ $slideshowId }} .slide-caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -49,14 +55,14 @@
   border-radius: 0 0 8px 8px;
 }
 
-#main-caption { 
-  text-align: center; 
-  font-weight: bold; 
-  margin-top: 0.5rem; 
+.slideshow-container-{{ $slideshowId }} .main-caption {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 </style>
 
-<div class="w3-content w3-display-container">
+<div class="slideshow-container-{{ $slideshowId }}" data-slideshow-id="{{ $slideshowId }}">
   {{ range $index := seq 1 20 }}
     {{ $imageParam := print "image" $index }}
     {{ $captionParam := print "caption" $index }}
@@ -66,25 +72,21 @@
       {{ $finalPath := "" }}
       {{ $imageFound := false }}
       
-      {{/* Clean the path - remove leading slashes/backslashes */}}
       {{ $cleanPath := strings.TrimPrefix "/" $imagePath }}
       {{ $cleanPath = strings.TrimPrefix "\\" $cleanPath }}
       
-      {{/* First: Check if image exists in page resources (same folder as .md) */}}
       {{ $pageImg := $.Page.Resources.GetMatch $cleanPath }}
       
       {{ if $pageImg }}
-        {{/* Found in page resources */}}
         {{ $finalPath = $pageImg.RelPermalink }}
         {{ $imageFound = true }}
       {{ else }}
-        {{/* Second: Try static folder - preserve original path format */}}
         {{ $finalPath = $imagePath }}
         {{ $imageFound = true }}
       {{ end }}
       
       {{ if $imageFound }}
-        <div class="mySlides">
+        <div class="slide" data-slide-index="{{ $index }}">
           <img src="{{ $finalPath }}" alt="Slideshow image" style="width: 100%; border-radius: 8px;">
           {{ $slideCaption := $.Get $captionParam }}
           {{ if $slideCaption }}
@@ -95,29 +97,55 @@
     {{ end }}
   {{ end }}
 
-  <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <button class="nav-btn prev" onclick="changeSlide('{{ $slideshowId }}', -1)">&#10094;</button>
+  <button class="nav-btn next" onclick="changeSlide('{{ $slideshowId }}', 1)">&#10095;</button>
+  
+  {{ if $mainCaption }}
+    <p class="main-caption">{{ $mainCaption }}</p>
+  {{ end }}
 </div>
 
-{{ if $mainCaption }}
-  <p id="main-caption">{{ $mainCaption }}</p>
-{{ end }}
-
 <script>
-let slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) { 
-  showDivs(slideIndex += n); 
-}
-
-function showDivs(n) {
-  const slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) slideIndex = 1;
-  if (n < 1) slideIndex = slides.length;
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+(function() {
+  // Initialize slideshow state management (only once)
+  if (!window.slideshowStates) {
+    window.slideshowStates = {};
+    
+    window.changeSlide = function(id, direction) {
+      const state = window.slideshowStates[id];
+      if (!state) return;
+      
+      state.currentIndex += direction;
+      showSlide(id);
+    };
+    
+    window.showSlide = function(id) {
+      const state = window.slideshowStates[id];
+      if (!state) return;
+      
+      const slides = state.container.querySelectorAll('.slide');
+      if (slides.length === 0) return;
+      
+      // Wrap around
+      if (state.currentIndex > slides.length) state.currentIndex = 1;
+      if (state.currentIndex < 1) state.currentIndex = slides.length;
+      
+      // Hide all slides, show current
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[state.currentIndex - 1].classList.add('active');
+    };
   }
-  slides[slideIndex - 1].style.display = "block";
-}
+  
+  // Initialize this specific slideshow
+  const id = '{{ $slideshowId }}';
+  const container = document.querySelector('.slideshow-container-' + id);
+  
+  if (container && !window.slideshowStates[id]) {
+    window.slideshowStates[id] = {
+      container: container,
+      currentIndex: 1
+    };
+    window.showSlide(id);
+  }
+})();
 </script>
