@@ -60,6 +60,11 @@
   font-weight: bold;
   margin-top: 0.5rem;
 }
+.main-caption{
+   text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
 </style>
 
 <div class="slideshow-container-{{ $slideshowId }}" data-slideshow-id="{{ $slideshowId }}">
@@ -81,13 +86,18 @@
         {{ $finalPath = $pageImg.RelPermalink }}
         {{ $imageFound = true }}
       {{ else }}
-        {{ $finalPath = $imagePath }}
+        {{/* Ensure path starts with / for proper resolution */}}
+        {{ if not (hasPrefix $imagePath "/") }}
+          {{ $finalPath = printf "/%s" $imagePath }}
+        {{ else }}
+          {{ $finalPath = $imagePath }}
+        {{ end }}
         {{ $imageFound = true }}
       {{ end }}
       
       {{ if $imageFound }}
         <div class="slide" data-slide-index="{{ $index }}">
-          <img src="{{ $finalPath }}" alt="Slideshow image" style="width: 100%; border-radius: 8px;">
+          <img src="{{ $finalPath | relURL }}" alt="Slideshow image" style="width: 100%; border-radius: 8px;">
           {{ $slideCaption := $.Get $captionParam }}
           {{ if $slideCaption }}
             <div class="slide-caption">{{ $slideCaption }}</div>
@@ -99,11 +109,11 @@
 
   <button class="nav-btn prev" onclick="changeSlide('{{ $slideshowId }}', -1)">&#10094;</button>
   <button class="nav-btn next" onclick="changeSlide('{{ $slideshowId }}', 1)">&#10095;</button>
-  
-  {{ if $mainCaption }}
-    <p class="main-caption">{{ $mainCaption }}</p>
-  {{ end }}
 </div>
+
+{{ if $mainCaption }}
+  <p class="main-caption">{{ $mainCaption }}</p>
+{{ end }}
 
 <script>
 (function() {

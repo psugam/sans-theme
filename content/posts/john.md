@@ -43,11 +43,12 @@ Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident c
 
 
 {{< slideshow
-    slidewidth="90%"
-    image1="/images/img_mountains.jpg" caption1="Sunrise over the peaks"
-    image2="/images/img_forest.jpg" caption2="Morning mist"
-    image3="/images/img_lights.jpg" caption3="Reflections on the lake"
-    image4="/images/avatar.png" caption4="Avatar"
+    slidewidth="100%"
+    caption="Hello"
+    image1="images/img_mountains.jpg" caption1="Sunrise over the peaks"
+    image2="images/img_forest.jpg" caption2="Morning mist"
+    image3="images/img_lights.jpg" caption3="Reflections on the lake"
+    image4="images/avatar.png" caption4="Avatar"
 >}}
 
   [^translator]: Hays translation
