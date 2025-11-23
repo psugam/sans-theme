@@ -1,4 +1,4 @@
-{{ $image := resources.Get .Site.Params.homepage.homePageCoverPath }}
+{{ $imagePath := .Site.Params.homepage.homePageCoverPath }}
 
 {{/* Hero Section */}}
 <section class="hero-section">
@@ -14,9 +14,9 @@
 <a href="{{.Site.BaseURL }}pages/about/" class="btn btn-secondary">About Us</a>
       </div>
     </div>
-    {{ if $image }}
+    {{ if $imagePath }}
     <div class="hero-image">
-      <img src="{{ $image.RelPermalink }}" alt="Hero" />
+      <img src="{{ $imagePath | relURL }}" alt="Hero" />
     </div>
     {{ end }}
   </div>
@@ -86,7 +86,7 @@
 
       <!-- Optional: Netlify anti-bot field -->
       <div style="display:none">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
+        <label>Don't fill this out: <input name="bot-field" /></label>
       </div>
 
       <!-- Hidden input so Netlify recognizes this form -->
@@ -116,14 +116,26 @@
       {{ with .Params.cover }}
         {{ $cover = .image }}
       {{ end }}
+      
+      {{/* Try to get image from page bundle first, then fallback to static */}}
       {{ $imageResource := .Resources.GetMatch $cover }}
       {{ if not $imageResource }}
-        {{ $imageResource = resources.Get "images/default.jpg" }}
+        {{ $defaultPath := "images/default.jpg" }}
+        {{ $imageResource = .Resources.GetMatch $defaultPath }}
+        {{ if not $imageResource }}
+          {{/* Fallback to static folder */}}
+          {{ $cover = "/images/default.jpg" }}
+        {{ else }}
+          {{ $cover = $imageResource.RelPermalink }}
+        {{ end }}
+      {{ else }}
+        {{ $cover = $imageResource.RelPermalink }}
       {{ end }}
-      {{ if $imageResource }}
+      
+      {{ if $cover }}
       <div class="post-image">
         <a href="{{ .Permalink }}">
-          <img src="{{ $imageResource.RelPermalink }}" alt="{{ .LinkTitle }}" loading="lazy" />
+          <img src="{{ $cover | relURL }}" alt="{{ .LinkTitle }}" loading="lazy" />
         </a>
       </div>
       {{ end }}

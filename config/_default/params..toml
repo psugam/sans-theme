@@ -3,7 +3,7 @@
   homePageLogo=true
   homePageTitle="JOHN DOE"
   homePageTagLine="Welcome to my website"
-  homePageLogoPath='images/avatar.png' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
+  homePageLogoPath='images/avatary.png' # you must either choose a logo or a cover image for the homepage if it is not a posts-main homepage. Selecting both will not work
   homePageAbout="Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
  
   homePageCoverPath='images/img_forest.jpg'
