@@ -1,4 +1,4 @@
-baseURL = "https://psugam.github.io/"
+baseURL = ""
 # if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
 languageCode = 'en-us'
 title = 'SUGO-WEBSITE'
