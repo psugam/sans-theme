@@ -315,16 +315,20 @@
 </div>
 
 <!-- Hidden Pagefind UI -->
+<script>
+    // Force HTTPS for pagefind paths
+    const pagefindBasePath = "{{ absURL "pagefind/" }}".replace(/^http:/, 'https:');
+</script>
 <script src="{{ absURL "pagefind/pagefind-ui.js" }}"></script>
 <div id="search"></div>
 
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-        // Initialize Pagefind with absolute URL
+        // Initialize Pagefind with HTTPS URL
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
-            bundlePath: "{{ absURL "pagefind/" }}"
+            bundlePath: pagefindBasePath
         });
 
         // Get elements
@@ -395,8 +399,9 @@
             searchResults.innerHTML = '<div class="no-results">Searching...</div>';
 
             try {
-                // Use Pagefind search API with absolute URL
-                const pagefind = await import('{{ absURL "pagefind/pagefind.js" }}');
+                // Use Pagefind search API with HTTPS URL
+                const pagefindJsPath = "{{ absURL "pagefind/pagefind.js" }}".replace(/^http:/, 'https:');
+                const pagefind = await import(pagefindJsPath);
                 const results = await pagefind.search(query);
                 
                 if (results.results.length === 0) {
@@ -441,6 +446,5 @@
         });
     });
 </script>
-
 {{end}}
 
