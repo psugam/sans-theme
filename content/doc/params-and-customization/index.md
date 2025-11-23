@@ -1,41 +1,93 @@
 +++
-title = '6 Params And Customization'
+title = 'Parameters and Customization'
 date = 2023-01-01T08:00:00-07:00
 draft = false
-type="page"
+type = "page"
 +++
 
-### Basic Features
-As specified earlier, some features of the sans theme can be turned off. Of these, searching will be dealt separately in an upcoming part.
-{{<codeblock lang="go">}}
+# Parameters and Customization
+
+This comprehensive guide covers all configurable parameters for customizing your site's appearance, behavior, and content display options.
+
+---
+
+## Theme Features
+
+The Sans theme provides optional features that can be enabled or disabled according to your requirements. Configure these settings in `hugo.toml`:
+
+{{<codeblock lang="toml">}}
 [theme]
-    showDarkModeToggle=true
-    showSearchIcon=true
-    showGoToTop=true
+  showDarkModeToggle = true
+  showSearchIcon = true
+  showGoToTop = true
 {{</codeblock>}}
 
-### Fonts
-To set the fonts for the whole site. 
-{{<codeblock lang="go">}}
+{{< table headers="Parameter|Default|Description" caption="Theme Feature Toggles" >}}
+showDarkModeToggle|true|Displays toggle button for switching between light and dark themes
+showSearchIcon|true|Shows search functionality icon in navigation
+showGoToTop|true|Displays scroll-to-top button for improved navigation
+{{< /table >}}
+
+**Note**: Search functionality configuration is covered in detail in the [Search Documentation](/docs/search).
+
+---
+
+## Typography Configuration
+
+### Site-Wide Font Settings
+
+Customize the typography for your entire site by specifying font families in `hugo.toml`:
+
+{{<codeblock lang="toml">}}
 [fonts]
-   siteFont='sans-serif, Monotype Corsiva'
+  siteFont = 'sans-serif, Monotype Corsiva'
 {{</codeblock>}}
-Single font should be separated by comma. 
 
-### Table of Contents
+{{< table headers="Parameter|Format|Example" caption="Font Configuration" >}}
+siteFont|Comma-separated font names|'Roboto, Arial, sans-serif'
+{{< /table >}}
 
-To enable the table of contents, you need to configure it in your site’s hugo.toml. Add or modify the following section:
+**Font Stack Guidelines**:
+- List fonts in order of preference
+- Include web-safe fallback fonts
+- Separate multiple fonts with commas
+- Enclose font names with spaces in quotes
+
+---
+
+## Table of Contents
+
+### Configuration Overview
+
+The table of contents (TOC) provides document navigation and can be customized through several parameters in `hugo.toml`:
 
 {{<codeblock lang="toml">}}
 [toc]
-numberingInTOC = false
-numberingInPost = true
+  numberingInTOC = false
+  numberingInPost = true
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2
 {{</codeblock>}}
 
-numberingInTOC — When set to true, all headings in the table of contents will be automatically numbered according to their hierarchy (e.g., 1, 1.1, 1.1.1).
+### TOC Parameters
 
-Thus, the toc will appear in the form: 
-{{<codeblock>}}
+{{< table headers="Parameter|Type|Description" caption="Table of Contents Configuration" >}}
+numberingInTOC|boolean|Enables hierarchical numbering in TOC (e.g., 1, 1.1, 1.1.1)
+numberingInPost|boolean|Applies same numbering directly to headings in post content
+startLevel|integer|Minimum heading level to include (2 = h2/##)
+endLevel|integer|Maximum heading level to include (5 = h5/#####)
+ordered|boolean|Enables restarted numbering at each level
+{{</codeblock>}}
+
+### Hierarchical Numbering Example
+
+When `numberingInTOC = true`, the TOC displays with continuous hierarchical numbering:
+
+{{<codeblock lang="text">}}
 Contents ▼
 
 1. MANY COLUMNS
@@ -44,31 +96,14 @@ Contents ▼
 │   │   └── 1.1.1.1. foot
 │   └── 1.1.2. FOOTnotes 2
 └── 1.2. HELLLO
-    └── 1.2.1. Mian Footnotes
+    └── 1.2.1. Main Footnotes
 {{</codeblock>}}
 
-numberingInPost — When set to true, the same numbering will appear directly within the post content itself.
+### Ordered Numbering Example
 
-If numberingInTOC is enabled, every heading inside the generated TOC will display its sequential number based on its position in the document structure. This helps readers visually understand the outline of the page.
+When `ordered = true` in markup settings, numbering restarts at each level:
 
-By default, a toc will not appear in a post. To enable toc, include this in the frontmatter to your post:
-
-```toc=true```
-
-Which headers are included in the table of contents can be specified by the following configuration in hugo.toml: 
-
-{{<codeblock lang="go">}}
-[markup]
-  [markup.tableOfContents]
-    endLevel = 5
-    ordered = false
-    startLevel = 2
-{{</codeblock>}}
-If the startLevel is 2, h2 (## in markdown) is the highest hierarchy that appears in the table of contents. Similarly, if the endLevel is 5, h5 (##### in markdown) is the lowest hierarchy that appears in the table of contents.
-
-If ordered is set to true, the table of contents is numbered but with restarted numbering. Thus the toc will appear in the form:
-
-{{<codeblock>}}
+{{<codeblock lang="text">}}
 Contents ▼
 
 1. MANY COLUMNS
@@ -77,99 +112,258 @@ Contents ▼
 │   │   └── 1. foot
 │   └── 2. FOOTnotes 2
 └── 3. HELLLO
-    └── 1. Mian Footnotes
-
+    └── 1. Main Footnotes
 {{</codeblock>}}
 
-These two params clash with each other, so only one must be set to true at a time. 
+### Enabling TOC in Posts
 
+By default, the table of contents is disabled for individual posts. To enable it, add the following to the post's front matter:
 
-### Posts
+{{<codeblock lang="yaml">}}
+toc = true
+{{</codeblock>}}
 
-For the posts in the site, some metadata is shown in the front. The params in `[posts]` can be used to configure whether or not the metadata show before the post. 
-{{<codeblock lang="go">}}
+### Important Considerations
+
+**Parameter Conflict**: The `numberingInTOC` and `ordered` parameters serve different numbering systems and should not both be enabled simultaneously. Choose one approach:
+- Use `numberingInTOC = true` for continuous hierarchical numbering
+- Use `ordered = true` for restarted numbering at each level
+
+---
+
+## Post Display Configuration
+
+Control the metadata and information displayed with each post through the `[posts]` section:
+
+{{<codeblock lang="toml">}}
 [posts]
-  readingSpeed=212
-  showDate=true
-  showWordCount=true
-  showAuthors=true
-  showTags=true
-  showCategories=true
-  showReadingTime=true
-  dateFormat="2 Jan 2006"
-  showTagCloud=false
-  showCategoryCloud=false
-  showAuthorCloud=false
+  readingSpeed = 212
+  showDate = true
+  showWordCount = true
+  showAuthors = true
+  showTags = true
+  showCategories = true
+  showReadingTime = true
+  dateFormat = "2 Jan 2006"
+  showTagCloud = false
+  showCategoryCloud = false
+  showAuthorCloud = false
 {{</codeblock>}}
 
-*readingSpeed* is used to calculate the expected reading time. 212 is the default value.
+### Post Parameters Reference
 
-*showDate*, *showWordCount*, *showAuthors*, *showTags*, *showCategories* and *showReadingTime* do what their name implies.
+{{< table headers="Parameter|Type|Description" caption="Post Display Parameters" >}}
+readingSpeed|integer|Words per minute for reading time calculation (default: 212)
+showDate|boolean|Displays publication date
+showWordCount|boolean|Shows total word count
+showAuthors|boolean|Displays author attribution
+showTags|boolean|Shows associated tags
+showCategories|boolean|Displays post categories
+showReadingTime|boolean|Shows estimated reading duration
+dateFormat|string|Date formatting specification (Go time format)
+showTagCloud|boolean|Displays tag cloud in sidebar (large screens only)
+showCategoryCloud|boolean|Shows category cloud in sidebar (large screens only)
+showAuthorCloud|boolean|Displays author cloud in sidebar (large screens only)
+{{</codeblock>}}
 
-*dateFormat* specifies the format of the date that is rendered in the posts page. This is different from the dateformat of the homepage. 
+### Reading Speed Calibration
 
-In large screens, you can enable clouds of taxonomies (tags, categories, authors or custom) with the params *showTagCloud*, *showCategoryCloud* and *showAuthorCloud*.
+The `readingSpeed` parameter determines reading time estimation:
+- **Default value**: 212 words per minute (average adult reading speed)
+- **Adjust based on content**: Technical content may require lower values (150-180)
+- **Language considerations**: Non-English content may have different optimal values
 
-### Sections
+### Taxonomy Clouds
 
-This covers much the same ground as the posts params but for sections i.e for list pages. 
-{{<codeblock lang="go">}}
+Taxonomy clouds (tags, categories, authors) appear in the sidebar on large screens, providing quick navigation to related content. These are automatically hidden on smaller viewports for optimal mobile experience.
+
+---
+
+## Section List Configuration
+
+Configure how content is displayed on list pages (archives, category pages, etc.):
+
+{{<codeblock lang="toml">}}
 [sections]
-  showDate=true
-  showTags=false
-  showCategories=false
-  showAuthors=false
-  showCoverImage=false
-  showSummary=true
-  showReadMore=false
-  summaryLength=500
-  dateFormat="2006-01-02"
+  showDate = true
+  showTags = false
+  showCategories = false
+  showAuthors = false
+  showCoverImage = false
+  showSummary = true
+  showReadMore = false
+  summaryLength = 500
+  dateFormat = "2006-01-02"
 {{</codeblock>}}
 
-The *summaryLength* value takes number of characters and not the number of words.
+### Section Parameters Reference
 
-### About Page
-Whether or not social media links are displayed on the about page can be handled by the following parameters.
-{{<codeblock lang="go">}}
+{{< table headers="Parameter|Type|Description" caption="Section List Display Parameters" >}}
+showDate|boolean|Displays publication date for each post
+showTags|boolean|Shows tags for each post in list
+showCategories|boolean|Displays categories for each post
+showAuthors|boolean|Shows author attribution
+showCoverImage|boolean|Displays post cover images in list view
+showSummary|boolean|Shows post summary/excerpt
+showReadMore|boolean|Displays "Read More" link
+summaryLength|integer|Maximum character count for summaries (not word count)
+dateFormat|string|Date formatting for list pages
+{{</codeblock>}}
+
+**Important**: The `summaryLength` value specifies character count, not word count. Adjust accordingly for desired summary length.
+
+---
+
+## About Page Configuration
+
+Control social media link visibility on the About page:
+
+{{<codeblock lang="toml">}}
 [about]
-  showSocialLinksPage=true
+  showSocialLinksPage = true
 {{</codeblock>}}
 
-### RSS
-When the RSS option is turned on, a small RSS icon appears at the bottom of the page which leads to the xml of the site. 
-{{<codeblock lang="go">}}
+{{< table headers="Parameter|Default|Description" caption="About Page Settings" >}}
+showSocialLinksPage|true|Controls display of social media links on About page
+{{< /table >}}
+
+Social media links are configured in the `[social]` section as described in the [Homepage Configuration](/docs/homepage) guide.
+
+---
+
+## RSS Feed Configuration
+
+Enable or disable RSS feed functionality and its associated icon:
+
+{{<codeblock lang="toml">}}
 [rss]
-    showRSS=false
+  showRSS = false
 {{</codeblock>}}
 
-### Code Highlight
-{{<codeblock lang="go">}}
+{{< table headers="Parameter|Default|Description" caption="RSS Configuration" >}}
+showRSS|false|Displays RSS icon in footer linking to site's XML feed
+{{< /table >}}
+
+When enabled, an RSS icon appears in the footer, providing users access to your site's RSS feed for content syndication.
+
+---
+
+## Code Highlighting
+
+Configure syntax highlighting for code blocks with extensive customization options:
+
+{{<codeblock lang="toml">}}
 [markup]
-  [markup.tableOfContents]
-    endLevel = 5
-    ordered = true
-    startLevel = 2
-
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
-
   [markup.highlight]
     style = "monokai"
     lineNos = true
     lineNumbersInTable = true
 {{</codeblock>}}
 
+### Syntax Highlighting Parameters
 
-### Pagination
-Pagination controls how many posts are displayed in a single page in any list page (like posts) or in the blog type homepage. The minimum value of the pagination must be 1. The path params controls what the address of the various pages become.  In hugo.toml change: 
-{{<codeblock lang="go">}}
+{{< table headers="Parameter|Options|Description" caption="Code Highlighting Configuration" >}}
+style|Various themes|Color scheme for syntax highlighting (e.g., monokai, dracula, github)
+lineNos|boolean|Enables line numbers for code blocks
+lineNumbersInTable|boolean|Renders line numbers using HTML tables for better copying
+{{</codeblock>}}
+
+### Available Highlight Styles
+
+{{< table headers="Style Name|Appearance|Best For" caption="Popular Syntax Highlighting Themes" >}}
+monokai|Dark with vibrant colors|Dark mode sites
+dracula|Purple and pink tones|Dark mode, modern aesthetic
+github|Light with subtle colors|Light mode, documentation
+solarized-dark|Muted dark palette|Reduced eye strain
+nord|Cool blue tones|Dark mode, minimalist
+{{< /table >}}
+
+### Mathematical Expression Support
+
+The configuration also enables passthrough for mathematical expressions:
+
+{{<codeblock lang="toml">}}
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)']]
+{{</codeblock>}}
+
+This allows LaTeX-style mathematical notation in your content using delimiters like `$$...$$` for block equations and `\(...\)` for inline expressions.
+
+---
+
+## Pagination Settings
+
+Control content pagination for list pages and blog-style homepages:
+
+{{<codeblock lang="toml">}}
 [pagination]
   disableAliases = false
   pagerSize = 4
   path = 'page'
 {{</codeblock>}}
+
+### Pagination Parameters
+
+{{< table headers="Parameter|Type|Description" caption="Pagination Configuration" >}}
+disableAliases|boolean|Controls creation of pagination aliases
+pagerSize|integer|Number of posts displayed per page (minimum: 1)
+path|string|URL segment for pagination (e.g., /page/2/, /page/3/)
+{{< /table >}}
+
+### URL Structure Examples
+
+With `path = 'page'` and `pagerSize = 4`:
+
+{{< table headers="Page Number|URL Example|Content" caption="Pagination URL Structure" >}}
+1|/posts/|Posts 1-4
+2|/posts/page/2/|Posts 5-8
+3|/posts/page/3/|Posts 9-12
+{{< /table >}}
+
+### Optimization Recommendations
+
+- **pagerSize**: Balance between page load time and user convenience
+  - Smaller values (4-6): Faster loading, more clicks required
+  - Larger values (10-15): Fewer pages, longer initial load
+- **path**: Use descriptive, URL-friendly terms
+- Consider your content volume and typical user browsing patterns
+
+---
+
+## Best Practices
+
+### Performance Considerations
+
+1. **Taxonomy Clouds**: Enable only if you have sufficient content volume
+2. **Cover Images**: Optimize images before enabling `showCoverImage`
+3. **Summary Length**: Keep summaries concise for faster rendering
+4. **Pagination**: Adjust `pagerSize` based on content weight
+
+### User Experience
+
+1. **Consistent Date Formats**: Maintain consistency between posts and sections
+2. **Reading Time**: Calibrate `readingSpeed` for your content type
+3. **Metadata Display**: Show only relevant information to avoid clutter
+4. **TOC Configuration**: Match TOC depth to content structure complexity
+
+### Accessibility
+
+1. **Code Highlighting**: Choose high-contrast color schemes
+2. **Line Numbers**: Enable for technical documentation
+3. **Font Choices**: Ensure web-safe fallbacks for typography
+4. **Navigation**: Keep "Go to Top" button enabled for long content
+
+---
+
+## Troubleshooting
+
+{{< table headers="Issue|Possible Cause|Solution" caption="Common Configuration Issues" >}}
+TOC not appearing|toc not enabled in front matter|Add toc = true to post front matter
+Code blocks not highlighting|Invalid style name|Verify style name against supported themes
+Reading time inaccurate|Incorrect readingSpeed value|Adjust readingSpeed parameter to match content type
+Pagination not working|pagerSize too large|Ensure pagerSize is appropriate for content volume
+Social links missing|showSocialLinksPage is false|Set showSocialLinksPage = true in configuration
+{{< /table >}}

@@ -13,7 +13,7 @@ This theme includes built-in search functionality powered by [Pagefind](https://
 
 Control the search icon visibility in your `params.toml`
 
-{{<codeblock lang="go">}}
+{{<codeblock lang="toml">}}
 [theme]
   showSearchIcon = true   # Enable search
   showSearchIcon = false  # Disable search
@@ -62,7 +62,7 @@ npm install -g pagefind
 #### 3. Use npm Scripts
 
 Include the following in the scripts section of the `package.json` file:
-{{<codeblock lang="js">}}
+{{<codeblock lang="json">}}
  "scripts": {
   "serve": "hugo server --disableFastRender",
   "build": "npx hugo && npx pagefind --site public --output-path public/pagefind",
@@ -82,7 +82,7 @@ This command:
 - Starts Hugo server with drafts enabled
 
 **For Production Build:**
-{{<codeblock lang="go">}}
+{{<codeblock lang="bash">}}
 npm run build
 {{</codeblock>}}
 
@@ -94,7 +94,7 @@ This command:
 
 **Simple Server (without rebuilding index):**
 
-{{<codeblock lang="go">}}
+{{<codeblock lang="bash">}}
 npm run serve
 {{</codeblock>}}
 
@@ -123,13 +123,13 @@ Pagefind is configured to:
 
 When deploying to platforms like Netlify, Vercel, or GitHub Pages, use the build command:
 
-{{<codeblock lang="go">}}
+{{<codeblock lang="bash">}}
 npm run build
 {{</codeblock>}}
 
 Or configure your platform's build command to:
 
-{{<codeblock lang="go">}}
+{{<codeblock lang="bash">}}
 npx hugo && npx pagefind --site public --output-path public/pagefind
 {{</codeblock>}}
 
@@ -137,18 +137,18 @@ npx hugo && npx pagefind --site public --output-path public/pagefind
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| Search not working locally | Run `npm run dev` instead of `hugo server` |
-| No search results | Ensure `npm run build` or `npm run dev` completed without errors |
-| Search icon not showing | Check `showSearchIcon = true` in config |
-| "pagefind not found" error | Run `npm install` or `npm install -g pagefind` |
+{{< table headers="Issue|Solution" caption="Common Search Issues" >}}
+Search not working locally|Run npm run dev instead of hugo server
+No search results|Ensure npm run build or npm run dev completed without errors
+Search icon not showing|Check showSearchIcon = true in config
+"pagefind not found" error|Run npm install or npm install -g pagefind
+{{< /table >}}
 
 ---
 
 ## Quick Reference
 
-| Search Status | Local Development | Production Build |
-|---------------|-------------------|------------------|
-| **Enabled** | `npm run dev` | `npm run build` |
-| **Disabled** | `hugo server` | `hugo` |
+{{< table headers="Search Status|Local Development|Production Build" caption="Command Reference" >}}
+Enabled|npm run dev|npm run build
+Disabled|hugo server|hugo
+{{< /table >}}

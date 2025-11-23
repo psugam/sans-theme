@@ -1,100 +1,268 @@
 +++
-title = '2 Homepage'
+title = 'Homepage Configuration'
 date = 2023-01-01T08:00:00-07:00
 draft = false
-toc=true
-type="page"
+toc = true
+type = "page"
 +++
 
-The first thing to configure is your homepage. There are three homepage variations that 'sans' theme supports. They are shown below with their default ui:
-#### 1. Only posts page
-     {{< figure src="onlyPosts.png" width="100%" caption="Fig: Only Posts Homepage" class="center" >}}
+# Homepage Configuration
 
-#### 2.  Logo page
- {{< figure src="logoPage.png" width="100%" caption="Fig: Logo Page Homepage" class="center" >}}
+The Sans theme offers three distinct homepage layouts to accommodate various website styles and content presentation preferences. This guide provides detailed configuration instructions for each layout type.
 
-#### 3. Blog page
+---
+
+## Available Homepage Layouts
+
+The theme supports three homepage variations, each designed for specific use cases:
+
+{{< table headers="Layout Type|Use Case|Complexity" caption="Homepage Layout Options" >}}
+Only Posts|Minimal blog or news site|Simple
+Logo Page|Personal portfolio or branding site|Moderate
+Blog Page|Full-featured blog with hero section|Advanced
+{{< /table >}}
+
+### 1. Only Posts Layout
+
+This streamlined layout presents a chronological list of posts with titles and publication dates, ideal for content-focused websites.
+
+{{< figure src="onlyPosts.png" width="100%" caption="Fig: Only Posts Homepage Layout" class="center" >}}
+
+### 2. Logo Page Layout
+
+A centered avatar-based layout featuring minimal biographical information, suitable for personal portfolios and professional profiles.
+
+{{< figure src="logoPage.png" width="100%" caption="Fig: Logo Page Homepage Layout" class="center" >}}
+
+### 3. Blog Page Layout
+
+A comprehensive blog homepage featuring a hero section, newsletter integration, and enhanced post previews with metadata and cover images.
+
 {{< slideshow
     slidewidth="90%"
-    caption="Blog Page Homepage"
+    caption="Blog Page Homepage Layout"
     image1="blogPageOne.png" caption1="Hero Section"
-    image2="blogPage2.png" caption2="Newsletter section"
-    image3="blogPage3.png" caption3="Posts"
+    image2="blogPage2.png" caption2="Newsletter Section"
+    image3="blogPage3.png" caption3="Posts Display"
 >}}
 
+---
 
-### Only Posts Page
-This is the simplest type of homepage. It just contains the title of the posts followed by the corresponding date. In order to use this homepage, go to ***config/params.toml*** and set the params to following:
+## Configuration Instructions
 
-{{< codeblock lang="go" >}}
+### Only Posts Layout
+
+This layout provides a minimalist approach, displaying only post titles and publication dates.
+
+#### Configuration Parameters
+
+Navigate to `config/params.toml` and apply the following configuration:
+
+{{< codeblock lang="toml" >}}
 [homepage]
   onlyPostsInHomePage = true
-  dateFormat= "2 Jan 2006"
+  dateFormat = "2 Jan 2006"
 {{< /codeblock >}}
-If you don't intend to change to other types of homepages, you can delete or comment out all other params in ```[homepage]```. Or they can be left as they are as they do not interfere with the current configuration.
 
-The text placed before the post list is sourced from the _index.md of contents folder and can be changed there directly with normal markdown rules.
+{{< table headers="Parameter|Value|Description" caption="Only Posts Configuration" >}}
+onlyPostsInHomePage|true|Enables the posts-only homepage layout
+dateFormat|2 Jan 2006|Defines the date display format (Go time format)
+{{< /table >}}
 
-### Logo Page
-This type of homepage has an avatar at the centre with minimal info.
+#### Additional Notes
 
-{{<codeblock lang="go">}}
+- Unused homepage parameters in the `[homepage]` section may be removed, commented out, or left unchanged—they will not interfere with this configuration
+- Introductory content displayed above the post list is sourced from `content/_index.md` and can be customized using standard Markdown syntax
+
+---
+
+### Logo Page Layout
+
+This layout features a centered avatar with essential biographical information and optional social media links.
+
+#### Configuration Parameters
+
+{{<codeblock lang="toml">}}
 [homepage]
   onlyPostsInHomePage = false
-  homePageLogo=true
-  homePageTitle="JOHN DOE"
-  homePageTagLine="Welcome to my website"
-  homePageLogoPath='images/avatar.png'
-  homePageAbout="Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
-  dateFormat= "2 Jan 2006"
-  showSocialLinksHome=true
+  homePageLogo = true
+  homePageTitle = "JOHN DOE"
+  homePageTagLine = "Welcome to my website"
+  homePageLogoPath = 'images/avatar.png'
+  homePageAbout = "Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
+  dateFormat = "2 Jan 2006"
+  showSocialLinksHome = true
 {{</codeblock>}}
-The ```onlyPostsInHomePage``` param must be set to false for this configuration to work. The ```homePageLogoPath``` should provide an image that is inside the images folder. i.e *your-hugo-site/assets/images/yourLogo.png* 
 
-The showSocialLinksHome param controls whether or not your social links are displayed in the homepage. If it is set to false, the social links would not be shown in homepage. 
-If it is set to true, the social links would be shown according to the following configuration. 
+{{< table headers="Parameter|Type|Description" caption="Logo Page Configuration Parameters" >}}
+onlyPostsInHomePage|boolean|Must be set to false to enable this layout
+homePageLogo|boolean|Activates the logo-centered layout
+homePageTitle|string|Primary heading displayed on homepage
+homePageTagLine|string|Subtitle or catchphrase beneath the title
+homePageLogoPath|string|Path to avatar image relative to assets/images/
+homePageAbout|string|Biographical description text
+dateFormat|string|Date formatting specification
+showSocialLinksHome|boolean|Controls social media link visibility
+{{< /table >}}
 
-In hugo.toml, set your own links in the following params:
+#### Image Asset Location
 
-{{<codeblock lang="go">}}
+Place your avatar image in the following directory structure:
+
+{{<codeblock lang="text">}}
+your-hugo-site/
+└── assets/
+    └── images/
+        └── avatar.png
+{{</codeblock>}}
+
+Reference the image using the relative path: `images/avatar.png`
+
+#### Social Media Integration
+
+Social media link visibility is controlled by the `showSocialLinksHome` parameter:
+
+- **When `true`**: Configured social links are displayed on the homepage
+- **When `false`**: Social links are hidden from the homepage
+
+##### Configuring Social Links
+
+Add your social media profiles in `hugo.toml`:
+
+{{<codeblock lang="toml">}}
 [social]
   facebook = "https://facebook.com/yourpage"
   x = "https://x.com/yourhandle"
-   instagram = "https://instagram.com/yourhandle"
-   linkedin = "https://linkedin.com/in/yourprofile"
-     youtube = "https://youtube.com/@yourchannel"
-   tiktok = "https://tiktok.com/@yourhandle"
+  instagram = "https://instagram.com/yourhandle"
+  linkedin = "https://linkedin.com/in/yourprofile"
+  youtube = "https://youtube.com/@yourchannel"
+  tiktok = "https://tiktok.com/@yourhandle"
   github = "https://github.com/yourusername"
-   reddit = "https://reddit.com/u/yourusername"
-   pinterest = "https://pinterest.com/yourhandle"
-   snapchat = "https://snapchat.com/add/yourhandle"
-   discord = "https://discord.gg/yourinvite"
-   twitch = "https://twitch.tv/yourchannel"
-   telegram = "https://t.me/yourhandle"
-   whatsapp = "https://wa.me/yourphonenumber"
-   mastodon = "https://mastodon.social/@yourhandle"
+  reddit = "https://reddit.com/u/yourusername"
+  pinterest = "https://pinterest.com/yourhandle"
+  snapchat = "https://snapchat.com/add/yourhandle"
+  discord = "https://discord.gg/yourinvite"
+  twitch = "https://twitch.tv/yourchannel"
+  telegram = "https://t.me/yourhandle"
+  whatsapp = "https://wa.me/yourphonenumber"
+  mastodon = "https://mastodon.social/@yourhandle"
   bluesky = "https://bsky.app/profile/yourhandle"
-   threads = "https://threads.net/@yourhandle"
-   medium = "https://medium.com/@yourhandle"
+  threads = "https://threads.net/@yourhandle"
+  medium = "https://medium.com/@yourhandle"
 {{</codeblock>}}
 
-All the params that contain values will be displayed in the homepage. If you don't need any social link to be displayed, they can be removed or commented out.
+{{< table headers="Platform|Parameter Key|URL Format" caption="Supported Social Media Platforms" >}}
+Facebook|facebook|https://facebook.com/yourpage
+X (Twitter)|x|https://x.com/yourhandle
+Instagram|instagram|https://instagram.com/yourhandle
+LinkedIn|linkedin|https://linkedin.com/in/yourprofile
+YouTube|youtube|https://youtube.com/@yourchannel
+TikTok|tiktok|https://tiktok.com/@yourhandle
+GitHub|github|https://github.com/yourusername
+Reddit|reddit|https://reddit.com/u/yourusername
+Pinterest|pinterest|https://pinterest.com/yourhandle
+Snapchat|snapchat|https://snapchat.com/add/yourhandle
+Discord|discord|https://discord.gg/yourinvite
+Twitch|twitch|https://twitch.tv/yourchannel
+Telegram|telegram|https://t.me/yourhandle
+WhatsApp|whatsapp|https://wa.me/yourphonenumber
+Mastodon|mastodon|https://mastodon.social/@yourhandle
+Bluesky|bluesky|https://bsky.app/profile/yourhandle
+Threads|threads|https://threads.net/@yourhandle
+Medium|medium|https://medium.com/@yourhandle
+{{< /table >}}
 
-### Blog Page
-This is the most complex type of homepage. It contains a hero section with the welcome message, newsletter subscription box and finally latest posts. The posts in this page are in a box and display cover image, author, date and tags too.
+**Note**: Only parameters with assigned values will be displayed. To hide specific platforms, remove or comment out the corresponding lines.
 
-In order to choose this type of homepage, choose the following configuration: 
+---
 
-{{<codeblock lang="go">}}
+### Blog Page Layout
+
+The most feature-rich homepage layout, incorporating a hero section with welcome message, newsletter subscription functionality, and enhanced post previews.
+
+#### Configuration Parameters
+
+{{<codeblock lang="toml">}}
 [homepage]
   onlyPostsInHomePage = false
-  homePageLogo=false 
-  homePageCoverPath='images/img_forest.jpg'
-  homePageCoverTitle="Welcome to our blog and portfolio."
-  homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
-  homePageSummaryLength=500
-  homePagePostDate=false 
-  dateFormat= "2 Jan 2006"
+  homePageLogo = false 
+  homePageCoverPath = 'images/img_forest.jpg'
+  homePageCoverTitle = "Welcome to our blog and portfolio."
+  homePageCoverTagLine = "Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom."
+  homePageSummaryLength = 500
+  homePagePostDate = false 
+  dateFormat = "2 Jan 2006"
 {{</codeblock>}}
 
-Setting false to the params of other two homepage types will automatically set Blog Page to be true. 
+{{< table headers="Parameter|Type|Description" caption="Blog Page Configuration Parameters" >}}
+onlyPostsInHomePage|boolean|Must be false to enable blog page layout
+homePageLogo|boolean|Must be false to activate blog page layout
+homePageCoverPath|string|Path to hero section background image
+homePageCoverTitle|string|Primary heading in hero section
+homePageCoverTagLine|string|Descriptive text displayed in hero section
+homePageSummaryLength|integer|Maximum character count for post summaries
+homePagePostDate|boolean|Controls date display in post previews
+dateFormat|string|Date formatting specification
+{{</codeblock>}}
+
+#### Layout Activation Logic
+
+The Blog Page layout is automatically activated when both `onlyPostsInHomePage` and `homePageLogo` are set to `false`. This hierarchical configuration system ensures only one layout is active at any time.
+
+#### Post Preview Features
+
+The Blog Page layout enhances post displays with:
+
+- Cover images (if specified in post front matter)
+- Author attribution
+- Publication dates (when enabled)
+- Category and tag listings
+- Post summaries with configurable length
+- Boxed card-style presentation
+
+---
+
+## Layout Selection Guide
+
+Choose the appropriate homepage layout based on your website's primary purpose:
+
+{{< table headers="Layout|Best For|Key Features" caption="Homepage Layout Comparison" >}}
+Only Posts|Content-focused blogs|Minimal design, fast loading, emphasizes content
+Logo Page|Personal portfolios|Professional presentation, social integration, branding focus
+Blog Page|Full-featured blogs|Rich media, newsletter integration, enhanced post previews
+{{< /table >}}
+
+---
+
+## Date Format Reference
+
+The `dateFormat` parameter uses Go's time formatting syntax. Common formats:
+
+{{< table headers="Format String|Output Example|Description" caption="Common Date Formats" >}}
+2 Jan 2006|23 Nov 2025|Day, abbreviated month, year
+January 2, 2006|November 23, 2025|Full month name, day, year
+2006-01-02|2025-11-23|ISO 8601 format
+02/01/2006|23/11/2025|Day/Month/Year
+Jan 2|Nov 23|Abbreviated month and day
+{{< /table >}}
+
+---
+
+## Troubleshooting
+
+{{< table headers="Issue|Cause|Solution" caption="Common Configuration Issues" >}}
+Wrong layout displays|Conflicting parameter values|Ensure only one layout type has required parameters set to true
+Avatar not showing|Incorrect image path|Verify image exists in assets/images/ directory
+Social links missing|showSocialLinksHome is false|Set showSocialLinksHome = true in configuration
+Hero image not loading|Invalid image path|Confirm homePageCoverPath points to valid image in assets/images/
+{{< /table >}}
+
+---
+
+## Best Practices
+
+1. **Image Optimization**: Compress hero and avatar images for faster load times
+2. **Content Planning**: Align homepage layout with your content strategy
+3. **Social Link Management**: Maintain only active social media profiles
+4. **Testing**: Preview changes locally before deploying
+5. **Consistency**: Ensure date formats match across all configuration fi
