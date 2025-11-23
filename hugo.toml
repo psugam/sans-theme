@@ -7,7 +7,7 @@ theme = 'sans'
 publishDir = "public"
 
 canonifyURLs = false  
-relativeURLs = true  
+relativeURLs = false  
 
 enableRobotsTXT = true
 summaryLength = 50
