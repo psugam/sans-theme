@@ -22,11 +22,11 @@ The Sans theme provides several optional features that can be enabled or disable
   showGoToTop = true
 {{</codeblock>}}
 
-{{< table headers="Feature|Parameter|Description" caption="Available Theme Features" >}}
+{{<table headers="Feature|Parameter|Description" caption="Available Theme Features" >}}
 Dark Mode Toggle|showDarkModeToggle|Displays a toggle button for switching between light and dark themes
 Search Icon|showSearchIcon|Shows the search functionality icon in the navigation
 Go to Top Button|showGoToTop|Displays a button to scroll back to the top of the page
-{{< /table >}}
+{{</table >}}
 
 ---
 
@@ -43,13 +43,13 @@ The theme supports two distinct color modes: light and dark. The configuration r
 
 Color values can be specified using any CSS-compatible format:
 
-{{< table headers="Format|Example|Use Case" caption="Supported Color Formats" >}}
+{{<table headers="Format|Example|Use Case" caption="Supported Color Formats" >}}
 Named Colors|white, black, red|Simple, readable color names
 Hexadecimal|#333333, #00e|Precise color control
 RGB|rgb(51, 51, 51)|Programmatic color generation
 RGBA|rgba(0, 0, 238, 0.9)|Colors with transparency
 HSL|hsl(240, 100%, 47%)|Hue-based color selection
-{{< /table >}}
+{{</table >}}
 
 ### Configuration Parameters
 
@@ -84,7 +84,7 @@ Add the following parameters to your `hugo.toml` file under the `[theme]` sectio
 
 ### Parameter Reference
 
-{{< table headers="Parameter|Applies To|Description" caption="Color Configuration Parameters" >}}
+{{<table headers="Parameter|Applies To|Description" caption="Color Configuration Parameters" >}}
 darkModeColor|Dark Mode|Primary background color for dark theme
 lightModeColor|Light Mode|Primary background color for light theme
 darkModeLinkColor|Dark Mode|Hyperlink text color in dark theme
@@ -99,7 +99,7 @@ lightModeButtonAlt|Light Mode|Secondary/outline button background color
 lightModeButtonAltText|Light Mode|Secondary/outline button text color
 darkModeButtonAlt|Dark Mode|Secondary/outline button background color
 darkModeButtonAltText|Dark Mode|Secondary/outline button text color
-{{< /table >}}
+{{</table >}}
 
 ---
 
@@ -144,12 +144,12 @@ Maintain visual consistency by:
 
 ## Troubleshooting
 
-{{< table headers="Issue|Possible Cause|Solution" caption="Common Color Configuration Issues" >}}
+{{<table headers="Issue|Possible Cause|Solution" caption="Common Color Configuration Issues" >}}
 Colors not applying|Syntax error in configuration|Verify TOML syntax and color format validity
 Inconsistent appearance|Missing dark or light mode values|Ensure all required parameters are defined for both modes
 Poor readability|Insufficient contrast|Adjust color values to meet accessibility standards
 Toggle not working|showDarkModeToggle disabled|Set showDarkModeToggle = true in configuration
-{{< /table >}}
+{{</table >}}
 
 ---
 

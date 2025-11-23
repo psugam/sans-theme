@@ -75,13 +75,13 @@ The table of contents (TOC) provides document navigation and can be customized t
 
 ### TOC Parameters
 
-{{< table headers="Parameter|Type|Description" caption="Table of Contents Configuration" >}}
+{{<table headers="Parameter|Type|Description" caption="Table of Contents Configuration" >}}
 numberingInTOC|boolean|Enables hierarchical numbering in TOC (e.g., 1, 1.1, 1.1.1)
 numberingInPost|boolean|Applies same numbering directly to headings in post content
 startLevel|integer|Minimum heading level to include (2 = h2/##)
 endLevel|integer|Maximum heading level to include (5 = h5/#####)
 ordered|boolean|Enables restarted numbering at each level
-{{</codeblock>}}
+{{</table>}}
 
 ### Hierarchical Numbering Example
 
@@ -152,7 +152,7 @@ Control the metadata and information displayed with each post through the `[post
 
 ### Post Parameters Reference
 
-{{< table headers="Parameter|Type|Description" caption="Post Display Parameters" >}}
+{{<table headers="Parameter|Type|Description" caption="Post Display Parameters" >}}
 readingSpeed|integer|Words per minute for reading time calculation (default: 212)
 showDate|boolean|Displays publication date
 showWordCount|boolean|Shows total word count
@@ -164,7 +164,7 @@ dateFormat|string|Date formatting specification (Go time format)
 showTagCloud|boolean|Displays tag cloud in sidebar (large screens only)
 showCategoryCloud|boolean|Shows category cloud in sidebar (large screens only)
 showAuthorCloud|boolean|Displays author cloud in sidebar (large screens only)
-{{</codeblock>}}
+{{</table>}}
 
 ### Reading Speed Calibration
 
@@ -198,7 +198,7 @@ Configure how content is displayed on list pages (archives, category pages, etc.
 
 ### Section Parameters Reference
 
-{{< table headers="Parameter|Type|Description" caption="Section List Display Parameters" >}}
+{{<table headers="Parameter|Type|Description" caption="Section List Display Parameters" >}}
 showDate|boolean|Displays publication date for each post
 showTags|boolean|Shows tags for each post in list
 showCategories|boolean|Displays categories for each post
@@ -208,7 +208,7 @@ showSummary|boolean|Shows post summary/excerpt
 showReadMore|boolean|Displays "Read More" link
 summaryLength|integer|Maximum character count for summaries (not word count)
 dateFormat|string|Date formatting for list pages
-{{</codeblock>}}
+{{</table>}}
 
 **Important**: The `summaryLength` value specifies character count, not word count. Adjust accordingly for desired summary length.
 
@@ -266,7 +266,7 @@ Configure syntax highlighting for code blocks with extensive customization optio
 style|Various themes|Color scheme for syntax highlighting (e.g., monokai, dracula, github)
 lineNos|boolean|Enables line numbers for code blocks
 lineNumbersInTable|boolean|Renders line numbers using HTML tables for better copying
-{{</codeblock>}}
+{{</table>}}
 
 ### Available Highlight Styles
 

@@ -16,29 +16,29 @@ The Sans theme offers three distinct homepage layouts to accommodate various web
 
 The theme supports three homepage variations, each designed for specific use cases:
 
-{{< table headers="Layout Type|Use Case|Complexity" caption="Homepage Layout Options" >}}
+{{<table headers="Layout Type|Use Case|Complexity" caption="Homepage Layout Options" >}}
 Only Posts|Minimal blog or news site|Simple
 Logo Page|Personal portfolio or branding site|Moderate
 Blog Page|Full-featured blog with hero section|Advanced
-{{< /table >}}
+{{</table >}}
 
 ### 1. Only Posts Layout
 
 This streamlined layout presents a chronological list of posts with titles and publication dates, ideal for content-focused websites.
 
-{{< figure src="onlyPosts.png" width="100%" caption="Fig: Only Posts Homepage Layout" class="center" >}}
+{{<figure src="onlyPosts.png" width="100%" caption="Fig: Only Posts Homepage Layout" class="center" >}}
 
 ### 2. Logo Page Layout
 
 A centered avatar-based layout featuring minimal biographical information, suitable for personal portfolios and professional profiles.
 
-{{< figure src="logoPage.png" width="100%" caption="Fig: Logo Page Homepage Layout" class="center" >}}
+{{<figure src="logoPage.png" width="100%" caption="Fig: Logo Page Homepage Layout" class="center" >}}
 
 ### 3. Blog Page Layout
 
 A comprehensive blog homepage featuring a hero section, newsletter integration, and enhanced post previews with metadata and cover images.
 
-{{< slideshow
+{{<slideshow
     slidewidth="90%"
     caption="Blog Page Homepage Layout"
     image1="blogPageOne.png" caption1="Hero Section"
@@ -58,16 +58,16 @@ This layout provides a minimalist approach, displaying only post titles and publ
 
 Navigate to `config/params.toml` and apply the following configuration:
 
-{{< codeblock lang="toml" >}}
+{{<codeblock lang="toml" >}}
 [homepage]
   onlyPostsInHomePage = true
   dateFormat = "2 Jan 2006"
-{{< /codeblock >}}
+{{</codeblock >}}
 
-{{< table headers="Parameter|Value|Description" caption="Only Posts Configuration" >}}
+{{<table headers="Parameter|Value|Description" caption="Only Posts Configuration" >}}
 onlyPostsInHomePage|true|Enables the posts-only homepage layout
 dateFormat|2 Jan 2006|Defines the date display format (Go time format)
-{{< /table >}}
+{{</table >}}
 
 #### Additional Notes
 
@@ -94,7 +94,7 @@ This layout features a centered avatar with essential biographical information a
   showSocialLinksHome = true
 {{</codeblock>}}
 
-{{< table headers="Parameter|Type|Description" caption="Logo Page Configuration Parameters" >}}
+{{<table headers="Parameter|Type|Description" caption="Logo Page Configuration Parameters" >}}
 onlyPostsInHomePage|boolean|Must be set to false to enable this layout
 homePageLogo|boolean|Activates the logo-centered layout
 homePageTitle|string|Primary heading displayed on homepage
@@ -103,7 +103,7 @@ homePageLogoPath|string|Path to avatar image relative to assets/images/
 homePageAbout|string|Biographical description text
 dateFormat|string|Date formatting specification
 showSocialLinksHome|boolean|Controls social media link visibility
-{{< /table >}}
+{{</table >}}
 
 #### Image Asset Location
 
@@ -151,7 +151,7 @@ Add your social media profiles in `hugo.toml`:
   medium = "https://medium.com/@yourhandle"
 {{</codeblock>}}
 
-{{< table headers="Platform|Parameter Key|URL Format" caption="Supported Social Media Platforms" >}}
+{{<table headers="Platform|Parameter Key|URL Format" caption="Supported Social Media Platforms" >}}
 Facebook|facebook|https://facebook.com/yourpage
 X (Twitter)|x|https://x.com/yourhandle
 Instagram|instagram|https://instagram.com/yourhandle
@@ -170,7 +170,7 @@ Mastodon|mastodon|https://mastodon.social/@yourhandle
 Bluesky|bluesky|https://bsky.app/profile/yourhandle
 Threads|threads|https://threads.net/@yourhandle
 Medium|medium|https://medium.com/@yourhandle
-{{< /table >}}
+{{</table >}}
 
 **Note**: Only parameters with assigned values will be displayed. To hide specific platforms, remove or comment out the corresponding lines.
 
@@ -194,7 +194,7 @@ The most feature-rich homepage layout, incorporating a hero section with welcome
   dateFormat = "2 Jan 2006"
 {{</codeblock>}}
 
-{{< table headers="Parameter|Type|Description" caption="Blog Page Configuration Parameters" >}}
+{{<table headers="Parameter|Type|Description" caption="Blog Page Configuration Parameters" >}}
 onlyPostsInHomePage|boolean|Must be false to enable blog page layout
 homePageLogo|boolean|Must be false to activate blog page layout
 homePageCoverPath|string|Path to hero section background image
@@ -203,7 +203,7 @@ homePageCoverTagLine|string|Descriptive text displayed in hero section
 homePageSummaryLength|integer|Maximum character count for post summaries
 homePagePostDate|boolean|Controls date display in post previews
 dateFormat|string|Date formatting specification
-{{</codeblock>}}
+{{</table >}}
 
 #### Layout Activation Logic
 
@@ -226,11 +226,11 @@ The Blog Page layout enhances post displays with:
 
 Choose the appropriate homepage layout based on your website's primary purpose:
 
-{{< table headers="Layout|Best For|Key Features" caption="Homepage Layout Comparison" >}}
+{{<table headers="Layout|Best For|Key Features" caption="Homepage Layout Comparison" >}}
 Only Posts|Content-focused blogs|Minimal design, fast loading, emphasizes content
 Logo Page|Personal portfolios|Professional presentation, social integration, branding focus
 Blog Page|Full-featured blogs|Rich media, newsletter integration, enhanced post previews
-{{< /table >}}
+{{</table >}}
 
 ---
 
@@ -238,24 +238,24 @@ Blog Page|Full-featured blogs|Rich media, newsletter integration, enhanced post 
 
 The `dateFormat` parameter uses Go's time formatting syntax. Common formats:
 
-{{< table headers="Format String|Output Example|Description" caption="Common Date Formats" >}}
+{{<table headers="Format String|Output Example|Description" caption="Common Date Formats" >}}
 2 Jan 2006|23 Nov 2025|Day, abbreviated month, year
 January 2, 2006|November 23, 2025|Full month name, day, year
 2006-01-02|2025-11-23|ISO 8601 format
 02/01/2006|23/11/2025|Day/Month/Year
 Jan 2|Nov 23|Abbreviated month and day
-{{< /table >}}
+{{</table >}}
 
 ---
 
 ## Troubleshooting
 
-{{< table headers="Issue|Cause|Solution" caption="Common Configuration Issues" >}}
+{{<table headers="Issue|Cause|Solution" caption="Common Configuration Issues" >}}
 Wrong layout displays|Conflicting parameter values|Ensure only one layout type has required parameters set to true
 Avatar not showing|Incorrect image path|Verify image exists in assets/images/ directory
 Social links missing|showSocialLinksHome is false|Set showSocialLinksHome = true in configuration
 Hero image not loading|Invalid image path|Confirm homePageCoverPath points to valid image in assets/images/
-{{< /table >}}
+{{</table >}}
 
 ---
 

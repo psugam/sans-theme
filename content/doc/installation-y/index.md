@@ -18,12 +18,12 @@ This guide will walk you through installing the Sugo theme for your Hugo site.
 
 Before installing the Sugo theme, ensure your development environment meets the following requirements:
 
-{{< table headers="Requirement|Minimum Version|Purpose" caption="System Requirements" >}}
+{{<table headers="Requirement|Minimum Version|Purpose" caption="System Requirements" >}}
 Hugo Extended|0.146.0+|Static site generator
 Git|2.0+|Version control and theme installation
 Node.js|18.0+|Package management and build tools
 npm|9.0+|JavaScript package manager
-{{< /table >}}
+{{</table >}}
 
 ### Verify Hugo Installation
 

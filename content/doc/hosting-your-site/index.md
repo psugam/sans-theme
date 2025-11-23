@@ -24,7 +24,7 @@ GitHub Pages offers free hosting for static sites directly from your repository.
 
 ### Workflow File
 
-{{< codeblock lang="yaml" >}}
+{{<codeblock lang="yaml" >}}
 # .github/workflows/deploy.yml
 name: Deploy Hugo site with Pagefind to Pages
 
@@ -102,7 +102,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-{{< /codeblock >}}
+{{</codeblock >}}
 
 ### Enable GitHub Pages
 
@@ -120,7 +120,7 @@ Vercel provides fast deployments with automatic SSL and global CDN.
 
 Create `vercel.json` in your project root:
 
-{{< codeblock lang="json" >}}
+{{<codeblock lang="json" >}}
 {
   "builds": [
     {
@@ -138,7 +138,7 @@ Create `vercel.json` in your project root:
   "trailingSlash": false,
   "ignoreCommand": "git diff --quiet HEAD^ HEAD ./"
 }
-{{< /codeblock >}}
+{{</codeblock >}}
 
 ### Deploy
 
@@ -148,10 +148,10 @@ Create `vercel.json` in your project root:
    - Click **Deploy**
 
 2. **Via CLI**:
-   {{< codeblock lang="bash" >}}
+   {{<codeblock lang="bash" >}}
    npm i -g vercel
    vercel
-   {{< /codeblock >}}
+   {{</codeblock >}}
 
 ---
 
@@ -163,7 +163,7 @@ Netlify offers continuous deployment with built-in form handling and serverless 
 
 Create `netlify.toml` in your project root:
 
-{{< codeblock lang="toml" >}}
+{{<codeblock lang="toml" >}}
 [build]
   publish = "public"
   command = "hugo --minify && npx pagefind --site public --output-path public/pagefind"
@@ -176,7 +176,7 @@ Create `netlify.toml` in your project root:
   from = "/pagefind/*"
   to = "/pagefind/:splat"
   status = 200
-{{< /codeblock >}}
+{{</codeblock >}}
 
 ### Deploy
 
@@ -186,10 +186,10 @@ Create `netlify.toml` in your project root:
    - Click **Deploy site**
 
 2. **Via CLI**:
-   {{< codeblock lang="bash" >}}
+   {{<codeblock lang="bash" >}}
    npm i -g netlify-cli
    netlify deploy --prod
-   {{< /codeblock >}}
+   {{</codeblock >}}
 
 ---
 
@@ -225,15 +225,15 @@ Cloudflare Pages provides fast global deployment with integrated CDN and DDoS pr
 
 All platforms use the same build process:
 
-{{< codeblock lang="bash" >}}
+{{<codeblock lang="bash" >}}
 npm run build
-{{< /codeblock >}}
+{{</codeblock >}}
 
 This runs:
 
-{{< codeblock lang="bash" >}}
+{{<codeblock lang="bash" >}}
 hugo && npx pagefind --site public --output-path public/pagefind
-{{< /codeblock >}}
+{{</codeblock >}}
 
 ### Output Directory
 
@@ -251,23 +251,23 @@ All configurations use **Node.js 20** for consistency.
 
 ## Troubleshooting
 
-{{< table headers="Issue|Solution" caption="Common Deployment Issues" >}}
+{{<table headers="Issue|Solution" caption="Common Deployment Issues" >}}
 Build fails with "hugo not found"|Check Hugo version in config matches available versions
 Search not working after deploy|Verify npx pagefind runs after hugo in build command
 404 errors on deployment|Check baseURL in hugo.toml matches your deployment URL
 CSS/JS not loading|Ensure Hugo extended version is installed (not standard)
 Slow build times|Consider caching dependencies in CI/CD workflows
-{{< /table >}}
+{{</table >}}
 
 ---
 
 ## Quick Comparison
 
-{{< table headers="Platform|Build Time|Free Tier|Auto SSL|Custom Domain" caption="Hosting Platform Comparison" >}}
+{{<table headers="Platform|Build Time|Free Tier|Auto SSL|Custom Domain" caption="Hosting Platform Comparison" >}}
 GitHub Pages|~2-3 min|✅ Unlimited|✅|✅
 Vercel|~1-2 min|✅ Generous|✅|✅
 Netlify|~1-2 min|✅ 300 min/month|✅|✅
 Cloudflare Pages|~1-2 min|✅ Unlimited|✅|✅
-{{< /table >}}
+{{</table >}}
 
 Choose based on your needs — all platforms work excellently with Hugo and Pagefind.
