@@ -60,6 +60,7 @@
   font-weight: bold;
   margin-top: 0.5rem;
 }
+
 .main-caption {
   text-align: center;
   font-weight: bold;
@@ -72,29 +73,46 @@
     {{ $imageParam := print "image" $index }}
     {{ $captionParam := print "caption" $index }}
     {{ $imagePath := $.Get $imageParam }}
-    
+
     {{ if $imagePath }}
       {{ $finalPath := "" }}
-      
-      {{/* Clean the path for page resources check */}}
-      {{ $cleanPath := strings.TrimPrefix "/" $imagePath }}
-      {{ $cleanPath = strings.TrimPrefix "\\" $cleanPath }}
-      
-      {{/* First: Try to get image from page bundle (same folder as .md) */}}
-      {{ $pageImg := $.Page.Resources.GetMatch $cleanPath }}
-      
+
+      {{/* Clean path */}}
+      {{ $clean := strings.TrimPrefix "/" $imagePath }}
+      {{ $clean = strings.TrimPrefix "\\" $clean }}
+
+      {{/* 1) Try to load from same folder (page bundle) */}}
+      {{ $pageImg := $.Page.Resources.GetMatch $clean }}
+
       {{ if $pageImg }}
-        {{/* Found in page resources (same folder) */}}
         {{ $finalPath = $pageImg.RelPermalink }}
+
       {{ else }}
-        {{/* Not in page resources, use as static file path */}}
-        {{ if not (hasPrefix $imagePath "/") }}
-          {{ $finalPath = printf "/%s" $imagePath }}
+
+        {{/* 2) Try from assets/images/... if user wrote images/foo.jpg */}}
+        {{ if (strings.HasPrefix $clean "images/") }}
+          {{/* Look for matching image inside assets/images/... */}}
+          {{ $assetImage := resources.Get (printf "images/%s" (strings.TrimPrefix "images/" $clean)) }}
+
+          {{ if $assetImage }}
+            {{ $finalPath = $assetImage.RelPermalink }}
+          {{ else }}
+            {{/* Not found → fallback to static path */}}
+            {{ $finalPath = printf "/%s" $clean }}
+          {{ end }}
+
         {{ else }}
-          {{ $finalPath = $imagePath }}
+
+          {{/* Normal static path fallback */}}
+          {{ if not (hasPrefix $imagePath "/") }}
+            {{ $finalPath = printf "/%s" $imagePath }}
+          {{ else }}
+            {{ $finalPath = $imagePath }}
+          {{ end }}
+
         {{ end }}
       {{ end }}
-      
+
       <div class="slide" data-slide-index="{{ $index }}">
         <img src="{{ $finalPath | relURL }}" alt="Slideshow image" style="width: 100%; border-radius: 8px;">
         {{ $slideCaption := $.Get $captionParam }}
@@ -115,14 +133,12 @@
 
 <script>
 (function() {
-  // Initialize slideshow state management (only once)
   if (!window.slideshowStates) {
     window.slideshowStates = {};
     
     window.changeSlide = function(id, direction) {
       const state = window.slideshowStates[id];
       if (!state) return;
-      
       state.currentIndex += direction;
       showSlide(id);
     };
@@ -130,21 +146,15 @@
     window.showSlide = function(id) {
       const state = window.slideshowStates[id];
       if (!state) return;
-      
       const slides = state.container.querySelectorAll('.slide');
       if (slides.length === 0) return;
-      
-      // Wrap around
       if (state.currentIndex > slides.length) state.currentIndex = 1;
       if (state.currentIndex < 1) state.currentIndex = slides.length;
-      
-      // Hide all slides, show current
       slides.forEach(slide => slide.classList.remove('active'));
       slides[state.currentIndex - 1].classList.add('active');
     };
   }
   
-  // Initialize this specific slideshow
   const id = '{{ $slideshowId }}';
   const container = document.querySelector('.slideshow-container-' + id);
   
