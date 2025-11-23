@@ -25,6 +25,12 @@
   }
 
 </style>
+{{ $baseSiteURL := .Site.Params.baseURL }}
+
+<script>
+  console.log("Base Site URL:", "{{ $baseSiteURL }}");
+</script>
+
 
 {{partial "postsList.html" .}}
 {{ end }}
