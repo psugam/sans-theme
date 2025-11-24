@@ -63,6 +63,7 @@
 
 [posts]
   readingSpeed=212
+  showFrontMatter=true
   showDate=true
   showWordCount=true
   showAuthors=true

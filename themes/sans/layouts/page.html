@@ -83,6 +83,11 @@
   
     <div data-pagefind-body>
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+    {{ $showFrontMatter := .Params.showFrontMatter | default .Site.Params.posts.showFrontMatter }}
+    {{if not $showFrontMatter}}
+
+    {{else}}
+
 
     {{ $readingTime := div (float .WordCount) .Site.Params.posts.readingSpeed }}
 {{ $readingTime = math.Ceil $readingTime }}
@@ -121,6 +126,8 @@
 <p>Reading Time: {{ $readingTime}} mins </p>
 {{end}}
    
+    {{end}}
+
   
   
   
@@ -134,7 +141,11 @@
 
 
 
+{{ $showTagCloud := .Site.Params.posts.showTagCloud }}
+{{ $showCategoryCloud := .Site.Params.posts.showCategoryCloud }}
+{{ $showAuthorCloud := .Site.Params.posts.showAuthorCloud }}
 
+{{ if or $showTagCloud $showCategoryCloud $showAuthorCloud }}
 <div class="taxo-clouds">
   <div class="tag-cloud">
     
@@ -161,8 +172,7 @@
   {{end}}
   </div>
 </div>
-
-
+{{ end }}
 <div class="main-text-container">
   {{ .Content }}
 </div>

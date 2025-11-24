@@ -2,7 +2,7 @@
 title = 'Author Quote'
 date = 2023-01-01T08:00:00-07:00
 draft = false
-type='page'
+showFrontMatter=false
 +++
 
 The author-quote shortcode creates beautifully formatted blockquotes with attribution. It displays quotes with decorative quotation marks, optional author names, and source citations.

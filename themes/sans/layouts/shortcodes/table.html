@@ -4,6 +4,7 @@
 <!-- layouts/shortcodes/table.html -->
 {{- $caption := .Get "caption" -}}
 {{- $id := $caption | urlize | default "" -}}
+<div class="table-wrapper">
 <table class="custom-table"{{- if $id }} id="{{ $id }}"{{- end -}}>
   {{- if .IsNamedParams -}}
     {{- if .Get "headers" -}}
@@ -34,6 +35,7 @@
   <caption class="table-caption"><b>Table: </b>{{ .Get "caption" }}</caption>
   {{end}}
 </table>
+</div>
 
 <style>
 
@@ -48,10 +50,17 @@
   margin-bottom: 1rem;
   font-size: larger;
   }
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
 .custom-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 0;
   font-size: 1rem;
   border: 1px solid #dcdcdc;
   overflow: hidden;

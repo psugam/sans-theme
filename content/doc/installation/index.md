@@ -5,7 +5,7 @@ title = 'Installation Guide'
 tags = ['installation','documentation']
 authors = ['John']
 categories=['category-1', 'category-2']
-type="page"
+showFrontMatter=false
 +++
 
 # Installation Guide
