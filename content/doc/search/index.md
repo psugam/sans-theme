@@ -3,9 +3,9 @@ title = 'Search'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
 
-# Search Feature Documentation
 
 This theme includes built-in search functionality powered by [Pagefind](https://pagefind.app/), a fast static search library that indexes your site content.
 

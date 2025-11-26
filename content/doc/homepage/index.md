@@ -151,27 +151,6 @@ Add your social media profiles in `hugo.toml`:
   medium = "https://medium.com/@yourhandle"
 {{</codeblock>}}
 
-{{<table headers="Platform|Parameter Key|URL Format" caption="Supported Social Media Platforms" >}}
-Facebook|facebook|https://facebook.com/yourpage
-X (Twitter)|x|https://x.com/yourhandle
-Instagram|instagram|https://instagram.com/yourhandle
-LinkedIn|linkedin|https://linkedin.com/in/yourprofile
-YouTube|youtube|https://youtube.com/@yourchannel
-TikTok|tiktok|https://tiktok.com/@yourhandle
-GitHub|github|https://github.com/yourusername
-Reddit|reddit|https://reddit.com/u/yourusername
-Pinterest|pinterest|https://pinterest.com/yourhandle
-Snapchat|snapchat|https://snapchat.com/add/yourhandle
-Discord|discord|https://discord.gg/yourinvite
-Twitch|twitch|https://twitch.tv/yourchannel
-Telegram|telegram|https://t.me/yourhandle
-WhatsApp|whatsapp|https://wa.me/yourphonenumber
-Mastodon|mastodon|https://mastodon.social/@yourhandle
-Bluesky|bluesky|https://bsky.app/profile/yourhandle
-Threads|threads|https://threads.net/@yourhandle
-Medium|medium|https://medium.com/@yourhandle
-{{</table >}}
-
 **Note**: Only parameters with assigned values will be displayed. To hide specific platforms, remove or comment out the corresponding lines.
 
 ---
@@ -247,22 +226,3 @@ Jan 2|Nov 23|Abbreviated month and day
 {{</table >}}
 
 ---
-
-## Troubleshooting
-
-{{<table headers="Issue|Cause|Solution" caption="Common Configuration Issues" >}}
-Wrong layout displays|Conflicting parameter values|Ensure only one layout type has required parameters set to true
-Avatar not showing|Incorrect image path|Verify image exists in assets/images/ directory
-Social links missing|showSocialLinksHome is false|Set showSocialLinksHome = true in configuration
-Hero image not loading|Invalid image path|Confirm homePageCoverPath points to valid image in assets/images/
-{{</table >}}
-
----
-
-## Best Practices
-
-1. **Image Optimization**: Compress hero and avatar images for faster load times
-2. **Content Planning**: Align homepage layout with your content strategy
-3. **Social Link Management**: Maintain only active social media profiles
-4. **Testing**: Preview changes locally before deploying
-5. **Consistency**: Ensure date formats match across all configuration fi

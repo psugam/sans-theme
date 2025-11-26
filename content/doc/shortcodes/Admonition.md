@@ -3,9 +3,8 @@ title = 'Admonition'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
-
-# Admonition Shortcode Documentation
 
 The admonition shortcode creates visually distinct callout boxes to highlight important information in your content. It supports five different types, each with its own styling and icon.
 
@@ -91,18 +90,6 @@ This is a dangerous operation that could cause data loss.
 
 ---
 
-## Color Reference
-
-{{< table headers="Type|Border Color|Background Color|Icon" caption="Admonition Color Scheme" >}}
-note|#2196f3|#e3f2fd|💡
-tip|#4caf50|#e8f5e9|✅
-info|#00acc1|#e0f7fa|ℹ️
-warning|#ff9800|#fff3e0|⚠️
-danger|#f44336|#ffebee|❌
-{{< /table >}}
-
----
-
 ## Examples
 
 ### Basic Note
@@ -128,15 +115,3 @@ You can use **bold**, *italic*, and even `code` inside admonitions.
 - Bullet points work too
 - Multiple paragraphs are supported
 {{</admonition>}}
-
-## Styling
-
-The shortcode includes built-in CSS that automatically adapts to dark mode. In dark mode, the text color is set to black for better readability against the light backgrounds.
-
-Each admonition type has:
-- A 5px colored left border
-- 8px border radius
-- Padding of 1em (top/bottom) and 1.2em (left/right)
-- 1em margin (top/bottom)
-- Type-specific background color
-- Bold title with an emoji icon

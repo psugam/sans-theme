@@ -1,5 +1,5 @@
 [homepage]
-  onlyPostsInHomePage = false
+  onlyPostsInHomePage = true
   homePageLogo=true
   homePageTitle="JOHN DOE"
   homePageTagLine="Welcome to my website"
@@ -83,13 +83,16 @@
 [sections]
   showDate=true
   showTags=false
-  showCategories=false
+  showCategories=true
   showAuthors=false
   showCoverImage=false
-  showSummary=true
+  showSummary=false
   showReadMore=false
   summaryLength=500
   dateFormat="2006-01-02"
+
+ [slideshow]
+  maxSize=20 
 
   [giscus]
 enable=false

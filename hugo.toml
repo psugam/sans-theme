@@ -2,7 +2,7 @@
 baseURL = "/"
 # if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
 languageCode = 'en-us'
-title = 'SANS'
+title = ''
 theme = 'sans'
 publishDir = "public"
 
@@ -23,7 +23,7 @@ defaultMarkdownHandler = "goldmark"
 
 [pagination]
   disableAliases = false
-  pagerSize = 4
+  pagerSize = 10
   path = 'page'
 
 
@@ -37,7 +37,7 @@ defaultMarkdownHandler = "goldmark"
 [markup]
   [markup.tableOfContents]
     endLevel = 5
-    ordered = true
+    ordered = false
     startLevel = 2
 
   [markup.goldmark]

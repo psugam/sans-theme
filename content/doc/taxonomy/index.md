@@ -3,9 +3,9 @@ title = 'Taxonomy Configuration'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
-+++
+toc=true
 
-# Taxonomy Configuration
++++
 
 Taxonomies provide a powerful method for organizing and categorizing content in Hugo. The Sans theme supports Hugo's flexible taxonomy system, allowing you to use default taxonomies or create custom classifications for your content.
 
@@ -56,8 +56,7 @@ Format|singular = "plural"|tag = "tags"
 
 ### Creating Custom Taxonomies
 
-The theme supports unlimited custom taxonomies beyond the default options. Custom taxonomies follow the same configuration pattern as default taxonomies.
-
+The process of creating custom taxonomies follows the same logic as that of default taxonomies. 
 #### Syntax Pattern
 
 {{<codeblock lang="toml">}}
@@ -82,17 +81,6 @@ The theme supports unlimited custom taxonomies beyond the default options. Custo
   difficulty = "difficulties"
 {{</codeblock>}}
 
-### Common Custom Taxonomy Use Cases
-
-{{< table headers="Taxonomy|Singular|Plural|Application" caption="Custom Taxonomy Examples" >}}
-Series|series|series|Multi-part content collections
-Topics|topic|topics|Subject matter classification
-Projects|project|projects|Project portfolio organization
-Locations|location|locations|Geographic content categorization
-Difficulty|difficulty|difficulties|Content complexity levels
-Language|language|languages|Multi-lingual content organization
-Format|format|formats|Content type classification (video, audio, text)
-{{< /table >}}
 
 ---
 
@@ -182,54 +170,6 @@ Control taxonomy display in various contexts through the `[posts]` and `[section
   showAuthors = false
 {{</codeblock>}}
 
-{{< table headers="Context|Configuration Section|Controls" caption="Taxonomy Display Settings" >}}
-Individual Posts|[posts]|Metadata display below post title
-List Pages|[sections]|Taxonomy display in post previews
-Sidebar Clouds|[posts]|Tag/category/author clouds (large screens)
-{{< /table >}}
-
----
-
-## Best Practices
-
-### Taxonomy Design Principles
-
-1. **Consistency**: Maintain consistent taxonomy usage across content
-2. **Specificity**: Use tags for specific topics, categories for broad themes
-3. **Hierarchy**: Categories should be broader than tags
-4. **Limitation**: Avoid creating too many taxonomies (3-5 is typically sufficient)
-5. **Naming**: Use clear, descriptive plural forms for better URLs
-
-### Recommended Taxonomy Structure
-
-{{< table headers="Level|Taxonomy|Example|Purpose" caption="Taxonomy Hierarchy Recommendations" >}}
-Broad|Categories|Tutorials, News, Projects|High-level content grouping
-Specific|Tags|hugo, javascript, css|Detailed topic classification
-Organizational|Series|Getting Started, Advanced Topics|Multi-part content
-Attribution|Authors|Staff names|Content ownership
-Supplementary|Custom|Format, Difficulty, Location|Additional classification
-{{< /table >}}
-
-### Content Organization Strategy
-
-**For Blogs**:
-- Use 2-4 broad categories
-- Apply 3-7 specific tags per post
-- Include author attribution
-- Consider series for tutorial sequences
-
-**For Documentation**:
-- Use categories for major sections
-- Apply tags for cross-referencing
-- Consider difficulty levels
-- Use series for progressive learning paths
-
-**For Portfolios**:
-- Use categories for project types
-- Apply tags for technologies/skills
-- Include location for geographic work
-- Consider format for media types
-
 ---
 
 ## Advanced Configuration
@@ -260,30 +200,6 @@ preserveTaxonomyNames = true
 
 ---
 
-## Troubleshooting
-
-{{< table headers="Issue|Cause|Solution" caption="Common Taxonomy Issues" >}}
-Taxonomy not appearing|Not defined in hugo.toml|Add taxonomy to [taxonomies] section
-Empty taxonomy pages|No content assigned|Add taxonomy terms to post front matter
-Incorrect URLs|Wrong plural form|Verify plural form in configuration matches desired URL
-Duplicate taxonomies|Multiple identical terms|Standardize taxonomy term spelling and case
-Case sensitivity issues|Hugo lowercasing|Enable preserveTaxonomyNames if needed
-{{< /table >}}
-
----
-
-## Migration Considerations
-
-### From Other Platforms
-
-When migrating content from other platforms:
-
-1. **Map existing taxonomies** to Hugo equivalents
-2. **Standardize term naming** for consistency
-3. **Batch update front matter** using scripts if needed
-4. **Verify URL structure** matches SEO requirements
-5. **Implement redirects** for changed taxonomy URLs
-
 ### Taxonomy Rename Process
 
 To rename a taxonomy:
@@ -295,11 +211,3 @@ To rename a taxonomy:
 5. Update internal links and references
 
 ---
-
-## Additional Resources
-
-{{< table headers="Resource|Description|Link" caption="Hugo Taxonomy Documentation" >}}
-Hugo Taxonomies|Official taxonomy documentation|https://gohugo.io/content-management/taxonomies/
-Front Matter|Content metadata configuration|https://gohugo.io/content-management/front-matter/
-URL Management|Customizing taxonomy URLs|https://gohugo.io/content-management/urls/
-{{< /table >}}

@@ -32,7 +32,7 @@
     name='File'
     url='/images/default.jpg'
     weight=60
-    params = {target = "_blank"}
+    params = {target = "_blank" }
 
   [[main]]
     name='Docs'

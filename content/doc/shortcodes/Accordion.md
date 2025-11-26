@@ -3,9 +3,9 @@ title = 'Accordion'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
 
-# Accordion Shortcode Documentation
 
 The accordion shortcode creates collapsible content sections that expand and collapse when clicked. It's perfect for FAQs, documentation sections, or any content that benefits from progressive disclosure.
 
@@ -44,17 +44,8 @@ Each accordion item is separated by `<!--accordion-->` and must follow this form
 
 {{< table headers="Field|Required|Description" caption="Accordion Item Fields" >}}
 title:|Yes|The clickable header text for the accordion item
-content:|Yes|The collapsible content (supports go)
+content:|Yes|The collapsible content (supports rich content). 
 {{< /table >}}
-
-## Features
-
-- **Single Item Open**: Only one accordion item can be open at a time
-- **Smooth Transitions**: Animated expand/collapse with rotating arrow icon
-- **go Support**: Full go rendering in content sections
-- **Dark Mode**: Automatically adapts to your theme's dark mode
-- **Mobile Responsive**: Optimized padding and font sizes for mobile devices
-- **Keyboard Accessible**: Works with keyboard navigation
 
 ## Examples
 
@@ -118,55 +109,7 @@ content: Common issues and solutions:
 Check the [documentation](https://gohugo.io) for more help.
 {{</accordion>}}
 
-## Styling Details
-
-{{< table headers="Element|Style|Description" caption="Accordion Styling" >}}
-Container|Rounded corners|8px border radius with 1rem padding
-Items|Bordered|1px border with theme colors
-Button|Full width|Flexbox layout with hover opacity
-Active Button|Highlighted|Uses theme dark color with white text
-Icon|Animated|Rotates 90° when accordion opens
-Content|Padded|1.5rem padding (1rem on mobile)
-{{< /table >}}
 
 ## Dark Mode Support
 
 The accordion automatically adapts to dark mode using your theme's color variables:
-
-{{< table headers="Variable|Usage" caption="Theme Variables" >}}
---light-color|Border and text colors in dark mode
---dark-color|Border and button colors in light mode
---light-link-color|Link colors in light mode
---dark-link-color|Title text color in dark mode
-{{< /table >}}
-
-## Behavior
-
-- Clicking an accordion button opens that item and closes all others
-- The arrow icon (▶) rotates 90° when an item is open
-- Active items have a highlighted background using the theme's dark color
-- All accordions are closed by default on page load
-
-## Mobile Responsiveness
-
-On screens 768px and below:
-- Button padding: `0.875rem 1rem`
-- Font size: `0.95rem`
-- Content padding: `1rem`
-
-## Tips
-
-{{< codeblock lang="go" >}}
-<!-- Use clear, concise titles -->
-title: Installation Guide
-
-<!-- Keep content focused and scannable -->
-content: Brief, focused content works best in accordions.
-
-<!-- Separate accordion items clearly -->
-<!--accordion-->
-
-<!-- Use go for formatting -->
-title: Advanced Features
-content: You can use **bold**, *italic*, `code`, and [links](https://example.com).
-{{< /codeblock >}}

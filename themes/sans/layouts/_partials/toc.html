@@ -3,11 +3,8 @@
 .toc-container{
 position: fixed;
 left: 20px;
-top: 20%;
+top: 5%;
 font-family: 'Georgia', 'Arial Narrow', Arial, sans-serif;
-}
-body.dark-mode .toc-body{
-border-right: 1px solid white;
 }
 
 .toc-title{
@@ -21,6 +18,7 @@ cursor: pointer;
   background-color: inherit;
   padding: 0.5rem;
   border-left: 1px solid black;
+max-width: 100%;
 }
 
 
@@ -61,7 +59,17 @@ cursor: pointer;
   padding-left: 0;
   }
 }
+@media only screen and (min-width: 1250px) {
+  .toc-container{
+  max-width: 300px;
 
+  }
+  .toc-body{
+   overflow-y: auto;
+  overflow-x: auto;
+  border-left: 2px solid white;
+  }
+}
 </style>
 
 {{if .Site.Params.toc.numberingInTOC}}
@@ -111,7 +119,7 @@ cursor: pointer;
         counter-reset: h2counter;
     }
     .main-text-container h1 {
-        counter-reset: h2counter;
+        counter-reset: 0;
     }
 .main-text-container    h2:before {
         content: counter(h2counter) ".\0000a0\0000a0";

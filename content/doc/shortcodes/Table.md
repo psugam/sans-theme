@@ -3,12 +3,11 @@ title = "Table Shortcode"
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
 
 The **table shortcode** allows you to create styled HTML tables within your Hugo content.  
 It supports custom headers, optional captions, and automatic styling for light/dark modes.
-
----
 
 ## Usage
 
@@ -46,16 +45,6 @@ Inner content|Yes|-|Rows of table data separated by newlines, cells separated by
 
 ---
 
-## Features
-
-- Styled HTML tables compatible with light and dark mode  
-- Automatic header row generation from `headers` parameter  
-- Responsive table layout  
-- Hover effects for table rows  
-- Caption support displayed prominently above or below the table  
-- Flexible number of rows and columns  
-
----
 
 ## Examples
 
@@ -78,36 +67,3 @@ Keyboard|50| *
 {{< /table >}}
 
 ---
-
-## Styling Details
-
-{{< table headers="Element|CSS Class|Description" caption="Table Styling Components" >}}
-Wrapper|.custom-table|Main table wrapper, applies borders, spacing, and light/dark mode styles  
-Header Cells|th|Bold text, semi-transparent background for contrast  
-Body Cells|td|Standard text, padding applied, alternating row backgrounds  
-Hover Effect|tbody tr:hover|Light overlay color on hover for emphasis  
-Caption|.table-caption|Optional table caption, displayed prominently  
-{{< /table >}}
-
----
-
-## Accessibility & Best Practices
-
-- Use proper header labels for screen readers  
-- Keep content concise for readability  
-- Avoid duplicate captions to prevent `id` conflicts  
-- Use pipe `|` consistently to separate cells  
-- Ensure enough color contrast for accessibility in light and dark modes  
-
----
-
-## Summary
-
-The `table` shortcode is ideal for:
-
-- Structured data in posts and documentation  
-- Comparisons, pricing tables, or team listings  
-- Any tabular content requiring consistent, styled layout  
-
-It is flexible, visually consistent, and adapts automatically to light and dark themes.
-

@@ -6,9 +6,8 @@ tags = ['installation','documentation']
 authors = ['John']
 categories=['category-1', 'category-2']
 showFrontMatter=false
+toc=true
 +++
-
-# Installation Guide
 
 This guide will walk you through installing the Sugo theme for your Hugo site.
 
@@ -18,11 +17,11 @@ This guide will walk you through installing the Sugo theme for your Hugo site.
 
 Before installing the Sugo theme, ensure your development environment meets the following requirements:
 
-{{<table headers="Requirement|Minimum Version|Purpose" caption="System Requirements" >}}
-Hugo Extended|0.146.0+|Static site generator
-Git|2.0+|Version control and theme installation
-Node.js|18.0+|Package management and build tools
-npm|9.0+|JavaScript package manager
+{{<table headers="Requirement|Minimum Version" caption="System Requirements" >}}
+Hugo Extended|0.146.0+
+Git|2.0+
+Node.js|18.0+
+npm|9.0+
 {{</table >}}
 
 ### Verify Hugo Installation
@@ -179,7 +178,7 @@ Edit `hugo.toml` or configuration files in the `config/` directory to customize:
 - Menu structure
 - Search functionality
 
-Refer to the [Configuration Guide](/docs/configuration) for detailed options.
+Refer to the [Configuration Guide](/doc/params-and-customization) for detailed options.
 
 ---
 
@@ -200,35 +199,12 @@ git submodule update --remote --merge
 
 ---
 
-## Troubleshooting
-
-{{< table headers="Issue|Solution" caption="Common Installation Issues" >}}
-"theme not found" error|Verify the theme folder is named exactly 'sugo' in the themes directory
-SCSS/Sass errors|Ensure you have Hugo Extended installed, not the standard version
-Module not found errors|Run npm install in your site root directory
-Port already in use|Use hugo server -p 1314 to run on a different port
-Submodule empty after clone|Run git submodule update --init --recursive
-{{< /table >}}
-
----
-
 ## Next Steps
 
 Now that you've installed the Sugo theme, you can:
 
-1. **[Configure Your Site](/docs/configuration)** - Customize theme settings
-2. **[Create Content](/docs/content-creation)** - Start writing posts and pages
-3. **[Enable Search](/docs/search)** - Set up Pagefind search functionality
-4. **[Deploy Your Site](/docs/deployment)** - Publish to hosting platforms
+1. **[Configure Your Site](/doc/params-and-customization)** - Customize theme settings
+2. **[Enable Search](/doc/search)** - Set up Pagefind search functionality
+3. **[Deploy Your Site](/doc/hosting-your-site)** - Publish to hosting platforms
 
 ---
-
-
-## Additional Resources
-
-{{< table headers="Resource|Description|Link" caption="Helpful Links" >}}
-Hugo Documentation|Official Hugo documentation|https://gohugo.io/documentation/
-Git Submodules Guide|Learn about Git submodules|https://git-scm.com/book/en/v2/Git-Tools-Submodules
-Node.js Documentation|Node.js and npm guides|https://nodejs.org/docs/
-Theme Repository|Sugo theme source code|https://github.com/psugam/sugo-theme
-{{< /table >}}

@@ -14,6 +14,7 @@ draft = false
 7. [Params and Customization](/doc/params-and-customization)
 8. [Shortcodes](/doc/shortcodes)
 9. [Search](/doc/search)
-10. [Hosting](/doc/hosting-your-site)
+10. [Comments](/doc/comments)
+11. [Hosting](/doc/hosting-your-site)
 
 ---

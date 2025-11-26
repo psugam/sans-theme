@@ -3,6 +3,7 @@ title = "Codeblock Shortcode"
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
 
 The **codeblock shortcode** provides a fully styled code display with:
@@ -10,9 +11,8 @@ The **codeblock shortcode** provides a fully styled code display with:
 - Syntax highlighting  
 - A language label  
 - A “Copy” button  
-- Custom dark theme styling  
 
-It is used to show clean code examples throughout the documentation.
+It is used to show clean code examples in your blog.
 
 ---
 
@@ -35,9 +35,18 @@ Inner content|Yes|-|The code to be displayed inside the block
 
 ---
 
+## Config
+
+The Sans theme uses the monokai highlighter by default. You can change the code highlighter and other params in **hugo.toml**. 
+{{<codeblock lang="toml">}}
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+{{</codeblock>}}
+
 ## Features
 
-- Dark theme code window  
 - Language label in the top bar  
 - Copy-to-clipboard button  
 - No extra spacing added  
@@ -96,56 +105,3 @@ This is inside an admonition block.
 {{< /codeblock >}}
 
 ---
-
-## Styling Details
-
-{{< table headers="Element|Style|Description" caption="Codeblock Styling" >}}
-Wrapper|Rounded + Shadow|Dark background, soft edges, boxed layout  
-Toolbar|Monospace bar|Shows language + copy button  
-Code Area|Monokai theme|Highlighted code with padding  
-Copy Button|Interactive|Turns into “Copied” after click  
-{{< /table >}}
-
----
-
-## Supported Languages
-
-The shortcode supports all languages supported by Hugo’s built-in highlighter.
-
-Common examples include:
-
-{{< table headers="Language|Identifier|Example" caption="Language Identifiers" >}}
-JavaScript|`javascript`|console.log()  
-HTML|`html`|`<div>`  
-CSS|`css`|`.selector{}`  
-Python|`python`|`def func()`  
-Go|`go`|`fmt.Println()`  
-Markdown|`markdown`|`# heading`  
-{{< /table >}}
-
----
-
-## Best Practices
-
-### Do:
-- Always specify a valid `lang`
-- Escape shortcode examples with `/* … */`
-- Keep code blocks short and focused
-
-### Don’t:
-- Insert raw unescaped shortcode tags inside codeblock
-- Add extra indentation outside the block
-
----
-
-## Summary
-
-The `codeblock` shortcode is perfect for:
-
-- Software documentation  
-- Showing shortcode usage  
-- Displaying formatted code examples  
-- Teaching programming concepts  
-
-Its clean UI and copy button make it easy for users to read and reuse example code.
-

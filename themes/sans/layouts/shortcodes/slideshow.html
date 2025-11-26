@@ -67,9 +67,10 @@
   margin-top: 0.5rem;
 }
 </style>
+{{ $maxSize:= .Site.Params.slideshow.maxSize}}
 
 <div class="slideshow-container-{{ $slideshowId }}" data-slideshow-id="{{ $slideshowId }}">
-  {{ range $index := seq 1 20 }}
+  {{ range $index := seq 1 $maxSize }}
     {{ $imageParam := print "image" $index }}
     {{ $captionParam := print "caption" $index }}
     {{ $imagePath := $.Get $imageParam }}

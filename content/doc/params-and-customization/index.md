@@ -3,9 +3,8 @@ title = 'Parameters and Customization'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
-
-# Parameters and Customization
 
 This comprehensive guide covers all configurable parameters for customizing your site's appearance, behavior, and content display options.
 

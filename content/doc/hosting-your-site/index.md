@@ -5,8 +5,6 @@ draft = false
 showFrontMatter=false
 +++
 
-# Hosting Your Site
-
 This guide covers deploying your Hugo site built with the *sans* theme to popular hosting platforms. All configurations include Pagefind search indexing.
 
 ---
@@ -14,84 +12,140 @@ This guide covers deploying your Hugo site built with the *sans* theme to popula
 ## GitHub Pages
 
 GitHub Pages offers free hosting for static sites directly from your repository.
+> *Note*: Before deploying your blog on github pages make sure that the following configuration is set in your *hugo.toml* file.
+{{<codeblock lang="toml">}}
+baseURL = "https://yourusername.github.io/your-blog"
+canonifyURLs = true  
+relativeURLs = false  
+{{</codeblock>}}
 
-### Configuration Steps
+If your blog is on a subdomain (i.e. with /your-repo-name rather than just yourusername.github.io), make sure that you include the full url with repo-name as well. Do not include slash at the end.
 
-1. **Create workflow file**: `.github/workflows/deploy.yml`
-2. **Adjust baseURL**:
-   - For `username.github.io`: Use `hugo.toml` (change workflow accordingly)
-   - For `username.github.io/repo-name`: Set `baseURL = "https://username.github.io/repo-name"` in `hugo.github.toml`
+Make sure that *canonifyURLs* is set to true and *relativeURLS* is set to false. Errors may occur if this is not done.
 
-### Workflow File
+### Enable GitHub Pages
 
-{{<codeblock lang="yaml" >}}
-# .github/workflows/deploy.yml
-name: Deploy Hugo site with Pagefind to Pages
+1. Go to your github repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Go to **Actions**→ **New Workflow** and search for hugo. Github automatically generates a hugo.yml at `your-hugo-site/.github/workflows/hugo.yml`
+4. If you have disabled the search option for your hugo blog. Leave the hugo yml as it is.
+5. If you have enabled search function, remove the *steps* in hugo.yml and replace by the following:
+   {{<codeblock lang="yml">}}
+         steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Install Pagefind
+        run: npm install -g pagefind
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --config hugo.toml \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Build Pagefind search index
+        run: npx pagefind --site public --output-path public/pagefind
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+   {{</codeblock>}}
+ Or replace the whole hugo.yml code with the following:
+   {{<codeblock lang="yml">}}
+          # Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Deploy Hugo site to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]  # or "main"
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Default to bash
 defaults:
   run:
     shell: bash
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.146.0
-      NODE_VERSION: 20
     steps:
-      - name: Checkout repository
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-          sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Setup GitHub Pages
-        id: pages
-        uses: actions/configure-pages@v5
-
+          node-version: '20'
+          cache: 'npm'
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Install Pagefind
-        run: npm install pagefind
-
-      - name: Build site with Hugo
+        run: npm install -g pagefind
+      - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: hugo --minify --config hugo.github.toml
-
-      - name: Run Pagefind indexing
+        run: |
+          hugo \
+            --config hugo.toml \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Build Pagefind search index
         run: npx pagefind --site public --output-path public/pagefind
-
-      - name: Upload site artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
+  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -102,14 +156,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-{{</codeblock >}}
-
-### Enable GitHub Pages
-
-1. Go to repository **Settings** → **Pages**
-2. Under **Source**, select **GitHub Actions**
-3. Push your code to trigger deployment
-
+   {{</codeblock>}}
 ---
 
 ## Vercel
@@ -140,6 +187,48 @@ Create `vercel.json` in your project root:
 }
 {{</codeblock >}}
 
+This assumes that there is a *package.json* file at the base of your directory. This is already true if you previously installed pagefind for search functionality. If you have enabled search, your *package.json* should look something like this:
+{{<codeblock lang = "json">}}
+{
+  "name": "your-hugo-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "serve": "hugo server --disableFastRender",
+  "build": "npx hugo && npx pagefind --site public --output-path public/pagefind",
+  "dev": "npx hugo --destination public && npx pagefind --site public --output-path public/pagefind && hugo server --disableFastRender --buildDrafts --noHTTPCache"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "hugo-extended": "^0.152.0"
+  }
+}
+{{</codeblock>}}
+
+If you do not have enabled search, your *package.json* should look something like this:
+{{<codeblock lang="json">}}
+{
+  "name": "my-sans-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "serve": "hugo server --disableFastRender",
+  "build": "npx hugo",
+  "dev": "npx hugo --destination public && hugo server --disableFastRender --buildDrafts --noHTTPCache"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "hugo-extended": "^0.152.0"
+  }
+}
+
+{{</codeblock>}}
 ### Deploy
 
 1. **Via Vercel Dashboard**:
@@ -195,7 +284,7 @@ Create `netlify.toml` in your project root:
 
 ## Cloudflare Pages
 
-Cloudflare Pages provides fast global deployment with integrated CDN and DDoS protection.
+Cloudflare Pages provides fast global deployment with integrated CDN and DDoS protection. Make sure that you have the same *package.json* files as those included in the [vercel](#vercel) section above.
 
 ### Configuration
 
@@ -248,26 +337,3 @@ Ensure your Hugo version in build configs matches your local development version
 All configurations use **Node.js 20** for consistency.
 
 ---
-
-## Troubleshooting
-
-{{<table headers="Issue|Solution" caption="Common Deployment Issues" >}}
-Build fails with "hugo not found"|Check Hugo version in config matches available versions
-Search not working after deploy|Verify npx pagefind runs after hugo in build command
-404 errors on deployment|Check baseURL in hugo.toml matches your deployment URL
-CSS/JS not loading|Ensure Hugo extended version is installed (not standard)
-Slow build times|Consider caching dependencies in CI/CD workflows
-{{</table >}}
-
----
-
-## Quick Comparison
-
-{{<table headers="Platform|Build Time|Free Tier|Auto SSL|Custom Domain" caption="Hosting Platform Comparison" >}}
-GitHub Pages|~2-3 min|✅ Unlimited|✅|✅
-Vercel|~1-2 min|✅ Generous|✅|✅
-Netlify|~1-2 min|✅ 300 min/month|✅|✅
-Cloudflare Pages|~1-2 min|✅ Unlimited|✅|✅
-{{</table >}}
-
-Choose based on your needs — all platforms work excellently with Hugo and Pagefind.
