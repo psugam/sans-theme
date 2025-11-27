@@ -50,63 +50,9 @@
   {{- end -}}
 </div>
 
-<script>
-(function() {
-  // Initialize accordion management (only once)
-  if (!window.accordionInitialized) {
-    window.accordionInitialized = {};
-    
-    window.initAccordionGroup = function(groupId) {
-      const container = document.querySelector('[data-accordion-group="' + groupId + '"]');
-      if (!container || window.accordionInitialized[groupId]) return;
-      
-      window.accordionInitialized[groupId] = true;
-      
-      const buttons = container.querySelectorAll('.accordion-btn');
-      const contents = container.querySelectorAll('.accordion-content');
-      
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const targetId = btn.getAttribute('data-accordion-target');
-          const content = document.getElementById(targetId);
-          const icon = btn.querySelector('.accordion-icon');
-          const isHidden = content.classList.contains('hidden');
-          
-          // Close all accordions in THIS group only
-          contents.forEach(c => c.classList.add('hidden'));
-          buttons.forEach(b => {
-            b.classList.remove('active');
-            b.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
-          });
-          
-          // Open clicked accordion if it was closed
-          if (isHidden) {
-            content.classList.remove('hidden');
-            btn.classList.add('active');
-            icon.style.transform = 'rotate(90deg)';
-          }
-        });
-      });
-    };
-  }
-  
-  // Initialize this specific accordion group
-  const groupId = '{{ $accordionGroupId }}';
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      window.initAccordionGroup(groupId);
-    });
-  } else {
-    window.initAccordionGroup(groupId);
-  }
-})();
-</script>
 
-{{/* Only output base styles once using defined check */}}
-{{ if not (.Page.Scratch.Get "accordionStylesLoaded") }}
-  {{ .Page.Scratch.Set "accordionStylesLoaded" true }}
 <style>
+  
 :root {
   --light-color: {{ .Site.Params.theme.lightModeColor }};
   --dark-color: {{ .Site.Params.theme.darkModeColor }};
@@ -220,5 +166,5 @@ body.dark-mode .accordion-content {
     padding: 1rem;
   }
 }
+
 </style>
-{{ end }}

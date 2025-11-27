@@ -1,5 +1,5 @@
 [homepage]
-  onlyPostsInHomePage = true
+  onlyPostsInHomePage = false
   homePageLogo=true
   homePageTitle="JOHN DOE"
   homePageTagLine="Welcome to my website"

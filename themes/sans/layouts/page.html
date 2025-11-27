@@ -1,215 +1,85 @@
-{{ define "main" }}
-{{/*  This is for each individual post  */}}
-<style>
-  .metadata p{
-  margin: 0;
-  }
-
-  .post-cover img{
-    width: 100%;
-    border-radius: 5%;
-  }
-  .caption{
-  text-align: center;
-  }
-
-  .taxo-clouds{
-  border: 1px solid black;
-  padding: 0.5rem;
-  position: absolute;
-  right: 30px;
-  max-width: 20%;
-  }
-    .taxo-clouds h2{
- margin:1rem 0;
- padding: 0;
- text-align: center;
-
-}
-
-  @media screen and (max-width: 768px) {
- main{
-  max-width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-}
-.prev-next-div{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-}
-@media screen and (max-width:1300px){
-  .taxo-clouds{
-  display: none;
-}
-  
-}
-
-</style>
-
-
-{{ $typeOfPage := .Params.type }}
-{{ if eq $typeOfPage "page" }}
-{{/*  for non post page doesn't show any frontmatter  */}}
+{{ define "main" }} 
+{{/* This is for each individual post */}} 
+{{ $typeOfPage := .Params.type }} 
+{{ if eq $typeOfPage "page" }} 
+{{/* for non post page doesn't show any frontmatter */}}
 <h1 data-pagefind-meta="title">{{ .Title }}</h1>
-  <div class="main-text-container">
-  {{ .Content }}
+<div class="main-text-container">{{ .Content }}</div>
+{{else}} {{/* for normal posts page */}} {{ with .Params.cover }} {{ $cover :=
+$.Resources.GetMatch .image }} {{ $displayImage := $.Params.cover.imageDisplay |
+default true}} {{ if $displayImage }} {{$displayCaption :=
+$.Params.cover.captionDisplay | default true}} {{ with $cover }}
+<div class="post-cover">
+  <img
+    src="{{ .RelPermalink }}"
+    alt="{{ $.Params.cover.alt | default $.Title }}"
+  />
+  {{ if $displayCaption}} {{ with $.Params.cover.caption }}
+  <p class="caption">{{ . }}</p>
+  {{ end }} {{end}}
 </div>
-  {{else}}
-  {{/*  for normal posts page  */}}
-  {{ with .Params.cover }}
-  {{ $cover := $.Resources.GetMatch .image }}
-  {{ $displayImage := $.Params.cover.imageDisplay | default true}}
-  
+{{ end }} {{ else }}
+<h2>Hello</h2>
+{{ end }} {{ end }}
 
-  {{ if $displayImage }}
-  {{$displayCaption := $.Params.cover.captionDisplay | default true}}
-    {{ with $cover }}
-      <div class="post-cover">
-        <img src="{{ .RelPermalink }}" alt="{{ $.Params.cover.alt | default $.Title }}">
-        {{ if $displayCaption}}
-        {{ with $.Params.cover.caption }}
-          <p class="caption">{{ . }}</p>
-        {{ end }}
-        {{end}}
+<div data-pagefind-body>
+  <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+  {{ $showFrontMatter := .Params.showFrontMatter | default
+  .Site.Params.posts.showFrontMatter }} {{if not $showFrontMatter}} {{else}} {{
+  $readingTime := div (float .WordCount) .Site.Params.posts.readingSpeed }} {{
+  $readingTime = math.Ceil $readingTime }}
+  <div class="metadata">
+    {{ if not .Site.Params.posts.showTags}} {{else}} {{ partial "terms.html"
+    (dict "taxonomy" "tags" "page" .) }} {{end}} {{ if not
+    .Site.Params.posts.showCategories}} {{else}} {{ partial "terms.html" (dict
+    "taxonomy" "categories" "page" .) }} {{end}} {{ if not
+    .Site.Params.posts.showAuthors}} {{else}} {{ partial "terms.html" (dict
+    "taxonomy" "authors" "page" .) }} {{end}} {{ if not
+    .Site.Params.posts.showDate}} {{else}} {{ $dateMachine := .Date |
+    time.Format "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date |
+    time.Format .Site.Params.posts.dateFormat }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{end}} {{ if not .Site.Params.posts.showWordCount}} {{else}}
+    <p>Words: {{ .WordCount }}</p>
+    {{end}} {{ if not .Site.Params.posts.showReadingTime}} {{else}}
+    <p>Reading Time: {{ $readingTime}} mins</p>
+    {{end}} {{end}}
+  </div>
 
-      </div>
-    {{ end }}
-  {{ else }}
-    <h2>Hello</h2>
+  {{if eq .Params.toc true}} {{ partial "toc.html" . }} {{end}} {{ $showTagCloud
+  := .Site.Params.posts.showTagCloud }} {{ $showCategoryCloud :=
+  .Site.Params.posts.showCategoryCloud }} {{ $showAuthorCloud :=
+  .Site.Params.posts.showAuthorCloud }} {{ if or $showTagCloud
+  $showCategoryCloud $showAuthorCloud }}
+  <div class="taxo-clouds">
+    <div class="tag-cloud">
+      {{ if not .Site.Params.posts.showTagCloud}} {{else}}
+      <h2>TAGS</h2>
+      {{ partial "taxocloud.html" (dict "taxonomy" "tags") }} {{end}}
+    </div>
+    <div class="category-cloud">
+      {{ if not .Site.Params.posts.showCategoryCloud}} {{else}}
+      <h2>CATEGORIES</h2>
+      {{ partial "taxocloud.html" (dict "taxonomy" "categories") }} {{end}}
+    </div>
+    <div class="author-cloud">
+      {{ if not .Site.Params.posts.showAuthorCloud}} {{else}}
+      <h2>AUTHORS</h2>
+      {{ partial "taxocloud.html" (dict "taxonomy" "authors") }} {{end}}
+    </div>
+  </div>
   {{ end }}
-{{ end }}
-
-
-
-
-
-  
-    <div data-pagefind-body>
-    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
-    {{ $showFrontMatter := .Params.showFrontMatter | default .Site.Params.posts.showFrontMatter }}
-    {{if not $showFrontMatter}}
-
-    {{else}}
-
-
-    {{ $readingTime := div (float .WordCount) .Site.Params.posts.readingSpeed }}
-{{ $readingTime = math.Ceil $readingTime }}
-<div class="metadata">
-
-{{ if not .Site.Params.posts.showTags}}
-{{else}}
-{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-{{end}}
-
-{{ if not .Site.Params.posts.showCategories}}
-{{else}}
-{{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
-{{end}}
-
-{{ if not .Site.Params.posts.showAuthors}}
-{{else}}
-{{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
-{{end}}  
-
-{{ if not .Site.Params.posts.showDate}}
-{{else}}
- {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
- {{ $dateHuman := .Date | time.Format .Site.Params.posts.dateFormat }}
- <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>  
-{{end}}
-
-{{ if not .Site.Params.posts.showWordCount}}
-{{else}}
- <p>Words: {{ .WordCount }}</p> 
-{{end}}
-
-
-{{ if not .Site.Params.posts.showReadingTime}}
-{{else}}
-<p>Reading Time: {{ $readingTime}} mins </p>
-{{end}}
-   
-    {{end}}
-
-  
-  
-  
+  <div class="main-text-container">{{ .Content }}</div>
 </div>
 
-{{if eq .Params.toc true}}
-{{ partial "toc.html" . }}
-{{end}}
+<!-- prev next links at the bottom -->
+{{ $pages := .CurrentSection.Pages.ByWeight }}
 
-
-
-
-
-{{ $showTagCloud := .Site.Params.posts.showTagCloud }}
-{{ $showCategoryCloud := .Site.Params.posts.showCategoryCloud }}
-{{ $showAuthorCloud := .Site.Params.posts.showAuthorCloud }}
-
-{{ if or $showTagCloud $showCategoryCloud $showAuthorCloud }}
-<div class="taxo-clouds">
-  <div class="tag-cloud">
-    
-  {{ if not .Site.Params.posts.showTagCloud}}
-  {{else}}
-  <h2>TAGS</h2>
-  {{ partial "taxocloud.html" (dict "taxonomy" "tags") }}
-  {{end}}
-  </div>
-  <div class="category-cloud">
-    
-  {{ if not .Site.Params.posts.showCategoryCloud}}
-  {{else}}
-  <h2>CATEGORIES</h2>
-  {{ partial "taxocloud.html" (dict "taxonomy" "categories") }}
-  {{end}}
-  </div>
-  <div class="author-cloud">
-    
-  {{ if not .Site.Params.posts.showAuthorCloud}}
-  {{else}}
-  <h2>AUTHORS</h2>
-  {{ partial "taxocloud.html" (dict "taxonomy" "authors") }}
-  {{end}}
-  </div>
-</div>
-{{ end }}
-<div class="main-text-container">
-  {{ .Content }}
-</div>
-</div>
-
-
-
-
-
-  <!-- prev next links at the bottom -->
-  {{ $pages := .CurrentSection.Pages.ByWeight }}
-
-  <div class="prev-next-div">
-{{ with $pages.Prev . }}
+<div class="prev-next-div">
+  {{ with $pages.Prev . }}
   <a href="{{ .RelPermalink }}">Previous: {{.LinkTitle}}</a>
-{{ end }}
-
-{{ with $pages.Next . }}
+  {{ end }} {{ with $pages.Next . }}
   <a href="{{ .RelPermalink }}">Next: {{.LinkTitle}}</a>
-  </div>
-{{ end }}
-
-{{ if .Site.Params.giscus.enable }}
-  {{partial "github-comments.html" .}}
-{{ end }}
-
-
-
-
-
-{{partial "go-to-top.html" .}}
-{{ end }}
-
-
-{{ end }}
+</div>
+{{ end }} {{ if .Site.Params.giscus.enable }} {{partial "github-comments.html"
+.}} {{ end }} {{partial "go-to-top.html" .}} {{ end }} {{ end }}

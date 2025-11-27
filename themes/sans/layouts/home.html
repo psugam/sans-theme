@@ -1,32 +1,3 @@
 {{ define "main" }}
-<style>
- 
-.home-page-main-div{
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-  #home-intro-page{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    max-width: 100%;
-  }
-  
-  .home-intro-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem; /* Optional: adds space between image and h2 */
-    height: 100%;
-  }
-
-</style>
-
-
-
 {{partial "postsList.html" .}}
 {{ end }}
