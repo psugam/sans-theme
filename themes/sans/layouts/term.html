@@ -1,15 +1,13 @@
 {{ define "main" }}
 <div class="individual-term-box">
   <h1>{{ .Title }}</h1>
-  <!-- This is for individual pages inside the term. So, not for Tags but for specific Green , blue tags etc. -->
   
-
-
 {{ $cover := "" }}
 {{ $displayImage := true }}
 
 {{ with .Params.taxonomy_image }}
-  {{ $cover = $.Resources.GetMatch . }}  <!-- or use $.Resources.GetMatch if it’s a page bundle -->
+  {{ $cover = $.Resources.GetMatch . }}
+
 {{ end }}
 
 {{ if $cover }}
@@ -22,8 +20,7 @@
 
   {{ .Content }} 
   {{ range .Pages }}
-   <!-- <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div> -->
-      <div>
+     <div>
 <a href="{{ .RelPermalink }}" style="display:inline-block; margin-right:8px; font-size: large;">
   {{ .LinkTitle }}
 </a>

@@ -15,7 +15,8 @@
   showSocialLinksHome=true
 
 [fonts]
-  siteFont='sans-serif, Monotype Corsiva'
+  # siteFont='Georgia, Times New Roman, Monotype Corsiva'
+  siteFont="UnifrakturMaguntia, serif"
 
 [social]
   facebook = 'https://facebook.com/yourpage'
@@ -42,7 +43,8 @@
   showSearchIcon=true
   showGoToTop=false
   darkModeColor='#333333' # main background colors
-  lightModeColor='white' # #e0dedeff
+  # lightModeColor='white' # #e0dedeff
+  lightModeColor="#f5f5dc"
   darkModeLinkColor='#CCCCCC'  # link colors
   lightModeLinkColor='#00e'
   heroSectionColor='white'  #  heroSectionColor='#e0dedeff'
@@ -72,7 +74,7 @@
   showReadingTime=true
   dateFormat="2 Jan 2006"
   showTagCloud=false
-  showCategoryCloud=false
+  showCategoryCloud=true
   showAuthorCloud=false
 [rss]
   showRSS=false
@@ -95,7 +97,7 @@
   maxSize=20 
 
   [giscus]
-enable=false
+enable=true
 src="https://giscus.app/client.js"
   dataRepo="psugam/sans-theme"
         dataRepoId="R_kgDOQHNo3Q"
@@ -110,3 +112,5 @@ src="https://giscus.app/client.js"
         dataLang="en"
         dataLoading="lazy"
         crossorigin="anonymous"
+
+

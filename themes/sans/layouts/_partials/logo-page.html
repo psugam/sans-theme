@@ -1,36 +1,3 @@
-<style>
-  #logo-image {
-    border-radius: 50%;
-    height: 25vh;
-    width: 25vh;
-    display: block;
-  }
-  h2{
-    text-align: center;
-  }
-
-  #logo-block{
-    min-height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #home-page-tag{
-    margin-top: 0;
-  }
-  
-  #home-page-title{
-    margin-bottom: 0;
-  }
-  
-  #home-page-about{
-    text-align: center;
-    max-width: 600px;
-    margin-top: 0;
-  }
-</style>
-
 <div id="logo-block">
     {{/*  from static/images  */}}
     {{ $imagePath := .Site.Params.homepage.homePageLogoPath }}

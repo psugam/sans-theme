@@ -2,7 +2,7 @@
 baseURL = "/"
 # if u use baseurl with repo-name and also use .Site.baseURL in the link manually it will work in github but then it gives error elsewhere
 languageCode = 'en-us'
-title = ''
+title = 'SANS'
 theme = 'sans'
 publishDir = "public"
 
@@ -60,6 +60,15 @@ defaultMarkdownHandler = "goldmark"
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
 
-  # [services]
-  # [services.disqus]
-  #   shortname = 'your-disqus-shortname'
+
+  [permalinks]
+  posts = "/:year/:month/:slug/"
+
+  [minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true

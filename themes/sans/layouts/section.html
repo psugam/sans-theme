@@ -3,13 +3,8 @@
 <h1>{{ .Title }}</h1>
   {{ .Content }} 
 </div>
-{{/*  {{ $pages := where site.RegularPages "Type" "posts" }}  */}}
-{{/*  {{ $pages := where site.RegularPages "Section" .Section }}   */}}
 {{ $pages := .RegularPages }}
 {{$paginator := .Paginate $pages }} 
- {{/*  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}   */}}
- {{/*  {{ $dateHuman := .Date | time.Format ":date_long"}}  */}}
- {{/*  {{ $dateHuman := .Date | time.Format .Site.Params.sections.dateFormat}}  */}}
   {{ range $paginator.Pages }}
 
 
@@ -26,27 +21,25 @@
   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 {{ end }}
 
-
+<div class="section-taxonomies">
 {{if .Site.Params.sections.showTags}}
-{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-{{end}}
-
-
-{{if .Site.Params.sections.showCategories}}
-{{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} 
-{{end}}
-
-{{if .Site.Params.sections.showAuthors}}
-{{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
-{{end}}
-
-
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  {{end}}
 </div>
-{{/*  <p>
-  {{ .Summary | replaceRE "(?s)```.*?```|`[^`]*`" "" | plainify | truncate 500
-  }}
-</p>  */}}
-{{/*  same thing just format and remove codeblock  */}}
+
+<div class="section-taxonomies">
+  {{if .Site.Params.sections.showCategories}}
+  {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }} 
+  {{end}}
+</div>
+
+<div class="section-taxonomies">
+  {{if .Site.Params.sections.showAuthors}}
+  {{ partial "terms.html" (dict "taxonomy" "authors" "page" .) }}
+  {{end}}
+</div>
+</div>
+
 
 {{if .Site.Params.sections.showCoverImage}}
 <div id="section-cover-image">
@@ -58,9 +51,6 @@
 
 {{ $imageResource := .Resources.GetMatch $cover }}
 
-{{/*  {{ if not $imageResource }}
-  {{ $imageResource = resources.Get "images/default.jpg" }}
-{{ end }}  */}}
 
 {{ if $imageResource }}
   <img src="{{ $imageResource.RelPermalink }}" alt="{{ .Title }}">
@@ -71,51 +61,38 @@
 {{end}}
 
 
-{{/*  {{ $summary := .Summary }}
-{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}.*?\{\{</.*?>\}\}` "" }}
-{{ $summary = $summary | replaceRE `(?s)\{\{<.*?>\}\}` "" }}  */}}
-{{/*  not working for codeblock removal somehow  */}}
-{{/*  {{ $summary = $summary | replaceRE "(?s)```.*?```" "" }}
-{{ $summary = $summary | replaceRE "`[^`]+`" "" }}
-{{ $summary = $summary | plainify | truncate 500 }}
-<p>{{ $summary }}</p>  */}}
-
 {{$summaryLength := .Site.Params.sections.summaryLength}}
 
-{{/* Custom summary cleaner to remove HTML & shortcodes */}}
 {{ $plain := .RawContent }}
-{{/* Remove paired shortcodes with content (multi-line) */}}
 {{ $plain = $plain | replaceRE `(?s)\{\{<\s*\w+[^>]*>\}\}.*?\{\{<\s*/\w+\s*>\}\}` "" }}
-{{/* Remove self-closing shortcodes */}}
 {{ $plain = $plain | replaceRE `\{\{[^}]+\}\}` "" }}
-{{/* Remove markdown headings (# ## ### etc.) */}}
 {{ $plain = $plain | replaceRE `(?m)^#+\s+.*$` "" }}
-{{/* Remove footnote references [^fn1] */}}
 {{ $plain = $plain | replaceRE `\[\^[^\]]+\]` "" }}
-{{/* Remove footnote definitions [^fn1]: content */}}
 {{ $plain = $plain | replaceRE `(?m)^\[\^[^\]]+\]:.*$` "" }}
-{{/* Convert to plain text */}}
 {{ $plain = $plain | plainify }}
-{{/* Clean up whitespace */}}
 {{ $plain = $plain | replaceRE `\s+` " " | strings.TrimSpace }}
 {{ $plain = $plain | truncate $summaryLength }}
 {{if .Site.Params.sections.showSummary}}
 <p >{{ $plain }}</p>
 {{end}}
 
-<!-- 500 is letters not words -->
 {{if .Site.Params.sections.showReadMore}}
 <p><a href="{{ .RelPermalink }}">Read more...</a></p>
 {{end}}
 
 </div>
+{{ end }} 
 
-
-
-{{ end }} {{ if gt $paginator.TotalPages 1 }} {{/* Compute start and end page
-numbers */}} {{ $current := $paginator.PageNumber }} {{ $start := sub $current 2
-}} {{ $end := add $current 2 }} {{ if lt $start 1 }}{{ $start = 1 }}{{ end }} {{
-if gt $end $paginator.TotalPages }}{{ $end = $paginator.TotalPages }}{{ end }}
+{{ if gt $paginator.TotalPages 1 }} 
+ {{ $current := $paginator.PageNumber }} 
+ {{ $start := sub $current 2}} 
+ {{ $end := add $current 2 }} 
+ {{ if lt $start 1 }}
+ {{ $start = 1 }}
+ {{ end }} 
+ {{if gt $end $paginator.TotalPages }}
+ {{ $end = $paginator.TotalPages }}
+ {{ end }}
 
 <nav>
   {{ if $paginator.HasPrev }}

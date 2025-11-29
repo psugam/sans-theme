@@ -40,82 +40,10 @@ Usage examples:
       <a 
         href="{{ $value.Page.Permalink }}" 
         class="taxo-term"
-        style="--size:{{ printf "%.2f" $size }}rem"
+        style="--size:{{ printf "%.2f" $size }}rem" 
         title="{{ $count }} {{ if eq $count 1 }}post{{ else }}posts{{ end }}">
         {{ $key }}
       </a>
     {{ end }}
   </div>
-
-<style>
-.taxo-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.4rem;
-  justify-content: center;
-  align-items: baseline;
-  padding: 0.6rem 0;
-  text-align: center;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-.taxo-term {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: var(--size);
-  transition: transform 0.15s ease, color 0.2s ease;
-  position: relative;
-  line-height: 1.2;
-}
-
-.taxo-term:hover {
-  color: #0077ff;
-  transform: scale(1.08);
-}
-
-.taxo-term::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.75);
-  color: white;
-  padding: 0.15rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
-}
-
-.taxo-term:hover::after { opacity: 1; }
-
-.taxo-cloud-empty {
-  color: #777;
-  text-align: center;
-  padding: 0.6rem;
-  font-style: italic;
-}
-</style>
-
-<script>
-(function(){
-  try {
-    const cloud = document.querySelector('.taxo-cloud[data-taxonomy="{{ $taxonomy }}"]');
-    if (!cloud) return;
-    const terms = Array.from(cloud.children);
-    // Shuffle for visual variety
-    terms.sort(() => Math.random() - 0.5);
-    cloud.innerHTML = '';
-    terms.forEach(t => cloud.appendChild(t));
-  } catch (err) {
-    console.error("Taxonomy cloud error:", err);
-  }
-})();
-</script>
-
 {{ end }}
-

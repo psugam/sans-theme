@@ -1,11 +1,10 @@
-{{ define "main" }} 
-{{/* This is for each individual post */}} 
+{{ define "main" }}  
 {{ $typeOfPage := .Params.type }} 
 {{ if eq $typeOfPage "page" }} 
-{{/* for non post page doesn't show any frontmatter */}}
 <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 <div class="main-text-container">{{ .Content }}</div>
-{{else}} {{/* for normal posts page */}} {{ with .Params.cover }} {{ $cover :=
+{{else}}
+ {{ with .Params.cover }} {{ $cover :=
 $.Resources.GetMatch .image }} {{ $displayImage := $.Params.cover.imageDisplay |
 default true}} {{ if $displayImage }} {{$displayCaption :=
 $.Params.cover.captionDisplay | default true}} {{ with $cover }}
@@ -72,7 +71,7 @@ $.Params.cover.captionDisplay | default true}} {{ with $cover }}
   <div class="main-text-container">{{ .Content }}</div>
 </div>
 
-<!-- prev next links at the bottom -->
+
 {{ $pages := .CurrentSection.Pages.ByWeight }}
 
 <div class="prev-next-div">
