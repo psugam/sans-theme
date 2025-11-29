@@ -74,7 +74,7 @@
   showReadingTime=true
   dateFormat="2 Jan 2006"
   showTagCloud=false
-  showCategoryCloud=true
+  showCategoryCloud=false
   showAuthorCloud=false
 [rss]
   showRSS=false

@@ -27,7 +27,7 @@ showSearchIcon|true|Shows search functionality icon in navigation
 showGoToTop|true|Displays scroll-to-top button for improved navigation
 {{< /table >}}
 
-**Note**: Search functionality configuration is covered in detail in the [Search Documentation](/docs/search).
+**Note**: Search functionality configuration is covered in detail in the [Search Documentation](/doc/search).
 
 ---
 
@@ -226,7 +226,7 @@ Control social media link visibility on the About page:
 showSocialLinksPage|true|Controls display of social media links on About page
 {{< /table >}}
 
-Social media links are configured in the `[social]` section as described in the [Homepage Configuration](/docs/homepage) guide.
+Social media links are configured in the `[social]` section as described in the [Homepage Configuration](/doc/homepage) guide.
 
 ---
 
@@ -320,49 +320,4 @@ With `path = 'page'` and `pagerSize = 4`:
 1|/posts/|Posts 1-4
 2|/posts/page/2/|Posts 5-8
 3|/posts/page/3/|Posts 9-12
-{{< /table >}}
-
-### Optimization Recommendations
-
-- **pagerSize**: Balance between page load time and user convenience
-  - Smaller values (4-6): Faster loading, more clicks required
-  - Larger values (10-15): Fewer pages, longer initial load
-- **path**: Use descriptive, URL-friendly terms
-- Consider your content volume and typical user browsing patterns
-
----
-
-## Best Practices
-
-### Performance Considerations
-
-1. **Taxonomy Clouds**: Enable only if you have sufficient content volume
-2. **Cover Images**: Optimize images before enabling `showCoverImage`
-3. **Summary Length**: Keep summaries concise for faster rendering
-4. **Pagination**: Adjust `pagerSize` based on content weight
-
-### User Experience
-
-1. **Consistent Date Formats**: Maintain consistency between posts and sections
-2. **Reading Time**: Calibrate `readingSpeed` for your content type
-3. **Metadata Display**: Show only relevant information to avoid clutter
-4. **TOC Configuration**: Match TOC depth to content structure complexity
-
-### Accessibility
-
-1. **Code Highlighting**: Choose high-contrast color schemes
-2. **Line Numbers**: Enable for technical documentation
-3. **Font Choices**: Ensure web-safe fallbacks for typography
-4. **Navigation**: Keep "Go to Top" button enabled for long content
-
----
-
-## Troubleshooting
-
-{{< table headers="Issue|Possible Cause|Solution" caption="Common Configuration Issues" >}}
-TOC not appearing|toc not enabled in front matter|Add toc = true to post front matter
-Code blocks not highlighting|Invalid style name|Verify style name against supported themes
-Reading time inaccurate|Incorrect readingSpeed value|Adjust readingSpeed parameter to match content type
-Pagination not working|pagerSize too large|Ensure pagerSize is appropriate for content volume
-Social links missing|showSocialLinksPage is false|Set showSocialLinksPage = true in configuration
 {{< /table >}}

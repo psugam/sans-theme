@@ -3,6 +3,7 @@ title = 'Hosting your site'
 date = 2023-01-01T08:00:00-07:00
 draft = false
 showFrontMatter=false
+toc=true
 +++
 
 This guide covers deploying your Hugo site built with the *sans* theme to popular hosting platforms. All configurations include Pagefind search indexing.
