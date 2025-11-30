@@ -19,14 +19,10 @@
     pageRef = '/categories'
     weight = 40
 
-# individual pages may be linked like this 
-
    [[main]]
     name = 'About'
     pageRef ='/pages/about/'
     weight = 50 
-
-# Individual files may be linked like this 
 
   [[main]]
     name='File'
@@ -36,5 +32,18 @@
 
   [[main]]
     name='Docs'
+    identifier='guides'
     url='/doc/'
     weight=70
+       params = {target = "_blank" }
+ [[main]]
+      parent = "guides"
+      name = "Beginner Guide"
+      url = "/docs/guides/beginner/"
+      weight = 71
+
+      [[main]]
+      parent = "guides"
+      name = "Advanced Guide"
+      url = "/docs/guides/advanced/"
+      weight = 72

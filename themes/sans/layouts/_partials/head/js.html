@@ -1,3 +1,17 @@
+{{- /*
+Builds and includes the main JavaScript bundle (js/main.js) using Hugo Pipes.
+
+Options passed to js.Build:
+  - "minify": Enabled only in production.
+  - "sourceMap": External in development, disabled in production.
+  - "targetPath": Output path for the processed JS file.
+
+@example:
+  {{ partial "scripts.html" . }}
+*/ -}}
+
+
+
 {{- with resources.Get "js/main.js" }}
   {{- $opts := dict
     "minify" (not hugo.IsDevelopment)

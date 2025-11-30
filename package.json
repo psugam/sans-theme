@@ -9,7 +9,7 @@
 },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "hugo-extended": "^0.152.0"

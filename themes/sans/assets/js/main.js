@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create the new div element
     const footnoteText = document.createElement('div');
     footnoteText.id = 'myfootnoteText';
-    footnoteText.textContent = 'FOOTNOTES';
+    footnoteText.textContent = 'Footnotes';
 
     // Insert before the <ol>, or after the <hr> if no <ol>
     if (ol) {
@@ -79,16 +79,128 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error("Taxonomy cloud error:", err);
   }
 
-  // hamburger menu toggle
-    const hamburger = document.getElementById("hamburger-menu");
-    const navMenu = document.getElementById("nav-menu");
+ const hamburger = document.getElementById("hamburger-menu");
+const navMenu = document.getElementById("nav-menu");
 
-    if (hamburger && navMenu) {
-      hamburger.addEventListener("click", function() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
+// Hamburger menu toggle
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", function(e) {
+    e.stopPropagation();
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+}
+
+// Mobile nested menu functionality
+function initMobileNestedMenus() {
+  if (window.innerWidth > 768) return;
+
+  const menuItems = document.querySelectorAll('.header-nav li');
+  
+  menuItems.forEach(item => {
+    const submenu = item.querySelector(':scope > ul');
+    
+    if (submenu) {
+      // Mark items that have children
+      item.classList.add('has-children');
+      
+      const link = item.querySelector(':scope > a');
+      
+      if (link && !link.dataset.mobileHandler) {
+        link.dataset.mobileHandler = 'true';
+        
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle this item
+            const wasExpanded = item.classList.contains('expanded');
+            
+            // Close siblings at the same level
+            const parent = item.parentElement;
+            const siblings = parent.querySelectorAll(':scope > li.has-children');
+            siblings.forEach(sibling => {
+              if (sibling !== item) {
+                sibling.classList.remove('expanded');
+              }
+            });
+            
+            // Toggle current item
+            if (wasExpanded) {
+              item.classList.remove('expanded');
+            } else {
+              item.classList.add('expanded');
+            }
+          }
+        });
+      }
+    }
+  });
+}
+
+// Initialize on page load
+initMobileNestedMenus();
+
+// Reinitialize on window resize
+let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    if (window.innerWidth <= 768) {
+      initMobileNestedMenus();
+    } else {
+      // Clean up mobile classes on desktop
+      document.querySelectorAll('.header-nav li.expanded').forEach(item => {
+        item.classList.remove('expanded');
       });
     }
+  }, 250);
+});
+
+// click outside close navbar
+document.addEventListener('click', function(e) {
+  if (window.innerWidth <= 768 && navMenu && hamburger) {
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedHamburger = hamburger.contains(e.target);
+    
+    if (!clickedInsideMenu && !clickedHamburger && navMenu.classList.contains('active')) {
+    
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    
+      document.querySelectorAll('.header-nav li.expanded').forEach(item => {
+        item.classList.remove('expanded');
+      });
+    }
+  }
+});
+
+
+
+// GO TO TOP
+
+  const goToTopButton = document.getElementById("goToTopButton");
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      goToTopButton.style.display = "block";
+    } else {
+      goToTopButton.style.display = "none";
+    }
+  }
+
+  // Smooth scroll to top
+  window.goToTop =function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+
   });
 
 

@@ -41,7 +41,7 @@
 [theme]
   showDarkModeToggle=true
   showSearchIcon=true
-  showGoToTop=false
+  showGoToTop=true
   darkModeColor='#333333' # main background colors
   # lightModeColor='white' # #e0dedeff
   lightModeColor="#f5f5dc"
@@ -60,7 +60,7 @@
 
 
 [toc]
-  numberingInTOC=false
+  numberingInTOC=true
   numberingInPost=false
 
 [posts]
