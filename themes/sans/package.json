@@ -1,0 +1,17 @@
+{
+  "name": "my-sans-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "serve": "hugo server --disableFastRender",
+  "build": "npx hugo && npx pagefind --site public --output-path public/pagefind",
+  "dev": "npx hugo --destination public && npx pagefind --site public --output-path public/pagefind && hugo server --disableFastRender --buildDrafts --noHTTPCache"
+},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "hugo-extended": "^0.152.0"
+  }
+}

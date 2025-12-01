@@ -38,12 +38,12 @@
        params = {target = "_blank" }
  [[main]]
       parent = "guides"
-      name = "Beginner Guide"
+      name = "Nested Link 1"
       url = "/docs/guides/beginner/"
       weight = 71
 
       [[main]]
       parent = "guides"
-      name = "Advanced Guide"
+      name = "Nested Link 2"
       url = "/docs/guides/advanced/"
       weight = 72

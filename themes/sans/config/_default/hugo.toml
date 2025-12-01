@@ -1,18 +1,16 @@
-baseURL = 'https://example.org/'
+baseURL = "/"
 languageCode = 'en-us'
-title = 'SUGO'
+title = 'SANS'
 theme = 'sans'
-
-
 publishDir = "public"
 
 canonifyURLs = false  
 relativeURLs = false  
 
-
 enableRobotsTXT = true
 summaryLength = 50
 defaultMarkdownHandler = "goldmark"
+
 
 [module]
   [module.hugoVersion]
@@ -23,7 +21,7 @@ defaultMarkdownHandler = "goldmark"
 
 [pagination]
   disableAliases = false
-  pagerSize = 2
+  pagerSize = 10
   path = 'page'
 
 
@@ -59,3 +57,16 @@ defaultMarkdownHandler = "goldmark"
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
+
+
+  [permalinks]
+  posts = "/:year/:month/:slug/"
+
+  [minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true

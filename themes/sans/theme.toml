@@ -1,15 +1,13 @@
-# Congo theme for Hugo
-
 name = "sans"
 license = "MIT"
 licenselink = "https://github.com/psugam/sans/blob/master/LICENSE"
 description = "A minimal theme for Hugo."
 
 homepage = "https://github.com/psugam/sans/"
-demosite = "https://psugam.github.io/sans/"
+demosite = "https://psugam.github.io/sans-theme/"
 
-tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
-features = ["syntax highlighting", "dark mode"]
+tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "personal"]
+features = ["syntax highlighting", "dark mode", "search"]
 min_version="0.146.0"
 
 [author]
