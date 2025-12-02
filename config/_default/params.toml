@@ -1,10 +1,10 @@
 [homepage]
   onlyPostsInHomePage = false
   homePageLogo=true
-  homePageTitle="JOHN DOE"
-  homePageTagLine="Welcome to my website"
+  homePageTitle="SANS hugo Theme"
+  homePageTagLine=""
   homePageLogoPath='images/avatar.png'
-  homePageAbout="Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
+  homePageAbout="This is a brief documentation for SANS Hugo theme. SANS is a minimal theme for Hugo."
  
   homePageCoverPath='images/img_forest.jpg'
   homePageCoverTitle="Welcome to our blog and portfolio."
@@ -12,7 +12,7 @@
   homePageSummaryLength=500
   homePagePostDate=false        
   dateFormat= "2 Jan 2006"
-  showSocialLinksHome=true
+  showSocialLinksHome=false
 
 [fonts]
   siteFont="Georgia, UnifrakturMaguntia, serif"
@@ -58,7 +58,7 @@
 
 
 [toc]
-  numberingInTOC=true
+  numberingInTOC=false
   numberingInPost=false
 
 [posts]
@@ -78,7 +78,7 @@
   showRSS=false
 
 [about]
-  showSocialLinksPage=true
+  showSocialLinksPage=false
 
 [sections]
   showDate=true
@@ -95,7 +95,7 @@
   maxSize=20 
 
   [giscus]
-enable=true
+enable=false
 src="https://giscus.app/client.js"
   dataRepo="psugam/sans-theme"
         dataRepoId="R_kgDOQHNo3Q"

@@ -8,17 +8,4 @@ build:
 weight: 10
 toc: false
 ---
-This is my about page content.
-
-
-``` WARN  deprecated: The "_build" front matter key was deprecated in Hugo 0.145.0 and will be removed in a future release. Use "build" instead. See https://gohugo.io/content-management/build-options.```
-
-{{< collapse title="Build information" >}}
-```WARN  deprecated: The "_build" front matter key was deprecated in Hugo 0.145.0 and will be removed in a future release. Use "build" instead. See https://gohugo.io/content-management/build-options.```
-{{< /collapse >}}
-
-
-
-<!-- social media links don't edit -->
-
-{{<media-links>}}
+This is a brief documentation site for SANS Hugo theme. Go [here](/doc) for more information. If you liked this theme or have any inquiries, please go to the [github repo](https://github.com/samaya-sharma/sans/).
