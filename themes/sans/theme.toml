@@ -1,9 +1,9 @@
 name = "sans"
 license = "MIT"
-licenselink = "https://github.com/samaya-sharma/sans/blob/master/LICENSE"
+licenselink = "https://github.com/psugam/sans/blob/master/LICENSE"
 description = "A minimal theme for Hugo."
 
-homepage = "https://github.com/samaya-sharma/sans/"
+homepage = "https://github.com/psugam/sans/"
 demosite = "https://sans-theme.pages.dev"
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "personal"]

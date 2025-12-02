@@ -75,7 +75,7 @@ git init
 #### Step 2: Add Theme as Submodule
 
 {{<codeblock lang="bash">}}
-git submodule add https://github.com/samaya-sharma/sans themes/sans
+git submodule add https://github.com/psugam/sans themes/sans
 {{</codeblock>}}
 
 This creates a `themes/sans` directory containing the theme.
@@ -126,7 +126,7 @@ If you prefer not to use Git submodules, you can manually download the theme.
 
 #### Step 1: Download Theme
 
-1. Visit the [Sans theme repository](https://github.com/samaya-sharma/sans)
+1. Visit the [Sans theme repository](https://github.com/psugam/sans)
 2. Click **Code** → **Download ZIP**
 3. Extract the ZIP file
 
@@ -197,7 +197,7 @@ git submodule update --remote --merge
 
 1. Download the latest version from GitHub
 2. Replace the `themes/sans` directory with the new version
-3. Review the [changelog](https://github.com/samaya-sharma/sans/releases) for breaking changes
+3. Review the [changelog](https://github.com/psugam/sans/releases) for breaking changes
 
 ---
 
