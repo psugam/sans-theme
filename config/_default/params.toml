@@ -6,7 +6,7 @@
   homePageLogoPath='images/avatar.png'
   homePageAbout="This is a brief documentation for SANS Hugo theme. SANS is a minimal theme for Hugo."
  
-  homePageCoverPath='images/img_forest.jpg'
+  homePageCoverPath='image1.png'
   homePageCoverTitle="Welcome to our blog and portfolio."
   homePageCoverTagLine="Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom.SUGAM"
   homePageSummaryLength=500

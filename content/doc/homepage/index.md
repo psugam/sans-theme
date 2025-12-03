@@ -88,7 +88,7 @@ This layout features a centered avatar with essential biographical information a
   homePageLogo = true
   homePageTitle = "JOHN DOE"
   homePageTagLine = "Welcome to my website"
-  homePageLogoPath = 'images/avatar.png'
+  homePageLogoPath = 'avatar.png'
   homePageAbout = "Hi! I'm John Doe, a passionate blogger and portfolio creator. Explore my latest posts and projects here."
   dateFormat = "2 Jan 2006"
   showSocialLinksHome = true
@@ -99,7 +99,7 @@ onlyPostsInHomePage|boolean|Must be set to false to enable this layout
 homePageLogo|boolean|Activates the logo-centered layout
 homePageTitle|string|Primary heading displayed on homepage
 homePageTagLine|string|Subtitle or catchphrase beneath the title
-homePageLogoPath|string|Path to avatar image relative to assets/images/
+homePageLogoPath|string|Path to avatar image relative to static
 homePageAbout|string|Biographical description text
 dateFormat|string|Date formatting specification
 showSocialLinksHome|boolean|Controls social media link visibility
@@ -111,12 +111,11 @@ Place your avatar image in the following directory structure:
 
 {{<codeblock lang="text">}}
 your-hugo-site/
-└── assets/
-    └── images/
+    └── static/
         └── avatar.png
 {{</codeblock>}}
 
-Reference the image using the relative path: `images/avatar.png`
+Reference the image using the relative path: `avatar.png`
 
 #### Social Media Integration
 
@@ -165,7 +164,7 @@ The most feature-rich homepage layout, incorporating a hero section with welcome
 [homepage]
   onlyPostsInHomePage = false
   homePageLogo = false 
-  homePageCoverPath = 'images/img_forest.jpg'
+  homePageCoverPath = 'img_forest.jpg' # this is in static folder too.
   homePageCoverTitle = "Welcome to our blog and portfolio."
   homePageCoverTagLine = "Discover insights, stories, and ideas that inspire. Join our community of readers exploring the latest trends and timeless wisdom."
   homePageSummaryLength = 500
