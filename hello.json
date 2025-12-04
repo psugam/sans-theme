@@ -1,0 +1,16 @@
+{
+  "name": "my-hugo-site",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "my-hugo-site",
+      "version": "1.0.0",
+      "license": "ISC",
+      "devDependencies": {
+        "hugo-extended": "^0.156.0"
+      }
+    }
+}
+}

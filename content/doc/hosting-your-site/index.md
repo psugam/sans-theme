@@ -206,7 +206,7 @@ This assumes that there is a *package.json* file at the base of your directory. 
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "hugo-extended": "^0.152.0"
+    "hugo-extended": "^0.146.0"
   }
 }
 {{</codeblock>}}
@@ -219,18 +219,39 @@ If you do not have enabled search, your *package.json* should look something lik
   "main": "index.js",
   "scripts": {
   "serve": "hugo server --disableFastRender",
-  "build": "npx hugo",
-  "dev": "npx hugo --destination public && hugo server --disableFastRender --buildDrafts --noHTTPCache"
+  "build": "hugo",
+  "dev": "hugo --destination public && hugo server --disableFastRender --buildDrafts --noHTTPCache"
 },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "hugo-extended": "^0.152.0"
+    "hugo-extended": "^0.146.0"
   }
 }
 
+{{</codeblock>}}
+
+When you create and install packages using npm, a *package-lock.json* file is automatically created. The absence of this file may lead to error, especially during deployment rather than local environment. Make sure you have a package-lock.json file with the following content at the minimum ( other packages will be added automatically if you install them in your environment.)
+
+{{<codeblock lang="go">}}
+{
+  "name": "my-hugo-site", # this is the same name as in your package.json file
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "my-hugo-site", # this is the same name as in your package.json file
+      "version": "1.0.0",
+      "license": "ISC",
+      "devDependencies": {
+        "hugo-extended": "^0.146.0"
+      }
+    }
+}
+}
 {{</codeblock>}}
 ### Deploy
 

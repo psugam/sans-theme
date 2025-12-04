@@ -13,9 +13,10 @@ draft = false
 6. [Front Matter](/doc/front-matter)
 7. [Params and Customization](/doc/params-and-customization)
 8. [Shortcodes](/doc/shortcodes)
-9. [Search](/doc/search)
-10. [Comments](/doc/comments)
-11. [Hosting](/doc/hosting-your-site)
+9. [A Page like this](/doc/a-page-like-this/)
+10. [Search](/doc/search)
+11. [Comments](/doc/comments)
+12. [Hosting](/doc/hosting-your-site)
 
  
  

@@ -90,6 +90,10 @@ cp -r themes/sans/exampleSite/assets ./
 cp -r themes/sans/exampleSite/config ./
 {{</codeblock>}}
 
+{{< admonition type="warning" title="Be Careful!" >}}
+Sometimes the existing config or asset files inside the themes folder or themes/sans folder can interfere with the output of your root site. It is recommended to delete the *contents*, *assets* and *config* from the exampleSite and also the config folder of the themes when you have copied them already.
+{{< /admonition >}}
+
 #### Step 4: Configure Theme
 
 Move `hugo.toml` from the config folder to your site root:
