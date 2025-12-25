@@ -11,10 +11,12 @@ draft = false
 5. [Button](button)
 6. [Codeblock](codeblock)
 7. [Collapse](collapse)
-8. [Highlight](highlight)
-9. [Slideshow](slideshow)
-10. [Table](table)
-11. [Tabs](tabs)
+8. [Columns](columns)
+9. [Highlight](highlight)
+10. [Slideshow](slideshow)
+11. [Table](table)
+12. [Tabs](tabs)
+13. [Some Text Formatting](formatting)
 
 ---
   
